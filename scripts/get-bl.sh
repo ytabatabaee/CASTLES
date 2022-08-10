@@ -1,0 +1,4 @@
+#!/bin/bash
+x=$1
+paste <( cat $x/truegenetrees|nw_reroot  - 4|nw_topology -I -|nw_order - |awk '{print($0=="'` cat $x/s_tree.trees|nw_reroot  - 4|nw_topology -I -|nw_order -`'")}' ) <( cat $x/truegenetrees|nw_reroot  - 1| nw_reroot -d -|nw_distance -mp -sf -t - |awk '{print $1+$2+$3+$4}' ) |awk '/^0/{d=d+$2;dc++;} /^1/{{a=a+$2;ac++}} END{printf("%s %s %d %d %.12f %.12f %.12f %.12f\n","'$x'","terminal",ac,dc,a,d,a/ac,d/dc)}'
+paste <( cat $x/truegenetrees|nw_reroot  - 4|nw_topology -I -|nw_order - |awk '{print($0=="'` cat $x/s_tree.trees|nw_reroot  - 4|nw_topology -I -|nw_order -`'")}' ) <( cat $x/truegenetrees|nw_reroot  - 1| nw_reroot -d -|nw_distance -mp -si - ) |awk '/^0/{d=d+$2;dc++;} /^1/{{a=a+$2;ac++}} END{printf("%s %s %d %d %.12f %.12f %.12f %.12f\n","'$x'","internal",ac,dc,a,d,a/ac,d/dc)}'
