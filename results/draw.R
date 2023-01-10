@@ -30,11 +30,11 @@ ggsave("S100-correlation.png",width=12.5,height = 9)
 
 
 ggplot(aes(x=sub("+","\n",Method,fixed=T),
-           y=l.est-l.true,color=Branch.Type),
+           y=l.true-l.est,color=Branch.Type),
        data=s[!variants,])+
   facet_wrap(~reorder(sub("_non","bp",sub("fasttree_genetrees_","",Condition)),l.true-l.est),ncol=1)+
   #scale_x_continuous(trans="identity",name="True length")+
-  scale_y_continuous(trans="identity",name="Estimated - True length (bias)")+
+  scale_y_continuous(trans="identity",name="True - Estimated length (bias)")+
   stat_summary(fun.data = mean_sdl,position = position_dodge(width=0.5))+
   #geom_boxplot(outlier.size = 0)+
   scale_fill_brewer(palette = "Dark2")+
@@ -45,6 +45,22 @@ ggplot(aes(x=sub("+","\n",Method,fixed=T),
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))
 ggsave("S100-bias.pdf",width=5,height = 9.2)
+
+ggplot(aes(x=sub("+","\n",Method,fixed=T),
+           y=l.true-l.est,color=Branch.Type),
+       data=s[!variants,])+
+  facet_wrap(~reorder(sub("_non","bp",sub("fasttree_genetrees_","",Condition)),l.true-l.est),ncol=1)+
+  #scale_x_continuous(trans="identity",name="True length")+
+  scale_y_continuous(trans="identity",name="True - Estimated length (bias)")+
+  stat_summary(fun.data = mean_sdl,position = position_dodge(width=0.5))+
+  #geom_boxplot(outlier.size = 0)+
+  scale_fill_brewer(palette = "Dark2")+
+  scale_color_brewer(palette = "Dark2",name="")+
+  geom_hline(color="blue",linetype=3,yintercept = 0)+
+  theme_bw()+
+  theme(legend.position = c(.23,.975), legend.direction = "horizontal",
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle=0))
 
 ggplot(aes(x=reorder(sub("_non","bp",sub("fasttree_genetrees_","",Condition)),l.true-l.est),
            y=abs(l.true-l.est),color=sub("+","\n",Method,fixed=T)),
@@ -78,7 +94,7 @@ ggplot(aes(x=reorder(sub("_non","bp",sub("fasttree_genetrees_","",Condition)),ab
   theme(legend.position = c(.38,.8), legend.direction = "horizontal",
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
-  coord_cartesian(ylim=c(0,0.076))
+  coord_cartesian(ylim=c(0,0.045))
 ggsave("S100-error-perrep.pdf",width=5,height = 4.7)
 
 
