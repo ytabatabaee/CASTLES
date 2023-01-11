@@ -122,10 +122,11 @@ ggplot(aes(x=sub("+","\n",Method,fixed=T),
         axis.text.x = element_text(angle=0))
 
 
-ggplot(aes(x= gsub(",","\n",Condition,fixed=T),
+ggplot(aes(x= Condition,
            y=l.true-l.est,color=Method),
        data=q[!qvariants,])+
   facet_wrap(~reorder(Branch.Type,-l.true),ncol=2)+
+  scale_x_discrete(label=function(x) gsub(",","\n",x,fixed=T))+
   geom_hline(color="grey50",linetype=1,yintercept = 0)+
   #scale_x_continuous(trans="identity",name="True length")+
   scale_y_continuous(name=expression("True" - "Estimated length (bias)"))+
@@ -134,10 +135,11 @@ ggplot(aes(x= gsub(",","\n",Condition,fixed=T),
   scale_fill_brewer(palette = "Dark2")+
   scale_color_brewer(palette = "Dark2",name="")+
   theme_bw()+
-  theme(legend.position = c(.295,.1), legend.direction = "horizontal",
+  theme(legend.position = c(.75,.18), legend.direction = "horizontal",
         axis.title.x = element_blank(),
-        axis.text.x = element_text(angle=0))
-ggsave("quartet-bias.pdf",width=11,height =  4.5)
+        axis.text.x = element_text(angle=0))+
+  guides(color=guide_legend(nrow=3, byrow=TRUE))
+ggsave("quartet-bias.pdf",width=8,height =  4.7)
 
 
 ggplot(aes(x= Condition,
@@ -192,8 +194,8 @@ ggplot(aes(x=reorder(sub("_non","bp",sub("fasttree_genetrees_","",Condition)),l.
 ggsave("S100-error-all.pdf",width=5,height = 9.2)
 
 
-ggplot(aes(x=reorder(sub("_non","bp",sub("fasttree_genetrees_","",Condition)),abserr),
-           y=abserr,color=sub("+","\n",Method,fixed=T)),
+ggplot(aes(x=Condition,
+           y=abserr,color=Method),
        data=dcast(data=s[!variants,],Condition+Method+replicate~'abserr' ,value.var = "abserr",fun.aggregate = mean))+
   scale_y_continuous(trans="identity",name="Mean absolute error")+
   geom_boxplot(outlier.alpha = 0.3,width=0.86)+
@@ -202,12 +204,62 @@ ggplot(aes(x=reorder(sub("_non","bp",sub("fasttree_genetrees_","",Condition)),ab
   scale_fill_brewer(palette = "Dark2")+
   scale_color_brewer(palette = "Dark2",name="")+
   theme_bw()+
-  theme(legend.position = c(.38,.8), legend.direction = "horizontal",
+  theme(legend.position = "bottom", legend.direction = "horizontal",
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
   coord_cartesian(ylim=c(0,0.045))
-ggsave("S100-error-perrep.pdf",width=5,height = 4.7)
+ggsave("S100-error-perrep.pdf",width=6.5,height = 5)
 
+ggplot(aes(x=Condition,
+           y=abserr,color=Method),
+       data=dcast(data=q[!qvariants,],Condition+Method+replicate~'abserr' ,value.var = "abserr",fun.aggregate = mean))+
+  scale_y_continuous(trans="identity",name="Mean absolute error")+
+  scale_x_discrete(label=function(x) gsub(",","\n",x,fixed=T))+
+  geom_boxplot(outlier.alpha = 0.3,width=0.86)+
+  stat_summary(position = position_dodge(width=0.86))+
+  #geom_boxplot(outlier.size = 0)+
+  scale_fill_brewer(palette = "Dark2")+
+  scale_color_brewer(palette = "Dark2",name="")+
+  theme_bw()+
+  theme(legend.position = c(.34,.9), legend.direction = "horizontal",
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle=0))+
+  coord_cartesian(ylim=c(0,0.75))+
+  guides(color=guide_legend(nrow=2, byrow=TRUE))
+ggsave("quartet-error-perrep.pdf",width=7,height = 4.5)
+
+ggplot(aes(x=Condition,
+       y=sqrt(se),color=Method),
+      data=dcast(data=s[!variants,],Condition+Method+replicate~'se' ,value.var = "se",fun.aggregate = mean))+
+  scale_y_continuous(trans="identity",name="Root mean square error")+
+  geom_boxplot(outlier.alpha = 0.3,width=0.86)+
+  stat_summary(position = position_dodge(width=0.86))+
+  #geom_boxplot(outlier.size = 0)+
+  scale_fill_brewer(palette = "Dark2")+
+  scale_color_brewer(palette = "Dark2",name="")+
+  theme_bw()+
+  theme(legend.position = "bottom", legend.direction = "horizontal",
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle=0))+
+  coord_cartesian(ylim=c(0,0.08))
+ggsave("S100-error-rmse.pdf",width=6.5,height = 5)
+
+ggplot(aes(x=Condition,
+           y=sqrt(se),color=Method),
+       data=dcast(data=q[!qvariants,],Condition+Method+replicate~'se' ,value.var = "se",fun.aggregate = mean))+
+  scale_y_continuous(trans="identity",name="Root mean square error")+
+  scale_x_discrete(label=function(x) gsub(",","\n",x,fixed=T))+
+  geom_boxplot(outlier.alpha = 0.3,width=0.86)+
+  stat_summary(position = position_dodge(width=0.86))+
+  #geom_boxplot(outlier.size = 0)+
+  scale_fill_brewer(palette = "Dark2")+
+  scale_color_brewer(palette = "Dark2",name="")+
+  theme_bw()+
+  theme(legend.position = "bottom", legend.direction = "horizontal",
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle=0))+
+  coord_cartesian(ylim=c(0,0.8))
+ggsave("quartet-error-rmse.pdf",width=6.5,height = 5)
 
 ggplot(aes(x=reorder(sub("_non","bp",sub("fasttree_genetrees_","",Condition)),se),
            y=sqrt(se),color=sub("+","\n",Method,fixed=T)),
@@ -223,7 +275,7 @@ ggplot(aes(x=reorder(sub("_non","bp",sub("fasttree_genetrees_","",Condition)),se
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
   coord_cartesian(ylim=c(0,0.095))
-ggsave("S100-error-rmse.pdf",width=5,height = 4.7)
+#ggsave("S100-error-rmse.pdf",width=5,height = 4.7)
 
 ggplot(aes(x=reorder(sub("_non","bp",sub("fasttree_genetrees_","",Condition)),log10err),
            y=log10err,color=sub("+","\n",Method,fixed=T)),
@@ -239,4 +291,38 @@ ggplot(aes(x=reorder(sub("_non","bp",sub("fasttree_genetrees_","",Condition)),lo
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
   coord_cartesian(ylim=c(0,1.5))
-ggsave("S100-error-logabs.pdf",width=5,height = 4.7)
+#ggsave("S100-error-logabs.pdf",width=5,height = 4.7)
+
+
+ggplot(aes(x=Condition,
+           y=log10err,color=Method),
+       data=dcast(data=s[!variants,],Condition+Method+replicate~'log10err' ,value.var = "log10err",fun.aggregate = function(x) mean(abs(x))))+
+  scale_y_continuous(trans="identity",name="Mean log error")+
+  geom_boxplot(outlier.alpha = 0.3,width=0.86)+
+  stat_summary(position = position_dodge(width=0.86))+
+  #geom_boxplot(outlier.size = 0)+
+  scale_fill_brewer(palette = "Dark2")+
+  scale_color_brewer(palette = "Dark2",name="")+
+  theme_bw()+
+  theme(legend.position = "bottom", legend.direction = "horizontal",
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle=0))+
+  coord_cartesian(ylim=c(0,1.5))
+ggsave("S100-error-logabs.pdf",width=6.5,height = 5)
+
+ggplot(aes(x=Condition,
+           y=log10err,color=Method),
+       data=dcast(data=q[!qvariants,],Condition+Method+replicate~'log10err' ,value.var = "log10err",fun.aggregate = function(x) mean(abs(x))))+
+  scale_y_continuous(trans="identity",name="Mean log error")+
+  geom_boxplot(outlier.alpha = 0.3,width=0.86)+
+  stat_summary(position = position_dodge(width=0.86))+
+  #geom_boxplot(outlier.size = 0)+
+  scale_fill_brewer(palette = "Dark2")+
+  scale_color_brewer(palette = "Dark2",name="")+
+  theme_bw()+
+  scale_x_discrete(label=function(x) gsub(",","\n",x,fixed=T))+
+  theme(legend.position = "bottom", legend.direction = "horizontal",
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle=0))+
+  coord_cartesian(ylim=c(0,1.5))
+ggsave("S100-error-logabs.pdf",width=6.5,height = 5)
