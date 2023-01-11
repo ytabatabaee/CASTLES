@@ -324,5 +324,5 @@ ggplot(aes(x=Condition,
   theme(legend.position = "bottom", legend.direction = "horizontal",
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
-  coord_cartesian(ylim=c(0,1.5))
-ggsave("S100-error-logabs.pdf",width=6.5,height = 5)
+  coord_cartesian(ylim=c(0,3.5))
+ggsave("quartet-error-logabs.pdf",width=6.5,height = 5)
