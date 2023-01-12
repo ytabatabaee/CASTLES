@@ -130,7 +130,7 @@ ggplot(aes(x= Condition,
   geom_hline(color="grey50",linetype=1,yintercept = 0)+
   #scale_x_continuous(trans="identity",name="True length")+
   scale_y_continuous(name=expression("True" - "Estimated length (bias)"))+
-  stat_summary(fun.data = mean_sdl,position = position_dodge(width=0.5))+
+  stat_summary(fun.data = mean_sdl,position = position_dodge(width=0.75))+
   #geom_boxplot(outlier.size = 0)+
   scale_fill_brewer(palette = "Dark2")+
   scale_color_brewer(palette = "Dark2",name="")+
