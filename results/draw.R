@@ -149,15 +149,16 @@ ggplot(aes(x= Condition,
   geom_hline(color="grey50",linetype=1,yintercept = 0)+
   #scale_x_continuous(trans="identity",name="True length")+
   scale_y_continuous(name=expression("True" - "Estimated length (bias)"))+
-  stat_summary(fun.data = mean_sdl,position = position_dodge(width=0.5))+
+  stat_summary(fun.data = mean_sdl,position = position_dodge(width=0.75))+
   #geom_boxplot(outlier.size = 0)+
   scale_fill_brewer(palette = "Dark2")+
   scale_color_brewer(palette = "Dark2",name="")+
   theme_bw()+
-  theme(legend.position = c(.73,.9), legend.direction = "horizontal",
+  theme(legend.position = "none", legend.direction = "horizontal",
         axis.title.x = element_blank(),
-        axis.text.x = element_text(angle=0))
-ggsave("S100-bias.pdf",width=11,height =  4.5)
+        axis.text.x = element_text(angle=0))#+
+  guides(color=guide_legend(nrow=3, byrow=TRUE))
+ggsave("S100-bias.pdf",width=8,height =  4)
 
 ggplot(aes(x=sub("+","\n",Method,fixed=T),
            y=l.true-l.est,color=Branch.Type),
