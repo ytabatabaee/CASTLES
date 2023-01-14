@@ -280,7 +280,7 @@ ggsave("MV-error-perrep-bymethod.pdf",width=6.4,height = 5)
 
 ggplot(aes(x=Method, y=l.true-l.est,color=ratevar,shape=outgroup),
        data=m[!mvariants,])+
-  scale_y_continuous(trans="identity",name="Mean absolute error")+
+  scale_y_continuous(trans="identity",name=expression("True" - "Estimated length (bias)"))+
   scale_x_discrete(label=function(x) gsub("+","\n",x,fixed=T))+
   stat_summary(position = position_dodge(width=0.9),size=0.8,fun.data = mean_sdl)+
   #geom_boxplot(outlier.size = 0)+
