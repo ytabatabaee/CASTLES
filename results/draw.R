@@ -274,12 +274,12 @@ ggplot(aes(x=Method, y=abserr,fill=ratevar,color=outgroup,shape=outgroup),
   theme(legend.position =  "bottom", legend.direction = "horizontal",
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
-  coord_cartesian(ylim=c(0,0.1))+
+  coord_cartesian(ylim=c(0,0.08))+
   guides(color=guide_legend(nrow=1, byrow=TRUE),
          fill=guide_legend(nrow=1, byrow=TRUE))
-ggsave("MV-error-perrep-bymethod.pdf",width=6.4,height = 5)
+ggsave("MV-error-perrep-bymethod.pdf",width=6.4,height = 4.5)
 
-ggplot(aes(fill=Method, y=log10err,x=cut(AD,4)),
+ggplot(aes(color=Method, y=log10err,x=cut(AD,4)),
        data=merge(
          dcast(data=m[!mvariants & m$outgroup ==FALSE,],
                   outgroup+ratevar+Method+replicate~'log10err' ,value.var = "log10err",fun.aggregate = function(x) mean(abs(x))),
@@ -292,15 +292,15 @@ ggplot(aes(fill=Method, y=log10err,x=cut(AD,4)),
   #geom_boxplot(outlier.size = 0)+
   scale_color_manual(values=c("black","grey50"),name="",labels=c("With outgroup","No outgroup"))+
   scale_shape(name="",labels=c("With outgroup","No outgroup"))+
-  scale_fill_brewer(palette = "Dark2",name="",direction = -1)+
+  scale_color_brewer(palette = "Dark2",name="")+
   theme_bw()+
   theme(legend.position =  "bottom", legend.direction = "horizontal",
         legend.box.margin = margin(0), legend.margin = margin(0),
-        axis.text.x = element_text(angle=0))+
+        axis.text.x = element_text(angle=0,size=11))+
   coord_cartesian()+
   guides(color=guide_legend(nrow=2, byrow=TRUE),
          fill=guide_legend(nrow=2, byrow=TRUE))
-ggsave("MV-logerr-perrep-ILS-bymethod.pdf",width=6.4,height = 5)
+ggsave("MV-logerr-perrep-ILS-bymethod.pdf",width=6.4*0.95,height = 4.6*0.95)
 
 ggplot(aes(x=Method, y=sqrt(se),fill=ratevar,color=outgroup,shape=outgroup),
        data=dcast(data=m[!mvariants,],
