@@ -302,6 +302,26 @@ ggplot(aes(fill=Method, y=log10err,x=cut(AD,4)),
          fill=guide_legend(nrow=2, byrow=TRUE))
 ggsave("MV-logerr-perrep-ILS-bymethod.pdf",width=6.4,height = 5)
 
+ggplot(aes(x=Method, y=sqrt(se),fill=ratevar,color=outgroup,shape=outgroup),
+       data=dcast(data=m[!mvariants,],
+                  outgroup+ratevar+Method+replicate~'se' ,value.var = "se",fun.aggregate = mean))+
+  scale_y_continuous(trans="identity",name="Root mean square error")+
+  scale_x_discrete(label=function(x) gsub("+","\n",x,fixed=T))+
+  geom_boxplot(outlier.alpha = 0.3,width=0.9,outlier.size = 0.8)+
+  stat_summary(position = position_dodge(width=0.9))+
+  #geom_boxplot(outlier.size = 0)+
+  scale_color_manual(values=c("black","grey50"),name="",labels=c("With outgroup","No outgroup"))+
+  scale_shape(name="",labels=c("With outgroup","No outgroup"))+
+  scale_fill_brewer(palette = 1,labels=c("High","Med","Low"),name="Rate variation",direction = -1)+
+  theme_bw()+
+  theme(legend.position =  "bottom", legend.direction = "horizontal",
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle=0))+
+  coord_cartesian(ylim=c(0,0.1))+
+  guides(color=guide_legend(nrow=1, byrow=TRUE),
+         fill=guide_legend(nrow=1, byrow=TRUE))
+ggsave("MV-rmse-bymethod.pdf",width=6.4,height = 5)
+
 ggplot(aes(x=Method, y=l.true-l.est,color=ratevar,shape=outgroup),
        data=m[!mvariants,])+
   scale_y_continuous(trans="identity",name=expression("True" - "Estimated length (bias)"))+
