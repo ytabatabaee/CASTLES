@@ -264,9 +264,9 @@ ggplot(aes(x=Method, y=abserr,fill=ratevar,color=outgroup,shape=outgroup),
   geom_boxplot(outlier.alpha = 0.3,width=0.9,outlier.size = 1)+
   stat_summary(position = position_dodge(width=0.9))+
   #geom_boxplot(outlier.size = 0)+
-  scale_color_manual(values=c("grey20","#CC3333"),name="",labels=c("With outgroup","No outgroup"))+
+  scale_color_manual(values=c("black","grey50"),name="",labels=c("With outgroup","No outgroup"))+
   scale_shape(name="",labels=c("With outgroup","No outgroup"))+
-  scale_fill_brewer(palette = 1,labels=c("High","Med","Low"),name="Rate variation")+
+  scale_fill_brewer(palette = 1,labels=c("High","Med","Low"),name="Rate variation",direction = -1)+
   theme_bw()+
   theme(legend.position =  "bottom", legend.direction = "horizontal",
         axis.title.x = element_blank(),
