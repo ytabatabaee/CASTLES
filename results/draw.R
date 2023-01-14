@@ -39,6 +39,14 @@ levels(q$Condition) = list("Homogeneous" = "no_variation",
                                  "Sp, Loc, Sp/Loc"  =  "hs_hl_hg" ,
                                  "Sp, Loc, Sp/Loc, highILS"  = "hs_hl_hg_highr")
 
+m = read.csv('mvroot_all_branches_estgt.csv')
+head(m)
+unique(m$Method)
+m$se = (m$l.est - m$l.true)^2 
+mvariants = q$Method %in% c("nothng")
+names(m) =  c(names(s)[1:4],"AD", "GTEE", names(s)[5:12])
+m$outgroup = factor(grepl("outgroup.0", m$Condition))
+m$ratevar =  unique(sub(".genes.*","",sub("outgroup.*.species.","",m$Condition)))
 
 ggplot(aes(x=l.true,y=l.est,color=Branch.Type,linetype=Branch.Type),
        data=s[!variants,])+
@@ -228,6 +236,62 @@ ggplot(aes(x=Condition,
   coord_cartesian(ylim=c(0,0.75))+
   guides(color=guide_legend(nrow=2, byrow=TRUE))
 ggsave("quartet-error-perrep.pdf",width=7,height = 4.5)
+
+
+ggplot(aes(x=ratevar, y=abserr,color=Method,fill=outgroup),
+       data=dcast(data=m[!mvariants,],
+                  outgroup+ratevar+Method+replicate~'abserr' ,value.var = "abserr",fun.aggregate = mean))+
+  scale_y_continuous(trans="identity",name="Mean absolute error")+
+  scale_x_discrete(labels=c("High","Med","Low"),name="Species rate variation")+
+  geom_boxplot(outlier.alpha = 0.3,width=0.9,outlier.size = 1)+
+  stat_summary(position = position_dodge(width=0.9))+
+  #geom_boxplot(outlier.size = 0)+
+  scale_fill_manual(values=c("white","grey70"),name="",labels=c("With outgroup","No outgroup"))+
+  scale_color_brewer(palette = "Dark2",name="")+
+  theme_bw()+
+  theme(legend.position =  "bottom", legend.direction = "horizontal",
+        axis.text.x = element_text(angle=0))+
+  coord_cartesian(ylim=c(0,0.1))+
+  guides(color=guide_legend(nrow=2, byrow=TRUE),
+         fill=guide_legend(nrow=2, byrow=TRUE))
+ggsave("MV-error-perrep.pdf",width=6.7,height = 5.2)
+
+ggplot(aes(x=Method, y=abserr,fill=ratevar,color=outgroup,shape=outgroup),
+       data=dcast(data=m[!mvariants,],
+                  outgroup+ratevar+Method+replicate~'abserr' ,value.var = "abserr",fun.aggregate = mean))+
+  scale_y_continuous(trans="identity",name="Mean absolute error")+
+  scale_x_discrete(label=function(x) gsub("+","\n",x,fixed=T))+
+  geom_boxplot(outlier.alpha = 0.3,width=0.9,outlier.size = 1)+
+  stat_summary(position = position_dodge(width=0.9))+
+  #geom_boxplot(outlier.size = 0)+
+  scale_color_manual(values=c("grey20","#CC3333"),name="",labels=c("With outgroup","No outgroup"))+
+  scale_shape(name="",labels=c("With outgroup","No outgroup"))+
+  scale_fill_brewer(palette = 1,labels=c("High","Med","Low"),name="Rate variation")+
+  theme_bw()+
+  theme(legend.position =  "bottom", legend.direction = "horizontal",
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle=0))+
+  coord_cartesian(ylim=c(0,0.1))+
+  guides(color=guide_legend(nrow=1, byrow=TRUE),
+         fill=guide_legend(nrow=1, byrow=TRUE))
+ggsave("MV-error-perrep-bymethod2.pdf",width=7,height = 5)
+
+ggplot(aes(x=ratevar, y=abserr,color=Method,linetype=outgroup,shape=outgroup),
+       data=dcast(data=m[!mvariants,],
+                  outgroup+ratevar+Method+replicate~'abserr' ,value.var = "abserr",fun.aggregate = mean))+
+  scale_y_continuous(trans="identity",name="Mean absolute error")+
+  scale_x_discrete(labels=c("High","Med","Low"),name="Species rate variation")+
+  stat_summary(aes(group=interaction(outgroup,Method)),geom="line")+
+  stat_summary()+
+  #geom_boxplot(outlier.size = 0)+
+  scale_fill_manual(values=c("white","grey70"),name="",labels=c("No outgroup","With outgroup"))+
+  scale_color_brewer(palette = "Dark2",name="")+
+  theme_bw()+
+  theme(legend.position =  "bottom", legend.direction = "horizontal",
+        axis.text.x = element_text(angle=0))+
+  coord_cartesian()+
+  guides(color=guide_legend(nrow=2, byrow=TRUE),
+         linetype=guide_legend(nrow=2, byrow=TRUE))
 
 ggplot(aes(x=Condition,
        y=sqrt(se),color=Method),
