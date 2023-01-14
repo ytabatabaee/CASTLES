@@ -41,9 +41,10 @@ levels(q$Condition) = list("Homogeneous" = "no_variation",
 
 m = read.csv('mvroot_all_branches_estgt.csv')
 head(m)
+nrow(m)
 unique(m$Method)
 m$se = (m$l.est - m$l.true)^2 
-mvariants = q$Method %in% c("nothng")
+mvariants = m$Method %in% c("nothng")
 names(m) =  c(names(s)[1:4],"AD", "GTEE", names(s)[5:12])
 m$outgroup = factor(grepl("outgroup.0", m$Condition))
 m$ratevar =  unique(sub(".genes.*","",sub("outgroup.*.species.","",m$Condition)))
@@ -278,9 +279,32 @@ ggplot(aes(x=Method, y=abserr,fill=ratevar,color=outgroup,shape=outgroup),
          fill=guide_legend(nrow=1, byrow=TRUE))
 ggsave("MV-error-perrep-bymethod.pdf",width=6.4,height = 5)
 
+ggplot(aes(fill=Method, y=log10err,x=cut(AD,4)),
+       data=merge(
+         dcast(data=m[!mvariants & m$outgroup ==FALSE,],
+                  outgroup+ratevar+Method+replicate~'log10err' ,value.var = "log10err",fun.aggregate = function(x) mean(abs(x))),
+         dcast(data=m[!mvariants  & m$outgroup ==FALSE,], outgroup+replicate+ratevar~'AD' ,value.var = "AD",fun.aggregate = mean)))+
+  scale_y_continuous(trans="identity",name="Mean log error")+
+  #facet_wrap(~outgroup,ncol=2,labeller = label_both)+
+  scale_x_discrete(label=function(x) gsub("+","\n",x,fixed=T),name="True gene tree discordance (ILS)")+
+  geom_boxplot(outlier.alpha = 0.3,width=0.8,outlier.size = 0.8)+
+  stat_summary(position = position_dodge(width=0.8))+
+  #geom_boxplot(outlier.size = 0)+
+  scale_color_manual(values=c("black","grey50"),name="",labels=c("With outgroup","No outgroup"))+
+  scale_shape(name="",labels=c("With outgroup","No outgroup"))+
+  scale_fill_brewer(palette = "Dark2",name="",direction = -1)+
+  theme_bw()+
+  theme(legend.position =  "bottom", legend.direction = "horizontal",
+        legend.box.margin = margin(0), legend.margin = margin(0),
+        axis.text.x = element_text(angle=0))+
+  coord_cartesian()+
+  guides(color=guide_legend(nrow=2, byrow=TRUE),
+         fill=guide_legend(nrow=2, byrow=TRUE))
+ggsave("MV-logerr-perrep-ILS-bymethod.pdf",width=6.4,height = 5)
+
 ggplot(aes(x=Method, y=l.true-l.est,color=ratevar,shape=outgroup),
        data=m[!mvariants,])+
-  scale_y_continuous(trans="identity",name="Mean absolute error")+
+  scale_y_continuous(trans="identity",name=expression("True" - "Estimated length (bias)"))+
   scale_x_discrete(label=function(x) gsub("+","\n",x,fixed=T))+
   stat_summary(position = position_dodge(width=0.9),size=0.8,fun.data = mean_sdl)+
   #geom_boxplot(outlier.size = 0)+
@@ -295,6 +319,8 @@ ggplot(aes(x=Method, y=l.true-l.est,color=ratevar,shape=outgroup),
   guides(color=guide_legend(nrow=1, byrow=TRUE),
          fill=guide_legend(nrow=1, byrow=TRUE))
 ggsave("MV-bias-bymethod.pdf",width=6.4,height = 5)
+
+
 
 ggplot(aes(x=ratevar, y=abserr,color=Method,linetype=outgroup,shape=outgroup),
        data=dcast(data=m[!mvariants,],
