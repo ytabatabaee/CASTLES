@@ -47,6 +47,8 @@ mvariants = q$Method %in% c("nothng")
 names(m) =  c(names(s)[1:4],"AD", "GTEE", names(s)[5:12])
 m$outgroup = factor(grepl("outgroup.0", m$Condition))
 m$ratevar =  unique(sub(".genes.*","",sub("outgroup.*.species.","",m$Condition)))
+m$Method = factor(m$Method, levels=c("CASTLES" ,"ERaBLE", "Naive" , 
+                           "Patristic(AVG)+FastME" ,"Patristic(MIN)+FastME", "Concat+RAxML"))
 
 ggplot(aes(x=l.true,y=l.est,color=Branch.Type,linetype=Branch.Type),
        data=s[!variants,])+
@@ -261,7 +263,7 @@ ggplot(aes(x=Method, y=abserr,fill=ratevar,color=outgroup,shape=outgroup),
                   outgroup+ratevar+Method+replicate~'abserr' ,value.var = "abserr",fun.aggregate = mean))+
   scale_y_continuous(trans="identity",name="Mean absolute error")+
   scale_x_discrete(label=function(x) gsub("+","\n",x,fixed=T))+
-  geom_boxplot(outlier.alpha = 0.3,width=0.9,outlier.size = 1)+
+  geom_boxplot(outlier.alpha = 0.3,width=0.9,outlier.size = 0.8)+
   stat_summary(position = position_dodge(width=0.9))+
   #geom_boxplot(outlier.size = 0)+
   scale_color_manual(values=c("black","grey50"),name="",labels=c("With outgroup","No outgroup"))+
@@ -274,7 +276,25 @@ ggplot(aes(x=Method, y=abserr,fill=ratevar,color=outgroup,shape=outgroup),
   coord_cartesian(ylim=c(0,0.1))+
   guides(color=guide_legend(nrow=1, byrow=TRUE),
          fill=guide_legend(nrow=1, byrow=TRUE))
-ggsave("MV-error-perrep-bymethod2.pdf",width=7,height = 5)
+ggsave("MV-error-perrep-bymethod.pdf",width=6.4,height = 5)
+
+ggplot(aes(x=Method, y=l.true-l.est,color=ratevar,shape=outgroup),
+       data=m[!mvariants,])+
+  scale_y_continuous(trans="identity",name="Mean absolute error")+
+  scale_x_discrete(label=function(x) gsub("+","\n",x,fixed=T))+
+  stat_summary(position = position_dodge(width=0.9),size=0.8,fun.data = mean_sdl)+
+  #geom_boxplot(outlier.size = 0)+
+  #scale_color_manual(values=c("black","grey50"),name="",labels=c("With outgroup","No outgroup"))+
+  scale_shape(name="",labels=c("With outgroup","No outgroup"))+
+  scale_color_brewer(palette = 1,labels=c("High","Med","Low"),name="Rate variation",direction = -1)+
+  theme_bw()+
+  theme(legend.position =  "bottom", legend.direction = "horizontal",
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle=0))+
+  geom_hline(color="grey50",linetype=1,yintercept = 0)+
+  guides(color=guide_legend(nrow=1, byrow=TRUE),
+         fill=guide_legend(nrow=1, byrow=TRUE))
+ggsave("MV-bias-bymethod.pdf",width=6.4,height = 5)
 
 ggplot(aes(x=ratevar, y=abserr,color=Method,linetype=outgroup,shape=outgroup),
        data=dcast(data=m[!mvariants,],
