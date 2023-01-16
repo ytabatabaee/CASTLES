@@ -7,7 +7,7 @@ s$se = (s$l.est - s$l.true)^2
 
 im =  c("CASTLES (Integrals)", "CASTLES (Taylor 33, Coal)" ,
         "CASTLES (Taylor 33)" , "CASTLES (Taylor 34, Coal)" ,
-        "CASTLES (Taylor 35, Coal)") 
+        "CASTLES (Taylor 35, Coal)", "Naive") 
 variants = s$Method %in% im
 s[s$Method=="CASTLES (Taylor 33, Handle OG)","Method"]="CASTLES"
 names(s)=c("X"             ,      "Condition"         ,  "Method"        ,      "replicate"    ,       "Branch.Type"  ,
@@ -44,7 +44,7 @@ head(m)
 nrow(m)
 unique(m$Method)
 m$se = (m$l.est - m$l.true)^2 
-mvariants = m$Method %in% c("nothng")
+mvariants = m$Method %in% c("Naive")
 names(m) =  c(names(s)[1:4],"AD", "GTEE", names(s)[5:12])
 m$outgroup = factor(grepl("outgroup.0", m$Condition))
 m$ratevar =  unique(sub(".genes.*","",sub("outgroup.*.species.","",m$Condition)))
@@ -146,7 +146,7 @@ ggplot(aes(x= Condition,
   scale_fill_brewer(palette = "Dark2")+
   scale_color_brewer(palette = "Dark2",name="")+
   theme_bw()+
-  theme(legend.position = c(.75,.18), legend.direction = "horizontal",
+  theme(legend.position = c(.75,.14), legend.direction = "horizontal",
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
   guides(color=guide_legend(nrow=3, byrow=TRUE))
@@ -170,6 +170,24 @@ ggplot(aes(x= Condition,
         axis.text.x = element_text(angle=0))#+
   guides(color=guide_legend(nrow=3, byrow=TRUE))
 ggsave("S100-bias.pdf",width=8,height =  4)
+
+ggplot(aes(x= Condition,
+           y=l.true-l.est,color=Method),
+       data=s[s$Method %in% c("CASTLES","Naive"),])+
+  facet_wrap(~reorder(Branch.Type,-l.true),ncol=2)+
+  geom_hline(color="grey50",linetype=1,yintercept = 0)+
+  #scale_x_continuous(trans="identity",name="True length")+
+  scale_y_continuous(name=expression("True" - "Estimated length (bias)"))+
+  stat_summary(fun.data = mean_sdl,position = position_dodge(width=0.75))+
+  stat_summary(aes(group=Method),fun.data = mean_sdl,position = position_dodge(width=0.75),geom="line")+
+  #geom_boxplot(outlier.size = 0)+
+  scale_fill_brewer(palette = "Dark2")+
+  scale_color_brewer(palette = "Dark2",name="")+
+  theme_bw()+
+  theme(legend.position = "bottom", legend.direction = "horizontal",
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle=0))#+
+guides(color=guide_legend(nrow=3, byrow=TRUE))
 
 ggplot(aes(x=sub("+","\n",Method,fixed=T),
            y=l.true-l.est,color=Branch.Type),
@@ -220,23 +238,23 @@ ggplot(aes(x=Condition,
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
   coord_cartesian(ylim=c(0,0.045))
-ggsave("S100-error-perrep.pdf",width=6.5,height = 5)
+ggsave("S100-error-perrep.pdf",width=7,height = 5)
 
 ggplot(aes(x=Condition,
            y=abserr,color=Method),
        data=dcast(data=q[!qvariants,],Condition+Method+replicate~'abserr' ,value.var = "abserr",fun.aggregate = mean))+
   scale_y_continuous(trans="identity",name="Mean absolute error")+
   scale_x_discrete(label=function(x) gsub(",","\n",x,fixed=T))+
-  geom_boxplot(outlier.alpha = 0.3,width=0.86)+
+  geom_boxplot(outlier.alpha = 0.3,width=0.86,outlier.size=1)+
   stat_summary(position = position_dodge(width=0.86))+
   #geom_boxplot(outlier.size = 0)+
   scale_fill_brewer(palette = "Dark2")+
   scale_color_brewer(palette = "Dark2",name="")+
   theme_bw()+
-  theme(legend.position = c(.34,.9), legend.direction = "horizontal",
+  theme(legend.position = c(.3,.9), legend.direction = "horizontal",
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
-  coord_cartesian(ylim=c(0,0.75))+
+  coord_cartesian(ylim=c(0,0.68))+
   guides(color=guide_legend(nrow=2, byrow=TRUE))
 ggsave("quartet-error-perrep.pdf",width=7,height = 4.5)
 
@@ -255,7 +273,7 @@ ggplot(aes(x=ratevar, y=abserr,color=Method,fill=outgroup),
   theme(legend.position =  "bottom", legend.direction = "horizontal",
         axis.text.x = element_text(angle=0))+
   coord_cartesian(ylim=c(0,0.1))+
-  guides(color=guide_legend(nrow=2, byrow=TRUE),
+  guides(color=guide_legend(nrow=2,  byrow=TRUE),
          fill=guide_legend(nrow=2, byrow=TRUE))
 ggsave("MV-error-perrep.pdf",width=6.7,height = 5.2)
 
@@ -277,9 +295,9 @@ ggplot(aes(x=Method, y=abserr,fill=ratevar,color=outgroup,shape=outgroup),
   coord_cartesian(ylim=c(0,0.08))+
   guides(color=guide_legend(nrow=1, byrow=TRUE),
          fill=guide_legend(nrow=1, byrow=TRUE))
-ggsave("MV-error-perrep-bymethod.pdf",width=6.4,height = 4.5)
+ggsave("MV-error-perrep-bymethod.pdf",width=6.2,height = 4.3)
 
-ggplot(aes(color=Method, y=log10err,x=cut(AD,4)),
+ ggplot(aes(color=Method, y=log10err,x=cut(AD,4)),
        data=merge(
          dcast(data=m[!mvariants & m$outgroup ==FALSE,],
                   outgroup+ratevar+Method+replicate~'log10err' ,value.var = "log10err",fun.aggregate = function(x) mean(abs(x))),
@@ -300,7 +318,7 @@ ggplot(aes(color=Method, y=log10err,x=cut(AD,4)),
   coord_cartesian()+
   guides(color=guide_legend(nrow=2, byrow=TRUE),
          fill=guide_legend(nrow=2, byrow=TRUE))
-ggsave("MV-logerr-perrep-ILS-bymethod.pdf",width=6.4*0.95,height = 4.6*0.95)
+ggsave("MV-logerr-perrep-ILS-bymethod.pdf",width=6.2*0.95,height = 4.3*0.95)
 
 ggplot(aes(x=Method, y=sqrt(se),fill=ratevar,color=outgroup,shape=outgroup),
        data=dcast(data=m[!mvariants,],
@@ -373,9 +391,9 @@ ggplot(aes(x=Condition,
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
   coord_cartesian(ylim=c(0,0.08))
-ggsave("S100-error-rmse.pdf",width=6.5,height = 5)
+ggsave("S100-error-rmse.pdf",width=7,height = 5)
 
-ggplot(aes(x=Condition,
+  ggplot(aes(x=Condition,
            y=sqrt(se),color=Method),
        data=dcast(data=q[!qvariants,],Condition+Method+replicate~'se' ,value.var = "se",fun.aggregate = mean))+
   scale_y_continuous(trans="identity",name="Root mean square error")+
@@ -439,7 +457,7 @@ ggplot(aes(x=Condition,
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
   coord_cartesian(ylim=c(0,1.5))
-ggsave("S100-error-logabs.pdf",width=6.5,height = 5)
+ggsave("S100-error-logabs.pdf",width=7,height = 5)
 
 ggplot(aes(x=Condition,
            y=log10err,color=Method),
@@ -457,3 +475,5 @@ ggplot(aes(x=Condition,
         axis.text.x = element_text(angle=0))+
   coord_cartesian(ylim=c(0,3.5))
 ggsave("quartet-error-logabs.pdf",width=6.5,height = 5)
+
+
