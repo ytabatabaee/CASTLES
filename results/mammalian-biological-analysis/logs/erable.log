@@ -1,0 +1,13 @@
+Reading command line.
+Tree reading.
+Matrices reading.
+Weigths reading.
+Wseq weights
+Constraint nksumdist
+System construction.
+System resolution (ldlt method).
+Correction factor : 1.00315
+Rates writting.
+Branch lengths writting.
+
+Total time : 470 mili seconds.
