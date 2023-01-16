@@ -10,18 +10,27 @@ def main(args):
     gts = dendropy.TreeList.get(path=args.genetrees, schema='newick', taxon_namespace=tns)
 
     dist_mat = np.zeros((len(tns), len(tns), len(gts)))
+    idx2 = 0
     for idx in range(len(gts)):
         gts[idx].deroot()
         pdc = gts[idx].phylogenetic_distance_matrix()
+        exclude = True
         for i in range(len(tns)):
             for j in range(i + 1, len(tns)):
-                dist_mat[i][j][idx] = pdc(tns[i], tns[j])
-                dist_mat[j][i][idx] = dist_mat[i][j][idx]
+                dist_mat[i][j][idx2] = pdc(tns[i], tns[j])
+                dist_mat[j][i][idx2] = dist_mat[i][j][idx2]
+                if dist_mat[j][i][idx2] != 0:
+                    exclude = False
+        if exclude:
+            continue
+        else:
+            idx2 += 1
 
+    dist_mat = dist_mat[:idx2]
     if args.mode == 'all':
         with open(args.outputmatrix, 'w') as f:
-            f.write(str(len(gts)) + '\n\n')
-            for idx in range(len(gts)):
+            f.write(str(idx2) + '\n\n')
+            for idx in range(idx2):
                 f.write(str(len(tns)) + ' 1 ' + '\n')
                 for i in range(len(tns)):
                     f.write(tns[i].label + '     ')
