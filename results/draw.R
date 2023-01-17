@@ -28,7 +28,7 @@ q= read.csv('quartets_all_branches.csv')
 head(q)
 unique(q$Method)
 q$se = (q$l.est - q$l.true)^2 
-q[q$Method=="CASTLES (Taylor 34, Coal)","Method"]="CASTLES"
+q[q$Method=="CASTLES (Taylor 33)","Method"]="CASTLES"
 qvariants = q$Method %in% im
 names(q) =  c(names(s)[1:4],"QuartetType", names(s)[5:12])
 q$Condition = factor(q$Condition)
@@ -518,7 +518,7 @@ ggplot(aes(x=Condition,
   theme(legend.position = "bottom", legend.direction = "horizontal",
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
-  coord_cartesian(ylim=c(0,3.5))
+  coord_cartesian(ylim=c(0,4.5))
 ggsave("quartet-error-logabs.pdf",width=6.5,height = 5)
 
 
