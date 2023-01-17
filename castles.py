@@ -42,33 +42,44 @@ def safe_div(n, d):
 
 
 def set_branch_length(edge, length):
-    edge.length = length # if length > 0 else 10 ** (-6)
+    edge.length = np.abs(length)#np.abs(length) # if length > 0 else 10 ** (-6)
     return edge
+
+
+def find_sibling(node):
+    if node.parent_node._child_nodes[0] == node:
+        sibling = node.parent_node._child_nodes[1]
+    if node.parent_node._child_nodes[1] == node:
+        sibling = node.parent_node._child_nodes[0]
+    return sibling
+
+
 
 def castles(args):
     tns = dendropy.TaxonNamespace()
     st = dendropy.Tree.get(path=args.speciestree, schema='newick', taxon_namespace=tns)
     gts = dendropy.TreeList.get(path=args.genetrees, schema='newick', taxon_namespace=tns)
 
+    #st.deroot()
+    #for gt in gts:
+    #    gt.deroot()
+
     for node in st.postorder_node_iter():
         if node.taxon is not None:
-            print('terminal')
+            #print('terminal')
             continue
         else:
             label_dict = process_node_annotation(node.label)
             num_m_gts = label_dict['LR_SO']['quartetCnt']
             num_n_gts = label_dict['LS_RO']['quartetCnt'] + label_dict['LO_RS']['quartetCnt']
             p_est = (num_m_gts - 0.5 * (1 + num_n_gts)) / (num_n_gts + num_m_gts + 1)
-            d_est = -np.log(1 - p_est)
+            #d_est = -np.log(1 - p_est)
 
             left = node._child_nodes[0]
             right = node._child_nodes[1]
             sibling = None
             if node.parent_node is not None:
-                if node.parent_node._child_nodes[0] == node:
-                    sibling = node.parent_node._child_nodes[1]
-                if node.parent_node._child_nodes[1] == node:
-                    sibling = node.parent_node._child_nodes[0]
+                sibling = find_sibling(node)
             else:
                 node.label = None
                 continue
@@ -88,19 +99,29 @@ def castles(args):
             lm_d = safe_div(label_dict['LR_SO']['sumO'], label_dict['LR_SO']['quartetCnt'])
             ln_d = safe_div(label_dict['LS_RO']['sumO']+label_dict['LO_RS']['sumO'],
                             label_dict['LS_RO']['quartetCnt']+label_dict['LO_RS']['quartetCnt'])
-            l_est = 1 / 3 * (lm_i - ln_i) * d_est * (1 + 2 * p_est) / (d_est - p_est)
 
-            print('average length non-matching', ln_i)
-            l_naive = d_est * ln_i
+            #l_integrals = 1 / 3 * (lm_i - ln_i) * d_est * (1 + 2 * p_est) / (d_est - p_est)
+            #l_naive = d_est * ln_i
 
-            threshold = np.log(len(gts))
-            w_formula, w_naive = threshold * d_est, 1 / (threshold * d_est)
-            l_mixed = (w_formula * l_est + w_naive * l_naive) / (w_formula + w_naive)
+            delta = safe_div(np.abs(lm_i - ln_i), ln_i)
+            l_est = 1/6 * (3 * delta + np.sqrt(3 * delta * (4 + 3 * delta))) * ln_i
 
-            print("internal, d_est, p_est", d_est, p_est)
-            print("l_est, l_naive, mixed", l_est, l_naive, l_mixed)
+            #m = max(0, d_est)
+            #l_taylor_34 = 1/6 * (3 * (delta + m) + np.sqrt(3)*np.exp(-m)*np.sqrt(np.abs(np.exp(m)*(3*np.exp(m)*(delta-m+2)**2-4*(2*delta+3))))) * ln_i
 
-            l_est = l_mixed
+            #M = delta*(delta*(delta+6)+3) - 1
+            #A = 3 * np.sqrt(np.abs(-delta*(delta*(delta*(delta+6)+6)+2)))
+            #l_taylor_35 = 1/3 * (delta - 1 + (M + A)**(1/3) + (delta*(delta+4)+1)/((M + A)**(1/3))) * ln_i
+
+            #threshold = 2 #np.log10(len(gts))
+            #w_formula, w_naive = threshold * d_est, 1 / (threshold * d_est)
+            #l_mixed = (w_formula * l_integrals + w_naive * l_taylor) / (w_formula + w_naive)
+
+            #print("internal, d_est, p_est", d_est, p_est)
+            #print("l_est, l_taylor", l_integrals, l_taylor_33)#, l_mixed)
+
+            #l_est = l_taylor_33
+            #mu1_est = l_est / d_est
 
             # cherry equations
             mu2_est_a = -2 * (1 + 2 * p_est) * ((lm_i - ln_i) + (lm_a - ln_a)) / (1 + 4 * p_est)
@@ -118,19 +139,44 @@ def castles(args):
                         l_d_est = average_terminal_bl(gts, sibling.taxon.label)
                     set_branch_length(node.edge, l_d_est)
                 else:
-                    set_branch_length(node.edge, np.abs(l_est))
+                    set_branch_length(node.edge, l_est)
             elif not node.edge.length:
-                set_branch_length(node.edge, np.abs(l_est))
+                set_branch_length(node.edge, l_est)
+            if left.is_leaf() and not left.edge.length:
+                set_branch_length(left.edge, l_a_est)
+                #print(left.taxon.label)
+            if right.is_leaf() and not right.edge.length:
+                set_branch_length(right.edge, l_b_est)
+                #print(right.taxon.label)
+            if sibling and sibling.is_leaf() and not sibling.edge.length:
+                set_branch_length(sibling.edge, l_c_est)
+                #print(sibling.taxon.label)
 
+
+            '''if node.parent_node.parent_node is None: # node is child of the root
+                if sibling.is_leaf():
+                    continue
+                else:
+                    set_branch_length(node.edge, l_est) # internal branch of balanced trees
+            elif node.parent_node.parent_node.parent_node is None: # node is grand-child of the root
+                uncle = find_sibling(node.parent_node)
+                if uncle.is_leaf() and not uncle.edge.length:
+                    set_branch_length(uncle.edge, l_d_est)
+                    #if l_d_est == 0:
+                    #     l_d_est = average_terminal_bl(gts, sibling.taxon.label)
+                #else:
+                #    set_branch_length(node.edge, np.abs(l_est))
+            if not node.edge.length:
+                set_branch_length(node.edge, l_est)
             if left.is_leaf() and not left.edge.length:
                 print(left.taxon.label)
-                set_branch_length(left.edge, np.abs(l_a_est))
+                set_branch_length(left.edge, l_a_est)
             if right.is_leaf() and not right.edge.length:
                 print(right.taxon.label)
-                set_branch_length(right.edge, np.abs(l_b_est))
+                set_branch_length(right.edge, l_b_est)
             if sibling and sibling.is_leaf() and not sibling.edge.length:
                 print(sibling.taxon.label)
-                set_branch_length(sibling.edge, np.abs(l_c_est))
+                set_branch_length(sibling.edge, l_c_est)'''
         node.label = None
 
     st.deroot()
