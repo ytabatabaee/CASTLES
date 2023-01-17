@@ -51,49 +51,22 @@ m$ratevar =  unique(sub(".genes.*","",sub("outgroup.*.species.","",m$Condition))
 m$Method = factor(m$Method, levels=c("CASTLES" ,"ERaBLE", "Naive" , 
                            "Patristic(AVG)+FastME" ,"Patristic(MIN)+FastME", "Concat+RAxML"))
 
-ggplot(aes(x=l.true,y=l.est,color=Branch.Type,linetype=Branch.Type),
-       data=s[!variants,])+
-  facet_grid(Condition~Method)+
-  geom_point(alpha=0.05)+
-  scale_x_continuous(trans="log10",name="True length")+
-  scale_y_continuous(trans="log10",name="Estimated length")+
-  stat_smooth(color="grey30",se=F,method="glm",formula=y ~ poly(x, 2))+
-  scale_color_brewer(palette = "Set2")+
-  coord_cartesian(xlim=c(10^-4.4,1),ylim=c(10^-4.4,1))+
-  geom_abline(color="blue",linetype=3)+
-  theme_bw()+
-  theme(legend.position = c(.94,.1)) + 
-  guides(colour = guide_legend(override.aes = list(alpha = 1)))
-ggsave("S100-correlation.png",width=12.5,height = 9)
-
-ggplot(aes(x=l.true,y=l.est,color=Method,linetype),
-       data=q[!qvariants,])+
-  facet_grid(Branch.Type~Condition)+
-  scale_x_continuous(trans="log10",name="True length")+
-  scale_y_continuous(trans="log10",name="Estimated length")+
-  stat_smooth(se=F,alpha=1,size=0.4,method="glm",formula=y ~ poly(x, 2))+
-  scale_color_brewer(palette = "Spectral")+
-  coord_cartesian(xlim=c(10^-3.8,0.9),ylim=c(10^-3.8,0.9))+
-  geom_abline(color="grey30",linetype=2)+
-  geom_point(alpha=0.2,size=0.7)+
-  theme_bw()+
-  theme(legend.position = "bottom")
-ggsave("quartet-correlation-spec.pdf",width=12.5,height = 4.8)
+### Comment out to include negative branch lengths. 
+m$l.est = ifelse(m$l.est <0, 1e-6, m$l.est)
+m$log10err = log10(m$l.est / m$l.true )
+m$abserr = abs(m$l.true - m$l.est)
+m$se = (m$l.est - m$l.true)^2 
+q$l.est = ifelse(q$l.est <0, 1e-6, q$l.est)
+q$log10err = log10(q$l.est / q$l.true )
+q$abserr = abs(q$l.true - q$l.est)
+q$se = (q$l.est - q$l.true)^2 
+s$l.est = ifelse(s$l.est <0, 1e-6, s$l.est)
+s$log10err = log10(s$l.est / s$l.true )
+s$abserr = abs(s$l.true - s$l.est)
+s$se = (s$l.est - s$l.true)^2 
 
 
-ggplot(aes(x=l.true,y=l.est,color=Method,linetype),
-       data=s[!variants,])+
-  facet_grid(Branch.Type~Condition)+
-  scale_x_continuous(trans="log10",name="True length")+
-  scale_y_continuous(trans="log10",name="Estimated length")+
-  scale_color_brewer(palette = "Spectral")+
-  coord_cartesian(xlim=c(10^-4,0.9),ylim=c(10^-4,0.9))+
-  geom_abline(color="grey30",linetype=2)+
-  geom_point(alpha=0.1,size=0.5)+
-  stat_smooth(se=F,alpha=1,size=0.7,method="glm",formula=y ~ poly(x, 2))+
-  theme_bw()+
-  theme(legend.position = "bottom")
-ggsave("S100-correlation-2.png",width=12,height = 7)
+
 
 
 ggplot(aes(x=sub("+","\n",Method,fixed=T),
@@ -263,7 +236,7 @@ ggplot(aes(x=ratevar, y=abserr,color=Method,fill=outgroup),
        data=dcast(data=m[!mvariants,],
                   outgroup+ratevar+Method+replicate~'abserr' ,value.var = "abserr",fun.aggregate = mean))+
   scale_y_continuous(trans="identity",name="Mean absolute error")+
-  scale_x_discrete(labels=c("High","Med","Low"),name="Species rate variation")+
+  scale_x_discrete(labels=c("High","Med","Low"),name="Clock deviation")+
   geom_boxplot(outlier.alpha = 0.3,width=0.9,outlier.size = 1)+
   stat_summary(position = position_dodge(width=0.9))+
   #geom_boxplot(outlier.size = 0)+
@@ -275,7 +248,7 @@ ggplot(aes(x=ratevar, y=abserr,color=Method,fill=outgroup),
   coord_cartesian(ylim=c(0,0.1))+
   guides(color=guide_legend(nrow=2,  byrow=TRUE),
          fill=guide_legend(nrow=2, byrow=TRUE))
-ggsave("MV-error-perrep.pdf",width=6.7,height = 5.2)
+ggsave("MV-error-perrep.pdf",width=6.7,height = 4.6)
 
 ggplot(aes(x=Method, y=abserr,fill=ratevar,color=outgroup,shape=outgroup),
        data=dcast(data=m[!mvariants,],
@@ -287,7 +260,7 @@ ggplot(aes(x=Method, y=abserr,fill=ratevar,color=outgroup,shape=outgroup),
   #geom_boxplot(outlier.size = 0)+
   scale_color_manual(values=c("black","grey50"),name="",labels=c("With outgroup","No outgroup"))+
   scale_shape(name="",labels=c("With outgroup","No outgroup"))+
-  scale_fill_brewer(palette = 1,labels=c("High","Med","Low"),name="Rate variation",direction = -1)+
+  scale_fill_brewer(palette = 1,labels=c("High","Med","Low"),name="Clock deviation",direction = -1)+
   theme_bw()+
   theme(legend.position =  "bottom", legend.direction = "horizontal",
         axis.title.x = element_blank(),
@@ -295,9 +268,9 @@ ggplot(aes(x=Method, y=abserr,fill=ratevar,color=outgroup,shape=outgroup),
   coord_cartesian(ylim=c(0,0.08))+
   guides(color=guide_legend(nrow=1, byrow=TRUE),
          fill=guide_legend(nrow=1, byrow=TRUE))
-ggsave("MV-error-perrep-bymethod.pdf",width=6.2,height = 4.3)
+ggsave("MV-error-perrep-bymethod.pdf",width=6.2*0.95,height = 4.3*0.95)
 
- ggplot(aes(color=Method, y=log10err,x=cut(AD,4)),
+ggplot(aes(color=Method, y=log10err,x=cut(AD,4)),
        data=merge(
          dcast(data=m[!mvariants & m$outgroup ==FALSE,],
                   outgroup+ratevar+Method+replicate~'log10err' ,value.var = "log10err",fun.aggregate = function(x) mean(abs(x))),
@@ -320,6 +293,53 @@ ggsave("MV-error-perrep-bymethod.pdf",width=6.2,height = 4.3)
          fill=guide_legend(nrow=2, byrow=TRUE))
 ggsave("MV-logerr-perrep-ILS-bymethod.pdf",width=6.2*0.95,height = 4.3*0.95)
 
+ggplot(aes(color=Method, y=log10err,x=cut(AD,4)),
+       data=merge(
+         dcast(data=m[!mvariants & m$outgroup ==FALSE,],
+               outgroup+ratevar+Method+replicate~'log10err' ,value.var = "log10err",fun.aggregate = function(x) mean(abs(x))),
+         dcast(data=m[!mvariants  & m$outgroup ==FALSE,], outgroup+replicate+ratevar~'AD' ,value.var = "AD",fun.aggregate = mean)))+
+  scale_y_continuous(trans="identity",name="Mean log10 error")+
+  #facet_wrap(~outgroup,ncol=2,labeller = label_both)+
+  scale_x_discrete(label=function(x) gsub("+","\n",x,fixed=T),name="True gene tree discordance (ILS)")+
+  geom_boxplot(outlier.alpha = 0.3,width=0.8,outlier.size = 0.8)+
+  stat_summary(position = position_dodge(width=0.8))+
+  #geom_boxplot(outlier.size = 0)+
+  scale_color_manual(values=c("black","grey50"),name="",labels=c("With outgroup","No outgroup"))+
+  scale_shape(name="",labels=c("With outgroup","No outgroup"))+
+  scale_color_brewer(palette = "Dark2",name="")+
+  theme_bw()+
+  theme(legend.position =  "none", legend.direction = "horizontal",
+        legend.box.margin = margin(0), legend.margin = margin(0),
+        axis.text.x = element_text(angle=0,size=11))+
+  coord_cartesian(ylim=c(0.1,1))+
+  geom_text(aes(color="Patristic(MIN)+FastME",y=0.6,label="Log\nError\n>2"),position = position_nudge(x  = 0.165),size=2.5)
+  guides(color=guide_legend(nrow=2, byrow=TRUE),
+         fill=guide_legend(nrow=2, byrow=TRUE))
+ggsave("MV-logerr-perrep-ILS-bymethod-nopatristic.pdf",width=6.2,height = 4)
+
+ggplot(aes(color=Method, y=abserr,x=cut(AD,4)),
+       data=merge(
+         dcast(data=m[!mvariants & m$outgroup ==FALSE,],
+               outgroup+ratevar+Method+replicate~'abserr' ,value.var = "abserr",fun.aggregate = function(x) mean(abs(x))),
+         dcast(data=m[!mvariants  & m$outgroup ==FALSE,], outgroup+replicate+ratevar~'AD' ,value.var = "AD",fun.aggregate = mean)))+
+  scale_y_continuous(trans="identity",name="Mean absolute error")+
+  #facet_wrap(~outgroup,ncol=2,labeller = label_both)+
+  scale_x_discrete(label=function(x) gsub("+","\n",x,fixed=T),name="True gene tree discordance (ILS)")+
+  geom_boxplot(outlier.alpha = 0.3,width=0.8,outlier.size = 0.8)+
+  stat_summary(position = position_dodge(width=0.8))+
+  #geom_boxplot(outlier.size = 0)+
+  scale_color_manual(values=c("black","grey50"),name="",labels=c("With outgroup","No outgroup"))+
+  scale_shape(name="",labels=c("With outgroup","No outgroup"))+
+  scale_color_brewer(palette = "Dark2",name="")+
+  theme_bw()+
+  theme(legend.position =  "bottom", legend.direction = "horizontal",
+        legend.box.margin = margin(0), legend.margin = margin(0),
+        axis.text.x = element_text(angle=0,size=11))+
+  coord_cartesian()+
+  guides(color=guide_legend(nrow=2, byrow=TRUE),
+         fill=guide_legend(nrow=2, byrow=TRUE))
+ggsave("MV-abserror-perrep-ILS-bymethod.pdf",width=6.2*0.95,height = 4.3*0.95)
+
 ggplot(aes(x=Method, y=sqrt(se),fill=ratevar,color=outgroup,shape=outgroup),
        data=dcast(data=m[!mvariants,],
                   outgroup+ratevar+Method+replicate~'se' ,value.var = "se",fun.aggregate = mean))+
@@ -330,7 +350,7 @@ ggplot(aes(x=Method, y=sqrt(se),fill=ratevar,color=outgroup,shape=outgroup),
   #geom_boxplot(outlier.size = 0)+
   scale_color_manual(values=c("black","grey50"),name="",labels=c("With outgroup","No outgroup"))+
   scale_shape(name="",labels=c("With outgroup","No outgroup"))+
-  scale_fill_brewer(palette = 1,labels=c("High","Med","Low"),name="Rate variation",direction = -1)+
+  scale_fill_brewer(palette = 1,labels=c("High","Med","Low"),name="Clock deviation",direction = -1)+
   theme_bw()+
   theme(legend.position =  "bottom", legend.direction = "horizontal",
         axis.title.x = element_blank(),
@@ -348,7 +368,7 @@ ggplot(aes(x=Method, y=l.true-l.est,color=ratevar,shape=outgroup),
   #geom_boxplot(outlier.size = 0)+
   #scale_color_manual(values=c("black","grey50"),name="",labels=c("With outgroup","No outgroup"))+
   scale_shape(name="",labels=c("With outgroup","No outgroup"))+
-  scale_color_brewer(palette = 1,labels=c("High","Med","Low"),name="Rate variation",direction = -1)+
+  scale_color_brewer(palette = 1,labels=c("High","Med","Low"),name="Clock deviation",direction = -1)+
   theme_bw()+
   theme(legend.position =  "bottom", legend.direction = "horizontal",
         axis.title.x = element_blank(),
@@ -364,7 +384,7 @@ ggplot(aes(x=ratevar, y=abserr,color=Method,linetype=outgroup,shape=outgroup),
        data=dcast(data=m[!mvariants,],
                   outgroup+ratevar+Method+replicate~'abserr' ,value.var = "abserr",fun.aggregate = mean))+
   scale_y_continuous(trans="identity",name="Mean absolute error")+
-  scale_x_discrete(labels=c("High","Med","Low"),name="Species rate variation")+
+  scale_x_discrete(labels=c("High","Med","Low"),name="Clock deviation")+
   stat_summary(aes(group=interaction(outgroup,Method)),geom="line")+
   stat_summary()+
   #geom_boxplot(outlier.size = 0)+
@@ -456,7 +476,8 @@ ggplot(aes(x=Condition,
   theme(legend.position = "bottom", legend.direction = "horizontal",
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
-  coord_cartesian(ylim=c(0,1.5))
+  coord_cartesian(ylim=c(0,1))+
+  geom_text(aes(color="Patristic(MIN)+FastME",y=0.6,label="Log\nError\n>1.5"),position = position_nudge(x  = 0.165),size=2.5)
 ggsave("S100-error-logabs.pdf",width=7,height = 5)
 
 ggplot(aes(x=Condition,
@@ -477,3 +498,47 @@ ggplot(aes(x=Condition,
 ggsave("quartet-error-logabs.pdf",width=6.5,height = 5)
 
 
+
+ggplot(aes(x=l.true,y=l.est,color=Branch.Type,linetype=Branch.Type),
+       data=s[!variants,])+
+  facet_grid(Condition~Method)+
+  geom_point(alpha=0.05)+
+  scale_x_continuous(trans="log10",name="True length")+
+  scale_y_continuous(trans="log10",name="Estimated length")+
+  stat_smooth(color="grey30",se=F,method="glm",formula=y ~ poly(x, 2))+
+  scale_color_brewer(palette = "Set2")+
+  coord_cartesian(xlim=c(10^-4.4,1),ylim=c(10^-4.4,1))+
+  geom_abline(color="blue",linetype=3)+
+  theme_bw()+
+  theme(legend.position = c(.94,.1)) + 
+  guides(colour = guide_legend(override.aes = list(alpha = 1)))
+ggsave("S100-correlation.png",width=12.5,height = 9)
+
+ggplot(aes(x=l.true,y=l.est,color=Method,linetype),
+       data=q[!qvariants,])+
+  facet_grid(Branch.Type~Condition)+
+  scale_x_continuous(trans="log10",name="True length")+
+  scale_y_continuous(trans="log10",name="Estimated length")+
+  stat_smooth(se=F,alpha=1,size=0.4,method="glm",formula=y ~ poly(x, 2))+
+  scale_color_brewer(palette = "Spectral")+
+  coord_cartesian(xlim=c(10^-3.8,0.9),ylim=c(10^-3.8,0.9))+
+  geom_abline(color="grey30",linetype=2)+
+  geom_point(alpha=0.2,size=0.7)+
+  theme_bw()+
+  theme(legend.position = "bottom")
+ggsave("quartet-correlation-spec.pdf",width=12.5,height = 4.8)
+
+
+ggplot(aes(x=l.true,y=l.est,color=Method,linetype),
+       data=s[!variants,])+
+  facet_grid(Branch.Type~Condition)+
+  scale_x_continuous(trans="log10",name="True length")+
+  scale_y_continuous(trans="log10",name="Estimated length")+
+  scale_color_brewer(palette = "Spectral")+
+  coord_cartesian(xlim=c(10^-4,0.9),ylim=c(10^-4,0.9))+
+  geom_abline(color="grey30",linetype=2)+
+  geom_point(alpha=0.1,size=0.5)+
+  stat_smooth(se=F,alpha=1,size=0.7,method="glm",formula=y ~ poly(x, 2))+
+  theme_bw()+
+  theme(legend.position = "bottom")
+ggsave("S100-correlation-2.png",width=12,height = 7)
