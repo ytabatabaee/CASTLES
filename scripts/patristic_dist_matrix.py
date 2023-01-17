@@ -26,7 +26,7 @@ def main(args):
         else:
             idx2 += 1
 
-    dist_mat = dist_mat[:idx2]
+    dist_mat = dist_mat[:, :, :idx2]
     if args.mode == 'all':
         with open(args.outputmatrix, 'w') as f:
             f.write(str(idx2) + '\n\n')
