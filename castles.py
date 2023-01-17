@@ -58,6 +58,7 @@ def find_sibling(node):
 def castles(args):
     tns = dendropy.TaxonNamespace()
     st = dendropy.Tree.get(path=args.speciestree, schema='newick', taxon_namespace=tns)
+    st = st.extract_tree_without_taxa([],suppress_unifurcations=True)
     gts = dendropy.TreeList.get(path=args.genetrees, schema='newick', taxon_namespace=tns)
 
     #st.deroot()
@@ -138,6 +139,8 @@ def castles(args):
                     if l_d_est == 0:
                         l_d_est = average_terminal_bl(gts, sibling.taxon.label)
                     set_branch_length(node.edge, l_d_est)
+                    node.edge.length /= 4.0
+                    sibling.edge.length = node.edge.length * 3.0
                 else:
                     set_branch_length(node.edge, l_est)
             elif not node.edge.length:
@@ -179,7 +182,7 @@ def castles(args):
                 set_branch_length(sibling.edge, l_c_est)'''
         node.label = None
 
-    st.deroot()
+    #st.deroot()
     with open(args.outputtree, 'w') as f:
         f.write(str(st) + ';\n')
 
