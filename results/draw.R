@@ -52,15 +52,15 @@ m$Method = factor(m$Method, levels=c("CASTLES" ,"ERaBLE", "Naive" ,
                            "Patristic(AVG)+FastME" ,"Patristic(MIN)+FastME", "Concat+RAxML"))
 
 ### Comment out to include negative branch lengths. 
-m$l.est = ifelse(m$l.est <0, 1e-6, m$l.est)
+m$l.est = ifelse(m$l.est <=0, 1e-6, m$l.est)
 m$log10err = log10(m$l.est / m$l.true )
 m$abserr = abs(m$l.true - m$l.est)
 m$se = (m$l.est - m$l.true)^2 
-q$l.est = ifelse(q$l.est <0, 1e-6, q$l.est)
+q$l.est = ifelse(q$l.est <=0, 1e-6, q$l.est)
 q$log10err = log10(q$l.est / q$l.true )
 q$abserr = abs(q$l.true - q$l.est)
 q$se = (q$l.est - q$l.true)^2 
-s$l.est = ifelse(s$l.est <0, 1e-6, s$l.est)
+s$l.est = ifelse(s$l.est <=0, 1e-6, s$l.est)
 s$log10err = log10(s$l.est / s$l.true )
 s$abserr = abs(s$l.true - s$l.est)
 s$se = (s$l.est - s$l.true)^2 
@@ -244,11 +244,13 @@ ggplot(aes(x=ratevar, y=abserr,color=Method,fill=outgroup),
   scale_color_brewer(palette = "Dark2",name="")+
   theme_bw()+
   theme(legend.position =  "bottom", legend.direction = "horizontal",
-        axis.text.x = element_text(angle=0))+
+        axis.text.x = element_text(angle=0),
+        legend.box.margin = margin(0), legend.margin = margin(0)
+        )+
   coord_cartesian(ylim=c(0,0.1))+
   guides(color=guide_legend(nrow=2,  byrow=TRUE),
          fill=guide_legend(nrow=2, byrow=TRUE))
-ggsave("MV-error-perrep.pdf",width=6.7,height = 4.6)
+ggsave("MV-error-perrep.pdf",width=6.5,height = 4.3)
 
 ggplot(aes(x=Method, y=abserr,fill=ratevar,color=outgroup,shape=outgroup),
        data=dcast(data=m[!mvariants,],
@@ -313,9 +315,31 @@ ggplot(aes(color=Method, y=log10err,x=cut(AD,4)),
         axis.text.x = element_text(angle=0,size=11))+
   coord_cartesian(ylim=c(0.1,1))+
   geom_text(aes(color="Patristic(MIN)+FastME",y=0.6,label="Log\nError\n>2"),position = position_nudge(x  = 0.165),size=2.5)
-  guides(color=guide_legend(nrow=2, byrow=TRUE),
-         fill=guide_legend(nrow=2, byrow=TRUE))
 ggsave("MV-logerr-perrep-ILS-bymethod-nopatristic.pdf",width=6.2,height = 4)
+
+
+ggplot(aes(color=Method, y=log10err,x=AD),
+       data=merge(
+         dcast(data=m[!mvariants & m$outgroup ==FALSE,],
+               outgroup+ratevar+Method+replicate~'log10err' ,value.var = "log10err",fun.aggregate = function(x) mean(abs(x))),
+         dcast(data=m[!mvariants  & m$outgroup ==FALSE,], outgroup+replicate+ratevar~'AD' ,value.var = "AD",fun.aggregate = mean)))+
+  scale_y_continuous(trans="identity",name="Mean log10 error",limits = c(0,1))+
+  #facet_wrap(~outgroup,ncol=2,labeller = label_both)+
+  #scale_x_discrete(label=function(x) gsub("+","\n",x,fixed=T),name="True gene tree discordance (ILS)")+
+  geom_point(alpha=0.5)+
+  stat_smooth(se=F,method="lm")+
+  #geom_boxplot(outlier.size = 0)+
+  scale_color_manual(values=c("black","grey50"),name="",labels=c("With outgroup","No outgroup"))+
+  scale_shape(name="",labels=c("With outgroup","No outgroup"))+
+  scale_color_brewer(palette = "Dark2",name="")+
+  theme_bw()+
+  theme(legend.position =  "right", legend.direction = "vertical",
+        legend.box.margin = margin(0), legend.margin = margin(0),
+        axis.text.x = element_text(angle=0,size=11))+
+  stat_cor(method = "pearson", 
+           aes(label = paste(..rr.label.., ..p.label.., sep = "~`,`~")))+
+  coord_cartesian()
+ggsave("MV-logerr-perrep-ILS-correlation.pdf",width=6.5,height = 5)
 
 ggplot(aes(color=Method, y=abserr,x=cut(AD,4)),
        data=merge(
