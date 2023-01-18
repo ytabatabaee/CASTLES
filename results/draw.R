@@ -315,7 +315,7 @@ ggplot(aes(color=Method, y=log10err,x=cut(AD,4)),
   theme(legend.position =  "none", legend.direction = "horizontal",
         legend.box.margin = margin(0), legend.margin = margin(0),
         axis.text.x = element_text(angle=0,size=11))+
-  coord_cartesian(ylim=c(0.1,1),xlim=c(1,3), clip = "off")+
+  coord_cartesian(ylim=c(0.1,1),xlim=c(1,4), clip = "off")+
   annotate(geom="text",label="b)", x = 0.13, y = 1.04, size = 5) + 
   geom_text(aes(color="Patristic(MIN)+FastME",y=0.6,label="Log\nError\n>2"),position = position_nudge(x  = 0.165),size=2.5)
 ggsave("MV-logerr-perrep-ILS-bymethod-nopatristic.pdf",width=6.2,height = 4)
@@ -601,6 +601,26 @@ ggplot(aes(x=reorder(Condition,time_s),y=time_s/60,color=Method,group=Method),
   guides(color=guide_legend(nrow=2, byrow=TRUE),
          linetype=guide_legend(nrow=2, byrow=TRUE))
 ggsave("S100-time.pdf",width=6.3,height =5)
+
+ggplot(aes(x=reorder(Condition,time_s),y=time_s/60,color=Method,group=Method),
+       data=t[t$Method %in% c("CASTLES+ASTER","Concat+RAxML","Patristic(ALL)+ERaBLE" ,   "Patristic(AVG)+FastME(AVG)" ,    "Patristic(MIN)+FastME(MIN)" ),])+
+  stat_summary(geom="line")+
+  stat_summary()+
+  scale_fill_brewer(palette = "Dark2",name="")+
+  scale_color_brewer(palette = "Dark2",name="")+
+  scale_y_continuous(trans="log10",name="Running time (minutes)" )+
+  theme_bw()+
+  theme(legend.position = "none", legend.direction = "horizontal",
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle=0),
+        legend.box.margin = margin(0), legend.margin = margin(0)
+  )+
+  coord_cartesian(xlim=c(1,5),clip="off")+
+  scale_x_discrete(label=function(x) gsub(",","\n",x,fixed=T))+
+  annotate(geom="text",label="c)", x = 0.13, y = 20.04, size = 5) +
+  guides(color=guide_legend(nrow=2, byrow=TRUE),
+         linetype=guide_legend(nrow=2, byrow=TRUE))
+ggsave("S100-time-main.pdf",width=5,height = 2.6)
 
 ggplot(aes(x=reorder(Condition,time_s),y=mem_gb,color=Method,group=Method),
        data=t[t$Method %in% c("CASTLES+ASTER","Concat+RAxML","Patristic(ALL)+ERaBLE" ,   "Patristic(AVG)+FastME(AVG)" ,    "Patristic(MIN)+FastME(MIN)" ),])+
