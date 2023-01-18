@@ -605,7 +605,8 @@ ggplot(aes(x=reorder(Condition,time_s),y=mem_gb,color=Method,group=Method),
   theme_bw()+
   theme(legend.position = "bottom", legend.direction = "horizontal",
         axis.title.x = element_blank(),
-        axis.text.x = element_text(angle=0))+
+        axis.text.x = element_text(angle=0),
+        legend.box.margin = margin(0), legend.margin = margin(0))+
   coord_cartesian(xlim=c(1,5),clip="off") +
   scale_x_discrete(label=function(x) gsub(" ","\n",x,fixed=T))+
   annotate(geom="text",label="b)", x = 0.03, y = 10.04, size = 5) +
