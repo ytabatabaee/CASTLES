@@ -51,7 +51,8 @@ m$ratevar =  unique(sub(".genes.*","",sub("outgroup.*.species.","",m$Condition))
 m$Method = factor(m$Method, levels=c("CASTLES" ,"ERaBLE", "Naive" , 
                            "Patristic(AVG)+FastME" ,"Patristic(MIN)+FastME", "Concat+RAxML"))
 
-### Comment out to include negative branch lengths. 
+### Comment out to include negative branch lengths.
+summary(with(m[m$Method =="CASTLES" ,],l.est < 0))
 m$l.est = ifelse(m$l.est <=0, 1e-6, m$l.est)
 m$log10err = log10(m$l.est / m$l.true )
 m$abserr = abs(m$l.true - m$l.est)
@@ -64,8 +65,6 @@ s$l.est = ifelse(s$l.est <=0, 1e-6, s$l.est)
 s$log10err = log10(s$l.est / s$l.true )
 s$abserr = abs(s$l.true - s$l.est)
 s$se = (s$l.est - s$l.true)^2 
-
-
 
 
 
@@ -210,7 +209,8 @@ ggplot(aes(x=Condition,
   theme(legend.position = "bottom", legend.direction = "horizontal",
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
-  coord_cartesian(ylim=c(0,0.045))
+  coord_cartesian(ylim=c(0,0.045),xlim=c(1,5),clip="off")+
+  annotate(geom="text",label="b)", x = 0.17, y = .046, size = 6)
 ggsave("S100-error-perrep.pdf",width=7,height = 5)
 
 ggplot(aes(x=Condition,
@@ -227,7 +227,8 @@ ggplot(aes(x=Condition,
   theme(legend.position = c(.3,.9), legend.direction = "horizontal",
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
-  coord_cartesian(ylim=c(0,0.68))+
+  coord_cartesian(ylim=c(0,0.68),xlim=c(1,6),clip="off")+
+  annotate(geom="text",label="b)", x = 0.185, y = .69, size = 5)+
   guides(color=guide_legend(nrow=2, byrow=TRUE))
 ggsave("quartet-error-perrep.pdf",width=7,height = 4.5)
 
@@ -247,9 +248,10 @@ ggplot(aes(x=ratevar, y=abserr,color=Method,fill=outgroup),
         axis.text.x = element_text(angle=0),
         legend.box.margin = margin(0), legend.margin = margin(0)
         )+
-  coord_cartesian(ylim=c(0,0.1))+
+  coord_cartesian(ylim=c(0,0.1) ,xlim=c(1,3), clip = "off")+
   guides(color=guide_legend(nrow=2,  byrow=TRUE),
-         fill=guide_legend(nrow=2, byrow=TRUE))
+         fill=guide_legend(nrow=2, byrow=TRUE))+
+  annotate(geom="text",label="a)", x = 0.13, y = 0.104, size = 5) 
 ggsave("MV-error-perrep.pdf",width=6.5,height = 4.3)
 
 ggplot(aes(x=Method, y=abserr,fill=ratevar,color=outgroup,shape=outgroup),
@@ -313,7 +315,8 @@ ggplot(aes(color=Method, y=log10err,x=cut(AD,4)),
   theme(legend.position =  "none", legend.direction = "horizontal",
         legend.box.margin = margin(0), legend.margin = margin(0),
         axis.text.x = element_text(angle=0,size=11))+
-  coord_cartesian(ylim=c(0.1,1))+
+  coord_cartesian(ylim=c(0.1,1),xlim=c(1,3), clip = "off")+
+  annotate(geom="text",label="b)", x = 0.13, y = 1.04, size = 5) + 
   geom_text(aes(color="Patristic(MIN)+FastME",y=0.6,label="Log\nError\n>2"),position = position_nudge(x  = 0.165),size=2.5)
 ggsave("MV-logerr-perrep-ILS-bymethod-nopatristic.pdf",width=6.2,height = 4)
 
@@ -566,3 +569,46 @@ ggplot(aes(x=l.true,y=l.est,color=Method,linetype),
   theme_bw()+
   theme(legend.position = "bottom")
 ggsave("S100-correlation-2.png",width=12,height = 7)
+
+
+
+
+t = read.csv('s100_time_memory.csv')
+head(t)
+ggplot(aes(x=reorder(Condition,time_s),y=time_s/60,color=Method,group=Method),
+       data=t[t$Method %in% c("CASTLES+ASTER","Concat+RAxML","Patristic(ALL)+ERaBLE" ,   "Patristic(AVG)+FastME(AVG)" ,    "Patristic(MIN)+FastME(MIN)" ),])+
+  stat_summary(geom="line")+
+  stat_summary()+
+  scale_fill_brewer(palette = "Dark2",name="")+
+  scale_color_brewer(palette = "Dark2",name="")+
+  scale_y_continuous(trans="log10",name="time (minutes)" )+
+  theme_bw()+
+  theme(legend.position = "bottom", legend.direction = "horizontal",
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle=0),
+        legend.box.margin = margin(0), legend.margin = margin(0)
+        )+
+  coord_cartesian(xlim=c(1,5),clip="off")+
+  scale_x_discrete(label=function(x) gsub(" ","\n",x,fixed=T))+
+  annotate(geom="text",label="a)", x = 0.13, y = 20.04, size = 5) +
+  guides(color=guide_legend(nrow=2, byrow=TRUE),
+         linetype=guide_legend(nrow=2, byrow=TRUE))
+ggsave("S100-time.pdf",width=6.3,height =5)
+
+ggplot(aes(x=reorder(Condition,time_s),y=mem_gb,color=Method,group=Method),
+       data=t[t$Method %in% c("CASTLES+ASTER","Concat+RAxML","Patristic(ALL)+ERaBLE" ,   "Patristic(AVG)+FastME(AVG)" ,    "Patristic(MIN)+FastME(MIN)" ),])+
+  stat_summary(geom="line")+
+  stat_summary()+
+  scale_fill_brewer(palette = "Dark2")+
+  scale_color_brewer(palette = "Dark2",name="")+
+  scale_y_continuous(trans="log10",name="Memory (Gb)" )+
+  theme_bw()+
+  theme(legend.position = "bottom", legend.direction = "horizontal",
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle=0))+
+  coord_cartesian(xlim=c(1,5),clip="off") +
+  scale_x_discrete(label=function(x) gsub(" ","\n",x,fixed=T))+
+  annotate(geom="text",label="b)", x = 0.03, y = 10.04, size = 5) +
+  guides(color=guide_legend(nrow=2, byrow=TRUE),
+         linetype=guide_legend(nrow=2, byrow=TRUE))
+ggsave("S100-memory.pdf",width=6.3,height =5)
