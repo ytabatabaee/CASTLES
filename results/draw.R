@@ -575,13 +575,20 @@ ggsave("S100-correlation-2.png",width=12,height = 7)
 
 t = read.csv('s100_time_memory.csv')
 head(t)
+t$Condition =  factor(t$Condition) 
+levels(t$Condition) = list("200bp" = "est gene trees (200L)", 
+                           "400bp" = "est gene trees (400L)", 
+                           "800bp" = "est gene trees (800L)",
+                           "1600bp" = "est gene trees (1600L)",
+                           "true gene trees" = "truegenetrees")
+
 ggplot(aes(x=reorder(Condition,time_s),y=time_s/60,color=Method,group=Method),
        data=t[t$Method %in% c("CASTLES+ASTER","Concat+RAxML","Patristic(ALL)+ERaBLE" ,   "Patristic(AVG)+FastME(AVG)" ,    "Patristic(MIN)+FastME(MIN)" ),])+
   stat_summary(geom="line")+
   stat_summary()+
   scale_fill_brewer(palette = "Dark2",name="")+
   scale_color_brewer(palette = "Dark2",name="")+
-  scale_y_continuous(trans="log10",name="time (minutes)" )+
+  scale_y_continuous(trans="log10",name="Running time (minutes)" )+
   theme_bw()+
   theme(legend.position = "bottom", legend.direction = "horizontal",
         axis.title.x = element_blank(),
@@ -601,7 +608,7 @@ ggplot(aes(x=reorder(Condition,time_s),y=mem_gb,color=Method,group=Method),
   stat_summary()+
   scale_fill_brewer(palette = "Dark2")+
   scale_color_brewer(palette = "Dark2",name="")+
-  scale_y_continuous(trans="log10",name="Memory (Gb)" )+
+  scale_y_continuous(trans="log10",name="Peak memory usage (GB)" )+
   theme_bw()+
   theme(legend.position = "bottom", legend.direction = "horizontal",
         axis.title.x = element_blank(),
