@@ -121,8 +121,10 @@ ggplot(aes(x= Condition,
   theme(legend.position = c(.75,.14), legend.direction = "horizontal",
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
-  guides(color=guide_legend(nrow=3, byrow=TRUE))
-ggsave("quartet-bias.pdf",width=8,height =  4.7)
+  guides(color=guide_legend(nrow=3, byrow=TRUE))+
+  coord_cartesian(xlim=c(1,6),clip="off",ylim=c(-1,0.31))+
+  annotate(geom="text",label="b)", x = -0.4, y = 0.43, size = 5)
+ggsave("quartet-bias.pdf",width=7.8,height =  4.2)
 
 
 ggplot(aes(x= Condition,
@@ -141,7 +143,7 @@ ggplot(aes(x= Condition,
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))#+
   guides(color=guide_legend(nrow=3, byrow=TRUE))
-ggsave("S100-bias.pdf",width=8,height =  4)
+ggsave("S100-bias.pdf",width=7.6,height =  3.9)
 
 ggplot(aes(x= Condition,
            y=l.true-l.est,color=Method),
@@ -210,8 +212,8 @@ ggplot(aes(x=Condition,
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
   coord_cartesian(ylim=c(0,0.045),xlim=c(1,5),clip="off")+
-  annotate(geom="text",label="b)", x = 0.17, y = .046, size = 6)
-ggsave("S100-error-perrep.pdf",width=7,height = 5)
+  annotate(geom="text",label="a)", x = 0.17, y = .046, size = 6)
+ggsave("S100-error-perrep.pdf",width=7,height = 4.7)
 
 ggplot(aes(x=Condition,
            y=abserr,color=Method),
@@ -224,13 +226,13 @@ ggplot(aes(x=Condition,
   scale_fill_brewer(palette = "Dark2")+
   scale_color_brewer(palette = "Dark2",name="")+
   theme_bw()+
-  theme(legend.position = c(.3,.9), legend.direction = "horizontal",
+  theme(legend.position = c(.33,.88), legend.direction = "horizontal",
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle=0))+
-  coord_cartesian(ylim=c(0,0.68),xlim=c(1,6),clip="off")+
-  annotate(geom="text",label="b)", x = 0.185, y = .69, size = 5)+
+  coord_cartesian(ylim=c(0,0.683),xlim=c(1,6),clip="off")+
+  annotate(geom="text",label="a)", x = 0.1, y = .69, size = 5)+
   guides(color=guide_legend(nrow=2, byrow=TRUE))
-ggsave("quartet-error-perrep.pdf",width=7,height = 4.5)
+ggsave("quartet-error-perrep.pdf",width=7*0.9,height = 4.5*0.9)
 
 
 ggplot(aes(x=ratevar, y=abserr,color=Method,fill=outgroup),
