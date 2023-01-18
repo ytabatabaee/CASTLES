@@ -118,13 +118,14 @@ ggplot(aes(x= Condition,
   scale_fill_brewer(palette = "Dark2")+
   scale_color_brewer(palette = "Dark2",name="")+
   theme_bw()+
-  theme(legend.position = c(.75,.14), legend.direction = "horizontal",
+  theme(legend.position = c(.75,.2), legend.direction = "horizontal",
         axis.title.x = element_blank(),
-        axis.text.x = element_text(angle=0))+
+        axis.text.x = element_text(angle=0),
+        legend.box.margin = margin(0), legend.margin = margin(0))+
   guides(color=guide_legend(nrow=3, byrow=TRUE))+
   coord_cartesian(xlim=c(1,6),clip="off",ylim=c(-1,0.31))+
   annotate(geom="text",label="b)", x = -0.4, y = 0.43, size = 5)
-ggsave("quartet-bias.pdf",width=7.8,height =  4.2)
+ggsave("quartet-bias.pdf",width=7.5,height =  4)
 
 
 ggplot(aes(x= Condition,
@@ -141,8 +142,10 @@ ggplot(aes(x= Condition,
   theme_bw()+
   theme(legend.position = "none", legend.direction = "horizontal",
         axis.title.x = element_blank(),
-        axis.text.x = element_text(angle=0))#+
-  guides(color=guide_legend(nrow=3, byrow=TRUE))
+        axis.text.x = element_text(angle=0),
+        legend.box.margin = margin(0), legend.margin = margin(0))+
+  coord_cartesian(xlim=c(1,5),clip="off",ylim=c(-0.06,0.125))+
+  annotate(geom="text",label="b)", x = -0.4, y = 0.145, size = 5)
 ggsave("S100-bias.pdf",width=7.6,height =  3.9)
 
 ggplot(aes(x= Condition,
@@ -619,10 +622,10 @@ ggplot(aes(x=reorder(Condition,time_s),y=time_s/60,color=Method,group=Method),
   )+
   coord_cartesian(xlim=c(1,5),clip="off")+
   scale_x_discrete(label=function(x) gsub(",","\n",x,fixed=T))+
-  annotate(geom="text",label="c)", x = 0.13, y = 20.04, size = 5) +
+  annotate(geom="text",label="c)", x = 0.1, y = 20.04, size = 5) +
   guides(color=guide_legend(nrow=2, byrow=TRUE),
          linetype=guide_legend(nrow=2, byrow=TRUE))
-ggsave("S100-time-main.pdf",width=5,height = 2.6)
+ggsave("S100-time-main.pdf",width=5*1.2,height = 2.6*1.2)
 
 ggplot(aes(x=reorder(Condition,time_s),y=mem_gb,color=Method,group=Method),
        data=t[t$Method %in% c("CASTLES+ASTER","Concat+RAxML","Patristic(ALL)+ERaBLE" ,   "Patristic(AVG)+FastME(AVG)" ,    "Patristic(MIN)+FastME(MIN)" ),])+
