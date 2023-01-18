@@ -1,0 +1,3201 @@
+,Condition,Method,replicate,time_s,mem_gb
+0,true gene trees,CASTLES,01,33.76,0.16176
+1,true gene trees,ERaBLE,01,6.33,0.179332
+2,true gene trees,FastME(AVG),01,0.03,0.001572
+3,true gene trees,FastME(MIN),01,0.08,0.001572
+4,true gene trees,Patristic(AVG),01,101.71000000000001,0.322764
+5,true gene trees,Patristic(MIN),01,106.19,0.322752
+6,true gene trees,Patristic(ALL),01,144.96,0.339096
+7,true gene trees,ASTER,01,23.72,0.261756
+8,true gene trees,CASTLES+ASTER,01,57.48,0.261756
+9,true gene trees,Patristic(AVG)+FastME(AVG),01,101.74000000000001,0.322764
+10,true gene trees,Patristic(MIN)+FastME(MIN),01,106.27,0.322752
+11,true gene trees,Patristic(ALL)+ERaBLE,01,151.29000000000002,0.339096
+12,est gene trees (1600L),CASTLES,01,36.73,0.180708
+13,est gene trees (1600L),ERaBLE,01,6.46,0.17934
+14,est gene trees (1600L),FastME(AVG),01,0.03,0.001572
+15,est gene trees (1600L),FastME(MIN),01,0.07,0.001576
+16,est gene trees (1600L),Concat+RAxML,01,510.74,11.613824
+17,est gene trees (1600L),Patristic(AVG),01,106.28,0.327296
+18,est gene trees (1600L),Patristic(MIN),01,108.66,0.327044
+19,est gene trees (1600L),Patristic(ALL),01,149.71,0.34434
+20,est gene trees (1600L),ASTER,01,26.9,0.262152
+21,est gene trees (1600L),CASTLES+ASTER,01,63.629999999999995,0.262152
+22,est gene trees (1600L),Patristic(AVG)+FastME(AVG),01,106.31,0.327296
+23,est gene trees (1600L),Patristic(MIN)+FastME(MIN),01,108.72999999999999,0.327044
+24,est gene trees (1600L),Patristic(ALL)+ERaBLE,01,156.17000000000002,0.34434
+25,est gene trees (800L),CASTLES,01,37.39,0.178972
+26,est gene trees (800L),ERaBLE,01,6.46,0.179336
+27,est gene trees (800L),FastME(AVG),01,0.03,0.001576
+28,est gene trees (800L),FastME(MIN),01,0.08,0.001576
+29,est gene trees (800L),Concat+RAxML,01,263.25,5.946672
+30,est gene trees (800L),Patristic(AVG),01,104.08,0.326692
+31,est gene trees (800L),Patristic(MIN),01,108.62,0.331604
+32,est gene trees (800L),Patristic(ALL),01,145.06,0.343912
+33,est gene trees (800L),ASTER,01,27.85,0.262132
+34,est gene trees (800L),CASTLES+ASTER,01,65.24000000000001,0.262132
+35,est gene trees (800L),Patristic(AVG)+FastME(AVG),01,104.11,0.326692
+36,est gene trees (800L),Patristic(MIN)+FastME(MIN),01,108.7,0.331604
+37,est gene trees (800L),Patristic(ALL)+ERaBLE,01,151.52,0.343912
+38,est gene trees (400L),CASTLES,01,36.53,0.169568
+39,est gene trees (400L),ERaBLE,01,6.55,0.179332
+40,est gene trees (400L),FastME(AVG),01,0.05,0.001576
+41,est gene trees (400L),FastME(MIN),01,0.07,0.001576
+42,est gene trees (400L),Concat+RAxML,01,221.13,3.043152
+43,est gene trees (400L),Patristic(AVG),01,106.47999999999999,0.3252
+44,est gene trees (400L),Patristic(MIN),01,108.3,0.325568
+45,est gene trees (400L),Patristic(ALL),01,144.88,0.34286
+46,est gene trees (400L),ASTER,01,27.59,0.262096
+47,est gene trees (400L),CASTLES+ASTER,01,64.12,0.262096
+48,est gene trees (400L),Patristic(AVG)+FastME(AVG),01,106.52999999999999,0.3252
+49,est gene trees (400L),Patristic(MIN)+FastME(MIN),01,108.36999999999999,0.325568
+50,est gene trees (400L),Patristic(ALL)+ERaBLE,01,151.43,0.34286
+51,est gene trees (200L),CASTLES,01,36.97,0.167028
+52,est gene trees (200L),ERaBLE,01,5.97,0.179336
+53,est gene trees (200L),FastME(AVG),01,0.03,0.001572
+54,est gene trees (200L),FastME(MIN),01,0.08,0.001576
+55,est gene trees (200L),Concat+RAxML,01,51.39,1.553648
+56,est gene trees (200L),Patristic(AVG),01,102.56,0.323336
+57,est gene trees (200L),Patristic(MIN),01,106.07,0.323984
+58,est gene trees (200L),Patristic(ALL),01,144.95,0.340712
+59,est gene trees (200L),ASTER,01,28.96,0.262028
+60,est gene trees (200L),CASTLES+ASTER,01,65.93,0.262028
+61,est gene trees (200L),Patristic(AVG)+FastME(AVG),01,102.59,0.323336
+62,est gene trees (200L),Patristic(MIN)+FastME(MIN),01,106.14999999999999,0.323984
+63,est gene trees (200L),Patristic(ALL)+ERaBLE,01,150.92,0.340712
+64,true gene trees,CASTLES,02,32.91,0.16874
+65,true gene trees,ERaBLE,02,6.36,0.17934
+66,true gene trees,FastME(AVG),02,0.04,0.001492
+67,true gene trees,FastME(MIN),02,0.03,0.00158
+68,true gene trees,Patristic(AVG),02,104.38,0.321972
+69,true gene trees,Patristic(MIN),02,109.03999999999999,0.32302
+70,true gene trees,Patristic(ALL),02,144.84,0.33858
+71,true gene trees,ASTER,02,23.71,0.261752
+72,true gene trees,CASTLES+ASTER,02,56.62,0.261752
+73,true gene trees,Patristic(AVG)+FastME(AVG),02,104.42,0.321972
+74,true gene trees,Patristic(MIN)+FastME(MIN),02,109.07,0.32302
+75,true gene trees,Patristic(ALL)+ERaBLE,02,151.20000000000002,0.33858
+76,est gene trees (1600L),CASTLES,02,37.8,0.180516
+77,est gene trees (1600L),ERaBLE,02,6.29,0.17934
+78,est gene trees (1600L),FastME(AVG),02,0.04,0.00158
+79,est gene trees (1600L),FastME(MIN),02,0.04,0.001584
+80,est gene trees (1600L),Concat+RAxML,02,998.49,12.325492
+81,est gene trees (1600L),Patristic(AVG),02,103.50999999999999,0.32708
+82,est gene trees (1600L),Patristic(MIN),02,107.58,0.327128
+83,est gene trees (1600L),Patristic(ALL),02,145.02,0.344028
+84,est gene trees (1600L),ASTER,02,23.19,0.26074
+85,est gene trees (1600L),CASTLES+ASTER,02,60.989999999999995,0.26074
+86,est gene trees (1600L),Patristic(AVG)+FastME(AVG),02,103.55,0.32708
+87,est gene trees (1600L),Patristic(MIN)+FastME(MIN),02,107.62,0.327128
+88,est gene trees (1600L),Patristic(ALL)+ERaBLE,02,151.31,0.344028
+89,est gene trees (800L),CASTLES,02,36.94,0.178776
+90,est gene trees (800L),ERaBLE,02,6.45,0.17934
+91,est gene trees (800L),FastME(AVG),02,0.05,0.00158
+92,est gene trees (800L),FastME(MIN),02,0.07,0.00158
+93,est gene trees (800L),Concat+RAxML,02,483.68,6.29478
+94,est gene trees (800L),Patristic(AVG),02,104.07,0.327252
+95,est gene trees (800L),Patristic(MIN),02,107.6,0.327072
+96,est gene trees (800L),Patristic(ALL),02,149.8,0.34804
+97,est gene trees (800L),ASTER,02,22.7,0.260716
+98,est gene trees (800L),CASTLES+ASTER,02,59.64,0.260716
+99,est gene trees (800L),Patristic(AVG)+FastME(AVG),02,104.11999999999999,0.327252
+100,est gene trees (800L),Patristic(MIN)+FastME(MIN),02,107.66999999999999,0.327072
+101,est gene trees (800L),Patristic(ALL)+ERaBLE,02,156.25,0.34804
+102,est gene trees (400L),CASTLES,02,36.72,0.180776
+103,est gene trees (400L),ERaBLE,02,6.47,0.17934
+104,est gene trees (400L),FastME(AVG),02,0.03,0.00158
+105,est gene trees (400L),FastME(MIN),02,0.02,0.00158
+106,est gene trees (400L),Concat+RAxML,02,239.5,3.201248
+107,est gene trees (400L),Patristic(AVG),02,105.61,0.327468
+108,est gene trees (400L),Patristic(MIN),02,106.84,0.326628
+109,est gene trees (400L),Patristic(ALL),02,150.07,0.34306
+110,est gene trees (400L),ASTER,02,23.61,0.262136
+111,est gene trees (400L),CASTLES+ASTER,02,60.33,0.262136
+112,est gene trees (400L),Patristic(AVG)+FastME(AVG),02,105.64,0.327468
+113,est gene trees (400L),Patristic(MIN)+FastME(MIN),02,106.86,0.326628
+114,est gene trees (400L),Patristic(ALL)+ERaBLE,02,156.54,0.34306
+115,est gene trees (200L),CASTLES,02,36.42,0.179952
+116,est gene trees (200L),ERaBLE,02,6.08,0.17934
+117,est gene trees (200L),FastME(AVG),02,0.08,0.001576
+118,est gene trees (200L),FastME(MIN),02,0.09,0.001576
+119,est gene trees (200L),Concat+RAxML,02,102.66,1.628224
+120,est gene trees (200L),Patristic(AVG),02,106.64,0.333
+121,est gene trees (200L),Patristic(MIN),02,106.95,0.325692
+122,est gene trees (200L),Patristic(ALL),02,149.75,0.345428
+123,est gene trees (200L),ASTER,02,23.57,0.2621
+124,est gene trees (200L),CASTLES+ASTER,02,59.99,0.2621
+125,est gene trees (200L),Patristic(AVG)+FastME(AVG),02,106.72,0.333
+126,est gene trees (200L),Patristic(MIN)+FastME(MIN),02,107.04,0.325692
+127,est gene trees (200L),Patristic(ALL)+ERaBLE,02,155.83,0.345428
+128,true gene trees,CASTLES,03,14.53,0.163244
+129,true gene trees,ERaBLE,03,6.44,0.17934
+130,true gene trees,FastME(AVG),03,0.06,0.001576
+131,true gene trees,FastME(MIN),03,0.06,0.00158
+132,true gene trees,Patristic(AVG),03,102.03,0.322656
+133,true gene trees,Patristic(MIN),03,103.14,0.321688
+134,true gene trees,Patristic(ALL),03,144.93,0.338732
+135,true gene trees,ASTER,03,23.71,0.26176
+136,true gene trees,CASTLES+ASTER,03,38.24,0.26176
+137,true gene trees,Patristic(AVG)+FastME(AVG),03,102.09,0.322656
+138,true gene trees,Patristic(MIN)+FastME(MIN),03,103.2,0.321688
+139,true gene trees,Patristic(ALL)+ERaBLE,03,151.37,0.338732
+140,est gene trees (1600L),CASTLES,03,16.24,0.175552
+141,est gene trees (1600L),ERaBLE,03,6.56,0.17934
+142,est gene trees (1600L),FastME(AVG),03,0.05,0.001576
+143,est gene trees (1600L),FastME(MIN),03,0.1,0.00158
+144,est gene trees (1600L),Concat+RAxML,03,292.23,7.22798
+145,est gene trees (1600L),Patristic(AVG),03,106.39,0.327408
+146,est gene trees (1600L),Patristic(MIN),03,104.59,0.327128
+147,est gene trees (1600L),Patristic(ALL),03,144.98,0.346564
+148,est gene trees (1600L),ASTER,03,27.03,0.262168
+149,est gene trees (1600L),CASTLES+ASTER,03,43.269999999999996,0.262168
+150,est gene trees (1600L),Patristic(AVG)+FastME(AVG),03,106.44,0.327408
+151,est gene trees (1600L),Patristic(MIN)+FastME(MIN),03,104.69,0.327128
+152,est gene trees (1600L),Patristic(ALL)+ERaBLE,03,151.54,0.346564
+153,est gene trees (800L),CASTLES,03,16.1,0.173876
+154,est gene trees (800L),ERaBLE,03,6.26,0.179344
+155,est gene trees (800L),FastME(AVG),03,0.07,0.00158
+156,est gene trees (800L),FastME(MIN),03,0.11,0.00158
+157,est gene trees (800L),Concat+RAxML,03,243.53,3.760468
+158,est gene trees (800L),Patristic(AVG),03,105.02000000000001,0.327524
+159,est gene trees (800L),Patristic(MIN),03,103.3,0.3266
+160,est gene trees (800L),Patristic(ALL),03,144.82999999999998,0.343416
+161,est gene trees (800L),ASTER,03,27.59,0.262128
+162,est gene trees (800L),CASTLES+ASTER,03,43.69,0.262128
+163,est gene trees (800L),Patristic(AVG)+FastME(AVG),03,105.09,0.327524
+164,est gene trees (800L),Patristic(MIN)+FastME(MIN),03,103.41,0.3266
+165,est gene trees (800L),Patristic(ALL)+ERaBLE,03,151.08999999999997,0.343416
+166,est gene trees (400L),CASTLES,03,15.84,0.166324
+167,est gene trees (400L),ERaBLE,03,6.39,0.179344
+168,est gene trees (400L),FastME(AVG),03,0.07,0.00158
+169,est gene trees (400L),FastME(MIN),03,3.96,0.00158
+170,est gene trees (400L),Concat+RAxML,03,74.06,1.942216
+171,est gene trees (400L),Patristic(AVG),03,106.57,0.32478
+172,est gene trees (400L),Patristic(MIN),03,106.59,0.32556
+173,est gene trees (400L),Patristic(ALL),03,149.6,0.341836
+174,est gene trees (400L),ASTER,03,31.63,0.262064
+175,est gene trees (400L),CASTLES+ASTER,03,47.47,0.262064
+176,est gene trees (400L),Patristic(AVG)+FastME(AVG),03,106.63999999999999,0.32478
+177,est gene trees (400L),Patristic(MIN)+FastME(MIN),03,110.55,0.32556
+178,est gene trees (400L),Patristic(ALL)+ERaBLE,03,155.98999999999998,0.341836
+179,est gene trees (200L),CASTLES,03,14.99,0.16272
+180,est gene trees (200L),ERaBLE,03,6.45,0.179376
+181,est gene trees (200L),FastME(AVG),03,0.05,0.00158
+182,est gene trees (200L),FastME(MIN),03,164.52,0.001576
+183,est gene trees (200L),Concat+RAxML,03,23.41,1.002512
+184,est gene trees (200L),Patristic(AVG),03,104.1,0.322172
+185,est gene trees (200L),Patristic(MIN),03,104.87,0.320796
+186,est gene trees (200L),Patristic(ALL),03,145.26,0.337016
+187,est gene trees (200L),ASTER,03,31.04,0.261912
+188,est gene trees (200L),CASTLES+ASTER,03,46.03,0.261912
+189,est gene trees (200L),Patristic(AVG)+FastME(AVG),03,104.14999999999999,0.322172
+190,est gene trees (200L),Patristic(MIN)+FastME(MIN),03,269.39,0.320796
+191,est gene trees (200L),Patristic(ALL)+ERaBLE,03,151.70999999999998,0.337016
+192,true gene trees,CASTLES,04,14.63,0.161636
+193,true gene trees,ERaBLE,04,6.39,0.17934
+194,true gene trees,FastME(AVG),04,0.17,0.00158
+195,true gene trees,FastME(MIN),04,0.06,0.00158
+196,true gene trees,Patristic(AVG),04,105.78999999999999,0.322644
+197,true gene trees,Patristic(MIN),04,106.24000000000001,0.323104
+198,true gene trees,Patristic(ALL),04,145.26,0.33952
+199,true gene trees,ASTER,04,23.72,0.26176
+200,true gene trees,CASTLES+ASTER,04,38.35,0.26176
+201,true gene trees,Patristic(AVG)+FastME(AVG),04,105.96,0.322644
+202,true gene trees,Patristic(MIN)+FastME(MIN),04,106.30000000000001,0.323104
+203,true gene trees,Patristic(ALL)+ERaBLE,04,151.64999999999998,0.33952
+204,est gene trees (1600L),CASTLES,04,15.8,0.180676
+205,est gene trees (1600L),ERaBLE,04,6.11,0.17934
+206,est gene trees (1600L),FastME(AVG),04,0.18,0.00158
+207,est gene trees (1600L),FastME(MIN),04,0.12,0.00158
+208,est gene trees (1600L),Concat+RAxML,04,985.33,11.17696
+209,est gene trees (1600L),Patristic(AVG),04,102.93,0.332752
+210,est gene trees (1600L),Patristic(MIN),04,109.36,0.33272
+211,est gene trees (1600L),Patristic(ALL),04,144.82999999999998,0.344216
+212,est gene trees (1600L),ASTER,04,27.06,0.262172
+213,est gene trees (1600L),CASTLES+ASTER,04,42.86,0.262172
+214,est gene trees (1600L),Patristic(AVG)+FastME(AVG),04,103.11000000000001,0.332752
+215,est gene trees (1600L),Patristic(MIN)+FastME(MIN),04,109.48,0.33272
+216,est gene trees (1600L),Patristic(ALL)+ERaBLE,04,150.94,0.344216
+217,est gene trees (800L),CASTLES,04,16.17,0.180804
+218,est gene trees (800L),ERaBLE,04,5.98,0.17934
+219,est gene trees (800L),FastME(AVG),04,0.17,0.001576
+220,est gene trees (800L),FastME(MIN),04,0.25,0.00158
+221,est gene trees (800L),Concat+RAxML,04,390.75,5.733708
+222,est gene trees (800L),Patristic(AVG),04,105.72999999999999,0.32728
+223,est gene trees (800L),Patristic(MIN),04,108.28,0.327316
+224,est gene trees (800L),Patristic(ALL),04,145.0,0.344324
+225,est gene trees (800L),ASTER,04,26.89,0.262156
+226,est gene trees (800L),CASTLES+ASTER,04,43.06,0.262156
+227,est gene trees (800L),Patristic(AVG)+FastME(AVG),04,105.89999999999999,0.32728
+228,est gene trees (800L),Patristic(MIN)+FastME(MIN),04,108.53,0.327316
+229,est gene trees (800L),Patristic(ALL)+ERaBLE,04,150.98,0.344324
+230,est gene trees (400L),CASTLES,04,15.6,0.179484
+231,est gene trees (400L),ERaBLE,04,6.35,0.17934
+232,est gene trees (400L),FastME(AVG),04,0.17,0.00158
+233,est gene trees (400L),FastME(MIN),04,0.19,0.00158
+234,est gene trees (400L),Concat+RAxML,04,85.98,2.938336
+235,est gene trees (400L),Patristic(AVG),04,105.92,0.326484
+236,est gene trees (400L),Patristic(MIN),04,110.00999999999999,0.326248
+237,est gene trees (400L),Patristic(ALL),04,149.62,0.34314
+238,est gene trees (400L),ASTER,04,27.67,0.262124
+239,est gene trees (400L),CASTLES+ASTER,04,43.27,0.262124
+240,est gene trees (400L),Patristic(AVG)+FastME(AVG),04,106.09,0.326484
+241,est gene trees (400L),Patristic(MIN)+FastME(MIN),04,110.19999999999999,0.326248
+242,est gene trees (400L),Patristic(ALL)+ERaBLE,04,155.97,0.34314
+243,est gene trees (200L),CASTLES,04,15.99,0.179688
+244,est gene trees (200L),ERaBLE,04,6.28,0.17934
+245,est gene trees (200L),FastME(AVG),04,0.19,0.00158
+246,est gene trees (200L),FastME(MIN),04,0.22,0.00158
+247,est gene trees (200L),Concat+RAxML,04,64.17,1.497232
+248,est gene trees (200L),Patristic(AVG),04,102.85,0.32546
+249,est gene trees (200L),Patristic(MIN),04,106.72999999999999,0.328116
+250,est gene trees (200L),Patristic(ALL),04,145.45,0.342624
+251,est gene trees (200L),ASTER,04,28.2,0.262976
+252,est gene trees (200L),CASTLES+ASTER,04,44.19,0.262976
+253,est gene trees (200L),Patristic(AVG)+FastME(AVG),04,103.03999999999999,0.32546
+254,est gene trees (200L),Patristic(MIN)+FastME(MIN),04,106.94999999999999,0.328116
+255,est gene trees (200L),Patristic(ALL)+ERaBLE,04,151.73,0.342624
+256,true gene trees,CASTLES,05,14.68,0.161444
+257,true gene trees,ERaBLE,05,6.0,0.17934
+258,true gene trees,FastME(AVG),05,0.05,0.001576
+259,true gene trees,FastME(MIN),05,0.07,0.00158
+260,true gene trees,Patristic(AVG),05,102.28,0.323204
+261,true gene trees,Patristic(MIN),05,105.62,0.3276
+262,true gene trees,Patristic(ALL),05,144.86,0.338644
+263,true gene trees,ASTER,05,23.71,0.261752
+264,true gene trees,CASTLES+ASTER,05,38.39,0.261752
+265,true gene trees,Patristic(AVG)+FastME(AVG),05,102.33,0.323204
+266,true gene trees,Patristic(MIN)+FastME(MIN),05,105.69,0.3276
+267,true gene trees,Patristic(ALL)+ERaBLE,05,150.86,0.338644
+268,est gene trees (1600L),CASTLES,05,16.13,0.178472
+269,est gene trees (1600L),ERaBLE,05,6.29,0.17934
+270,est gene trees (1600L),FastME(AVG),05,0.05,0.00158
+271,est gene trees (1600L),FastME(MIN),05,0.09,0.00158
+272,est gene trees (1600L),Concat+RAxML,05,907.26,11.261124
+273,est gene trees (1600L),Patristic(AVG),05,102.46000000000001,0.328136
+274,est gene trees (1600L),Patristic(MIN),05,105.75999999999999,0.32718
+275,est gene trees (1600L),Patristic(ALL),05,145.32999999999998,0.344132
+276,est gene trees (1600L),ASTER,05,26.38,0.26218
+277,est gene trees (1600L),CASTLES+ASTER,05,42.51,0.26218
+278,est gene trees (1600L),Patristic(AVG)+FastME(AVG),05,102.51,0.328136
+279,est gene trees (1600L),Patristic(MIN)+FastME(MIN),05,105.85,0.32718
+280,est gene trees (1600L),Patristic(ALL)+ERaBLE,05,151.61999999999998,0.344132
+281,est gene trees (800L),CASTLES,05,15.93,0.1777
+282,est gene trees (800L),ERaBLE,05,6.35,0.17934
+283,est gene trees (800L),FastME(AVG),05,0.05,0.001576
+284,est gene trees (800L),FastME(MIN),05,0.09,0.001576
+285,est gene trees (800L),Concat+RAxML,05,463.26,5.7645
+286,est gene trees (800L),Patristic(AVG),05,105.92,0.32894
+287,est gene trees (800L),Patristic(MIN),05,104.14,0.327652
+288,est gene trees (800L),Patristic(ALL),05,144.82999999999998,0.343916
+289,est gene trees (800L),ASTER,05,26.83,0.26216
+290,est gene trees (800L),CASTLES+ASTER,05,42.76,0.26216
+291,est gene trees (800L),Patristic(AVG)+FastME(AVG),05,105.97,0.32894
+292,est gene trees (800L),Patristic(MIN)+FastME(MIN),05,104.23,0.327652
+293,est gene trees (800L),Patristic(ALL)+ERaBLE,05,151.17999999999998,0.343916
+294,est gene trees (400L),CASTLES,05,16.09,0.170056
+295,est gene trees (400L),ERaBLE,05,6.43,0.17934
+296,est gene trees (400L),FastME(AVG),05,0.06,0.00158
+297,est gene trees (400L),FastME(MIN),05,0.15,0.001576
+298,est gene trees (400L),Concat+RAxML,05,249.04,2.941084
+299,est gene trees (400L),Patristic(AVG),05,104.14,0.326332
+300,est gene trees (400L),Patristic(MIN),05,104.34,0.327288
+301,est gene trees (400L),Patristic(ALL),05,144.86,0.34292
+302,est gene trees (400L),ASTER,05,26.94,0.262124
+303,est gene trees (400L),CASTLES+ASTER,05,43.03,0.262124
+304,est gene trees (400L),Patristic(AVG)+FastME(AVG),05,104.2,0.326332
+305,est gene trees (400L),Patristic(MIN)+FastME(MIN),05,104.49000000000001,0.327288
+306,est gene trees (400L),Patristic(ALL)+ERaBLE,05,151.29000000000002,0.34292
+307,est gene trees (200L),CASTLES,05,15.66,0.167332
+308,est gene trees (200L),ERaBLE,05,6.11,0.17934
+309,est gene trees (200L),FastME(AVG),05,0.05,0.00158
+310,est gene trees (200L),FastME(MIN),05,0.72,0.00158
+311,est gene trees (200L),Concat+RAxML,05,94.6,1.49364
+312,est gene trees (200L),Patristic(AVG),05,105.2,0.32574
+313,est gene trees (200L),Patristic(MIN),05,105.14,0.328012
+314,est gene trees (200L),Patristic(ALL),05,144.6,0.34168
+315,est gene trees (200L),ASTER,05,27.77,0.262052
+316,est gene trees (200L),CASTLES+ASTER,05,43.43,0.262052
+317,est gene trees (200L),Patristic(AVG)+FastME(AVG),05,105.25,0.32574
+318,est gene trees (200L),Patristic(MIN)+FastME(MIN),05,105.86,0.328012
+319,est gene trees (200L),Patristic(ALL)+ERaBLE,05,150.71,0.34168
+320,true gene trees,CASTLES,06,14.63,0.162272
+321,true gene trees,ERaBLE,06,6.21,0.179336
+322,true gene trees,FastME(AVG),06,0.03,0.001492
+323,true gene trees,FastME(MIN),06,0.06,0.001576
+324,true gene trees,Patristic(AVG),06,103.71000000000001,0.322908
+325,true gene trees,Patristic(MIN),06,107.2,0.322876
+326,true gene trees,Patristic(ALL),06,144.92000000000002,0.3389
+327,true gene trees,ASTER,06,23.73,0.260328
+328,true gene trees,CASTLES+ASTER,06,38.36,0.260328
+329,true gene trees,Patristic(AVG)+FastME(AVG),06,103.74000000000001,0.322908
+330,true gene trees,Patristic(MIN)+FastME(MIN),06,107.26,0.322876
+331,true gene trees,Patristic(ALL)+ERaBLE,06,151.13000000000002,0.3389
+332,est gene trees (1600L),CASTLES,06,15.61,0.180328
+333,est gene trees (1600L),ERaBLE,06,6.12,0.179344
+334,est gene trees (1600L),FastME(AVG),06,0.03,0.001576
+335,est gene trees (1600L),FastME(MIN),06,0.18,0.001576
+336,est gene trees (1600L),Concat+RAxML,06,245.92,7.916092
+337,est gene trees (1600L),Patristic(AVG),06,103.2,0.327644
+338,est gene trees (1600L),Patristic(MIN),06,106.57,0.327956
+339,est gene trees (1600L),Patristic(ALL),06,144.84,0.343464
+340,est gene trees (1600L),ASTER,06,23.76,0.260724
+341,est gene trees (1600L),CASTLES+ASTER,06,39.370000000000005,0.260724
+342,est gene trees (1600L),Patristic(AVG)+FastME(AVG),06,103.23,0.327644
+343,est gene trees (1600L),Patristic(MIN)+FastME(MIN),06,106.75,0.327956
+344,est gene trees (1600L),Patristic(ALL)+ERaBLE,06,150.96,0.343464
+345,est gene trees (800L),CASTLES,06,15.65,0.179416
+346,est gene trees (800L),ERaBLE,06,6.33,0.17934
+347,est gene trees (800L),FastME(AVG),06,0.02,0.001576
+348,est gene trees (800L),FastME(MIN),06,0.15,0.001576
+349,est gene trees (800L),Concat+RAxML,06,251.35,4.126708
+350,est gene trees (800L),Patristic(AVG),06,106.69,0.328824
+351,est gene trees (800L),Patristic(MIN),06,106.22999999999999,0.32748
+352,est gene trees (800L),Patristic(ALL),06,144.99,0.344432
+353,est gene trees (800L),ASTER,06,24.37,0.26214
+354,est gene trees (800L),CASTLES+ASTER,06,40.02,0.26214
+355,est gene trees (800L),Patristic(AVG)+FastME(AVG),06,106.71,0.328824
+356,est gene trees (800L),Patristic(MIN)+FastME(MIN),06,106.38,0.32748
+357,est gene trees (800L),Patristic(ALL)+ERaBLE,06,151.32000000000002,0.344432
+358,est gene trees (400L),CASTLES,06,15.59,0.17456
+359,est gene trees (400L),ERaBLE,06,6.3,0.179336
+360,est gene trees (400L),FastME(AVG),06,0.05,0.00158
+361,est gene trees (400L),FastME(MIN),06,0.18,0.00158
+362,est gene trees (400L),Concat+RAxML,06,80.52,2.141396
+363,est gene trees (400L),Patristic(AVG),06,103.2,0.326424
+364,est gene trees (400L),Patristic(MIN),06,108.62,0.327208
+365,est gene trees (400L),Patristic(ALL),06,149.22,0.343284
+366,est gene trees (400L),ASTER,06,24.43,0.264728
+367,est gene trees (400L),CASTLES+ASTER,06,40.019999999999996,0.264728
+368,est gene trees (400L),Patristic(AVG)+FastME(AVG),06,103.25,0.326424
+369,est gene trees (400L),Patristic(MIN)+FastME(MIN),06,108.80000000000001,0.327208
+370,est gene trees (400L),Patristic(ALL)+ERaBLE,06,155.52,0.343284
+371,est gene trees (200L),CASTLES,06,15.98,0.165296
+372,est gene trees (200L),ERaBLE,06,6.04,0.17934
+373,est gene trees (200L),FastME(AVG),06,0.02,0.001576
+374,est gene trees (200L),FastME(MIN),06,0.27,0.00158
+375,est gene trees (200L),Concat+RAxML,06,26.99,1.108032
+376,est gene trees (200L),Patristic(AVG),06,104.97,0.324532
+377,est gene trees (200L),Patristic(MIN),06,107.87,0.3238
+378,est gene trees (200L),Patristic(ALL),06,144.78,0.343508
+379,est gene trees (200L),ASTER,06,25.46,0.264048
+380,est gene trees (200L),CASTLES+ASTER,06,41.44,0.264048
+381,est gene trees (200L),Patristic(AVG)+FastME(AVG),06,104.99,0.324532
+382,est gene trees (200L),Patristic(MIN)+FastME(MIN),06,108.14,0.3238
+383,est gene trees (200L),Patristic(ALL)+ERaBLE,06,150.82,0.343508
+384,true gene trees,CASTLES,07,14.89,0.160688
+385,true gene trees,ERaBLE,07,6.42,0.17934
+386,true gene trees,FastME(AVG),07,0.1,0.001576
+387,true gene trees,FastME(MIN),07,0.04,0.00158
+388,true gene trees,Patristic(AVG),07,104.0,0.322412
+389,true gene trees,Patristic(MIN),07,106.97,0.325408
+390,true gene trees,Patristic(ALL),07,102.11,0.3413
+391,true gene trees,ASTER,07,23.69,0.260324
+392,true gene trees,CASTLES+ASTER,07,38.58,0.260324
+393,true gene trees,Patristic(AVG)+FastME(AVG),07,104.1,0.322412
+394,true gene trees,Patristic(MIN)+FastME(MIN),07,107.01,0.325408
+395,true gene trees,Patristic(ALL)+ERaBLE,07,108.53,0.3413
+396,est gene trees (1600L),CASTLES,07,15.77,0.179968
+397,est gene trees (1600L),ERaBLE,07,6.26,0.17934
+398,est gene trees (1600L),FastME(AVG),07,0.11,0.00158
+399,est gene trees (1600L),FastME(MIN),07,0.16,0.001576
+400,est gene trees (1600L),Concat+RAxML,07,439.5,7.50326
+401,est gene trees (1600L),Patristic(AVG),07,103.33,0.328184
+402,est gene trees (1600L),Patristic(MIN),07,107.47999999999999,0.328116
+403,est gene trees (1600L),Patristic(ALL),07,105.75,0.344244
+404,est gene trees (1600L),ASTER,07,27.37,0.262244
+405,est gene trees (1600L),CASTLES+ASTER,07,43.14,0.262244
+406,est gene trees (1600L),Patristic(AVG)+FastME(AVG),07,103.44,0.328184
+407,est gene trees (1600L),Patristic(MIN)+FastME(MIN),07,107.63999999999999,0.328116
+408,est gene trees (1600L),Patristic(ALL)+ERaBLE,07,112.01,0.344244
+409,est gene trees (800L),CASTLES,07,16.56,0.18016
+410,est gene trees (800L),ERaBLE,07,6.04,0.17934
+411,est gene trees (800L),FastME(AVG),07,0.12,0.0015
+412,est gene trees (800L),FastME(MIN),07,0.14,0.001576
+413,est gene trees (800L),Concat+RAxML,07,414.02,3.921728
+414,est gene trees (800L),Patristic(AVG),07,103.17,0.330424
+415,est gene trees (800L),Patristic(MIN),07,107.86,0.328504
+416,est gene trees (800L),Patristic(ALL),07,103.55,0.34448
+417,est gene trees (800L),ASTER,07,27.38,0.260708
+418,est gene trees (800L),CASTLES+ASTER,07,43.94,0.260708
+419,est gene trees (800L),Patristic(AVG)+FastME(AVG),07,103.29,0.330424
+420,est gene trees (800L),Patristic(MIN)+FastME(MIN),07,108.0,0.328504
+421,est gene trees (800L),Patristic(ALL)+ERaBLE,07,109.59,0.34448
+422,est gene trees (400L),CASTLES,07,15.87,0.172436
+423,est gene trees (400L),ERaBLE,07,6.39,0.179344
+424,est gene trees (400L),FastME(AVG),07,0.12,0.00158
+425,est gene trees (400L),FastME(MIN),07,0.17,0.001496
+426,est gene trees (400L),Concat+RAxML,07,74.64,2.041676
+427,est gene trees (400L),Patristic(AVG),07,103.55,0.327112
+428,est gene trees (400L),Patristic(MIN),07,107.81,0.326992
+429,est gene trees (400L),Patristic(ALL),07,109.25,0.342592
+430,est gene trees (400L),ASTER,07,30.35,0.262092
+431,est gene trees (400L),CASTLES+ASTER,07,46.22,0.262092
+432,est gene trees (400L),Patristic(AVG)+FastME(AVG),07,103.67,0.327112
+433,est gene trees (400L),Patristic(MIN)+FastME(MIN),07,107.98,0.326992
+434,est gene trees (400L),Patristic(ALL)+ERaBLE,07,115.64,0.342592
+435,est gene trees (200L),CASTLES,07,15.77,0.166948
+436,est gene trees (200L),ERaBLE,07,6.04,0.17934
+437,est gene trees (200L),FastME(AVG),07,0.12,0.00158
+438,est gene trees (200L),FastME(MIN),07,0.35,0.00158
+439,est gene trees (200L),Concat+RAxML,07,25.19,1.053192
+440,est gene trees (200L),Patristic(AVG),07,102.88,0.325608
+441,est gene trees (200L),Patristic(MIN),07,105.3,0.324708
+442,est gene trees (200L),Patristic(ALL),07,105.15,0.340696
+443,est gene trees (200L),ASTER,07,29.33,0.264676
+444,est gene trees (200L),CASTLES+ASTER,07,45.099999999999994,0.264676
+445,est gene trees (200L),Patristic(AVG)+FastME(AVG),07,103.0,0.325608
+446,est gene trees (200L),Patristic(MIN)+FastME(MIN),07,105.64999999999999,0.324708
+447,est gene trees (200L),Patristic(ALL)+ERaBLE,07,111.19000000000001,0.340696
+448,true gene trees,CASTLES,08,25.62,0.167724
+449,true gene trees,ERaBLE,08,6.26,0.17934
+450,true gene trees,FastME(AVG),08,0.06,0.00158
+451,true gene trees,FastME(MIN),08,0.02,0.00158
+452,true gene trees,Patristic(AVG),08,85.37,0.323028
+453,true gene trees,Patristic(MIN),08,104.03999999999999,0.32222
+454,true gene trees,Patristic(ALL),08,107.1,0.3386
+455,true gene trees,ASTER,08,23.71,0.261764
+456,true gene trees,CASTLES+ASTER,08,49.33,0.261764
+457,true gene trees,Patristic(AVG)+FastME(AVG),08,85.43,0.323028
+458,true gene trees,Patristic(MIN)+FastME(MIN),08,104.05999999999999,0.32222
+459,true gene trees,Patristic(ALL)+ERaBLE,08,113.36,0.3386
+460,est gene trees (1600L),CASTLES,08,17.51,0.173992
+461,est gene trees (1600L),ERaBLE,08,6.28,0.17934
+462,est gene trees (1600L),FastME(AVG),08,0.06,0.00158
+463,est gene trees (1600L),FastME(MIN),08,0.1,0.00158
+464,est gene trees (1600L),Concat+RAxML,08,408.5,5.214212
+465,est gene trees (1600L),Patristic(AVG),08,89.06,0.333376
+466,est gene trees (1600L),Patristic(MIN),08,104.14,0.327672
+467,est gene trees (1600L),Patristic(ALL),08,100.19,0.342668
+468,est gene trees (1600L),ASTER,08,30.73,0.260688
+469,est gene trees (1600L),CASTLES+ASTER,08,48.24,0.260688
+470,est gene trees (1600L),Patristic(AVG)+FastME(AVG),08,89.12,0.333376
+471,est gene trees (1600L),Patristic(MIN)+FastME(MIN),08,104.24,0.327672
+472,est gene trees (1600L),Patristic(ALL)+ERaBLE,08,106.47,0.342668
+473,est gene trees (800L),CASTLES,08,30.97,0.165812
+474,est gene trees (800L),ERaBLE,08,6.09,0.179344
+475,est gene trees (800L),FastME(AVG),08,0.06,0.00158
+476,est gene trees (800L),FastME(MIN),08,0.58,0.001576
+477,est gene trees (800L),Concat+RAxML,08,145.59,2.743048
+478,est gene trees (800L),Patristic(AVG),08,84.6,0.325344
+479,est gene trees (800L),Patristic(MIN),08,104.07,0.324816
+480,est gene trees (800L),Patristic(ALL),08,106.47999999999999,0.342464
+481,est gene trees (800L),ASTER,08,36.65,0.260604
+482,est gene trees (800L),CASTLES+ASTER,08,67.62,0.260604
+483,est gene trees (800L),Patristic(AVG)+FastME(AVG),08,84.66,0.325344
+484,est gene trees (800L),Patristic(MIN)+FastME(MIN),08,104.64999999999999,0.324816
+485,est gene trees (800L),Patristic(ALL)+ERaBLE,08,112.57,0.342464
+486,est gene trees (400L),CASTLES,08,16.21,0.162148
+487,est gene trees (400L),ERaBLE,08,6.51,0.17934
+488,est gene trees (400L),FastME(AVG),08,0.03,0.001496
+489,est gene trees (400L),FastME(MIN),08,2.07,0.00158
+490,est gene trees (400L),Concat+RAxML,08,58.5,1.43614
+491,est gene trees (400L),Patristic(AVG),08,90.08,0.321216
+492,est gene trees (400L),Patristic(MIN),08,104.88,0.321504
+493,est gene trees (400L),Patristic(ALL),08,100.77000000000001,0.336252
+494,est gene trees (400L),ASTER,08,33.42,0.261888
+495,est gene trees (400L),CASTLES+ASTER,08,49.63,0.261888
+496,est gene trees (400L),Patristic(AVG)+FastME(AVG),08,90.11,0.321216
+497,est gene trees (400L),Patristic(MIN)+FastME(MIN),08,106.94999999999999,0.321504
+498,est gene trees (400L),Patristic(ALL)+ERaBLE,08,107.28000000000002,0.336252
+499,est gene trees (200L),CASTLES,08,15.01,0.154364
+500,est gene trees (200L),ERaBLE,08,6.45,0.17934
+501,est gene trees (200L),FastME(AVG),08,0.05,0.00158
+502,est gene trees (200L),FastME(MIN),08,164.57,0.00158
+503,est gene trees (200L),Concat+RAxML,08,15.91,0.748208
+504,est gene trees (200L),Patristic(AVG),08,86.69,0.314016
+505,est gene trees (200L),Patristic(MIN),08,104.18,0.315984
+506,est gene trees (200L),Patristic(ALL),08,108.69,0.328352
+507,est gene trees (200L),ASTER,08,39.28,0.260188
+508,est gene trees (200L),CASTLES+ASTER,08,54.29,0.260188
+509,est gene trees (200L),Patristic(AVG)+FastME(AVG),08,86.74,0.314016
+510,est gene trees (200L),Patristic(MIN)+FastME(MIN),08,268.75,0.315984
+511,est gene trees (200L),Patristic(ALL)+ERaBLE,08,115.14,0.328352
+512,true gene trees,CASTLES,09,14.67,0.160688
+513,true gene trees,ERaBLE,09,6.35,0.17934
+514,true gene trees,FastME(AVG),09,0.03,0.00158
+515,true gene trees,FastME(MIN),09,0.06,0.00158
+516,true gene trees,Patristic(AVG),09,83.56,0.323712
+517,true gene trees,Patristic(MIN),09,107.72,0.322296
+518,true gene trees,Patristic(ALL),09,102.53,0.339816
+519,true gene trees,ASTER,09,23.7,0.261748
+520,true gene trees,CASTLES+ASTER,09,38.37,0.261748
+521,true gene trees,Patristic(AVG)+FastME(AVG),09,83.59,0.323712
+522,true gene trees,Patristic(MIN)+FastME(MIN),09,107.78,0.322296
+523,true gene trees,Patristic(ALL)+ERaBLE,09,108.88,0.339816
+524,est gene trees (1600L),CASTLES,09,16.42,0.180712
+525,est gene trees (1600L),ERaBLE,09,6.34,0.179344
+526,est gene trees (1600L),FastME(AVG),09,0.06,0.00158
+527,est gene trees (1600L),FastME(MIN),09,0.06,0.001576
+528,est gene trees (1600L),Concat+RAxML,09,1369.22,15.727552
+529,est gene trees (1600L),Patristic(AVG),09,92.18,0.327352
+530,est gene trees (1600L),Patristic(MIN),09,105.93,0.330588
+531,est gene trees (1600L),Patristic(ALL),09,110.92,0.343136
+532,est gene trees (1600L),ASTER,09,22.47,0.26218
+533,est gene trees (1600L),CASTLES+ASTER,09,38.89,0.26218
+534,est gene trees (1600L),Patristic(AVG)+FastME(AVG),09,92.24000000000001,0.327352
+535,est gene trees (1600L),Patristic(MIN)+FastME(MIN),09,105.99000000000001,0.330588
+536,est gene trees (1600L),Patristic(ALL)+ERaBLE,09,117.26,0.343136
+537,est gene trees (800L),CASTLES,09,15.78,0.180908
+538,est gene trees (800L),ERaBLE,09,6.25,0.179344
+539,est gene trees (800L),FastME(AVG),09,0.05,0.00158
+540,est gene trees (800L),FastME(MIN),09,0.06,0.00158
+541,est gene trees (800L),Concat+RAxML,09,522.92,7.93052
+542,est gene trees (800L),Patristic(AVG),09,91.2,0.329572
+543,est gene trees (800L),Patristic(MIN),09,105.22999999999999,0.326704
+544,est gene trees (800L),Patristic(ALL),09,105.4,0.347348
+545,est gene trees (800L),ASTER,09,22.2,0.262248
+546,est gene trees (800L),CASTLES+ASTER,09,37.98,0.262248
+547,est gene trees (800L),Patristic(AVG)+FastME(AVG),09,91.25,0.329572
+548,est gene trees (800L),Patristic(MIN)+FastME(MIN),09,105.28999999999999,0.326704
+549,est gene trees (800L),Patristic(ALL)+ERaBLE,09,111.65,0.347348
+550,est gene trees (400L),CASTLES,09,15.91,0.18052
+551,est gene trees (400L),ERaBLE,09,6.34,0.179344
+552,est gene trees (400L),FastME(AVG),09,0.04,0.001576
+553,est gene trees (400L),FastME(MIN),09,0.05,0.00158
+554,est gene trees (400L),Concat+RAxML,09,208.0,4.002008
+555,est gene trees (400L),Patristic(AVG),09,84.72,0.32824
+556,est gene trees (400L),Patristic(MIN),09,108.57,0.326496
+557,est gene trees (400L),Patristic(ALL),09,102.47,0.343744
+558,est gene trees (400L),ASTER,09,24.21,0.26214
+559,est gene trees (400L),CASTLES+ASTER,09,40.120000000000005,0.26214
+560,est gene trees (400L),Patristic(AVG)+FastME(AVG),09,84.76,0.32824
+561,est gene trees (400L),Patristic(MIN)+FastME(MIN),09,108.61999999999999,0.326496
+562,est gene trees (400L),Patristic(ALL)+ERaBLE,09,108.81,0.343744
+563,est gene trees (200L),CASTLES,09,16.34,0.180232
+564,est gene trees (200L),ERaBLE,09,6.43,0.179336
+565,est gene trees (200L),FastME(AVG),09,0.05,0.001576
+566,est gene trees (200L),FastME(MIN),09,0.05,0.00158
+567,est gene trees (200L),Concat+RAxML,09,77.09,2.013492
+568,est gene trees (200L),Patristic(AVG),09,89.65,0.327036
+569,est gene trees (200L),Patristic(MIN),09,108.36,0.330856
+570,est gene trees (200L),Patristic(ALL),09,104.61,0.343704
+571,est gene trees (200L),ASTER,09,23.32,0.26212
+572,est gene trees (200L),CASTLES+ASTER,09,39.66,0.26212
+573,est gene trees (200L),Patristic(AVG)+FastME(AVG),09,89.7,0.327036
+574,est gene trees (200L),Patristic(MIN)+FastME(MIN),09,108.41,0.330856
+575,est gene trees (200L),Patristic(ALL)+ERaBLE,09,111.03999999999999,0.343704
+576,true gene trees,CASTLES,10,14.85,0.167708
+577,true gene trees,ERaBLE,10,15.29,0.179152
+578,true gene trees,FastME(AVG),10,0.05,0.00158
+579,true gene trees,FastME(MIN),10,0.07,0.00158
+580,true gene trees,Patristic(AVG),10,85.17,0.325392
+581,true gene trees,Patristic(MIN),10,268.24,0.326332
+582,true gene trees,Patristic(ALL),10,100.49000000000001,0.339916
+583,true gene trees,ASTER,10,23.71,0.26176
+584,true gene trees,CASTLES+ASTER,10,38.56,0.26176
+585,true gene trees,Patristic(AVG)+FastME(AVG),10,85.22,0.325392
+586,true gene trees,Patristic(MIN)+FastME(MIN),10,268.31,0.326332
+587,true gene trees,Patristic(ALL)+ERaBLE,10,115.78,0.339916
+588,est gene trees (1600L),CASTLES,10,17.08,0.181708
+589,est gene trees (1600L),ERaBLE,10,15.69,0.17922
+590,est gene trees (1600L),FastME(AVG),10,0.06,0.00158
+591,est gene trees (1600L),FastME(MIN),10,0.14,0.001576
+592,est gene trees (1600L),Concat+RAxML,10,1824.82,13.751188
+593,est gene trees (1600L),Patristic(AVG),10,88.13,0.330676
+594,est gene trees (1600L),Patristic(MIN),10,267.14,0.328276
+595,est gene trees (1600L),Patristic(ALL),10,103.16,0.343676
+596,est gene trees (1600L),ASTER,10,27.2,0.262188
+597,est gene trees (1600L),CASTLES+ASTER,10,44.28,0.262188
+598,est gene trees (1600L),Patristic(AVG)+FastME(AVG),10,88.19,0.330676
+599,est gene trees (1600L),Patristic(MIN)+FastME(MIN),10,267.28,0.328276
+600,est gene trees (1600L),Patristic(ALL)+ERaBLE,10,118.85,0.343676
+601,est gene trees (800L),CASTLES,10,15.93,0.181124
+602,est gene trees (800L),ERaBLE,10,15.5,0.179344
+603,est gene trees (800L),FastME(AVG),10,0.06,0.00158
+604,est gene trees (800L),FastME(MIN),10,0.18,0.001576
+605,est gene trees (800L),Concat+RAxML,10,938.54,6.984156
+606,est gene trees (800L),Patristic(AVG),10,87.8,0.328792
+607,est gene trees (800L),Patristic(MIN),10,266.73,0.326892
+608,est gene trees (800L),Patristic(ALL),10,103.34,0.343624
+609,est gene trees (800L),ASTER,10,26.6,0.262168
+610,est gene trees (800L),CASTLES+ASTER,10,42.53,0.262168
+611,est gene trees (800L),Patristic(AVG)+FastME(AVG),10,87.86,0.328792
+612,est gene trees (800L),Patristic(MIN)+FastME(MIN),10,266.91,0.326892
+613,est gene trees (800L),Patristic(ALL)+ERaBLE,10,118.84,0.343624
+614,est gene trees (400L),CASTLES,10,16.6,0.18372
+615,est gene trees (400L),ERaBLE,10,15.61,0.179296
+616,est gene trees (400L),FastME(AVG),10,0.04,0.00158
+617,est gene trees (400L),FastME(MIN),10,0.16,0.001576
+618,est gene trees (400L),Concat+RAxML,10,411.45,3.543968
+619,est gene trees (400L),Patristic(AVG),10,87.06,0.33226
+620,est gene trees (400L),Patristic(MIN),10,270.04,0.328324
+621,est gene trees (400L),Patristic(ALL),10,109.06,0.34466
+622,est gene trees (400L),ASTER,10,28.79,0.262144
+623,est gene trees (400L),CASTLES+ASTER,10,45.39,0.262144
+624,est gene trees (400L),Patristic(AVG)+FastME(AVG),10,87.10000000000001,0.33226
+625,est gene trees (400L),Patristic(MIN)+FastME(MIN),10,270.20000000000005,0.328324
+626,est gene trees (400L),Patristic(ALL)+ERaBLE,10,124.67,0.34466
+627,est gene trees (200L),CASTLES,10,15.89,0.174424
+628,est gene trees (200L),ERaBLE,10,15.43,0.179128
+629,est gene trees (200L),FastME(AVG),10,0.07,0.00158
+630,est gene trees (200L),FastME(MIN),10,0.14,0.00158
+631,est gene trees (200L),Concat+RAxML,10,74.72,1.791852
+632,est gene trees (200L),Patristic(AVG),10,95.03,0.326696
+633,est gene trees (200L),Patristic(MIN),10,265.68,0.329368
+634,est gene trees (200L),Patristic(ALL),10,104.03999999999999,0.3423
+635,est gene trees (200L),ASTER,10,27.67,0.262112
+636,est gene trees (200L),CASTLES+ASTER,10,43.56,0.262112
+637,est gene trees (200L),Patristic(AVG)+FastME(AVG),10,95.1,0.326696
+638,est gene trees (200L),Patristic(MIN)+FastME(MIN),10,265.82,0.329368
+639,est gene trees (200L),Patristic(ALL)+ERaBLE,10,119.47,0.3423
+640,true gene trees,CASTLES,11,14.72,0.169064
+641,true gene trees,ERaBLE,11,15.31,0.17934
+642,true gene trees,FastME(AVG),11,0.05,0.001576
+643,true gene trees,FastME(MIN),11,0.04,0.00158
+644,true gene trees,Patristic(AVG),11,84.98,0.323188
+645,true gene trees,Patristic(MIN),11,268.79,0.327564
+646,true gene trees,Patristic(ALL),11,100.71000000000001,0.33974
+647,true gene trees,ASTER,11,23.71,0.261764
+648,true gene trees,CASTLES+ASTER,11,38.43,0.261764
+649,true gene trees,Patristic(AVG)+FastME(AVG),11,85.03,0.323188
+650,true gene trees,Patristic(MIN)+FastME(MIN),11,268.83000000000004,0.327564
+651,true gene trees,Patristic(ALL)+ERaBLE,11,116.02000000000001,0.33974
+652,est gene trees (1600L),CASTLES,11,16.33,0.179764
+653,est gene trees (1600L),ERaBLE,11,15.67,0.17938
+654,est gene trees (1600L),FastME(AVG),11,0.05,0.00158
+655,est gene trees (1600L),FastME(MIN),11,0.04,0.00158
+656,est gene trees (1600L),Concat+RAxML,11,775.94,13.26324
+657,est gene trees (1600L),Patristic(AVG),11,86.74,0.33286
+658,est gene trees (1600L),Patristic(MIN),11,267.19,0.32824
+659,est gene trees (1600L),Patristic(ALL),11,105.99000000000001,0.344924
+660,est gene trees (1600L),ASTER,11,26.67,0.262184
+661,est gene trees (1600L),CASTLES+ASTER,11,43.0,0.262184
+662,est gene trees (1600L),Patristic(AVG)+FastME(AVG),11,86.78999999999999,0.33286
+663,est gene trees (1600L),Patristic(MIN)+FastME(MIN),11,267.23,0.32824
+664,est gene trees (1600L),Patristic(ALL)+ERaBLE,11,121.66000000000001,0.344924
+665,est gene trees (800L),CASTLES,11,16.16,0.179596
+666,est gene trees (800L),ERaBLE,11,15.22,0.17934
+667,est gene trees (800L),FastME(AVG),11,0.04,0.00158
+668,est gene trees (800L),FastME(MIN),11,0.06,0.001576
+669,est gene trees (800L),Concat+RAxML,11,755.99,6.749
+670,est gene trees (800L),Patristic(AVG),11,85.96000000000001,0.327628
+671,est gene trees (800L),Patristic(MIN),11,267.09,0.32842
+672,est gene trees (800L),Patristic(ALL),11,101.42,0.344032
+673,est gene trees (800L),ASTER,11,26.48,0.260728
+674,est gene trees (800L),CASTLES+ASTER,11,42.64,0.260728
+675,est gene trees (800L),Patristic(AVG)+FastME(AVG),11,86.00000000000001,0.327628
+676,est gene trees (800L),Patristic(MIN)+FastME(MIN),11,267.15,0.32842
+677,est gene trees (800L),Patristic(ALL)+ERaBLE,11,116.64,0.344032
+678,est gene trees (400L),CASTLES,11,15.98,0.175512
+679,est gene trees (400L),ERaBLE,11,15.48,0.179256
+680,est gene trees (400L),FastME(AVG),11,0.04,0.001576
+681,est gene trees (400L),FastME(MIN),11,0.05,0.001576
+682,est gene trees (400L),Concat+RAxML,11,277.11,3.424052
+683,est gene trees (400L),Patristic(AVG),11,85.99,0.3267
+684,est gene trees (400L),Patristic(MIN),11,270.89,0.3269
+685,est gene trees (400L),Patristic(ALL),11,112.71000000000001,0.344384
+686,est gene trees (400L),ASTER,11,26.86,0.262144
+687,est gene trees (400L),CASTLES+ASTER,11,42.84,0.262144
+688,est gene trees (400L),Patristic(AVG)+FastME(AVG),11,86.03,0.3267
+689,est gene trees (400L),Patristic(MIN)+FastME(MIN),11,270.94,0.3269
+690,est gene trees (400L),Patristic(ALL)+ERaBLE,11,128.19,0.344384
+691,est gene trees (200L),CASTLES,11,15.89,0.176648
+692,est gene trees (200L),ERaBLE,11,15.62,0.179328
+693,est gene trees (200L),FastME(AVG),11,0.04,0.001576
+694,est gene trees (200L),FastME(MIN),11,0.04,0.00158
+695,est gene trees (200L),Concat+RAxML,11,64.0,1.736592
+696,est gene trees (200L),Patristic(AVG),11,93.47999999999999,0.327548
+697,est gene trees (200L),Patristic(MIN),11,269.76,0.326108
+698,est gene trees (200L),Patristic(ALL),11,106.50999999999999,0.342532
+699,est gene trees (200L),ASTER,11,27.29,0.262104
+700,est gene trees (200L),CASTLES+ASTER,11,43.18,0.262104
+701,est gene trees (200L),Patristic(AVG)+FastME(AVG),11,93.52,0.327548
+702,est gene trees (200L),Patristic(MIN)+FastME(MIN),11,269.8,0.326108
+703,est gene trees (200L),Patristic(ALL)+ERaBLE,11,122.13,0.342532
+704,true gene trees,CASTLES,12,14.27,0.168984
+705,true gene trees,ERaBLE,12,15.16,0.179364
+706,true gene trees,FastME(AVG),12,0.06,0.00158
+707,true gene trees,FastME(MIN),12,0.06,0.001576
+708,true gene trees,Patristic(AVG),12,92.6,0.325288
+709,true gene trees,Patristic(MIN),12,269.11,0.3227
+710,true gene trees,Patristic(ALL),12,106.21000000000001,0.33854
+711,true gene trees,ASTER,12,23.69,0.26032
+712,true gene trees,CASTLES+ASTER,12,37.96,0.26032
+713,true gene trees,Patristic(AVG)+FastME(AVG),12,92.66,0.325288
+714,true gene trees,Patristic(MIN)+FastME(MIN),12,269.17,0.3227
+715,true gene trees,Patristic(ALL)+ERaBLE,12,121.37,0.33854
+716,est gene trees (1600L),CASTLES,12,15.9,0.17896
+717,est gene trees (1600L),ERaBLE,12,15.39,0.17934
+718,est gene trees (1600L),FastME(AVG),12,0.04,0.00158
+719,est gene trees (1600L),FastME(MIN),12,0.04,0.001576
+720,est gene trees (1600L),Concat+RAxML,12,775.84,10.557796
+721,est gene trees (1600L),Patristic(AVG),12,87.49,0.3276
+722,est gene trees (1600L),Patristic(MIN),12,270.88,0.327784
+723,est gene trees (1600L),Patristic(ALL),12,110.88,0.346204
+724,est gene trees (1600L),ASTER,12,25.04,0.262172
+725,est gene trees (1600L),CASTLES+ASTER,12,40.94,0.262172
+726,est gene trees (1600L),Patristic(AVG)+FastME(AVG),12,87.53,0.3276
+727,est gene trees (1600L),Patristic(MIN)+FastME(MIN),12,270.92,0.327784
+728,est gene trees (1600L),Patristic(ALL)+ERaBLE,12,126.27,0.346204
+729,est gene trees (800L),CASTLES,12,15.38,0.180148
+730,est gene trees (800L),ERaBLE,12,15.58,0.179208
+731,est gene trees (800L),FastME(AVG),12,0.04,0.00158
+732,est gene trees (800L),FastME(MIN),12,0.05,0.00158
+733,est gene trees (800L),Concat+RAxML,12,379.79,5.439084
+734,est gene trees (800L),Patristic(AVG),12,85.82,0.32764
+735,est gene trees (800L),Patristic(MIN),12,269.59,0.326572
+736,est gene trees (800L),Patristic(ALL),12,108.13,0.342812
+737,est gene trees (800L),ASTER,12,25.44,0.262156
+738,est gene trees (800L),CASTLES+ASTER,12,40.82,0.262156
+739,est gene trees (800L),Patristic(AVG)+FastME(AVG),12,85.86,0.32764
+740,est gene trees (800L),Patristic(MIN)+FastME(MIN),12,269.64,0.326572
+741,est gene trees (800L),Patristic(ALL)+ERaBLE,12,123.71,0.342812
+742,est gene trees (400L),CASTLES,12,14.98,0.180452
+743,est gene trees (400L),ERaBLE,12,15.36,0.17934
+744,est gene trees (400L),FastME(AVG),12,0.04,0.001576
+745,est gene trees (400L),FastME(MIN),12,0.06,0.001576
+746,est gene trees (400L),Concat+RAxML,12,160.36,2.786984
+747,est gene trees (400L),Patristic(AVG),12,85.37,0.327304
+748,est gene trees (400L),Patristic(MIN),12,268.35,0.326324
+749,est gene trees (400L),Patristic(ALL),12,101.94,0.346028
+750,est gene trees (400L),ASTER,12,25.89,0.262124
+751,est gene trees (400L),CASTLES+ASTER,12,40.870000000000005,0.262124
+752,est gene trees (400L),Patristic(AVG)+FastME(AVG),12,85.41000000000001,0.327304
+753,est gene trees (400L),Patristic(MIN)+FastME(MIN),12,268.41,0.326324
+754,est gene trees (400L),Patristic(ALL)+ERaBLE,12,117.3,0.346028
+755,est gene trees (200L),CASTLES,12,15.11,0.173224
+756,est gene trees (200L),ERaBLE,12,15.72,0.179148
+757,est gene trees (200L),FastME(AVG),12,0.05,0.00158
+758,est gene trees (200L),FastME(MIN),12,0.15,0.00158
+759,est gene trees (200L),Concat+RAxML,12,50.15,1.422864
+760,est gene trees (200L),Patristic(AVG),12,88.27,0.326424
+761,est gene trees (200L),Patristic(MIN),12,264.01,0.32598
+762,est gene trees (200L),Patristic(ALL),12,101.0,0.343572
+763,est gene trees (200L),ASTER,12,26.54,0.262072
+764,est gene trees (200L),CASTLES+ASTER,12,41.65,0.262072
+765,est gene trees (200L),Patristic(AVG)+FastME(AVG),12,88.32,0.326424
+766,est gene trees (200L),Patristic(MIN)+FastME(MIN),12,264.15999999999997,0.32598
+767,est gene trees (200L),Patristic(ALL)+ERaBLE,12,116.72,0.343572
+768,true gene trees,CASTLES,13,32.72,0.160712
+769,true gene trees,ERaBLE,13,5.89,0.179272
+770,true gene trees,FastME(AVG),13,0.06,0.00158
+771,true gene trees,FastME(MIN),13,0.05,0.001576
+772,true gene trees,Patristic(AVG),13,86.46000000000001,0.322852
+773,true gene trees,Patristic(MIN),13,85.77,0.327496
+774,true gene trees,Patristic(ALL),13,100.3,0.339296
+775,true gene trees,ASTER,13,20.1,0.261756
+776,true gene trees,CASTLES+ASTER,13,52.82,0.261756
+777,true gene trees,Patristic(AVG)+FastME(AVG),13,86.52000000000001,0.322852
+778,true gene trees,Patristic(MIN)+FastME(MIN),13,85.82,0.327496
+779,true gene trees,Patristic(ALL)+ERaBLE,13,106.19,0.339296
+780,est gene trees (1600L),CASTLES,13,36.29,0.181472
+781,est gene trees (1600L),ERaBLE,13,6.3,0.17934
+782,est gene trees (1600L),FastME(AVG),13,0.05,0.00158
+783,est gene trees (1600L),FastME(MIN),13,0.04,0.001576
+784,est gene trees (1600L),Concat+RAxML,13,1659.46,12.2425
+785,est gene trees (1600L),Patristic(AVG),13,85.68,0.327028
+786,est gene trees (1600L),Patristic(MIN),13,88.59,0.328044
+787,est gene trees (1600L),Patristic(ALL),13,105.05,0.3431
+788,est gene trees (1600L),ASTER,13,26.25,0.262176
+789,est gene trees (1600L),CASTLES+ASTER,13,62.54,0.262176
+790,est gene trees (1600L),Patristic(AVG)+FastME(AVG),13,85.73,0.327028
+791,est gene trees (1600L),Patristic(MIN)+FastME(MIN),13,88.63000000000001,0.328044
+792,est gene trees (1600L),Patristic(ALL)+ERaBLE,13,111.35,0.3431
+793,est gene trees (800L),CASTLES,13,35.66,0.181576
+794,est gene trees (800L),ERaBLE,13,5.84,0.179328
+795,est gene trees (800L),FastME(AVG),13,0.05,0.00158
+796,est gene trees (800L),FastME(MIN),13,0.06,0.00158
+797,est gene trees (800L),Concat+RAxML,13,444.85,6.245204
+798,est gene trees (800L),Patristic(AVG),13,87.69,0.327292
+799,est gene trees (800L),Patristic(MIN),13,86.44,0.32766
+800,est gene trees (800L),Patristic(ALL),13,114.59,0.343292
+801,est gene trees (800L),ASTER,13,26.32,0.26216
+802,est gene trees (800L),CASTLES+ASTER,13,61.98,0.26216
+803,est gene trees (800L),Patristic(AVG)+FastME(AVG),13,87.74,0.327292
+804,est gene trees (800L),Patristic(MIN)+FastME(MIN),13,86.5,0.32766
+805,est gene trees (800L),Patristic(ALL)+ERaBLE,13,120.43,0.343292
+806,est gene trees (400L),CASTLES,13,35.65,0.172268
+807,est gene trees (400L),ERaBLE,13,6.16,0.17934
+808,est gene trees (400L),FastME(AVG),13,0.05,0.001576
+809,est gene trees (400L),FastME(MIN),13,0.03,0.00158
+810,est gene trees (400L),Concat+RAxML,13,135.11,3.18754
+811,est gene trees (400L),Patristic(AVG),13,88.66,0.327776
+812,est gene trees (400L),Patristic(MIN),13,88.03,0.327296
+813,est gene trees (400L),Patristic(ALL),13,102.67,0.342748
+814,est gene trees (400L),ASTER,13,26.71,0.262128
+815,est gene trees (400L),CASTLES+ASTER,13,62.36,0.262128
+816,est gene trees (400L),Patristic(AVG)+FastME(AVG),13,88.71,0.327776
+817,est gene trees (400L),Patristic(MIN)+FastME(MIN),13,88.06,0.327296
+818,est gene trees (400L),Patristic(ALL)+ERaBLE,13,108.83,0.342748
+819,est gene trees (200L),CASTLES,13,35.67,0.167088
+820,est gene trees (200L),ERaBLE,13,6.01,0.179288
+821,est gene trees (200L),FastME(AVG),13,0.06,0.00158
+822,est gene trees (200L),FastME(MIN),13,0.04,0.001576
+823,est gene trees (200L),Concat+RAxML,13,131.57,1.618544
+824,est gene trees (200L),Patristic(AVG),13,91.55,0.332316
+825,est gene trees (200L),Patristic(MIN),13,91.44,0.328324
+826,est gene trees (200L),Patristic(ALL),13,105.00999999999999,0.342972
+827,est gene trees (200L),ASTER,13,26.82,0.262092
+828,est gene trees (200L),CASTLES+ASTER,13,62.49,0.262092
+829,est gene trees (200L),Patristic(AVG)+FastME(AVG),13,91.61,0.332316
+830,est gene trees (200L),Patristic(MIN)+FastME(MIN),13,91.48,0.328324
+831,est gene trees (200L),Patristic(ALL)+ERaBLE,13,111.02,0.342972
+832,true gene trees,CASTLES,14,32.12,0.161156
+833,true gene trees,ERaBLE,14,6.02,0.179316
+834,true gene trees,FastME(AVG),14,0.11,0.001576
+835,true gene trees,FastME(MIN),14,0.07,0.001576
+836,true gene trees,Patristic(AVG),14,88.12,0.323168
+837,true gene trees,Patristic(MIN),14,94.08,0.32278
+838,true gene trees,Patristic(ALL),14,99.32,0.3391
+839,true gene trees,ASTER,14,22.98,0.261756
+840,true gene trees,CASTLES+ASTER,14,55.099999999999994,0.261756
+841,true gene trees,Patristic(AVG)+FastME(AVG),14,88.23,0.323168
+842,true gene trees,Patristic(MIN)+FastME(MIN),14,94.14999999999999,0.32278
+843,true gene trees,Patristic(ALL)+ERaBLE,14,105.33999999999999,0.3391
+844,est gene trees (1600L),CASTLES,14,35.76,0.179504
+845,est gene trees (1600L),ERaBLE,14,5.88,0.179288
+846,est gene trees (1600L),FastME(AVG),14,0.09,0.001576
+847,est gene trees (1600L),FastME(MIN),14,0.19,0.001576
+848,est gene trees (1600L),Concat+RAxML,14,874.42,10.785048
+849,est gene trees (1600L),Patristic(AVG),14,87.69,0.326692
+850,est gene trees (1600L),Patristic(MIN),14,88.88,0.327696
+851,est gene trees (1600L),Patristic(ALL),14,106.25,0.346616
+852,est gene trees (1600L),ASTER,14,29.7,0.262156
+853,est gene trees (1600L),CASTLES+ASTER,14,65.46,0.262156
+854,est gene trees (1600L),Patristic(AVG)+FastME(AVG),14,87.78,0.326692
+855,est gene trees (1600L),Patristic(MIN)+FastME(MIN),14,89.07,0.327696
+856,est gene trees (1600L),Patristic(ALL)+ERaBLE,14,112.13,0.346616
+857,est gene trees (800L),CASTLES,14,36.12,0.174428
+858,est gene trees (800L),ERaBLE,14,6.15,0.179344
+859,est gene trees (800L),FastME(AVG),14,0.13,0.001572
+860,est gene trees (800L),FastME(MIN),14,0.18,0.001492
+861,est gene trees (800L),Concat+RAxML,14,425.3,5.540008
+862,est gene trees (800L),Patristic(AVG),14,88.6,0.329128
+863,est gene trees (800L),Patristic(MIN),14,88.96000000000001,0.330012
+864,est gene trees (800L),Patristic(ALL),14,105.77000000000001,0.345156
+865,est gene trees (800L),ASTER,14,29.94,0.262132
+866,est gene trees (800L),CASTLES+ASTER,14,66.06,0.262132
+867,est gene trees (800L),Patristic(AVG)+FastME(AVG),14,88.72999999999999,0.329128
+868,est gene trees (800L),Patristic(MIN)+FastME(MIN),14,89.14000000000001,0.330012
+869,est gene trees (800L),Patristic(ALL)+ERaBLE,14,111.92000000000002,0.345156
+870,est gene trees (400L),CASTLES,14,35.52,0.17944
+871,est gene trees (400L),ERaBLE,14,5.85,0.179344
+872,est gene trees (400L),FastME(AVG),14,0.09,0.001572
+873,est gene trees (400L),FastME(MIN),14,0.15,0.001576
+874,est gene trees (400L),Concat+RAxML,14,178.67000000000002,2.844212
+875,est gene trees (400L),Patristic(AVG),14,93.08,0.326448
+876,est gene trees (400L),Patristic(MIN),14,91.73,0.327844
+877,est gene trees (400L),Patristic(ALL),14,100.05,0.342184
+878,est gene trees (400L),ASTER,14,32.3,0.26066
+879,est gene trees (400L),CASTLES+ASTER,14,67.82,0.26066
+880,est gene trees (400L),Patristic(AVG)+FastME(AVG),14,93.17,0.326448
+881,est gene trees (400L),Patristic(MIN)+FastME(MIN),14,91.88000000000001,0.327844
+882,est gene trees (400L),Patristic(ALL)+ERaBLE,14,105.89999999999999,0.342184
+883,est gene trees (200L),CASTLES,14,34.57,0.168344
+884,est gene trees (200L),ERaBLE,14,5.71,0.17932
+885,est gene trees (200L),FastME(AVG),14,0.09,0.001572
+886,est gene trees (200L),FastME(MIN),14,0.23,0.001576
+887,est gene trees (200L),Concat+RAxML,14,86.52,1.452816
+888,est gene trees (200L),Patristic(AVG),14,86.82,0.325632
+889,est gene trees (200L),Patristic(MIN),14,91.01,0.324944
+890,est gene trees (200L),Patristic(ALL),14,111.83,0.341244
+891,est gene trees (200L),ASTER,14,30.58,0.262136
+892,est gene trees (200L),CASTLES+ASTER,14,65.15,0.262136
+893,est gene trees (200L),Patristic(AVG)+FastME(AVG),14,86.91,0.325632
+894,est gene trees (200L),Patristic(MIN)+FastME(MIN),14,91.24000000000001,0.324944
+895,est gene trees (200L),Patristic(ALL)+ERaBLE,14,117.53999999999999,0.341244
+896,true gene trees,CASTLES,15,32.54,0.16302
+897,true gene trees,ERaBLE,15,6.07,0.179292
+898,true gene trees,FastME(AVG),15,0.04,0.00158
+899,true gene trees,FastME(MIN),15,0.04,0.00158
+900,true gene trees,Patristic(AVG),15,84.11,0.325364
+901,true gene trees,Patristic(MIN),15,91.42,0.323488
+902,true gene trees,Patristic(ALL),15,352.54,0.3381
+903,true gene trees,ASTER,15,21.0,0.261756
+904,true gene trees,CASTLES+ASTER,15,53.54,0.261756
+905,true gene trees,Patristic(AVG)+FastME(AVG),15,84.15,0.325364
+906,true gene trees,Patristic(MIN)+FastME(MIN),15,91.46000000000001,0.323488
+907,true gene trees,Patristic(ALL)+ERaBLE,15,358.61,0.3381
+908,est gene trees (1600L),CASTLES,15,35.48,0.180716
+909,est gene trees (1600L),ERaBLE,15,5.63,0.179328
+910,est gene trees (1600L),FastME(AVG),15,0.05,0.00158
+911,est gene trees (1600L),FastME(MIN),15,0.06,0.00158
+912,est gene trees (1600L),Concat+RAxML,15,775.87,10.757276
+913,est gene trees (1600L),Patristic(AVG),15,90.64,0.327156
+914,est gene trees (1600L),Patristic(MIN),15,87.37,0.32938
+915,est gene trees (1600L),Patristic(ALL),15,363.66,0.343304
+916,est gene trees (1600L),ASTER,15,26.86,0.262188
+917,est gene trees (1600L),CASTLES+ASTER,15,62.339999999999996,0.262188
+918,est gene trees (1600L),Patristic(AVG)+FastME(AVG),15,90.69,0.327156
+919,est gene trees (1600L),Patristic(MIN)+FastME(MIN),15,87.43,0.32938
+920,est gene trees (1600L),Patristic(ALL)+ERaBLE,15,369.29,0.343304
+921,est gene trees (800L),CASTLES,15,35.97,0.181272
+922,est gene trees (800L),ERaBLE,15,5.58,0.179144
+923,est gene trees (800L),FastME(AVG),15,0.04,0.00158
+924,est gene trees (800L),FastME(MIN),15,0.05,0.00158
+925,est gene trees (800L),Concat+RAxML,15,315.43,5.5297
+926,est gene trees (800L),Patristic(AVG),15,85.6,0.328876
+927,est gene trees (800L),Patristic(MIN),15,85.43,0.327364
+928,est gene trees (800L),Patristic(ALL),15,363.35,0.344532
+929,est gene trees (800L),ASTER,15,27.48,0.26216
+930,est gene trees (800L),CASTLES+ASTER,15,63.45,0.26216
+931,est gene trees (800L),Patristic(AVG)+FastME(AVG),15,85.64,0.328876
+932,est gene trees (800L),Patristic(MIN)+FastME(MIN),15,85.48,0.327364
+933,est gene trees (800L),Patristic(ALL)+ERaBLE,15,368.93,0.344532
+934,est gene trees (400L),CASTLES,15,35.8,0.1794
+935,est gene trees (400L),ERaBLE,15,6.26,0.179336
+936,est gene trees (400L),FastME(AVG),15,0.06,0.001576
+937,est gene trees (400L),FastME(MIN),15,0.08,0.00158
+938,est gene trees (400L),Concat+RAxML,15,184.0,2.825532
+939,est gene trees (400L),Patristic(AVG),15,85.72,0.326592
+940,est gene trees (400L),Patristic(MIN),15,86.0,0.326544
+941,est gene trees (400L),Patristic(ALL),15,364.22,0.343836
+942,est gene trees (400L),ASTER,15,27.41,0.260684
+943,est gene trees (400L),CASTLES+ASTER,15,63.209999999999994,0.260684
+944,est gene trees (400L),Patristic(AVG)+FastME(AVG),15,85.78,0.326592
+945,est gene trees (400L),Patristic(MIN)+FastME(MIN),15,86.08,0.326544
+946,est gene trees (400L),Patristic(ALL)+ERaBLE,15,370.48,0.343836
+947,est gene trees (200L),CASTLES,15,35.72,0.176404
+948,est gene trees (200L),ERaBLE,15,5.71,0.179248
+949,est gene trees (200L),FastME(AVG),15,0.05,0.00158
+950,est gene trees (200L),FastME(MIN),15,0.12,0.001576
+951,est gene trees (200L),Concat+RAxML,15,70.08,1.443768
+952,est gene trees (200L),Patristic(AVG),15,88.96000000000001,0.325664
+953,est gene trees (200L),Patristic(MIN),15,86.74,0.325964
+954,est gene trees (200L),Patristic(ALL),15,363.68,0.341724
+955,est gene trees (200L),ASTER,15,27.85,0.262076
+956,est gene trees (200L),CASTLES+ASTER,15,63.57,0.262076
+957,est gene trees (200L),Patristic(AVG)+FastME(AVG),15,89.01,0.325664
+958,est gene trees (200L),Patristic(MIN)+FastME(MIN),15,86.86,0.325964
+959,est gene trees (200L),Patristic(ALL)+ERaBLE,15,369.39,0.341724
+960,true gene trees,CASTLES,16,32.72,0.169108
+961,true gene trees,ERaBLE,16,5.43,0.179268
+962,true gene trees,FastME(AVG),16,0.05,0.001576
+963,true gene trees,FastME(MIN),16,0.05,0.001572
+964,true gene trees,Patristic(AVG),16,91.18,0.32246
+965,true gene trees,Patristic(MIN),16,87.9,0.323192
+966,true gene trees,Patristic(ALL),16,369.1,0.340196
+967,true gene trees,ASTER,16,25.31,0.261764
+968,true gene trees,CASTLES+ASTER,16,58.03,0.261764
+969,true gene trees,Patristic(AVG)+FastME(AVG),16,91.23,0.32246
+970,true gene trees,Patristic(MIN)+FastME(MIN),16,87.95,0.323192
+971,true gene trees,Patristic(ALL)+ERaBLE,16,374.53000000000003,0.340196
+972,est gene trees (1600L),CASTLES,16,35.9,0.179368
+973,est gene trees (1600L),ERaBLE,16,5.67,0.1792
+974,est gene trees (1600L),FastME(AVG),16,0.05,0.001576
+975,est gene trees (1600L),FastME(MIN),16,0.05,0.001576
+976,est gene trees (1600L),Concat+RAxML,16,1406.16,13.367324
+977,est gene trees (1600L),Patristic(AVG),16,85.53999999999999,0.327972
+978,est gene trees (1600L),Patristic(MIN),16,91.26,0.3271
+979,est gene trees (1600L),Patristic(ALL),16,368.88,0.345252
+980,est gene trees (1600L),ASTER,16,31.46,0.262172
+981,est gene trees (1600L),CASTLES+ASTER,16,67.36,0.262172
+982,est gene trees (1600L),Patristic(AVG)+FastME(AVG),16,85.58999999999999,0.327972
+983,est gene trees (1600L),Patristic(MIN)+FastME(MIN),16,91.31,0.3271
+984,est gene trees (1600L),Patristic(ALL)+ERaBLE,16,374.55,0.345252
+985,est gene trees (800L),CASTLES,16,35.23,0.180392
+986,est gene trees (800L),ERaBLE,16,5.8,0.17932
+987,est gene trees (800L),FastME(AVG),16,0.03,0.001576
+988,est gene trees (800L),FastME(MIN),16,0.05,0.001576
+989,est gene trees (800L),Concat+RAxML,16,645.13,6.801856
+990,est gene trees (800L),Patristic(AVG),16,87.0,0.328428
+991,est gene trees (800L),Patristic(MIN),16,89.31,0.332976
+992,est gene trees (800L),Patristic(ALL),16,368.8,0.343516
+993,est gene trees (800L),ASTER,16,35.63,0.262156
+994,est gene trees (800L),CASTLES+ASTER,16,70.86,0.262156
+995,est gene trees (800L),Patristic(AVG)+FastME(AVG),16,87.03,0.328428
+996,est gene trees (800L),Patristic(MIN)+FastME(MIN),16,89.36,0.332976
+997,est gene trees (800L),Patristic(ALL)+ERaBLE,16,374.6,0.343516
+998,est gene trees (400L),CASTLES,16,35.34,0.177524
+999,est gene trees (400L),ERaBLE,16,5.79,0.179328
+1000,est gene trees (400L),FastME(AVG),16,0.04,0.001576
+1001,est gene trees (400L),FastME(MIN),16,0.04,0.001576
+1002,est gene trees (400L),Concat+RAxML,16,122.78,3.452812
+1003,est gene trees (400L),Patristic(AVG),16,87.48,0.327384
+1004,est gene trees (400L),Patristic(MIN),16,97.16,0.325852
+1005,est gene trees (400L),Patristic(ALL),16,368.92,0.342168
+1006,est gene trees (400L),ASTER,16,32.78,0.262128
+1007,est gene trees (400L),CASTLES+ASTER,16,68.12,0.262128
+1008,est gene trees (400L),Patristic(AVG)+FastME(AVG),16,87.52000000000001,0.327384
+1009,est gene trees (400L),Patristic(MIN)+FastME(MIN),16,97.2,0.325852
+1010,est gene trees (400L),Patristic(ALL)+ERaBLE,16,374.71000000000004,0.342168
+1011,est gene trees (200L),CASTLES,16,35.26,0.171104
+1012,est gene trees (200L),ERaBLE,16,5.97,0.179336
+1013,est gene trees (200L),FastME(AVG),16,0.04,0.001576
+1014,est gene trees (200L),FastME(MIN),16,0.05,0.001576
+1015,est gene trees (200L),Concat+RAxML,16,55.42,1.750228
+1016,est gene trees (200L),Patristic(AVG),16,85.64,0.32602
+1017,est gene trees (200L),Patristic(MIN),16,91.88,0.326424
+1018,est gene trees (200L),Patristic(ALL),16,368.8,0.345024
+1019,est gene trees (200L),ASTER,16,32.96,0.260656
+1020,est gene trees (200L),CASTLES+ASTER,16,68.22,0.260656
+1021,est gene trees (200L),Patristic(AVG)+FastME(AVG),16,85.68,0.32602
+1022,est gene trees (200L),Patristic(MIN)+FastME(MIN),16,91.92999999999999,0.326424
+1023,est gene trees (200L),Patristic(ALL)+ERaBLE,16,374.77000000000004,0.345024
+1024,true gene trees,CASTLES,17,14.91,0.168688
+1025,true gene trees,ERaBLE,17,6.03,0.17934
+1026,true gene trees,FastME(AVG),17,0.03,0.00158
+1027,true gene trees,FastME(MIN),17,0.06,0.001576
+1028,true gene trees,Patristic(AVG),17,84.87,0.323348
+1029,true gene trees,Patristic(MIN),17,88.02,0.322968
+1030,true gene trees,Patristic(ALL),17,369.28,0.341432
+1031,true gene trees,ASTER,17,18.83,0.261756
+1032,true gene trees,CASTLES+ASTER,17,33.739999999999995,0.261756
+1033,true gene trees,Patristic(AVG)+FastME(AVG),17,84.9,0.323348
+1034,true gene trees,Patristic(MIN)+FastME(MIN),17,88.08,0.322968
+1035,true gene trees,Patristic(ALL)+ERaBLE,17,375.30999999999995,0.341432
+1036,est gene trees (1600L),CASTLES,17,15.36,0.180988
+1037,est gene trees (1600L),ERaBLE,17,5.87,0.179336
+1038,est gene trees (1600L),FastME(AVG),17,0.06,0.001576
+1039,est gene trees (1600L),FastME(MIN),17,0.07,0.001576
+1040,est gene trees (1600L),Concat+RAxML,17,459.59000000000003,6.480696
+1041,est gene trees (1600L),Patristic(AVG),17,88.23,0.327764
+1042,est gene trees (1600L),Patristic(MIN),17,95.4,0.327912
+1043,est gene trees (1600L),Patristic(ALL),17,368.83,0.346308
+1044,est gene trees (1600L),ASTER,17,26.63,0.262168
+1045,est gene trees (1600L),CASTLES+ASTER,17,41.989999999999995,0.262168
+1046,est gene trees (1600L),Patristic(AVG)+FastME(AVG),17,88.29,0.327764
+1047,est gene trees (1600L),Patristic(MIN)+FastME(MIN),17,95.47,0.327912
+1048,est gene trees (1600L),Patristic(ALL)+ERaBLE,17,374.7,0.346308
+1049,est gene trees (800L),CASTLES,17,15.39,0.18
+1050,est gene trees (800L),ERaBLE,17,5.75,0.17932
+1051,est gene trees (800L),FastME(AVG),17,0.06,0.001584
+1052,est gene trees (800L),FastME(MIN),17,0.12,0.00158
+1053,est gene trees (800L),Concat+RAxML,17,141.09,3.400604
+1054,est gene trees (800L),Patristic(AVG),17,86.15,0.326488
+1055,est gene trees (800L),Patristic(MIN),17,92.78999999999999,0.32846
+1056,est gene trees (800L),Patristic(ALL),17,368.87,0.344332
+1057,est gene trees (800L),ASTER,17,26.02,0.262132
+1058,est gene trees (800L),CASTLES+ASTER,17,41.41,0.262132
+1059,est gene trees (800L),Patristic(AVG)+FastME(AVG),17,86.21000000000001,0.326488
+1060,est gene trees (800L),Patristic(MIN)+FastME(MIN),17,92.91,0.32846
+1061,est gene trees (800L),Patristic(ALL)+ERaBLE,17,374.62,0.344332
+1062,est gene trees (400L),CASTLES,17,15.26,0.173772
+1063,est gene trees (400L),ERaBLE,17,5.94,0.179248
+1064,est gene trees (400L),FastME(AVG),17,0.05,0.00158
+1065,est gene trees (400L),FastME(MIN),17,0.13,0.00158
+1066,est gene trees (400L),Concat+RAxML,17,117.49000000000001,1.777392
+1067,est gene trees (400L),Patristic(AVG),17,91.5,0.32574
+1068,est gene trees (400L),Patristic(MIN),17,91.4,0.326568
+1069,est gene trees (400L),Patristic(ALL),17,368.77,0.343128
+1070,est gene trees (400L),ASTER,17,26.93,0.26064
+1071,est gene trees (400L),CASTLES+ASTER,17,42.19,0.26064
+1072,est gene trees (400L),Patristic(AVG)+FastME(AVG),17,91.55,0.32574
+1073,est gene trees (400L),Patristic(MIN)+FastME(MIN),17,91.53,0.326568
+1074,est gene trees (400L),Patristic(ALL)+ERaBLE,17,374.71,0.343128
+1075,est gene trees (200L),CASTLES,17,14.86,0.165448
+1076,est gene trees (200L),ERaBLE,17,5.54,0.179136
+1077,est gene trees (200L),FastME(AVG),17,0.06,0.00158
+1078,est gene trees (200L),FastME(MIN),17,0.83,0.001576
+1079,est gene trees (200L),Concat+RAxML,17,21.38,0.921404
+1080,est gene trees (200L),Patristic(AVG),17,87.28999999999999,0.323028
+1081,est gene trees (200L),Patristic(MIN),17,88.18,0.323144
+1082,est gene trees (200L),Patristic(ALL),17,368.93,0.339364
+1083,est gene trees (200L),ASTER,17,27.58,0.2621
+1084,est gene trees (200L),CASTLES+ASTER,17,42.44,0.2621
+1085,est gene trees (200L),Patristic(AVG)+FastME(AVG),17,87.35,0.323028
+1086,est gene trees (200L),Patristic(MIN)+FastME(MIN),17,89.01,0.323144
+1087,est gene trees (200L),Patristic(ALL)+ERaBLE,17,374.47,0.339364
+1088,true gene trees,CASTLES,18,13.49,0.169072
+1089,true gene trees,ERaBLE,18,6.42,0.17934
+1090,true gene trees,FastME(AVG),18,0.03,0.001576
+1091,true gene trees,FastME(MIN),18,0.06,0.001576
+1092,true gene trees,Patristic(AVG),18,86.03,0.325532
+1093,true gene trees,Patristic(MIN),18,89.26,0.326224
+1094,true gene trees,Patristic(ALL),18,99.87,0.339212
+1095,true gene trees,ASTER,18,21.71,0.26032
+1096,true gene trees,CASTLES+ASTER,18,35.2,0.26032
+1097,true gene trees,Patristic(AVG)+FastME(AVG),18,86.06,0.325532
+1098,true gene trees,Patristic(MIN)+FastME(MIN),18,89.32000000000001,0.326224
+1099,true gene trees,Patristic(ALL)+ERaBLE,18,106.29,0.339212
+1100,est gene trees (1600L),CASTLES,18,15.25,0.180668
+1101,est gene trees (1600L),ERaBLE,18,6.38,0.17934
+1102,est gene trees (1600L),FastME(AVG),18,0.05,0.001584
+1103,est gene trees (1600L),FastME(MIN),18,0.05,0.00158
+1104,est gene trees (1600L),Concat+RAxML,18,2400.52,12.420648
+1105,est gene trees (1600L),Patristic(AVG),18,87.22,0.32692
+1106,est gene trees (1600L),Patristic(MIN),18,89.51,0.328504
+1107,est gene trees (1600L),Patristic(ALL),18,110.74000000000001,0.344348
+1108,est gene trees (1600L),ASTER,18,26.56,0.262176
+1109,est gene trees (1600L),CASTLES+ASTER,18,41.81,0.262176
+1110,est gene trees (1600L),Patristic(AVG)+FastME(AVG),18,87.27,0.32692
+1111,est gene trees (1600L),Patristic(MIN)+FastME(MIN),18,89.56,0.328504
+1112,est gene trees (1600L),Patristic(ALL)+ERaBLE,18,117.12,0.344348
+1113,est gene trees (800L),CASTLES,18,14.88,0.180264
+1114,est gene trees (800L),ERaBLE,18,6.06,0.179336
+1115,est gene trees (800L),FastME(AVG),18,0.02,0.001576
+1116,est gene trees (800L),FastME(MIN),18,0.04,0.00158
+1117,est gene trees (800L),Concat+RAxML,18,440.82,6.339392
+1118,est gene trees (800L),Patristic(AVG),18,86.05,0.32716
+1119,est gene trees (800L),Patristic(MIN),18,90.05,0.330356
+1120,est gene trees (800L),Patristic(ALL),18,103.55,0.343864
+1121,est gene trees (800L),ASTER,18,26.18,0.262164
+1122,est gene trees (800L),CASTLES+ASTER,18,41.06,0.262164
+1123,est gene trees (800L),Patristic(AVG)+FastME(AVG),18,86.07,0.32716
+1124,est gene trees (800L),Patristic(MIN)+FastME(MIN),18,90.09,0.330356
+1125,est gene trees (800L),Patristic(ALL)+ERaBLE,18,109.61,0.343864
+1126,est gene trees (400L),CASTLES,18,15.14,0.179796
+1127,est gene trees (400L),ERaBLE,18,5.62,0.179352
+1128,est gene trees (400L),FastME(AVG),18,0.06,0.001584
+1129,est gene trees (400L),FastME(MIN),18,0.1,0.00158
+1130,est gene trees (400L),Concat+RAxML,18,96.62,3.22804
+1131,est gene trees (400L),Patristic(AVG),18,93.96000000000001,0.32778
+1132,est gene trees (400L),Patristic(MIN),18,89.06,0.327592
+1133,est gene trees (400L),Patristic(ALL),18,101.53999999999999,0.344216
+1134,est gene trees (400L),ASTER,18,26.4,0.262144
+1135,est gene trees (400L),CASTLES+ASTER,18,41.54,0.262144
+1136,est gene trees (400L),Patristic(AVG)+FastME(AVG),18,94.02000000000001,0.32778
+1137,est gene trees (400L),Patristic(MIN)+FastME(MIN),18,89.16,0.327592
+1138,est gene trees (400L),Patristic(ALL)+ERaBLE,18,107.16,0.344216
+1139,est gene trees (200L),CASTLES,18,15.14,0.179744
+1140,est gene trees (200L),ERaBLE,18,5.98,0.17934
+1141,est gene trees (200L),FastME(AVG),18,0.06,0.00158
+1142,est gene trees (200L),FastME(MIN),18,0.12,0.00158
+1143,est gene trees (200L),Concat+RAxML,18,151.18,1.637604
+1144,est gene trees (200L),Patristic(AVG),18,85.03,0.32648
+1145,est gene trees (200L),Patristic(MIN),18,100.94,0.326776
+1146,est gene trees (200L),Patristic(ALL),18,104.1,0.343664
+1147,est gene trees (200L),ASTER,18,27.68,0.262112
+1148,est gene trees (200L),CASTLES+ASTER,18,42.82,0.262112
+1149,est gene trees (200L),Patristic(AVG)+FastME(AVG),18,85.09,0.32648
+1150,est gene trees (200L),Patristic(MIN)+FastME(MIN),18,101.06,0.326776
+1151,est gene trees (200L),Patristic(ALL)+ERaBLE,18,110.08,0.343664
+1152,true gene trees,CASTLES,19,15.2,0.161688
+1153,true gene trees,ERaBLE,19,6.51,0.179332
+1154,true gene trees,FastME(AVG),19,0.07,0.00158
+1155,true gene trees,FastME(MIN),19,0.02,0.00158
+1156,true gene trees,Patristic(AVG),19,88.06,0.322664
+1157,true gene trees,Patristic(MIN),19,84.95,0.321864
+1158,true gene trees,Patristic(ALL),19,105.38,0.339996
+1159,true gene trees,ASTER,19,20.42,0.26176
+1160,true gene trees,CASTLES+ASTER,19,35.620000000000005,0.26176
+1161,true gene trees,Patristic(AVG)+FastME(AVG),19,88.13,0.322664
+1162,true gene trees,Patristic(MIN)+FastME(MIN),19,84.97,0.321864
+1163,true gene trees,Patristic(ALL)+ERaBLE,19,111.89,0.339996
+1164,est gene trees (1600L),CASTLES,19,16.25,0.174612
+1165,est gene trees (1600L),ERaBLE,19,6.61,0.17934
+1166,est gene trees (1600L),FastME(AVG),19,0.09,0.001576
+1167,est gene trees (1600L),FastME(MIN),19,0.04,0.00158
+1168,est gene trees (1600L),Concat+RAxML,19,776.44,5.692796
+1169,est gene trees (1600L),Patristic(AVG),19,85.45,0.331668
+1170,est gene trees (1600L),Patristic(MIN),19,89.65,0.327088
+1171,est gene trees (1600L),Patristic(ALL),19,109.24000000000001,0.344464
+1172,est gene trees (1600L),ASTER,19,26.66,0.262152
+1173,est gene trees (1600L),CASTLES+ASTER,19,42.91,0.262152
+1174,est gene trees (1600L),Patristic(AVG)+FastME(AVG),19,85.54,0.331668
+1175,est gene trees (1600L),Patristic(MIN)+FastME(MIN),19,89.69000000000001,0.327088
+1176,est gene trees (1600L),Patristic(ALL)+ERaBLE,19,115.85000000000001,0.344464
+1177,est gene trees (800L),CASTLES,19,15.97,0.172492
+1178,est gene trees (800L),ERaBLE,19,6.61,0.179336
+1179,est gene trees (800L),FastME(AVG),19,0.07,0.00158
+1180,est gene trees (800L),FastME(MIN),19,0.16,0.001576
+1181,est gene trees (800L),Concat+RAxML,19,96.50999999999999,2.993744
+1182,est gene trees (800L),Patristic(AVG),19,93.03,0.325652
+1183,est gene trees (800L),Patristic(MIN),19,84.91,0.326636
+1184,est gene trees (800L),Patristic(ALL),19,104.39,0.342752
+1185,est gene trees (800L),ASTER,19,27.62,0.262104
+1186,est gene trees (800L),CASTLES+ASTER,19,43.59,0.262104
+1187,est gene trees (800L),Patristic(AVG)+FastME(AVG),19,93.1,0.325652
+1188,est gene trees (800L),Patristic(MIN)+FastME(MIN),19,85.07,0.326636
+1189,est gene trees (800L),Patristic(ALL)+ERaBLE,19,111.0,0.342752
+1190,est gene trees (400L),CASTLES,19,15.7,0.16428
+1191,est gene trees (400L),ERaBLE,19,6.79,0.179336
+1192,est gene trees (400L),FastME(AVG),19,0.07,0.00158
+1193,est gene trees (400L),FastME(MIN),19,7.34,0.00158
+1194,est gene trees (400L),Concat+RAxML,19,46.09,1.560356
+1195,est gene trees (400L),Patristic(AVG),19,85.44,0.324272
+1196,est gene trees (400L),Patristic(MIN),19,90.84,0.324332
+1197,est gene trees (400L),Patristic(ALL),19,100.72,0.339848
+1198,est gene trees (400L),ASTER,19,38.22,0.262
+1199,est gene trees (400L),CASTLES+ASTER,19,53.92,0.262
+1200,est gene trees (400L),Patristic(AVG)+FastME(AVG),19,85.50999999999999,0.324272
+1201,est gene trees (400L),Patristic(MIN)+FastME(MIN),19,98.18,0.324332
+1202,est gene trees (400L),Patristic(ALL)+ERaBLE,19,107.51,0.339848
+1203,est gene trees (200L),CASTLES,19,15.1,0.158852
+1204,est gene trees (200L),ERaBLE,19,6.71,0.179336
+1205,est gene trees (200L),FastME(AVG),19,0.08,0.00158
+1206,est gene trees (200L),FastME(MIN),19,208.0,0.00158
+1207,est gene trees (200L),Concat+RAxML,19,46.05,0.810856
+1208,est gene trees (200L),Patristic(AVG),19,88.38,0.316472
+1209,est gene trees (200L),Patristic(MIN),19,92.38,0.316592
+1210,est gene trees (200L),Patristic(ALL),19,101.43,0.332796
+1211,est gene trees (200L),ASTER,19,30.25,0.261784
+1212,est gene trees (200L),CASTLES+ASTER,19,45.35,0.261784
+1213,est gene trees (200L),Patristic(AVG)+FastME(AVG),19,88.46,0.316472
+1214,est gene trees (200L),Patristic(MIN)+FastME(MIN),19,300.38,0.316592
+1215,est gene trees (200L),Patristic(ALL)+ERaBLE,19,108.14,0.332796
+1216,true gene trees,CASTLES,20,14.71,0.16794
+1217,true gene trees,ERaBLE,20,5.74,0.179356
+1218,true gene trees,FastME(AVG),20,0.03,0.001576
+1219,true gene trees,FastME(MIN),20,0.04,0.001576
+1220,true gene trees,Patristic(AVG),20,84.51,0.3227
+1221,true gene trees,Patristic(MIN),20,86.72,0.324932
+1222,true gene trees,Patristic(ALL),20,101.03,0.339488
+1223,true gene trees,ASTER,20,20.36,0.26176
+1224,true gene trees,CASTLES+ASTER,20,35.07,0.26176
+1225,true gene trees,Patristic(AVG)+FastME(AVG),20,84.54,0.3227
+1226,true gene trees,Patristic(MIN)+FastME(MIN),20,86.76,0.324932
+1227,true gene trees,Patristic(ALL)+ERaBLE,20,106.77,0.339488
+1228,est gene trees (1600L),CASTLES,20,16.34,0.184688
+1229,est gene trees (1600L),ERaBLE,20,6.31,0.17934
+1230,est gene trees (1600L),FastME(AVG),20,0.06,0.00158
+1231,est gene trees (1600L),FastME(MIN),20,0.03,0.00158
+1232,est gene trees (1600L),Concat+RAxML,20,2062.27,11.535248
+1233,est gene trees (1600L),Patristic(AVG),20,90.95,0.328452
+1234,est gene trees (1600L),Patristic(MIN),20,89.42,0.330476
+1235,est gene trees (1600L),Patristic(ALL),20,105.7,0.346844
+1236,est gene trees (1600L),ASTER,20,27.89,0.262176
+1237,est gene trees (1600L),CASTLES+ASTER,20,44.230000000000004,0.262176
+1238,est gene trees (1600L),Patristic(AVG)+FastME(AVG),20,91.01,0.328452
+1239,est gene trees (1600L),Patristic(MIN)+FastME(MIN),20,89.45,0.330476
+1240,est gene trees (1600L),Patristic(ALL)+ERaBLE,20,112.01,0.346844
+1241,est gene trees (800L),CASTLES,20,15.93,0.180172
+1242,est gene trees (800L),ERaBLE,20,5.51,0.179172
+1243,est gene trees (800L),FastME(AVG),20,0.04,0.001576
+1244,est gene trees (800L),FastME(MIN),20,0.03,0.00158
+1245,est gene trees (800L),Concat+RAxML,20,451.57,5.89854
+1246,est gene trees (800L),Patristic(AVG),20,92.2,0.327956
+1247,est gene trees (800L),Patristic(MIN),20,92.22999999999999,0.3276
+1248,est gene trees (800L),Patristic(ALL),20,104.87,0.343424
+1249,est gene trees (800L),ASTER,20,28.3,0.262152
+1250,est gene trees (800L),CASTLES+ASTER,20,44.230000000000004,0.262152
+1251,est gene trees (800L),Patristic(AVG)+FastME(AVG),20,92.24000000000001,0.327956
+1252,est gene trees (800L),Patristic(MIN)+FastME(MIN),20,92.25999999999999,0.3276
+1253,est gene trees (800L),Patristic(ALL)+ERaBLE,20,110.38000000000001,0.343424
+1254,est gene trees (400L),CASTLES,20,16.04,0.179932
+1255,est gene trees (400L),ERaBLE,20,5.8,0.179328
+1256,est gene trees (400L),FastME(AVG),20,0.05,0.00158
+1257,est gene trees (400L),FastME(MIN),20,0.06,0.00158
+1258,est gene trees (400L),Concat+RAxML,20,181.62,3.010784
+1259,est gene trees (400L),Patristic(AVG),20,87.2,0.327964
+1260,est gene trees (400L),Patristic(MIN),20,87.3,0.32916
+1261,est gene trees (400L),Patristic(ALL),20,111.41,0.343388
+1262,est gene trees (400L),ASTER,20,37.98,0.262128
+1263,est gene trees (400L),CASTLES+ASTER,20,54.019999999999996,0.262128
+1264,est gene trees (400L),Patristic(AVG)+FastME(AVG),20,87.25,0.327964
+1265,est gene trees (400L),Patristic(MIN)+FastME(MIN),20,87.36,0.32916
+1266,est gene trees (400L),Patristic(ALL)+ERaBLE,20,117.21,0.343388
+1267,est gene trees (200L),CASTLES,20,16.25,0.1664
+1268,est gene trees (200L),ERaBLE,20,6.2,0.179344
+1269,est gene trees (200L),FastME(AVG),20,0.05,0.001576
+1270,est gene trees (200L),FastME(MIN),20,0.46,0.00158
+1271,est gene trees (200L),Concat+RAxML,20,222.0,1.531592
+1272,est gene trees (200L),Patristic(AVG),20,88.65,0.325296
+1273,est gene trees (200L),Patristic(MIN),20,86.57,0.327176
+1274,est gene trees (200L),Patristic(ALL),20,101.1,0.343504
+1275,est gene trees (200L),ASTER,20,29.32,0.262096
+1276,est gene trees (200L),CASTLES+ASTER,20,45.57,0.262096
+1277,est gene trees (200L),Patristic(AVG)+FastME(AVG),20,88.7,0.325296
+1278,est gene trees (200L),Patristic(MIN)+FastME(MIN),20,87.02999999999999,0.327176
+1279,est gene trees (200L),Patristic(ALL)+ERaBLE,20,107.3,0.343504
+1280,true gene trees,CASTLES,21,15.83,0.160416
+1281,true gene trees,ERaBLE,21,6.27,0.179344
+1282,true gene trees,FastME(AVG),21,0.05,0.001576
+1283,true gene trees,FastME(MIN),21,0.06,0.001572
+1284,true gene trees,Patristic(AVG),21,86.16,0.323632
+1285,true gene trees,Patristic(MIN),21,88.97,0.323044
+1286,true gene trees,Patristic(ALL),21,102.41,0.340056
+1287,true gene trees,ASTER,21,27.46,0.261768
+1288,true gene trees,CASTLES+ASTER,21,43.29,0.261768
+1289,true gene trees,Patristic(AVG)+FastME(AVG),21,86.21,0.323632
+1290,true gene trees,Patristic(MIN)+FastME(MIN),21,89.03,0.323044
+1291,true gene trees,Patristic(ALL)+ERaBLE,21,108.67999999999999,0.340056
+1292,est gene trees (1600L),CASTLES,21,17.32,0.179624
+1293,est gene trees (1600L),ERaBLE,21,6.04,0.179344
+1294,est gene trees (1600L),FastME(AVG),21,0.03,0.001572
+1295,est gene trees (1600L),FastME(MIN),21,0.05,0.001492
+1296,est gene trees (1600L),Concat+RAxML,21,1350.38,8.100732
+1297,est gene trees (1600L),Patristic(AVG),21,87.58,0.329512
+1298,est gene trees (1600L),Patristic(MIN),21,84.78,0.3268
+1299,est gene trees (1600L),Patristic(ALL),21,102.9,0.343296
+1300,est gene trees (1600L),ASTER,21,34.22,0.262144
+1301,est gene trees (1600L),CASTLES+ASTER,21,51.54,0.262144
+1302,est gene trees (1600L),Patristic(AVG)+FastME(AVG),21,87.61,0.329512
+1303,est gene trees (1600L),Patristic(MIN)+FastME(MIN),21,84.83,0.3268
+1304,est gene trees (1600L),Patristic(ALL)+ERaBLE,21,108.94000000000001,0.343296
+1305,est gene trees (800L),CASTLES,21,17.39,0.171224
+1306,est gene trees (800L),ERaBLE,21,6.45,0.17934
+1307,est gene trees (800L),FastME(AVG),21,0.05,0.001572
+1308,est gene trees (800L),FastME(MIN),21,0.05,0.001576
+1309,est gene trees (800L),Concat+RAxML,21,124.82,4.219688
+1310,est gene trees (800L),Patristic(AVG),21,92.55,0.329204
+1311,est gene trees (800L),Patristic(MIN),21,90.67,0.326464
+1312,est gene trees (800L),Patristic(ALL),21,103.62,0.345164
+1313,est gene trees (800L),ASTER,21,33.79,0.262112
+1314,est gene trees (800L),CASTLES+ASTER,21,51.18,0.262112
+1315,est gene trees (800L),Patristic(AVG)+FastME(AVG),21,92.6,0.329204
+1316,est gene trees (800L),Patristic(MIN)+FastME(MIN),21,90.72,0.326464
+1317,est gene trees (800L),Patristic(ALL)+ERaBLE,21,110.07000000000001,0.345164
+1318,est gene trees (400L),CASTLES,21,17.12,0.166748
+1319,est gene trees (400L),ERaBLE,21,6.08,0.179344
+1320,est gene trees (400L),FastME(AVG),21,0.03,0.001576
+1321,est gene trees (400L),FastME(MIN),21,0.04,0.001576
+1322,est gene trees (400L),Concat+RAxML,21,89.63,2.195148
+1323,est gene trees (400L),Patristic(AVG),21,87.56,0.325232
+1324,est gene trees (400L),Patristic(MIN),21,85.1,0.324448
+1325,est gene trees (400L),Patristic(ALL),21,110.89,0.341284
+1326,est gene trees (400L),ASTER,21,34.5,0.260604
+1327,est gene trees (400L),CASTLES+ASTER,21,51.620000000000005,0.260604
+1328,est gene trees (400L),Patristic(AVG)+FastME(AVG),21,87.59,0.325232
+1329,est gene trees (400L),Patristic(MIN)+FastME(MIN),21,85.14,0.324448
+1330,est gene trees (400L),Patristic(ALL)+ERaBLE,21,116.97,0.341284
+1331,est gene trees (200L),CASTLES,21,16.64,0.160648
+1332,est gene trees (200L),ERaBLE,21,6.32,0.179344
+1333,est gene trees (200L),FastME(AVG),21,0.04,0.001576
+1334,est gene trees (200L),FastME(MIN),21,0.03,0.001572
+1335,est gene trees (200L),Concat+RAxML,21,30.97,1.138816
+1336,est gene trees (200L),Patristic(AVG),21,86.01,0.327772
+1337,est gene trees (200L),Patristic(MIN),21,91.05,0.322632
+1338,est gene trees (200L),Patristic(ALL),21,106.41,0.33714
+1339,est gene trees (200L),ASTER,21,34.79,0.261888
+1340,est gene trees (200L),CASTLES+ASTER,21,51.43,0.261888
+1341,est gene trees (200L),Patristic(AVG)+FastME(AVG),21,86.05000000000001,0.327772
+1342,est gene trees (200L),Patristic(MIN)+FastME(MIN),21,91.08,0.322632
+1343,est gene trees (200L),Patristic(ALL)+ERaBLE,21,112.72999999999999,0.33714
+1344,true gene trees,CASTLES,22,13.32,0.160472
+1345,true gene trees,ERaBLE,22,6.41,0.17934
+1346,true gene trees,FastME(AVG),22,0.06,0.001576
+1347,true gene trees,FastME(MIN),22,0.04,0.00158
+1348,true gene trees,Patristic(AVG),22,86.61,0.323168
+1349,true gene trees,Patristic(MIN),22,87.63,0.321692
+1350,true gene trees,Patristic(ALL),22,110.59,0.339892
+1351,true gene trees,ASTER,22,18.79,0.261756
+1352,true gene trees,CASTLES+ASTER,22,32.11,0.261756
+1353,true gene trees,Patristic(AVG)+FastME(AVG),22,86.67,0.323168
+1354,true gene trees,Patristic(MIN)+FastME(MIN),22,87.67,0.321692
+1355,true gene trees,Patristic(ALL)+ERaBLE,22,117.0,0.339892
+1356,est gene trees (1600L),CASTLES,22,15.08,0.18
+1357,est gene trees (1600L),ERaBLE,22,6.29,0.179344
+1358,est gene trees (1600L),FastME(AVG),22,0.05,0.00158
+1359,est gene trees (1600L),FastME(MIN),22,0.05,0.00158
+1360,est gene trees (1600L),Concat+RAxML,22,1323.51,7.790192
+1361,est gene trees (1600L),Patristic(AVG),22,89.53999999999999,0.327476
+1362,est gene trees (1600L),Patristic(MIN),22,84.82,0.327424
+1363,est gene trees (1600L),Patristic(ALL),22,104.17,0.34432
+1364,est gene trees (1600L),ASTER,22,26.62,0.260724
+1365,est gene trees (1600L),CASTLES+ASTER,22,41.7,0.260724
+1366,est gene trees (1600L),Patristic(AVG)+FastME(AVG),22,89.58999999999999,0.327476
+1367,est gene trees (1600L),Patristic(MIN)+FastME(MIN),22,84.86999999999999,0.327424
+1368,est gene trees (1600L),Patristic(ALL)+ERaBLE,22,110.46000000000001,0.34432
+1369,est gene trees (800L),CASTLES,22,14.15,0.170224
+1370,est gene trees (800L),ERaBLE,22,5.88,0.17934
+1371,est gene trees (800L),FastME(AVG),22,0.04,0.00158
+1372,est gene trees (800L),FastME(MIN),22,0.04,0.00158
+1373,est gene trees (800L),Concat+RAxML,22,290.64,4.04106
+1374,est gene trees (800L),Patristic(AVG),22,85.43,0.325952
+1375,est gene trees (800L),Patristic(MIN),22,91.69,0.326308
+1376,est gene trees (800L),Patristic(ALL),22,104.78,0.342336
+1377,est gene trees (800L),ASTER,22,26.51,0.26212
+1378,est gene trees (800L),CASTLES+ASTER,22,40.660000000000004,0.26212
+1379,est gene trees (800L),Patristic(AVG)+FastME(AVG),22,85.47000000000001,0.325952
+1380,est gene trees (800L),Patristic(MIN)+FastME(MIN),22,91.73,0.326308
+1381,est gene trees (800L),Patristic(ALL)+ERaBLE,22,110.66,0.342336
+1382,est gene trees (400L),CASTLES,22,14.31,0.166108
+1383,est gene trees (400L),ERaBLE,22,6.46,0.17934
+1384,est gene trees (400L),FastME(AVG),22,0.04,0.001576
+1385,est gene trees (400L),FastME(MIN),22,0.47,0.00158
+1386,est gene trees (400L),Concat+RAxML,22,142.39,2.091384
+1387,est gene trees (400L),Patristic(AVG),22,91.35,0.325404
+1388,est gene trees (400L),Patristic(MIN),22,84.38,0.330296
+1389,est gene trees (400L),Patristic(ALL),22,102.85,0.340924
+1390,est gene trees (400L),ASTER,22,27.23,0.260612
+1391,est gene trees (400L),CASTLES+ASTER,22,41.54,0.260612
+1392,est gene trees (400L),Patristic(AVG)+FastME(AVG),22,91.39,0.325404
+1393,est gene trees (400L),Patristic(MIN)+FastME(MIN),22,84.85,0.330296
+1394,est gene trees (400L),Patristic(ALL)+ERaBLE,22,109.30999999999999,0.340924
+1395,est gene trees (200L),CASTLES,22,13.84,0.161072
+1396,est gene trees (200L),ERaBLE,22,6.23,0.179344
+1397,est gene trees (200L),FastME(AVG),22,0.06,0.00158
+1398,est gene trees (200L),FastME(MIN),22,71.58,0.00158
+1399,est gene trees (200L),Concat+RAxML,22,117.91,1.078428
+1400,est gene trees (200L),Patristic(AVG),22,84.73,0.321072
+1401,est gene trees (200L),Patristic(MIN),22,89.06,0.32096
+1402,est gene trees (200L),Patristic(ALL),22,103.72,0.336988
+1403,est gene trees (200L),ASTER,22,29.07,0.261904
+1404,est gene trees (200L),CASTLES+ASTER,22,42.91,0.261904
+1405,est gene trees (200L),Patristic(AVG)+FastME(AVG),22,84.79,0.321072
+1406,est gene trees (200L),Patristic(MIN)+FastME(MIN),22,160.64,0.32096
+1407,est gene trees (200L),Patristic(ALL)+ERaBLE,22,109.95,0.336988
+1408,true gene trees,CASTLES,23,13.29,0.170208
+1409,true gene trees,ERaBLE,23,6.29,0.17934
+1410,true gene trees,FastME(AVG),23,0.04,0.001572
+1411,true gene trees,FastME(MIN),23,0.05,0.001576
+1412,true gene trees,Patristic(AVG),23,83.81,0.322412
+1413,true gene trees,Patristic(MIN),23,87.96000000000001,0.324428
+1414,true gene trees,Patristic(ALL),23,102.28999999999999,0.338932
+1415,true gene trees,ASTER,23,17.67,0.261752
+1416,true gene trees,CASTLES+ASTER,23,30.96,0.261752
+1417,true gene trees,Patristic(AVG)+FastME(AVG),23,83.85000000000001,0.322412
+1418,true gene trees,Patristic(MIN)+FastME(MIN),23,88.01,0.324428
+1419,true gene trees,Patristic(ALL)+ERaBLE,23,108.58,0.338932
+1420,est gene trees (1600L),CASTLES,23,14.89,0.180516
+1421,est gene trees (1600L),ERaBLE,23,6.3,0.17934
+1422,est gene trees (1600L),FastME(AVG),23,0.04,0.001572
+1423,est gene trees (1600L),FastME(MIN),23,0.06,0.001576
+1424,est gene trees (1600L),Concat+RAxML,23,1797.22,10.48182
+1425,est gene trees (1600L),Patristic(AVG),23,88.3,0.332932
+1426,est gene trees (1600L),Patristic(MIN),23,86.4,0.328308
+1427,est gene trees (1600L),Patristic(ALL),23,103.22999999999999,0.34356
+1428,est gene trees (1600L),ASTER,23,27.74,0.262176
+1429,est gene trees (1600L),CASTLES+ASTER,23,42.629999999999995,0.262176
+1430,est gene trees (1600L),Patristic(AVG)+FastME(AVG),23,88.34,0.332932
+1431,est gene trees (1600L),Patristic(MIN)+FastME(MIN),23,86.46000000000001,0.328308
+1432,est gene trees (1600L),Patristic(ALL)+ERaBLE,23,109.52999999999999,0.34356
+1433,est gene trees (800L),CASTLES,23,14.85,0.181344
+1434,est gene trees (800L),ERaBLE,23,6.29,0.17934
+1435,est gene trees (800L),FastME(AVG),23,0.03,0.001576
+1436,est gene trees (800L),FastME(MIN),23,0.04,0.001576
+1437,est gene trees (800L),Concat+RAxML,23,387.91,5.384208
+1438,est gene trees (800L),Patristic(AVG),23,84.96000000000001,0.327268
+1439,est gene trees (800L),Patristic(MIN),23,96.08,0.326892
+1440,est gene trees (800L),Patristic(ALL),23,105.34,0.34524
+1441,est gene trees (800L),ASTER,23,23.68,0.262152
+1442,est gene trees (800L),CASTLES+ASTER,23,38.53,0.262152
+1443,est gene trees (800L),Patristic(AVG)+FastME(AVG),23,84.99000000000001,0.327268
+1444,est gene trees (800L),Patristic(MIN)+FastME(MIN),23,96.12,0.326892
+1445,est gene trees (800L),Patristic(ALL)+ERaBLE,23,111.63000000000001,0.34524
+1446,est gene trees (400L),CASTLES,23,14.07,0.179816
+1447,est gene trees (400L),ERaBLE,23,6.0,0.17934
+1448,est gene trees (400L),FastME(AVG),23,0.05,0.001492
+1449,est gene trees (400L),FastME(MIN),23,0.05,0.001572
+1450,est gene trees (400L),Concat+RAxML,23,151.37,2.766948
+1451,est gene trees (400L),Patristic(AVG),23,93.34,0.32622
+1452,est gene trees (400L),Patristic(MIN),23,85.02,0.327692
+1453,est gene trees (400L),Patristic(ALL),23,122.62,0.343976
+1454,est gene trees (400L),ASTER,23,23.9,0.260696
+1455,est gene trees (400L),CASTLES+ASTER,23,37.97,0.260696
+1456,est gene trees (400L),Patristic(AVG)+FastME(AVG),23,93.39,0.32622
+1457,est gene trees (400L),Patristic(MIN)+FastME(MIN),23,85.07,0.327692
+1458,est gene trees (400L),Patristic(ALL)+ERaBLE,23,128.62,0.343976
+1459,est gene trees (200L),CASTLES,23,14.12,0.170912
+1460,est gene trees (200L),ERaBLE,23,6.51,0.17934
+1461,est gene trees (200L),FastME(AVG),23,0.06,0.001576
+1462,est gene trees (200L),FastME(MIN),23,0.05,0.001572
+1463,est gene trees (200L),Concat+RAxML,23,148.56,1.41156
+1464,est gene trees (200L),Patristic(AVG),23,89.33,0.32734
+1465,est gene trees (200L),Patristic(MIN),23,88.14,0.327376
+1466,est gene trees (200L),Patristic(ALL),23,103.78,0.342804
+1467,est gene trees (200L),ASTER,23,25.4,0.262084
+1468,est gene trees (200L),CASTLES+ASTER,23,39.519999999999996,0.262084
+1469,est gene trees (200L),Patristic(AVG)+FastME(AVG),23,89.39,0.32734
+1470,est gene trees (200L),Patristic(MIN)+FastME(MIN),23,88.19,0.327376
+1471,est gene trees (200L),Patristic(ALL)+ERaBLE,23,110.29,0.342804
+1472,true gene trees,CASTLES,24,13.42,0.160828
+1473,true gene trees,ERaBLE,24,6.11,0.17934
+1474,true gene trees,FastME(AVG),24,0.03,0.001576
+1475,true gene trees,FastME(MIN),24,0.05,0.00158
+1476,true gene trees,Patristic(AVG),24,85.77,0.322596
+1477,true gene trees,Patristic(MIN),24,84.33,0.322828
+1478,true gene trees,Patristic(ALL),24,104.93,0.33816
+1479,true gene trees,ASTER,24,21.31,0.261756
+1480,true gene trees,CASTLES+ASTER,24,34.73,0.261756
+1481,true gene trees,Patristic(AVG)+FastME(AVG),24,85.8,0.322596
+1482,true gene trees,Patristic(MIN)+FastME(MIN),24,84.38,0.322828
+1483,true gene trees,Patristic(ALL)+ERaBLE,24,111.04,0.33816
+1484,est gene trees (1600L),CASTLES,24,14.35,0.17942
+1485,est gene trees (1600L),ERaBLE,24,6.27,0.179344
+1486,est gene trees (1600L),FastME(AVG),24,0.06,0.001576
+1487,est gene trees (1600L),FastME(MIN),24,0.13,0.00158
+1488,est gene trees (1600L),Concat+RAxML,24,2377.97,12.721852
+1489,est gene trees (1600L),Patristic(AVG),24,85.93,0.329652
+1490,est gene trees (1600L),Patristic(MIN),24,88.51,0.328496
+1491,est gene trees (1600L),Patristic(ALL),24,109.72,0.342944
+1492,est gene trees (1600L),ASTER,24,28.66,0.262172
+1493,est gene trees (1600L),CASTLES+ASTER,24,43.01,0.262172
+1494,est gene trees (1600L),Patristic(AVG)+FastME(AVG),24,85.99000000000001,0.329652
+1495,est gene trees (1600L),Patristic(MIN)+FastME(MIN),24,88.64,0.328496
+1496,est gene trees (1600L),Patristic(ALL)+ERaBLE,24,115.99,0.342944
+1497,est gene trees (800L),CASTLES,24,14.23,0.17742
+1498,est gene trees (800L),ERaBLE,24,6.11,0.179224
+1499,est gene trees (800L),FastME(AVG),24,0.04,0.00158
+1500,est gene trees (800L),FastME(MIN),24,0.13,0.00158
+1501,est gene trees (800L),Concat+RAxML,24,566.32,6.485928
+1502,est gene trees (800L),Patristic(AVG),24,95.37,0.330072
+1503,est gene trees (800L),Patristic(MIN),24,89.28,0.330136
+1504,est gene trees (800L),Patristic(ALL),24,101.87,0.348696
+1505,est gene trees (800L),ASTER,24,27.95,0.26072
+1506,est gene trees (800L),CASTLES+ASTER,24,42.18,0.26072
+1507,est gene trees (800L),Patristic(AVG)+FastME(AVG),24,95.41000000000001,0.330072
+1508,est gene trees (800L),Patristic(MIN)+FastME(MIN),24,89.41,0.330136
+1509,est gene trees (800L),Patristic(ALL)+ERaBLE,24,107.98,0.348696
+1510,est gene trees (400L),CASTLES,24,14.48,0.178892
+1511,est gene trees (400L),ERaBLE,24,6.22,0.179376
+1512,est gene trees (400L),FastME(AVG),24,0.07,0.00158
+1513,est gene trees (400L),FastME(MIN),24,0.13,0.00158
+1514,est gene trees (400L),Concat+RAxML,24,251.55,3.2999
+1515,est gene trees (400L),Patristic(AVG),24,89.36,0.327252
+1516,est gene trees (400L),Patristic(MIN),24,91.4,0.329788
+1517,est gene trees (400L),Patristic(ALL),24,104.17,0.345708
+1518,est gene trees (400L),ASTER,24,36.71,0.262128
+1519,est gene trees (400L),CASTLES+ASTER,24,51.19,0.262128
+1520,est gene trees (400L),Patristic(AVG)+FastME(AVG),24,89.42999999999999,0.327252
+1521,est gene trees (400L),Patristic(MIN)+FastME(MIN),24,91.53,0.329788
+1522,est gene trees (400L),Patristic(ALL)+ERaBLE,24,110.39,0.345708
+1523,est gene trees (200L),CASTLES,24,14.21,0.1796
+1524,est gene trees (200L),ERaBLE,24,6.3,0.17934
+1525,est gene trees (200L),FastME(AVG),24,0.04,0.001576
+1526,est gene trees (200L),FastME(MIN),24,0.19,0.00158
+1527,est gene trees (200L),Concat+RAxML,24,213.56,1.674096
+1528,est gene trees (200L),Patristic(AVG),24,89.28999999999999,0.326072
+1529,est gene trees (200L),Patristic(MIN),24,85.08,0.327044
+1530,est gene trees (200L),Patristic(ALL),24,102.75,0.342408
+1531,est gene trees (200L),ASTER,24,28.77,0.262096
+1532,est gene trees (200L),CASTLES+ASTER,24,42.980000000000004,0.262096
+1533,est gene trees (200L),Patristic(AVG)+FastME(AVG),24,89.33,0.326072
+1534,est gene trees (200L),Patristic(MIN)+FastME(MIN),24,85.27,0.327044
+1535,est gene trees (200L),Patristic(ALL)+ERaBLE,24,109.05,0.342408
+1536,true gene trees,CASTLES,25,13.35,0.16786
+1537,true gene trees,ERaBLE,25,6.25,0.179344
+1538,true gene trees,FastME(AVG),25,0.1,0.001496
+1539,true gene trees,FastME(MIN),25,0.08,0.00158
+1540,true gene trees,Patristic(AVG),25,87.46000000000001,0.322504
+1541,true gene trees,Patristic(MIN),25,84.31,0.32214
+1542,true gene trees,Patristic(ALL),25,103.88,0.33924
+1543,true gene trees,ASTER,25,22.09,0.261764
+1544,true gene trees,CASTLES+ASTER,25,35.44,0.261764
+1545,true gene trees,Patristic(AVG)+FastME(AVG),25,87.56,0.322504
+1546,true gene trees,Patristic(MIN)+FastME(MIN),25,84.39,0.32214
+1547,true gene trees,Patristic(ALL)+ERaBLE,25,110.13,0.33924
+1548,est gene trees (1600L),CASTLES,25,14.96,0.174512
+1549,est gene trees (1600L),ERaBLE,25,6.09,0.17934
+1550,est gene trees (1600L),FastME(AVG),25,0.07,0.00158
+1551,est gene trees (1600L),FastME(MIN),25,0.35,0.00158
+1552,est gene trees (1600L),Concat+RAxML,25,524.62,6.924064
+1553,est gene trees (1600L),Patristic(AVG),25,85.52,0.327692
+1554,est gene trees (1600L),Patristic(MIN),25,98.77000000000001,0.326988
+1555,est gene trees (1600L),Patristic(ALL),25,103.0,0.343588
+1556,est gene trees (1600L),ASTER,25,30.47,0.26216
+1557,est gene trees (1600L),CASTLES+ASTER,25,45.43,0.26216
+1558,est gene trees (1600L),Patristic(AVG)+FastME(AVG),25,85.58999999999999,0.327692
+1559,est gene trees (1600L),Patristic(MIN)+FastME(MIN),25,99.12,0.326988
+1560,est gene trees (1600L),Patristic(ALL)+ERaBLE,25,109.09,0.343588
+1561,est gene trees (800L),CASTLES,25,14.45,0.170784
+1562,est gene trees (800L),ERaBLE,25,6.03,0.179344
+1563,est gene trees (800L),FastME(AVG),25,0.1,0.00158
+1564,est gene trees (800L),FastME(MIN),25,0.41,0.001576
+1565,est gene trees (800L),Concat+RAxML,25,111.08,3.61042
+1566,est gene trees (800L),Patristic(AVG),25,87.56,0.32654
+1567,est gene trees (800L),Patristic(MIN),25,89.37,0.326752
+1568,est gene trees (800L),Patristic(ALL),25,104.22,0.343432
+1569,est gene trees (800L),ASTER,25,30.37,0.26068
+1570,est gene trees (800L),CASTLES+ASTER,25,44.82,0.26068
+1571,est gene trees (800L),Patristic(AVG)+FastME(AVG),25,87.66,0.32654
+1572,est gene trees (800L),Patristic(MIN)+FastME(MIN),25,89.78,0.326752
+1573,est gene trees (800L),Patristic(ALL)+ERaBLE,25,110.25,0.343432
+1574,est gene trees (400L),CASTLES,25,14.1,0.166732
+1575,est gene trees (400L),ERaBLE,25,6.14,0.179344
+1576,est gene trees (400L),FastME(AVG),25,0.1,0.001576
+1577,est gene trees (400L),FastME(MIN),25,3.35,0.00158
+1578,est gene trees (400L),Concat+RAxML,25,98.77000000000001,1.872428
+1579,est gene trees (400L),Patristic(AVG),25,87.84,0.324564
+1580,est gene trees (400L),Patristic(MIN),25,84.62,0.325624
+1581,est gene trees (400L),Patristic(ALL),25,107.58,0.340584
+1582,est gene trees (400L),ASTER,25,31.07,0.260588
+1583,est gene trees (400L),CASTLES+ASTER,25,45.17,0.260588
+1584,est gene trees (400L),Patristic(AVG)+FastME(AVG),25,87.94,0.324564
+1585,est gene trees (400L),Patristic(MIN)+FastME(MIN),25,87.97,0.325624
+1586,est gene trees (400L),Patristic(ALL)+ERaBLE,25,113.72,0.340584
+1587,est gene trees (200L),CASTLES,25,13.81,0.160964
+1588,est gene trees (200L),ERaBLE,25,6.3,0.179344
+1589,est gene trees (200L),FastME(AVG),25,0.09,0.001576
+1590,est gene trees (200L),FastME(MIN),25,39.48,0.00158
+1591,est gene trees (200L),Concat+RAxML,25,52.8,0.967628
+1592,est gene trees (200L),Patristic(AVG),25,95.74000000000001,0.317948
+1593,est gene trees (200L),Patristic(MIN),25,89.8,0.319364
+1594,est gene trees (200L),Patristic(ALL),25,101.83,0.335356
+1595,est gene trees (200L),ASTER,25,33.88,0.264356
+1596,est gene trees (200L),CASTLES+ASTER,25,47.690000000000005,0.264356
+1597,est gene trees (200L),Patristic(AVG)+FastME(AVG),25,95.83000000000001,0.317948
+1598,est gene trees (200L),Patristic(MIN)+FastME(MIN),25,129.28,0.319364
+1599,est gene trees (200L),Patristic(ALL)+ERaBLE,25,108.13,0.335356
+1600,true gene trees,CASTLES,26,13.1,0.169096
+1601,true gene trees,ERaBLE,26,6.16,0.179344
+1602,true gene trees,FastME(AVG),26,0.06,0.001576
+1603,true gene trees,FastME(MIN),26,0.05,0.001576
+1604,true gene trees,Patristic(AVG),26,84.78,0.3229
+1605,true gene trees,Patristic(MIN),26,91.4,0.324256
+1606,true gene trees,Patristic(ALL),26,100.71000000000001,0.339156
+1607,true gene trees,ASTER,26,25.19,0.261764
+1608,true gene trees,CASTLES+ASTER,26,38.29,0.261764
+1609,true gene trees,Patristic(AVG)+FastME(AVG),26,84.84,0.3229
+1610,true gene trees,Patristic(MIN)+FastME(MIN),26,91.45,0.324256
+1611,true gene trees,Patristic(ALL)+ERaBLE,26,106.87,0.339156
+1612,est gene trees (1600L),CASTLES,26,14.37,0.181324
+1613,est gene trees (1600L),ERaBLE,26,6.11,0.17934
+1614,est gene trees (1600L),FastME(AVG),26,0.05,0.001576
+1615,est gene trees (1600L),FastME(MIN),26,0.12,0.001572
+1616,est gene trees (1600L),Concat+RAxML,26,1053.27,12.056156
+1617,est gene trees (1600L),Patristic(AVG),26,88.76,0.328248
+1618,est gene trees (1600L),Patristic(MIN),26,87.62,0.328204
+1619,est gene trees (1600L),Patristic(ALL),26,109.00999999999999,0.343452
+1620,est gene trees (1600L),ASTER,26,31.85,0.26218
+1621,est gene trees (1600L),CASTLES+ASTER,26,46.22,0.26218
+1622,est gene trees (1600L),Patristic(AVG)+FastME(AVG),26,88.81,0.328248
+1623,est gene trees (1600L),Patristic(MIN)+FastME(MIN),26,87.74000000000001,0.328204
+1624,est gene trees (1600L),Patristic(ALL)+ERaBLE,26,115.11999999999999,0.343452
+1625,est gene trees (800L),CASTLES,26,14.3,0.181372
+1626,est gene trees (800L),ERaBLE,26,6.23,0.17934
+1627,est gene trees (800L),FastME(AVG),26,0.06,0.001572
+1628,est gene trees (800L),FastME(MIN),26,0.06,0.001576
+1629,est gene trees (800L),Concat+RAxML,26,371.6,6.16666
+1630,est gene trees (800L),Patristic(AVG),26,92.49000000000001,0.332088
+1631,est gene trees (800L),Patristic(MIN),26,87.97,0.327324
+1632,est gene trees (800L),Patristic(ALL),26,104.94,0.343716
+1633,est gene trees (800L),ASTER,26,32.37,0.260724
+1634,est gene trees (800L),CASTLES+ASTER,26,46.67,0.260724
+1635,est gene trees (800L),Patristic(AVG)+FastME(AVG),26,92.55000000000001,0.332088
+1636,est gene trees (800L),Patristic(MIN)+FastME(MIN),26,88.03,0.327324
+1637,est gene trees (800L),Patristic(ALL)+ERaBLE,26,111.17,0.343716
+1638,est gene trees (400L),CASTLES,26,14.21,0.172296
+1639,est gene trees (400L),ERaBLE,26,6.27,0.179344
+1640,est gene trees (400L),FastME(AVG),26,0.05,0.001492
+1641,est gene trees (400L),FastME(MIN),26,0.09,0.001576
+1642,est gene trees (400L),Concat+RAxML,26,127.09,3.140168
+1643,est gene trees (400L),Patristic(AVG),26,84.63,0.332248
+1644,est gene trees (400L),Patristic(MIN),26,86.65,0.327468
+1645,est gene trees (400L),Patristic(ALL),26,105.82,0.344636
+1646,est gene trees (400L),ASTER,26,33.01,0.262136
+1647,est gene trees (400L),CASTLES+ASTER,26,47.22,0.262136
+1648,est gene trees (400L),Patristic(AVG)+FastME(AVG),26,84.67999999999999,0.332248
+1649,est gene trees (400L),Patristic(MIN)+FastME(MIN),26,86.74000000000001,0.327468
+1650,est gene trees (400L),Patristic(ALL)+ERaBLE,26,112.08999999999999,0.344636
+1651,est gene trees (200L),CASTLES,26,14.16,0.17508
+1652,est gene trees (200L),ERaBLE,26,6.17,0.17938
+1653,est gene trees (200L),FastME(AVG),26,0.06,0.001576
+1654,est gene trees (200L),FastME(MIN),26,0.15,0.001572
+1655,est gene trees (200L),Concat+RAxML,26,235.62,1.596008
+1656,est gene trees (200L),Patristic(AVG),26,90.52,0.330928
+1657,est gene trees (200L),Patristic(MIN),26,87.0,0.326948
+1658,est gene trees (200L),Patristic(ALL),26,101.14,0.342592
+1659,est gene trees (200L),ASTER,26,34.2,0.262096
+1660,est gene trees (200L),CASTLES+ASTER,26,48.36,0.262096
+1661,est gene trees (200L),Patristic(AVG)+FastME(AVG),26,90.58,0.330928
+1662,est gene trees (200L),Patristic(MIN)+FastME(MIN),26,87.15,0.326948
+1663,est gene trees (200L),Patristic(ALL)+ERaBLE,26,107.31,0.342592
+1664,true gene trees,CASTLES,27,13.43,0.170736
+1665,true gene trees,ERaBLE,27,6.15,0.179336
+1666,true gene trees,FastME(AVG),27,0.06,0.001576
+1667,true gene trees,FastME(MIN),27,0.07,0.001576
+1668,true gene trees,Patristic(AVG),27,85.55,0.321796
+1669,true gene trees,Patristic(MIN),27,95.75,0.323312
+1670,true gene trees,Patristic(ALL),27,110.36,0.340184
+1671,true gene trees,ASTER,27,21.08,0.260316
+1672,true gene trees,CASTLES+ASTER,27,34.51,0.260316
+1673,true gene trees,Patristic(AVG)+FastME(AVG),27,85.61,0.321796
+1674,true gene trees,Patristic(MIN)+FastME(MIN),27,95.82,0.323312
+1675,true gene trees,Patristic(ALL)+ERaBLE,27,116.51,0.340184
+1676,est gene trees (1600L),CASTLES,27,14.75,0.180292
+1677,est gene trees (1600L),ERaBLE,27,6.45,0.179368
+1678,est gene trees (1600L),FastME(AVG),27,0.03,0.001576
+1679,est gene trees (1600L),FastME(MIN),27,0.04,0.001572
+1680,est gene trees (1600L),Concat+RAxML,27,806.17,10.50464
+1681,est gene trees (1600L),Patristic(AVG),27,85.17,0.327824
+1682,est gene trees (1600L),Patristic(MIN),27,88.58,0.327308
+1683,est gene trees (1600L),Patristic(ALL),27,103.7,0.344716
+1684,est gene trees (1600L),ASTER,27,27.43,0.262172
+1685,est gene trees (1600L),CASTLES+ASTER,27,42.18,0.262172
+1686,est gene trees (1600L),Patristic(AVG)+FastME(AVG),27,85.2,0.327824
+1687,est gene trees (1600L),Patristic(MIN)+FastME(MIN),27,88.62,0.327308
+1688,est gene trees (1600L),Patristic(ALL)+ERaBLE,27,110.15,0.344716
+1689,est gene trees (800L),CASTLES,27,15.11,0.17648
+1690,est gene trees (800L),ERaBLE,27,6.29,0.17934
+1691,est gene trees (800L),FastME(AVG),27,0.06,0.001576
+1692,est gene trees (800L),FastME(MIN),27,0.04,0.00158
+1693,est gene trees (800L),Concat+RAxML,27,419.89,5.403936
+1694,est gene trees (800L),Patristic(AVG),27,87.58,0.327328
+1695,est gene trees (800L),Patristic(MIN),27,87.46000000000001,0.327448
+1696,est gene trees (800L),Patristic(ALL),27,101.27000000000001,0.346184
+1697,est gene trees (800L),ASTER,27,27.94,0.262144
+1698,est gene trees (800L),CASTLES+ASTER,27,43.05,0.262144
+1699,est gene trees (800L),Patristic(AVG)+FastME(AVG),27,87.64,0.327328
+1700,est gene trees (800L),Patristic(MIN)+FastME(MIN),27,87.50000000000001,0.327448
+1701,est gene trees (800L),Patristic(ALL)+ERaBLE,27,107.56000000000002,0.346184
+1702,est gene trees (400L),CASTLES,27,14.13,0.177952
+1703,est gene trees (400L),ERaBLE,27,6.11,0.17934
+1704,est gene trees (400L),FastME(AVG),27,0.05,0.001576
+1705,est gene trees (400L),FastME(MIN),27,0.03,0.001576
+1706,est gene trees (400L),Concat+RAxML,27,187.2,2.780132
+1707,est gene trees (400L),Patristic(AVG),27,84.62,0.327212
+1708,est gene trees (400L),Patristic(MIN),27,85.45,0.326088
+1709,est gene trees (400L),Patristic(ALL),27,102.95,0.3434
+1710,est gene trees (400L),ASTER,27,27.73,0.262108
+1711,est gene trees (400L),CASTLES+ASTER,27,41.86,0.262108
+1712,est gene trees (400L),Patristic(AVG)+FastME(AVG),27,84.67,0.327212
+1713,est gene trees (400L),Patristic(MIN)+FastME(MIN),27,85.48,0.326088
+1714,est gene trees (400L),Patristic(ALL)+ERaBLE,27,109.06,0.3434
+1715,est gene trees (200L),CASTLES,27,14.15,0.169276
+1716,est gene trees (200L),ERaBLE,27,6.07,0.179344
+1717,est gene trees (200L),FastME(AVG),27,0.05,0.001576
+1718,est gene trees (200L),FastME(MIN),27,0.03,0.001572
+1719,est gene trees (200L),Concat+RAxML,27,82.03,1.423448
+1720,est gene trees (200L),Patristic(AVG),27,93.16,0.325076
+1721,est gene trees (200L),Patristic(MIN),27,85.95,0.324424
+1722,est gene trees (200L),Patristic(ALL),27,103.03,0.344232
+1723,est gene trees (200L),ASTER,27,28.45,0.260608
+1724,est gene trees (200L),CASTLES+ASTER,27,42.6,0.260608
+1725,est gene trees (200L),Patristic(AVG)+FastME(AVG),27,93.21,0.325076
+1726,est gene trees (200L),Patristic(MIN)+FastME(MIN),27,85.98,0.324424
+1727,est gene trees (200L),Patristic(ALL)+ERaBLE,27,109.1,0.344232
+1728,true gene trees,CASTLES,28,13.35,0.16174
+1729,true gene trees,ERaBLE,28,6.09,0.179344
+1730,true gene trees,FastME(AVG),28,0.04,0.00158
+1731,true gene trees,FastME(MIN),28,0.06,0.00158
+1732,true gene trees,Patristic(AVG),28,102.88,0.322892
+1733,true gene trees,Patristic(MIN),28,85.88,0.32292
+1734,true gene trees,Patristic(ALL),28,143.22,0.339156
+1735,true gene trees,ASTER,28,17.15,0.26176
+1736,true gene trees,CASTLES+ASTER,28,30.5,0.26176
+1737,true gene trees,Patristic(AVG)+FastME(AVG),28,102.92,0.322892
+1738,true gene trees,Patristic(MIN)+FastME(MIN),28,85.94,0.32292
+1739,true gene trees,Patristic(ALL)+ERaBLE,28,149.31,0.339156
+1740,est gene trees (1600L),CASTLES,28,14.61,0.179984
+1741,est gene trees (1600L),ERaBLE,28,6.06,0.179344
+1742,est gene trees (1600L),FastME(AVG),28,0.06,0.00158
+1743,est gene trees (1600L),FastME(MIN),28,0.05,0.00158
+1744,est gene trees (1600L),Concat+RAxML,28,1207.51,13.13044
+1745,est gene trees (1600L),Patristic(AVG),28,104.17,0.328964
+1746,est gene trees (1600L),Patristic(MIN),28,85.94,0.32706
+1747,est gene trees (1600L),Patristic(ALL),28,142.57,0.348296
+1748,est gene trees (1600L),ASTER,28,28.23,0.262184
+1749,est gene trees (1600L),CASTLES+ASTER,28,42.84,0.262184
+1750,est gene trees (1600L),Patristic(AVG)+FastME(AVG),28,104.23,0.328964
+1751,est gene trees (1600L),Patristic(MIN)+FastME(MIN),28,85.99,0.32706
+1752,est gene trees (1600L),Patristic(ALL)+ERaBLE,28,148.63,0.348296
+1753,est gene trees (800L),CASTLES,28,14.46,0.179748
+1754,est gene trees (800L),ERaBLE,28,6.08,0.17934
+1755,est gene trees (800L),FastME(AVG),28,0.03,0.00158
+1756,est gene trees (800L),FastME(MIN),28,0.05,0.00158
+1757,est gene trees (800L),Concat+RAxML,28,577.01,6.67668
+1758,est gene trees (800L),Patristic(AVG),28,104.22,0.327824
+1759,est gene trees (800L),Patristic(MIN),28,87.24,0.32684
+1760,est gene trees (800L),Patristic(ALL),28,142.92000000000002,0.342972
+1761,est gene trees (800L),ASTER,28,23.98,0.262168
+1762,est gene trees (800L),CASTLES+ASTER,28,38.44,0.262168
+1763,est gene trees (800L),Patristic(AVG)+FastME(AVG),28,104.25,0.327824
+1764,est gene trees (800L),Patristic(MIN)+FastME(MIN),28,87.28999999999999,0.32684
+1765,est gene trees (800L),Patristic(ALL)+ERaBLE,28,149.00000000000003,0.342972
+1766,est gene trees (400L),CASTLES,28,14.38,0.18032
+1767,est gene trees (400L),ERaBLE,28,6.34,0.17934
+1768,est gene trees (400L),FastME(AVG),28,0.06,0.00158
+1769,est gene trees (400L),FastME(MIN),28,0.05,0.00158
+1770,est gene trees (400L),Concat+RAxML,28,272.54,3.385572
+1771,est gene trees (400L),Patristic(AVG),28,106.72999999999999,0.32778
+1772,est gene trees (400L),Patristic(MIN),28,95.7,0.32676
+1773,est gene trees (400L),Patristic(ALL),28,143.12,0.343096
+1774,est gene trees (400L),ASTER,28,24.15,0.262144
+1775,est gene trees (400L),CASTLES+ASTER,28,38.53,0.262144
+1776,est gene trees (400L),Patristic(AVG)+FastME(AVG),28,106.78999999999999,0.32778
+1777,est gene trees (400L),Patristic(MIN)+FastME(MIN),28,95.75,0.32676
+1778,est gene trees (400L),Patristic(ALL)+ERaBLE,28,149.46,0.343096
+1779,est gene trees (200L),CASTLES,28,14.25,0.180152
+1780,est gene trees (200L),ERaBLE,28,6.38,0.179344
+1781,est gene trees (200L),FastME(AVG),28,0.05,0.001576
+1782,est gene trees (200L),FastME(MIN),28,0.12,0.001576
+1783,est gene trees (200L),Concat+RAxML,28,122.97,1.71858
+1784,est gene trees (200L),Patristic(AVG),28,105.36,0.3258
+1785,est gene trees (200L),Patristic(MIN),28,86.97,0.326456
+1786,est gene trees (200L),Patristic(ALL),28,143.22,0.343548
+1787,est gene trees (200L),ASTER,28,25.07,0.262112
+1788,est gene trees (200L),CASTLES+ASTER,28,39.32,0.262112
+1789,est gene trees (200L),Patristic(AVG)+FastME(AVG),28,105.41,0.3258
+1790,est gene trees (200L),Patristic(MIN)+FastME(MIN),28,87.09,0.326456
+1791,est gene trees (200L),Patristic(ALL)+ERaBLE,28,149.6,0.343548
+1792,true gene trees,CASTLES,29,13.38,0.168396
+1793,true gene trees,ERaBLE,29,6.17,0.17934
+1794,true gene trees,FastME(AVG),29,0.03,0.001572
+1795,true gene trees,FastME(MIN),29,0.03,0.001576
+1796,true gene trees,Patristic(AVG),29,84.87,0.327484
+1797,true gene trees,Patristic(MIN),29,89.14,0.321688
+1798,true gene trees,Patristic(ALL),29,111.41,0.338348
+1799,true gene trees,ASTER,29,21.76,0.261764
+1800,true gene trees,CASTLES+ASTER,29,35.14,0.261764
+1801,true gene trees,Patristic(AVG)+FastME(AVG),29,84.9,0.327484
+1802,true gene trees,Patristic(MIN)+FastME(MIN),29,89.17,0.321688
+1803,true gene trees,Patristic(ALL)+ERaBLE,29,117.58,0.338348
+1804,est gene trees (1600L),CASTLES,29,14.68,0.180988
+1805,est gene trees (1600L),ERaBLE,29,6.47,0.179332
+1806,est gene trees (1600L),FastME(AVG),29,0.03,0.001576
+1807,est gene trees (1600L),FastME(MIN),29,0.11,0.001488
+1808,est gene trees (1600L),Concat+RAxML,29,913.26,10.638284
+1809,est gene trees (1600L),Patristic(AVG),29,89.33,0.326932
+1810,est gene trees (1600L),Patristic(MIN),29,88.41,0.328184
+1811,est gene trees (1600L),Patristic(ALL),29,113.9,0.343896
+1812,est gene trees (1600L),ASTER,29,27.06,0.262176
+1813,est gene trees (1600L),CASTLES+ASTER,29,41.739999999999995,0.262176
+1814,est gene trees (1600L),Patristic(AVG)+FastME(AVG),29,89.36,0.326932
+1815,est gene trees (1600L),Patristic(MIN)+FastME(MIN),29,88.52,0.328184
+1816,est gene trees (1600L),Patristic(ALL)+ERaBLE,29,120.37,0.343896
+1817,est gene trees (800L),CASTLES,29,14.97,0.175164
+1818,est gene trees (800L),ERaBLE,29,6.06,0.17934
+1819,est gene trees (800L),FastME(AVG),29,0.02,0.001572
+1820,est gene trees (800L),FastME(MIN),29,0.09,0.001572
+1821,est gene trees (800L),Concat+RAxML,29,443.38,5.461728
+1822,est gene trees (800L),Patristic(AVG),29,91.98,0.327368
+1823,est gene trees (800L),Patristic(MIN),29,91.65,0.327356
+1824,est gene trees (800L),Patristic(ALL),29,121.41,0.346516
+1825,est gene trees (800L),ASTER,29,27.74,0.262152
+1826,est gene trees (800L),CASTLES+ASTER,29,42.71,0.262152
+1827,est gene trees (800L),Patristic(AVG)+FastME(AVG),29,92.0,0.327368
+1828,est gene trees (800L),Patristic(MIN)+FastME(MIN),29,91.74000000000001,0.327356
+1829,est gene trees (800L),Patristic(ALL)+ERaBLE,29,127.47,0.346516
+1830,est gene trees (400L),CASTLES,29,14.34,0.174924
+1831,est gene trees (400L),ERaBLE,29,6.22,0.17934
+1832,est gene trees (400L),FastME(AVG),29,0.02,0.001572
+1833,est gene trees (400L),FastME(MIN),29,0.76,0.001572
+1834,est gene trees (400L),Concat+RAxML,29,147.07,2.791464
+1835,est gene trees (400L),Patristic(AVG),29,85.38,0.327876
+1836,est gene trees (400L),Patristic(MIN),29,86.37,0.32696
+1837,est gene trees (400L),Patristic(ALL),29,109.42,0.342508
+1838,est gene trees (400L),ASTER,29,37.64,0.26212
+1839,est gene trees (400L),CASTLES+ASTER,29,51.980000000000004,0.26212
+1840,est gene trees (400L),Patristic(AVG)+FastME(AVG),29,85.39999999999999,0.327876
+1841,est gene trees (400L),Patristic(MIN)+FastME(MIN),29,87.13000000000001,0.32696
+1842,est gene trees (400L),Patristic(ALL)+ERaBLE,29,115.64,0.342508
+1843,est gene trees (200L),CASTLES,29,14.49,0.16736
+1844,est gene trees (200L),ERaBLE,29,6.23,0.179344
+1845,est gene trees (200L),FastME(AVG),29,0.02,0.001576
+1846,est gene trees (200L),FastME(MIN),29,0.86,0.001572
+1847,est gene trees (200L),Concat+RAxML,29,94.0,1.423864
+1848,est gene trees (200L),Patristic(AVG),29,85.48,0.328156
+1849,est gene trees (200L),Patristic(MIN),29,85.57,0.326036
+1850,est gene trees (200L),Patristic(ALL),29,113.81,0.342632
+1851,est gene trees (200L),ASTER,29,28.98,0.260624
+1852,est gene trees (200L),CASTLES+ASTER,29,43.47,0.260624
+1853,est gene trees (200L),Patristic(AVG)+FastME(AVG),29,85.5,0.328156
+1854,est gene trees (200L),Patristic(MIN)+FastME(MIN),29,86.42999999999999,0.326036
+1855,est gene trees (200L),Patristic(ALL)+ERaBLE,29,120.04,0.342632
+1856,true gene trees,CASTLES,30,12.95,0.169
+1857,true gene trees,ERaBLE,30,5.61,0.179144
+1858,true gene trees,FastME(AVG),30,0.02,0.00158
+1859,true gene trees,FastME(MIN),30,0.04,0.00158
+1860,true gene trees,Patristic(AVG),30,84.25,0.324224
+1861,true gene trees,Patristic(MIN),30,94.13,0.322212
+1862,true gene trees,Patristic(ALL),30,109.28,0.33942
+1863,true gene trees,ASTER,30,17.86,0.261756
+1864,true gene trees,CASTLES+ASTER,30,30.81,0.261756
+1865,true gene trees,Patristic(AVG)+FastME(AVG),30,84.27,0.324224
+1866,true gene trees,Patristic(MIN)+FastME(MIN),30,94.17,0.322212
+1867,true gene trees,Patristic(ALL)+ERaBLE,30,114.89,0.33942
+1868,est gene trees (1600L),CASTLES,30,14.49,0.180496
+1869,est gene trees (1600L),ERaBLE,30,6.02,0.179336
+1870,est gene trees (1600L),FastME(AVG),30,0.02,0.001576
+1871,est gene trees (1600L),FastME(MIN),30,0.06,0.001576
+1872,est gene trees (1600L),Concat+RAxML,30,570.63,9.133024
+1873,est gene trees (1600L),Patristic(AVG),30,87.9,0.327704
+1874,est gene trees (1600L),Patristic(MIN),30,85.26,0.32676
+1875,est gene trees (1600L),Patristic(ALL),30,114.47999999999999,0.34334
+1876,est gene trees (1600L),ASTER,30,27.55,0.262164
+1877,est gene trees (1600L),CASTLES+ASTER,30,42.04,0.262164
+1878,est gene trees (1600L),Patristic(AVG)+FastME(AVG),30,87.92,0.327704
+1879,est gene trees (1600L),Patristic(MIN)+FastME(MIN),30,85.32000000000001,0.32676
+1880,est gene trees (1600L),Patristic(ALL)+ERaBLE,30,120.49999999999999,0.34334
+1881,est gene trees (800L),CASTLES,30,14.23,0.180024
+1882,est gene trees (800L),ERaBLE,30,6.11,0.17934
+1883,est gene trees (800L),FastME(AVG),30,0.02,0.001576
+1884,est gene trees (800L),FastME(MIN),30,0.18,0.001576
+1885,est gene trees (800L),Concat+RAxML,30,255.38,4.734624
+1886,est gene trees (800L),Patristic(AVG),30,92.53,0.332044
+1887,est gene trees (800L),Patristic(MIN),30,89.43,0.326692
+1888,est gene trees (800L),Patristic(ALL),30,118.55,0.342524
+1889,est gene trees (800L),ASTER,30,24.77,0.260696
+1890,est gene trees (800L),CASTLES+ASTER,30,39.0,0.260696
+1891,est gene trees (800L),Patristic(AVG)+FastME(AVG),30,92.55,0.332044
+1892,est gene trees (800L),Patristic(MIN)+FastME(MIN),30,89.61000000000001,0.326692
+1893,est gene trees (800L),Patristic(ALL)+ERaBLE,30,124.66,0.342524
+1894,est gene trees (400L),CASTLES,30,14.47,0.171868
+1895,est gene trees (400L),ERaBLE,30,5.99,0.17934
+1896,est gene trees (400L),FastME(AVG),30,0.02,0.00158
+1897,est gene trees (400L),FastME(MIN),30,0.25,0.00158
+1898,est gene trees (400L),Concat+RAxML,30,78.69,2.450132
+1899,est gene trees (400L),Patristic(AVG),30,87.18,0.325896
+1900,est gene trees (400L),Patristic(MIN),30,89.69,0.326876
+1901,est gene trees (400L),Patristic(ALL),30,111.78999999999999,0.344836
+1902,est gene trees (400L),ASTER,30,24.63,0.262096
+1903,est gene trees (400L),CASTLES+ASTER,30,39.1,0.262096
+1904,est gene trees (400L),Patristic(AVG)+FastME(AVG),30,87.2,0.325896
+1905,est gene trees (400L),Patristic(MIN)+FastME(MIN),30,89.94,0.326876
+1906,est gene trees (400L),Patristic(ALL)+ERaBLE,30,117.77999999999999,0.344836
+1907,est gene trees (200L),CASTLES,30,14.5,0.17078
+1908,est gene trees (200L),ERaBLE,30,5.81,0.179336
+1909,est gene trees (200L),FastME(AVG),30,0.04,0.00158
+1910,est gene trees (200L),FastME(MIN),30,0.25,0.00158
+1911,est gene trees (200L),Concat+RAxML,30,32.83,1.26178
+1912,est gene trees (200L),Patristic(AVG),30,85.37,0.324432
+1913,est gene trees (200L),Patristic(MIN),30,86.66,0.324108
+1914,est gene trees (200L),Patristic(ALL),30,113.75,0.34402
+1915,est gene trees (200L),ASTER,30,24.84,0.262024
+1916,est gene trees (200L),CASTLES+ASTER,30,39.34,0.262024
+1917,est gene trees (200L),Patristic(AVG)+FastME(AVG),30,85.41000000000001,0.324432
+1918,est gene trees (200L),Patristic(MIN)+FastME(MIN),30,86.91,0.324108
+1919,est gene trees (200L),Patristic(ALL)+ERaBLE,30,119.56,0.34402
+1920,true gene trees,CASTLES,31,13.34,0.168584
+1921,true gene trees,ERaBLE,31,5.48,0.17926
+1922,true gene trees,FastME(AVG),31,0.04,0.00158
+1923,true gene trees,FastME(MIN),31,0.03,0.001576
+1924,true gene trees,Patristic(AVG),31,86.39,0.323912
+1925,true gene trees,Patristic(MIN),31,87.26,0.322772
+1926,true gene trees,Patristic(ALL),31,111.94,0.33812
+1927,true gene trees,ASTER,31,24.57,0.26176
+1928,true gene trees,CASTLES+ASTER,31,37.91,0.26176
+1929,true gene trees,Patristic(AVG)+FastME(AVG),31,86.43,0.323912
+1930,true gene trees,Patristic(MIN)+FastME(MIN),31,87.29,0.322772
+1931,true gene trees,Patristic(ALL)+ERaBLE,31,117.42,0.33812
+1932,est gene trees (1600L),CASTLES,31,14.37,0.175276
+1933,est gene trees (1600L),ERaBLE,31,6.05,0.179328
+1934,est gene trees (1600L),FastME(AVG),31,0.04,0.00158
+1935,est gene trees (1600L),FastME(MIN),31,0.08,0.00158
+1936,est gene trees (1600L),Concat+RAxML,31,937.16,10.590424
+1937,est gene trees (1600L),Patristic(AVG),31,88.22,0.326952
+1938,est gene trees (1600L),Patristic(MIN),31,87.37,0.327184
+1939,est gene trees (1600L),Patristic(ALL),31,122.51,0.344348
+1940,est gene trees (1600L),ASTER,31,32.15,0.262168
+1941,est gene trees (1600L),CASTLES+ASTER,31,46.519999999999996,0.262168
+1942,est gene trees (1600L),Patristic(AVG)+FastME(AVG),31,88.26,0.326952
+1943,est gene trees (1600L),Patristic(MIN)+FastME(MIN),31,87.45,0.327184
+1944,est gene trees (1600L),Patristic(ALL)+ERaBLE,31,128.56,0.344348
+1945,est gene trees (800L),CASTLES,31,14.42,0.181108
+1946,est gene trees (800L),ERaBLE,31,5.76,0.179268
+1947,est gene trees (800L),FastME(AVG),31,0.04,0.00158
+1948,est gene trees (800L),FastME(MIN),31,0.07,0.00158
+1949,est gene trees (800L),Concat+RAxML,31,483.77,5.457136
+1950,est gene trees (800L),Patristic(AVG),31,85.17,0.326668
+1951,est gene trees (800L),Patristic(MIN),31,97.52000000000001,0.328616
+1952,est gene trees (800L),Patristic(ALL),31,111.38,0.342668
+1953,est gene trees (800L),ASTER,31,31.43,0.262148
+1954,est gene trees (800L),CASTLES+ASTER,31,45.85,0.262148
+1955,est gene trees (800L),Patristic(AVG)+FastME(AVG),31,85.21000000000001,0.326668
+1956,est gene trees (800L),Patristic(MIN)+FastME(MIN),31,97.59,0.328616
+1957,est gene trees (800L),Patristic(ALL)+ERaBLE,31,117.14,0.342668
+1958,est gene trees (400L),CASTLES,31,14.5,0.17762
+1959,est gene trees (400L),ERaBLE,31,5.77,0.179324
+1960,est gene trees (400L),FastME(AVG),31,0.04,0.001576
+1961,est gene trees (400L),FastME(MIN),31,0.18,0.00158
+1962,est gene trees (400L),Concat+RAxML,31,143.52,2.799012
+1963,est gene trees (400L),Patristic(AVG),31,91.15,0.327884
+1964,est gene trees (400L),Patristic(MIN),31,87.61,0.32786
+1965,est gene trees (400L),Patristic(ALL),31,113.58,0.34332
+1966,est gene trees (400L),ASTER,31,31.85,0.262108
+1967,est gene trees (400L),CASTLES+ASTER,31,46.35,0.262108
+1968,est gene trees (400L),Patristic(AVG)+FastME(AVG),31,91.19000000000001,0.327884
+1969,est gene trees (400L),Patristic(MIN)+FastME(MIN),31,87.79,0.32786
+1970,est gene trees (400L),Patristic(ALL)+ERaBLE,31,119.35,0.34332
+1971,est gene trees (200L),CASTLES,31,14.25,0.169108
+1972,est gene trees (200L),ERaBLE,31,6.54,0.179356
+1973,est gene trees (200L),FastME(AVG),31,0.04,0.00158
+1974,est gene trees (200L),FastME(MIN),31,0.14,0.00158
+1975,est gene trees (200L),Concat+RAxML,31,81.39,1.435404
+1976,est gene trees (200L),Patristic(AVG),31,84.89,0.326304
+1977,est gene trees (200L),Patristic(MIN),31,86.51,0.324332
+1978,est gene trees (200L),Patristic(ALL),31,109.19,0.34242
+1979,est gene trees (200L),ASTER,31,33.78,0.262028
+1980,est gene trees (200L),CASTLES+ASTER,31,48.03,0.262028
+1981,est gene trees (200L),Patristic(AVG)+FastME(AVG),31,84.93,0.326304
+1982,est gene trees (200L),Patristic(MIN)+FastME(MIN),31,86.65,0.324332
+1983,est gene trees (200L),Patristic(ALL)+ERaBLE,31,115.73,0.34242
+1984,true gene trees,CASTLES,32,13.06,0.1612
+1985,true gene trees,ERaBLE,32,6.24,0.17924
+1986,true gene trees,FastME(AVG),32,0.03,0.001576
+1987,true gene trees,FastME(MIN),32,0.06,0.001572
+1988,true gene trees,Patristic(AVG),32,85.75,0.323716
+1989,true gene trees,Patristic(MIN),32,88.16,0.323236
+1990,true gene trees,Patristic(ALL),32,114.25,0.341648
+1991,true gene trees,ASTER,32,17.4,0.260324
+1992,true gene trees,CASTLES+ASTER,32,30.46,0.260324
+1993,true gene trees,Patristic(AVG)+FastME(AVG),32,85.78,0.323716
+1994,true gene trees,Patristic(MIN)+FastME(MIN),32,88.22,0.323236
+1995,true gene trees,Patristic(ALL)+ERaBLE,32,120.49,0.341648
+1996,est gene trees (1600L),CASTLES,32,14.77,0.173832
+1997,est gene trees (1600L),ERaBLE,32,5.59,0.179376
+1998,est gene trees (1600L),FastME(AVG),32,0.03,0.001572
+1999,est gene trees (1600L),FastME(MIN),32,0.17,0.00158
+2000,est gene trees (1600L),Concat+RAxML,32,433.68,6.707768
+2001,est gene trees (1600L),Patristic(AVG),32,86.28,0.325816
+2002,est gene trees (1600L),Patristic(MIN),32,92.03999999999999,0.325992
+2003,est gene trees (1600L),Patristic(ALL),32,118.50999999999999,0.348552
+2004,est gene trees (1600L),ASTER,32,27.97,0.26212
+2005,est gene trees (1600L),CASTLES+ASTER,32,42.739999999999995,0.26212
+2006,est gene trees (1600L),Patristic(AVG)+FastME(AVG),32,86.31,0.325816
+2007,est gene trees (1600L),Patristic(MIN)+FastME(MIN),32,92.21,0.325992
+2008,est gene trees (1600L),Patristic(ALL)+ERaBLE,32,124.1,0.348552
+2009,est gene trees (800L),CASTLES,32,14.27,0.16712
+2010,est gene trees (800L),ERaBLE,32,5.77,0.17924
+2011,est gene trees (800L),FastME(AVG),32,0.02,0.001576
+2012,est gene trees (800L),FastME(MIN),32,0.37,0.001576
+2013,est gene trees (800L),Concat+RAxML,32,218.68,3.532392
+2014,est gene trees (800L),Patristic(AVG),32,88.39,0.330248
+2015,est gene trees (800L),Patristic(MIN),32,89.64,0.325636
+2016,est gene trees (800L),Patristic(ALL),32,115.96000000000001,0.341136
+2017,est gene trees (800L),ASTER,32,27.28,0.26206
+2018,est gene trees (800L),CASTLES+ASTER,32,41.55,0.26206
+2019,est gene trees (800L),Patristic(AVG)+FastME(AVG),32,88.41,0.330248
+2020,est gene trees (800L),Patristic(MIN)+FastME(MIN),32,90.01,0.325636
+2021,est gene trees (800L),Patristic(ALL)+ERaBLE,32,121.73,0.341136
+2022,est gene trees (400L),CASTLES,32,13.86,0.164516
+2023,est gene trees (400L),ERaBLE,32,6.09,0.17934
+2024,est gene trees (400L),FastME(AVG),32,0.02,0.001576
+2025,est gene trees (400L),FastME(MIN),32,0.95,0.001572
+2026,est gene trees (400L),Concat+RAxML,32,74.34,1.857316
+2027,est gene trees (400L),Patristic(AVG),32,92.68,0.322404
+2028,est gene trees (400L),Patristic(MIN),32,84.8,0.320508
+2029,est gene trees (400L),Patristic(ALL),32,111.41,0.336844
+2030,est gene trees (400L),ASTER,32,27.9,0.261932
+2031,est gene trees (400L),CASTLES+ASTER,32,41.76,0.261932
+2032,est gene trees (400L),Patristic(AVG)+FastME(AVG),32,92.7,0.322404
+2033,est gene trees (400L),Patristic(MIN)+FastME(MIN),32,85.75,0.320508
+2034,est gene trees (400L),Patristic(ALL)+ERaBLE,32,117.5,0.336844
+2035,est gene trees (200L),CASTLES,32,12.82,0.1561
+2036,est gene trees (200L),ERaBLE,32,5.83,0.179328
+2037,est gene trees (200L),FastME(AVG),32,0.02,0.001492
+2038,est gene trees (200L),FastME(MIN),32,23.61,0.001576
+2039,est gene trees (200L),Concat+RAxML,32,30.97,0.970324
+2040,est gene trees (200L),Patristic(AVG),32,86.53,0.313572
+2041,est gene trees (200L),Patristic(MIN),32,83.69,0.312868
+2042,est gene trees (200L),Patristic(ALL),32,111.33,0.331628
+2043,est gene trees (200L),ASTER,32,30.63,0.264224
+2044,est gene trees (200L),CASTLES+ASTER,32,43.45,0.264224
+2045,est gene trees (200L),Patristic(AVG)+FastME(AVG),32,86.55,0.313572
+2046,est gene trees (200L),Patristic(MIN)+FastME(MIN),32,107.3,0.312868
+2047,est gene trees (200L),Patristic(ALL)+ERaBLE,32,117.16,0.331628
+2048,true gene trees,CASTLES,33,41.3,0.169636
+2049,true gene trees,ERaBLE,33,5.92,0.179292
+2050,true gene trees,FastME(AVG),33,0.07,0.001576
+2051,true gene trees,FastME(MIN),33,0.04,0.001572
+2052,true gene trees,Patristic(AVG),33,88.55,0.322312
+2053,true gene trees,Patristic(MIN),33,93.4,0.32258
+2054,true gene trees,Patristic(ALL),33,111.55,0.339848
+2055,true gene trees,ASTER,33,43.8,0.261764
+2056,true gene trees,CASTLES+ASTER,33,85.1,0.261764
+2057,true gene trees,Patristic(AVG)+FastME(AVG),33,88.61999999999999,0.322312
+2058,true gene trees,Patristic(MIN)+FastME(MIN),33,93.44000000000001,0.32258
+2059,true gene trees,Patristic(ALL)+ERaBLE,33,117.47,0.339848
+2060,est gene trees (1600L),CASTLES,33,45.18,0.182492
+2061,est gene trees (1600L),ERaBLE,33,5.76,0.179212
+2062,est gene trees (1600L),FastME(AVG),33,0.04,0.001576
+2063,est gene trees (1600L),FastME(MIN),33,0.06,0.001576
+2064,est gene trees (1600L),Concat+RAxML,33,1017.43,11.515892
+2065,est gene trees (1600L),Patristic(AVG),33,87.27,0.32812
+2066,est gene trees (1600L),Patristic(MIN),33,91.83,0.327968
+2067,est gene trees (1600L),Patristic(ALL),33,120.98,0.34314
+2068,est gene trees (1600L),ASTER,33,53.36,0.262168
+2069,est gene trees (1600L),CASTLES+ASTER,33,98.53999999999999,0.262168
+2070,est gene trees (1600L),Patristic(AVG)+FastME(AVG),33,87.31,0.32812
+2071,est gene trees (1600L),Patristic(MIN)+FastME(MIN),33,91.89,0.327968
+2072,est gene trees (1600L),Patristic(ALL)+ERaBLE,33,126.74000000000001,0.34314
+2073,est gene trees (800L),CASTLES,33,44.97,0.181112
+2074,est gene trees (800L),ERaBLE,33,5.62,0.179204
+2075,est gene trees (800L),FastME(AVG),33,0.05,0.001576
+2076,est gene trees (800L),FastME(MIN),33,0.05,0.001576
+2077,est gene trees (800L),Concat+RAxML,33,287.13,5.907992
+2078,est gene trees (800L),Patristic(AVG),33,90.66,0.332268
+2079,est gene trees (800L),Patristic(MIN),33,91.39,0.327992
+2080,est gene trees (800L),Patristic(ALL),33,111.5,0.342704
+2081,est gene trees (800L),ASTER,33,54.71,0.262152
+2082,est gene trees (800L),CASTLES+ASTER,33,99.68,0.262152
+2083,est gene trees (800L),Patristic(AVG)+FastME(AVG),33,90.71,0.332268
+2084,est gene trees (800L),Patristic(MIN)+FastME(MIN),33,91.44,0.327992
+2085,est gene trees (800L),Patristic(ALL)+ERaBLE,33,117.12,0.342704
+2086,est gene trees (400L),CASTLES,33,45.33,0.17324
+2087,est gene trees (400L),ERaBLE,33,5.98,0.179336
+2088,est gene trees (400L),FastME(AVG),33,0.06,0.001572
+2089,est gene trees (400L),FastME(MIN),33,0.06,0.001572
+2090,est gene trees (400L),Concat+RAxML,33,202.01,3.016804
+2091,est gene trees (400L),Patristic(AVG),33,85.63,0.327368
+2092,est gene trees (400L),Patristic(MIN),33,84.68,0.326344
+2093,est gene trees (400L),Patristic(ALL),33,112.05,0.34386
+2094,est gene trees (400L),ASTER,33,55.4,0.26212
+2095,est gene trees (400L),CASTLES+ASTER,33,100.72999999999999,0.26212
+2096,est gene trees (400L),Patristic(AVG)+FastME(AVG),33,85.69,0.327368
+2097,est gene trees (400L),Patristic(MIN)+FastME(MIN),33,84.74000000000001,0.326344
+2098,est gene trees (400L),Patristic(ALL)+ERaBLE,33,118.03,0.34386
+2099,est gene trees (200L),CASTLES,33,44.66,0.168628
+2100,est gene trees (200L),ERaBLE,33,5.78,0.17926
+2101,est gene trees (200L),FastME(AVG),33,0.06,0.001576
+2102,est gene trees (200L),FastME(MIN),33,0.17,0.001576
+2103,est gene trees (200L),Concat+RAxML,33,99.65,1.537464
+2104,est gene trees (200L),Patristic(AVG),33,87.03999999999999,0.32714
+2105,est gene trees (200L),Patristic(MIN),33,85.36,0.325248
+2106,est gene trees (200L),Patristic(ALL),33,111.39,0.342024
+2107,est gene trees (200L),ASTER,33,55.39,0.260632
+2108,est gene trees (200L),CASTLES+ASTER,33,100.05,0.260632
+2109,est gene trees (200L),Patristic(AVG)+FastME(AVG),33,87.1,0.32714
+2110,est gene trees (200L),Patristic(MIN)+FastME(MIN),33,85.53,0.325248
+2111,est gene trees (200L),Patristic(ALL)+ERaBLE,33,117.17,0.342024
+2112,true gene trees,CASTLES,34,42.07,0.16774
+2113,true gene trees,ERaBLE,34,5.97,0.179224
+2114,true gene trees,FastME(AVG),34,0.04,0.00158
+2115,true gene trees,FastME(MIN),34,0.05,0.001576
+2116,true gene trees,Patristic(AVG),34,84.28999999999999,0.321936
+2117,true gene trees,Patristic(MIN),34,86.48,0.321824
+2118,true gene trees,Patristic(ALL),34,109.6,0.339012
+2119,true gene trees,ASTER,34,25.36,0.26176
+2120,true gene trees,CASTLES+ASTER,34,67.43,0.26176
+2121,true gene trees,Patristic(AVG)+FastME(AVG),34,84.33,0.321936
+2122,true gene trees,Patristic(MIN)+FastME(MIN),34,86.53,0.321824
+2123,true gene trees,Patristic(ALL)+ERaBLE,34,115.57,0.339012
+2124,est gene trees (1600L),CASTLES,34,44.97,0.174512
+2125,est gene trees (1600L),ERaBLE,34,6.18,0.179336
+2126,est gene trees (1600L),FastME(AVG),34,0.03,0.00158
+2127,est gene trees (1600L),FastME(MIN),34,0.07,0.001576
+2128,est gene trees (1600L),Concat+RAxML,34,1101.72,10.253988
+2129,est gene trees (1600L),Patristic(AVG),34,90.99,0.32726
+2130,est gene trees (1600L),Patristic(MIN),34,91.62,0.327384
+2131,est gene trees (1600L),Patristic(ALL),34,109.77000000000001,0.34376
+2132,est gene trees (1600L),ASTER,34,26.73,0.260752
+2133,est gene trees (1600L),CASTLES+ASTER,34,71.7,0.260752
+2134,est gene trees (1600L),Patristic(AVG)+FastME(AVG),34,91.02,0.32726
+2135,est gene trees (1600L),Patristic(MIN)+FastME(MIN),34,91.69,0.327384
+2136,est gene trees (1600L),Patristic(ALL)+ERaBLE,34,115.95000000000002,0.34376
+2137,est gene trees (800L),CASTLES,34,45.61,0.177228
+2138,est gene trees (800L),ERaBLE,34,6.01,0.179336
+2139,est gene trees (800L),FastME(AVG),34,0.05,0.001576
+2140,est gene trees (800L),FastME(MIN),34,0.06,0.001576
+2141,est gene trees (800L),Concat+RAxML,34,896.74,5.261712
+2142,est gene trees (800L),Patristic(AVG),34,85.58,0.327652
+2143,est gene trees (800L),Patristic(MIN),34,89.26,0.32826
+2144,est gene trees (800L),Patristic(ALL),34,113.53,0.343268
+2145,est gene trees (800L),ASTER,34,27.26,0.26216
+2146,est gene trees (800L),CASTLES+ASTER,34,72.87,0.26216
+2147,est gene trees (800L),Patristic(AVG)+FastME(AVG),34,85.63,0.327652
+2148,est gene trees (800L),Patristic(MIN)+FastME(MIN),34,89.32000000000001,0.32826
+2149,est gene trees (800L),Patristic(ALL)+ERaBLE,34,119.54,0.343268
+2150,est gene trees (400L),CASTLES,34,45.44,0.169576
+2151,est gene trees (400L),ERaBLE,34,6.07,0.179336
+2152,est gene trees (400L),FastME(AVG),34,0.05,0.00158
+2153,est gene trees (400L),FastME(MIN),34,0.09,0.001576
+2154,est gene trees (400L),Concat+RAxML,34,213.07999999999998,2.699732
+2155,est gene trees (400L),Patristic(AVG),34,87.96000000000001,0.327652
+2156,est gene trees (400L),Patristic(MIN),34,84.58,0.327148
+2157,est gene trees (400L),Patristic(ALL),34,121.29,0.342452
+2158,est gene trees (400L),ASTER,34,28.05,0.260684
+2159,est gene trees (400L),CASTLES+ASTER,34,73.49,0.260684
+2160,est gene trees (400L),Patristic(AVG)+FastME(AVG),34,88.01,0.327652
+2161,est gene trees (400L),Patristic(MIN)+FastME(MIN),34,84.67,0.327148
+2162,est gene trees (400L),Patristic(ALL)+ERaBLE,34,127.36000000000001,0.342452
+2163,est gene trees (200L),CASTLES,34,43.99,0.165712
+2164,est gene trees (200L),ERaBLE,34,6.32,0.179336
+2165,est gene trees (200L),FastME(AVG),34,0.06,0.00158
+2166,est gene trees (200L),FastME(MIN),34,0.74,0.001496
+2167,est gene trees (200L),Concat+RAxML,34,95.49000000000001,1.37984
+2168,est gene trees (200L),Patristic(AVG),34,87.5,0.330356
+2169,est gene trees (200L),Patristic(MIN),34,88.38,0.32474
+2170,est gene trees (200L),Patristic(ALL),34,114.21000000000001,0.341296
+2171,est gene trees (200L),ASTER,34,28.53,0.262212
+2172,est gene trees (200L),CASTLES+ASTER,34,72.52000000000001,0.262212
+2173,est gene trees (200L),Patristic(AVG)+FastME(AVG),34,87.56,0.330356
+2174,est gene trees (200L),Patristic(MIN)+FastME(MIN),34,89.11999999999999,0.32474
+2175,est gene trees (200L),Patristic(ALL)+ERaBLE,34,120.53,0.341296
+2176,true gene trees,CASTLES,35,41.35,0.16816
+2177,true gene trees,ERaBLE,35,5.5,0.179252
+2178,true gene trees,FastME(AVG),35,0.06,0.001572
+2179,true gene trees,FastME(MIN),35,0.05,0.001572
+2180,true gene trees,Patristic(AVG),35,86.88,0.322664
+2181,true gene trees,Patristic(MIN),35,87.37,0.3219
+2182,true gene trees,Patristic(ALL),35,113.97999999999999,0.339496
+2183,true gene trees,ASTER,35,17.69,0.261756
+2184,true gene trees,CASTLES+ASTER,35,59.040000000000006,0.261756
+2185,true gene trees,Patristic(AVG)+FastME(AVG),35,86.94,0.322664
+2186,true gene trees,Patristic(MIN)+FastME(MIN),35,87.42,0.3219
+2187,true gene trees,Patristic(ALL)+ERaBLE,35,119.47999999999999,0.339496
+2188,est gene trees (1600L),CASTLES,35,44.8,0.179972
+2189,est gene trees (1600L),ERaBLE,35,6.09,0.17934
+2190,est gene trees (1600L),FastME(AVG),35,0.05,0.001572
+2191,est gene trees (1600L),FastME(MIN),35,0.05,0.001572
+2192,est gene trees (1600L),Concat+RAxML,35,1355.48,11.758208
+2193,est gene trees (1600L),Patristic(AVG),35,92.28,0.328624
+2194,est gene trees (1600L),Patristic(MIN),35,85.96000000000001,0.328052
+2195,est gene trees (1600L),Patristic(ALL),35,118.75999999999999,0.342964
+2196,est gene trees (1600L),ASTER,35,23.53,0.260736
+2197,est gene trees (1600L),CASTLES+ASTER,35,68.33,0.260736
+2198,est gene trees (1600L),Patristic(AVG)+FastME(AVG),35,92.33,0.328624
+2199,est gene trees (1600L),Patristic(MIN)+FastME(MIN),35,86.01,0.328052
+2200,est gene trees (1600L),Patristic(ALL)+ERaBLE,35,124.85,0.342964
+2201,est gene trees (800L),CASTLES,35,44.99,0.180376
+2202,est gene trees (800L),ERaBLE,35,6.16,0.17934
+2203,est gene trees (800L),FastME(AVG),35,0.05,0.001572
+2204,est gene trees (800L),FastME(MIN),35,0.05,0.001572
+2205,est gene trees (800L),Concat+RAxML,35,273.65,6.023148
+2206,est gene trees (800L),Patristic(AVG),35,87.2,0.335296
+2207,est gene trees (800L),Patristic(MIN),35,93.13,0.3264
+2208,est gene trees (800L),Patristic(ALL),35,111.62,0.343388
+2209,est gene trees (800L),ASTER,35,23.9,0.262144
+2210,est gene trees (800L),CASTLES+ASTER,35,68.89,0.262144
+2211,est gene trees (800L),Patristic(AVG)+FastME(AVG),35,87.25,0.335296
+2212,est gene trees (800L),Patristic(MIN)+FastME(MIN),35,93.17999999999999,0.3264
+2213,est gene trees (800L),Patristic(ALL)+ERaBLE,35,117.78,0.343388
+2214,est gene trees (400L),CASTLES,35,45.36,0.179408
+2215,est gene trees (400L),ERaBLE,35,6.45,0.179336
+2216,est gene trees (400L),FastME(AVG),35,0.06,0.001576
+2217,est gene trees (400L),FastME(MIN),35,0.05,0.001576
+2218,est gene trees (400L),Concat+RAxML,35,205.25,3.081196
+2219,est gene trees (400L),Patristic(AVG),35,85.43,0.32644
+2220,est gene trees (400L),Patristic(MIN),35,87.72,0.327284
+2221,est gene trees (400L),Patristic(ALL),35,114.37,0.343672
+2222,est gene trees (400L),ASTER,35,25.94,0.262124
+2223,est gene trees (400L),CASTLES+ASTER,35,71.3,0.262124
+2224,est gene trees (400L),Patristic(AVG)+FastME(AVG),35,85.49000000000001,0.32644
+2225,est gene trees (400L),Patristic(MIN)+FastME(MIN),35,87.77,0.327284
+2226,est gene trees (400L),Patristic(ALL)+ERaBLE,35,120.82000000000001,0.343672
+2227,est gene trees (200L),CASTLES,35,44.44,0.172316
+2228,est gene trees (200L),ERaBLE,35,5.66,0.179244
+2229,est gene trees (200L),FastME(AVG),35,0.05,0.001576
+2230,est gene trees (200L),FastME(MIN),35,0.19,0.001572
+2231,est gene trees (200L),Concat+RAxML,35,66.31,1.575888
+2232,est gene trees (200L),Patristic(AVG),35,88.14,0.325152
+2233,est gene trees (200L),Patristic(MIN),35,85.28999999999999,0.32584
+2234,est gene trees (200L),Patristic(ALL),35,111.91,0.344512
+2235,est gene trees (200L),ASTER,35,28.48,0.262076
+2236,est gene trees (200L),CASTLES+ASTER,35,72.92,0.262076
+2237,est gene trees (200L),Patristic(AVG)+FastME(AVG),35,88.19,0.325152
+2238,est gene trees (200L),Patristic(MIN)+FastME(MIN),35,85.47999999999999,0.32584
+2239,est gene trees (200L),Patristic(ALL)+ERaBLE,35,117.57,0.344512
+2240,true gene trees,CASTLES,36,41.42,0.161204
+2241,true gene trees,ERaBLE,36,5.44,0.17934
+2242,true gene trees,FastME(AVG),36,0.05,0.00158
+2243,true gene trees,FastME(MIN),36,0.07,0.00158
+2244,true gene trees,Patristic(AVG),36,87.47,0.323704
+2245,true gene trees,Patristic(MIN),36,85.07,0.322996
+2246,true gene trees,Patristic(ALL),36,113.75,0.339248
+2247,true gene trees,ASTER,36,54.48,0.261748
+2248,true gene trees,CASTLES+ASTER,36,95.9,0.261748
+2249,true gene trees,Patristic(AVG)+FastME(AVG),36,87.52,0.323704
+2250,true gene trees,Patristic(MIN)+FastME(MIN),36,85.13999999999999,0.322996
+2251,true gene trees,Patristic(ALL)+ERaBLE,36,119.19,0.339248
+2252,est gene trees (1600L),CASTLES,36,45.63,0.176808
+2253,est gene trees (1600L),ERaBLE,36,6.08,0.179336
+2254,est gene trees (1600L),FastME(AVG),36,0.05,0.00158
+2255,est gene trees (1600L),FastME(MIN),36,0.05,0.00158
+2256,est gene trees (1600L),Concat+RAxML,36,760.94,8.575628
+2257,est gene trees (1600L),Patristic(AVG),36,85.08,0.330272
+2258,est gene trees (1600L),Patristic(MIN),36,87.64,0.32762
+2259,est gene trees (1600L),Patristic(ALL),36,112.00999999999999,0.345316
+2260,est gene trees (1600L),ASTER,36,60.37,0.26216
+2261,est gene trees (1600L),CASTLES+ASTER,36,106.0,0.26216
+2262,est gene trees (1600L),Patristic(AVG)+FastME(AVG),36,85.13,0.330272
+2263,est gene trees (1600L),Patristic(MIN)+FastME(MIN),36,87.69,0.32762
+2264,est gene trees (1600L),Patristic(ALL)+ERaBLE,36,118.08999999999999,0.345316
+2265,est gene trees (800L),CASTLES,36,44.84,0.169276
+2266,est gene trees (800L),ERaBLE,36,5.71,0.17928
+2267,est gene trees (800L),FastME(AVG),36,0.05,0.00158
+2268,est gene trees (800L),FastME(MIN),36,0.12,0.00158
+2269,est gene trees (800L),Concat+RAxML,36,339.01,4.445924
+2270,est gene trees (800L),Patristic(AVG),36,91.56,0.327604
+2271,est gene trees (800L),Patristic(MIN),36,94.8,0.325892
+2272,est gene trees (800L),Patristic(ALL),36,121.49,0.342936
+2273,est gene trees (800L),ASTER,36,60.58,0.260684
+2274,est gene trees (800L),CASTLES+ASTER,36,105.42,0.260684
+2275,est gene trees (800L),Patristic(AVG)+FastME(AVG),36,91.61,0.327604
+2276,est gene trees (800L),Patristic(MIN)+FastME(MIN),36,94.92,0.325892
+2277,est gene trees (800L),Patristic(ALL)+ERaBLE,36,127.19999999999999,0.342936
+2278,est gene trees (400L),CASTLES,36,45.32,0.165904
+2279,est gene trees (400L),ERaBLE,36,5.91,0.179324
+2280,est gene trees (400L),FastME(AVG),36,0.05,0.001576
+2281,est gene trees (400L),FastME(MIN),36,6.95,0.00158
+2282,est gene trees (400L),Concat+RAxML,36,144.32999999999998,2.296668
+2283,est gene trees (400L),Patristic(AVG),36,88.1,0.3251
+2284,est gene trees (400L),Patristic(MIN),36,86.63,0.32538
+2285,est gene trees (400L),Patristic(ALL),36,113.88,0.34174
+2286,est gene trees (400L),ASTER,36,66.3,0.262048
+2287,est gene trees (400L),CASTLES+ASTER,36,111.62,0.262048
+2288,est gene trees (400L),Patristic(AVG)+FastME(AVG),36,88.14999999999999,0.3251
+2289,est gene trees (400L),Patristic(MIN)+FastME(MIN),36,93.58,0.32538
+2290,est gene trees (400L),Patristic(ALL)+ERaBLE,36,119.78999999999999,0.34174
+2291,est gene trees (200L),CASTLES,36,43.4,0.164368
+2292,est gene trees (200L),ERaBLE,36,5.79,0.17924
+2293,est gene trees (200L),FastME(AVG),36,0.03,0.00158
+2294,est gene trees (200L),FastME(MIN),36,51.84,0.00158
+2295,est gene trees (200L),Concat+RAxML,36,64.44,1.183228
+2296,est gene trees (200L),Patristic(AVG),36,85.88,0.32136
+2297,est gene trees (200L),Patristic(MIN),36,87.49,0.32458
+2298,est gene trees (200L),Patristic(ALL),36,111.37,0.338408
+2299,est gene trees (200L),ASTER,36,62.85,0.260484
+2300,est gene trees (200L),CASTLES+ASTER,36,106.25,0.260484
+2301,est gene trees (200L),Patristic(AVG)+FastME(AVG),36,85.91,0.32136
+2302,est gene trees (200L),Patristic(MIN)+FastME(MIN),36,139.32999999999998,0.32458
+2303,est gene trees (200L),Patristic(ALL)+ERaBLE,36,117.16000000000001,0.338408
+2304,true gene trees,CASTLES,37,11.89,0.170232
+2305,true gene trees,ERaBLE,37,5.81,0.179196
+2306,true gene trees,FastME(AVG),37,0.18,0.00158
+2307,true gene trees,FastME(MIN),37,0.05,0.001576
+2308,true gene trees,Patristic(AVG),37,85.3,0.321892
+2309,true gene trees,Patristic(MIN),37,85.02,0.323016
+2310,true gene trees,Patristic(ALL),37,111.49000000000001,0.33888
+2311,true gene trees,ASTER,37,41.43,0.261756
+2312,true gene trees,CASTLES+ASTER,37,53.32,0.261756
+2313,true gene trees,Patristic(AVG)+FastME(AVG),37,85.48,0.321892
+2314,true gene trees,Patristic(MIN)+FastME(MIN),37,85.07,0.323016
+2315,true gene trees,Patristic(ALL)+ERaBLE,37,117.30000000000001,0.33888
+2316,est gene trees (1600L),CASTLES,37,12.07,0.18112
+2317,est gene trees (1600L),ERaBLE,37,5.9,0.179324
+2318,est gene trees (1600L),FastME(AVG),37,0.18,0.00158
+2319,est gene trees (1600L),FastME(MIN),37,0.09,0.001576
+2320,est gene trees (1600L),Concat+RAxML,37,760.92,8.028164
+2321,est gene trees (1600L),Patristic(AVG),37,87.82,0.332768
+2322,est gene trees (1600L),Patristic(MIN),37,89.88,0.328336
+2323,est gene trees (1600L),Patristic(ALL),37,113.57,0.343836
+2324,est gene trees (1600L),ASTER,37,51.86,0.262172
+2325,est gene trees (1600L),CASTLES+ASTER,37,63.93,0.262172
+2326,est gene trees (1600L),Patristic(AVG)+FastME(AVG),37,88.0,0.332768
+2327,est gene trees (1600L),Patristic(MIN)+FastME(MIN),37,89.97,0.328336
+2328,est gene trees (1600L),Patristic(ALL)+ERaBLE,37,119.47,0.343836
+2329,est gene trees (800L),CASTLES,37,12.21,0.17534
+2330,est gene trees (800L),ERaBLE,37,5.75,0.179336
+2331,est gene trees (800L),FastME(AVG),37,0.21,0.00158
+2332,est gene trees (800L),FastME(MIN),37,0.09,0.001576
+2333,est gene trees (800L),Concat+RAxML,37,226.02,4.174444
+2334,est gene trees (800L),Patristic(AVG),37,94.58,0.326592
+2335,est gene trees (800L),Patristic(MIN),37,89.35,0.329084
+2336,est gene trees (800L),Patristic(ALL),37,122.48,0.346396
+2337,est gene trees (800L),ASTER,37,52.87,0.262144
+2338,est gene trees (800L),CASTLES+ASTER,37,65.08,0.262144
+2339,est gene trees (800L),Patristic(AVG)+FastME(AVG),37,94.78999999999999,0.326592
+2340,est gene trees (800L),Patristic(MIN)+FastME(MIN),37,89.44,0.329084
+2341,est gene trees (800L),Patristic(ALL)+ERaBLE,37,128.23000000000002,0.346396
+2342,est gene trees (400L),CASTLES,37,11.94,0.17068
+2343,est gene trees (400L),ERaBLE,37,5.47,0.179208
+2344,est gene trees (400L),FastME(AVG),37,0.17,0.00158
+2345,est gene trees (400L),FastME(MIN),37,0.16,0.00158
+2346,est gene trees (400L),Concat+RAxML,37,77.47,2.158432
+2347,est gene trees (400L),Patristic(AVG),37,86.51,0.329464
+2348,est gene trees (400L),Patristic(MIN),37,84.57,0.325764
+2349,est gene trees (400L),Patristic(ALL),37,111.43,0.344656
+2350,est gene trees (400L),ASTER,37,53.73,0.2621
+2351,est gene trees (400L),CASTLES+ASTER,37,65.67,0.2621
+2352,est gene trees (400L),Patristic(AVG)+FastME(AVG),37,86.68,0.329464
+2353,est gene trees (400L),Patristic(MIN)+FastME(MIN),37,84.72999999999999,0.325764
+2354,est gene trees (400L),Patristic(ALL)+ERaBLE,37,116.9,0.344656
+2355,est gene trees (200L),CASTLES,37,11.86,0.166604
+2356,est gene trees (200L),ERaBLE,37,5.99,0.179336
+2357,est gene trees (200L),FastME(AVG),37,0.18,0.00158
+2358,est gene trees (200L),FastME(MIN),37,0.19,0.00158
+2359,est gene trees (200L),Concat+RAxML,37,31.7,1.1095
+2360,est gene trees (200L),Patristic(AVG),37,86.41,0.325368
+2361,est gene trees (200L),Patristic(MIN),37,92.97,0.324968
+2362,est gene trees (200L),Patristic(ALL),37,114.34,0.340176
+2363,est gene trees (200L),ASTER,37,54.67,0.262012
+2364,est gene trees (200L),CASTLES+ASTER,37,66.53,0.262012
+2365,est gene trees (200L),Patristic(AVG)+FastME(AVG),37,86.59,0.325368
+2366,est gene trees (200L),Patristic(MIN)+FastME(MIN),37,93.16,0.324968
+2367,est gene trees (200L),Patristic(ALL)+ERaBLE,37,120.33,0.340176
+2368,true gene trees,CASTLES,38,12.87,0.167716
+2369,true gene trees,ERaBLE,38,5.85,0.179288
+2370,true gene trees,FastME(AVG),38,0.03,0.00158
+2371,true gene trees,FastME(MIN),38,0.06,0.001576
+2372,true gene trees,Patristic(AVG),38,102.05,0.322356
+2373,true gene trees,Patristic(MIN),38,88.88,0.32424
+2374,true gene trees,Patristic(ALL),38,118.08,0.3414
+2375,true gene trees,ASTER,38,23.22,0.260328
+2376,true gene trees,CASTLES+ASTER,38,36.089999999999996,0.260328
+2377,true gene trees,Patristic(AVG)+FastME(AVG),38,102.08,0.322356
+2378,true gene trees,Patristic(MIN)+FastME(MIN),38,88.94,0.32424
+2379,true gene trees,Patristic(ALL)+ERaBLE,38,123.92999999999999,0.3414
+2380,est gene trees (1600L),CASTLES,38,12.35,0.173584
+2381,est gene trees (1600L),ERaBLE,38,6.53,0.179344
+2382,est gene trees (1600L),FastME(AVG),38,0.05,0.00158
+2383,est gene trees (1600L),FastME(MIN),38,0.07,0.001576
+2384,est gene trees (1600L),Concat+RAxML,38,438.54,6.191704
+2385,est gene trees (1600L),Patristic(AVG),38,103.14,0.32754
+2386,est gene trees (1600L),Patristic(MIN),38,89.32,0.326156
+2387,est gene trees (1600L),Patristic(ALL),38,111.35,0.342164
+2388,est gene trees (1600L),ASTER,38,30.05,0.26212
+2389,est gene trees (1600L),CASTLES+ASTER,38,42.4,0.26212
+2390,est gene trees (1600L),Patristic(AVG)+FastME(AVG),38,103.19,0.32754
+2391,est gene trees (1600L),Patristic(MIN)+FastME(MIN),38,89.38999999999999,0.326156
+2392,est gene trees (1600L),Patristic(ALL)+ERaBLE,38,117.88,0.342164
+2393,est gene trees (800L),CASTLES,38,14.75,0.172152
+2394,est gene trees (800L),ERaBLE,38,5.46,0.17932
+2395,est gene trees (800L),FastME(AVG),38,0.04,0.001576
+2396,est gene trees (800L),FastME(MIN),38,0.18,0.00158
+2397,est gene trees (800L),Concat+RAxML,38,199.88,3.280228
+2398,est gene trees (800L),Patristic(AVG),38,105.03,0.3266
+2399,est gene trees (800L),Patristic(MIN),38,85.76,0.32654
+2400,est gene trees (800L),Patristic(ALL),38,113.64,0.343732
+2401,est gene trees (800L),ASTER,38,30.1,0.262068
+2402,est gene trees (800L),CASTLES+ASTER,38,44.85,0.262068
+2403,est gene trees (800L),Patristic(AVG)+FastME(AVG),38,105.07000000000001,0.3266
+2404,est gene trees (800L),Patristic(MIN)+FastME(MIN),38,85.94000000000001,0.32654
+2405,est gene trees (800L),Patristic(ALL)+ERaBLE,38,119.1,0.343732
+2406,est gene trees (400L),CASTLES,38,12.81,0.164208
+2407,est gene trees (400L),ERaBLE,38,6.22,0.179348
+2408,est gene trees (400L),FastME(AVG),38,0.04,0.001576
+2409,est gene trees (400L),FastME(MIN),38,1.07,0.00158
+2410,est gene trees (400L),Concat+RAxML,38,115.99000000000001,1.7238
+2411,est gene trees (400L),Patristic(AVG),38,105.6,0.322412
+2412,est gene trees (400L),Patristic(MIN),38,84.99,0.322788
+2413,est gene trees (400L),Patristic(ALL),38,111.68,0.338652
+2414,est gene trees (400L),ASTER,38,31.04,0.26268
+2415,est gene trees (400L),CASTLES+ASTER,38,43.85,0.26268
+2416,est gene trees (400L),Patristic(AVG)+FastME(AVG),38,105.64,0.322412
+2417,est gene trees (400L),Patristic(MIN)+FastME(MIN),38,86.05999999999999,0.322788
+2418,est gene trees (400L),Patristic(ALL)+ERaBLE,38,117.9,0.338652
+2419,est gene trees (200L),CASTLES,38,11.43,0.156812
+2420,est gene trees (200L),ERaBLE,38,5.52,0.179144
+2421,est gene trees (200L),FastME(AVG),38,0.06,0.00158
+2422,est gene trees (200L),FastME(MIN),38,4.22,0.00158
+2423,est gene trees (200L),Concat+RAxML,38,30.92,0.903576
+2424,est gene trees (200L),Patristic(AVG),38,102.69,0.31448
+2425,est gene trees (200L),Patristic(MIN),38,92.88,0.314676
+2426,est gene trees (200L),Patristic(ALL),38,111.59,0.33158
+2427,est gene trees (200L),ASTER,38,33.06,0.264216
+2428,est gene trees (200L),CASTLES+ASTER,38,44.49,0.264216
+2429,est gene trees (200L),Patristic(AVG)+FastME(AVG),38,102.75,0.31448
+2430,est gene trees (200L),Patristic(MIN)+FastME(MIN),38,97.1,0.314676
+2431,est gene trees (200L),Patristic(ALL)+ERaBLE,38,117.11,0.33158
+2432,true gene trees,CASTLES,39,13.82,0.167764
+2433,true gene trees,ERaBLE,39,5.97,0.179336
+2434,true gene trees,FastME(AVG),39,0.05,0.00158
+2435,true gene trees,FastME(MIN),39,0.05,0.001576
+2436,true gene trees,Patristic(AVG),39,89.71000000000001,0.327668
+2437,true gene trees,Patristic(MIN),39,84.68,0.3225
+2438,true gene trees,Patristic(ALL),39,116.67,0.338084
+2439,true gene trees,ASTER,39,19.34,0.261756
+2440,true gene trees,CASTLES+ASTER,39,33.16,0.261756
+2441,true gene trees,Patristic(AVG)+FastME(AVG),39,89.76,0.327668
+2442,true gene trees,Patristic(MIN)+FastME(MIN),39,84.73,0.3225
+2443,true gene trees,Patristic(ALL)+ERaBLE,39,122.64,0.338084
+2444,est gene trees (1600L),CASTLES,39,12.97,0.181544
+2445,est gene trees (1600L),ERaBLE,39,6.32,0.179344
+2446,est gene trees (1600L),FastME(AVG),39,0.04,0.00158
+2447,est gene trees (1600L),FastME(MIN),39,0.04,0.00158
+2448,est gene trees (1600L),Concat+RAxML,39,450.84,12.17754
+2449,est gene trees (1600L),Patristic(AVG),39,85.6,0.327316
+2450,est gene trees (1600L),Patristic(MIN),39,91.14,0.32708
+2451,est gene trees (1600L),Patristic(ALL),39,116.35,0.344368
+2452,est gene trees (1600L),ASTER,39,25.46,0.26218
+2453,est gene trees (1600L),CASTLES+ASTER,39,38.43,0.26218
+2454,est gene trees (1600L),Patristic(AVG)+FastME(AVG),39,85.64,0.327316
+2455,est gene trees (1600L),Patristic(MIN)+FastME(MIN),39,91.18,0.32708
+2456,est gene trees (1600L),Patristic(ALL)+ERaBLE,39,122.66999999999999,0.344368
+2457,est gene trees (800L),CASTLES,39,12.59,0.18036
+2458,est gene trees (800L),ERaBLE,39,5.98,0.17934
+2459,est gene trees (800L),FastME(AVG),39,0.05,0.00158
+2460,est gene trees (800L),FastME(MIN),39,0.04,0.00158
+2461,est gene trees (800L),Concat+RAxML,39,243.62,6.216852
+2462,est gene trees (800L),Patristic(AVG),39,88.12,0.332612
+2463,est gene trees (800L),Patristic(MIN),39,91.4,0.32828
+2464,est gene trees (800L),Patristic(ALL),39,113.62,0.343696
+2465,est gene trees (800L),ASTER,39,25.73,0.26216
+2466,est gene trees (800L),CASTLES+ASTER,39,38.32,0.26216
+2467,est gene trees (800L),Patristic(AVG)+FastME(AVG),39,88.17,0.332612
+2468,est gene trees (800L),Patristic(MIN)+FastME(MIN),39,91.44000000000001,0.32828
+2469,est gene trees (800L),Patristic(ALL)+ERaBLE,39,119.60000000000001,0.343696
+2470,est gene trees (400L),CASTLES,39,12.73,0.183672
+2471,est gene trees (400L),ERaBLE,39,6.31,0.17934
+2472,est gene trees (400L),FastME(AVG),39,0.05,0.001576
+2473,est gene trees (400L),FastME(MIN),39,0.09,0.001576
+2474,est gene trees (400L),Concat+RAxML,39,119.13,3.168816
+2475,est gene trees (400L),Patristic(AVG),39,90.45,0.326552
+2476,est gene trees (400L),Patristic(MIN),39,88.73,0.327304
+2477,est gene trees (400L),Patristic(ALL),39,111.38,0.343776
+2478,est gene trees (400L),ASTER,39,26.66,0.2607
+2479,est gene trees (400L),CASTLES+ASTER,39,39.39,0.2607
+2480,est gene trees (400L),Patristic(AVG)+FastME(AVG),39,90.5,0.326552
+2481,est gene trees (400L),Patristic(MIN)+FastME(MIN),39,88.82000000000001,0.327304
+2482,est gene trees (400L),Patristic(ALL)+ERaBLE,39,117.69,0.343776
+2483,est gene trees (200L),CASTLES,39,11.97,0.174212
+2484,est gene trees (200L),ERaBLE,39,6.28,0.17934
+2485,est gene trees (200L),FastME(AVG),39,0.05,0.00158
+2486,est gene trees (200L),FastME(MIN),39,0.24,0.001576
+2487,est gene trees (200L),Concat+RAxML,39,63.66,1.609564
+2488,est gene trees (200L),Patristic(AVG),39,84.8,0.326788
+2489,est gene trees (200L),Patristic(MIN),39,85.16,0.32696
+2490,est gene trees (200L),Patristic(ALL),39,111.56,0.342472
+2491,est gene trees (200L),ASTER,39,27.94,0.262088
+2492,est gene trees (200L),CASTLES+ASTER,39,39.910000000000004,0.262088
+2493,est gene trees (200L),Patristic(AVG)+FastME(AVG),39,84.85,0.326788
+2494,est gene trees (200L),Patristic(MIN)+FastME(MIN),39,85.39999999999999,0.32696
+2495,est gene trees (200L),Patristic(ALL)+ERaBLE,39,117.84,0.342472
+2496,true gene trees,CASTLES,40,13.84,0.160692
+2497,true gene trees,ERaBLE,40,5.79,0.179144
+2498,true gene trees,FastME(AVG),40,0.1,0.001576
+2499,true gene trees,FastME(MIN),40,0.06,0.001576
+2500,true gene trees,Patristic(AVG),40,86.2,0.322028
+2501,true gene trees,Patristic(MIN),40,84.97,0.322892
+2502,true gene trees,Patristic(ALL),40,146.65,0.3409
+2503,true gene trees,ASTER,40,39.41,0.26176
+2504,true gene trees,CASTLES+ASTER,40,53.25,0.26176
+2505,true gene trees,Patristic(AVG)+FastME(AVG),40,86.3,0.322028
+2506,true gene trees,Patristic(MIN)+FastME(MIN),40,85.03,0.322892
+2507,true gene trees,Patristic(ALL)+ERaBLE,40,152.44,0.3409
+2508,est gene trees (1600L),CASTLES,40,12.36,0.179956
+2509,est gene trees (1600L),ERaBLE,40,6.26,0.179344
+2510,est gene trees (1600L),FastME(AVG),40,0.11,0.00158
+2511,est gene trees (1600L),FastME(MIN),40,0.17,0.00158
+2512,est gene trees (1600L),Concat+RAxML,40,746.0,10.2725
+2513,est gene trees (1600L),Patristic(AVG),40,85.59,0.326684
+2514,est gene trees (1600L),Patristic(MIN),40,93.53999999999999,0.32778
+2515,est gene trees (1600L),Patristic(ALL),40,146.51,0.344228
+2516,est gene trees (1600L),ASTER,40,35.35,0.260728
+2517,est gene trees (1600L),CASTLES+ASTER,40,47.71,0.260728
+2518,est gene trees (1600L),Patristic(AVG)+FastME(AVG),40,85.7,0.326684
+2519,est gene trees (1600L),Patristic(MIN)+FastME(MIN),40,93.71,0.32778
+2520,est gene trees (1600L),Patristic(ALL)+ERaBLE,40,152.76999999999998,0.344228
+2521,est gene trees (800L),CASTLES,40,12.75,0.17872
+2522,est gene trees (800L),ERaBLE,40,5.64,0.179376
+2523,est gene trees (800L),FastME(AVG),40,0.11,0.00158
+2524,est gene trees (800L),FastME(MIN),40,0.21,0.00158
+2525,est gene trees (800L),Concat+RAxML,40,424.2,5.28932
+2526,est gene trees (800L),Patristic(AVG),40,92.68,0.327808
+2527,est gene trees (800L),Patristic(MIN),40,90.63,0.330296
+2528,est gene trees (800L),Patristic(ALL),40,146.95,0.343192
+2529,est gene trees (800L),ASTER,40,35.79,0.262148
+2530,est gene trees (800L),CASTLES+ASTER,40,48.54,0.262148
+2531,est gene trees (800L),Patristic(AVG)+FastME(AVG),40,92.79,0.327808
+2532,est gene trees (800L),Patristic(MIN)+FastME(MIN),40,90.83999999999999,0.330296
+2533,est gene trees (800L),Patristic(ALL)+ERaBLE,40,152.58999999999997,0.343192
+2534,est gene trees (400L),CASTLES,40,12.28,0.169728
+2535,est gene trees (400L),ERaBLE,40,5.46,0.17936
+2536,est gene trees (400L),FastME(AVG),40,0.11,0.00158
+2537,est gene trees (400L),FastME(MIN),40,0.19,0.001576
+2538,est gene trees (400L),Concat+RAxML,40,150.45,2.7182
+2539,est gene trees (400L),Patristic(AVG),40,86.75,0.32674
+2540,est gene trees (400L),Patristic(MIN),40,85.52,0.326528
+2541,est gene trees (400L),Patristic(ALL),40,146.57,0.343232
+2542,est gene trees (400L),ASTER,40,35.9,0.260676
+2543,est gene trees (400L),CASTLES+ASTER,40,48.18,0.260676
+2544,est gene trees (400L),Patristic(AVG)+FastME(AVG),40,86.86,0.32674
+2545,est gene trees (400L),Patristic(MIN)+FastME(MIN),40,85.71,0.326528
+2546,est gene trees (400L),Patristic(ALL)+ERaBLE,40,152.03,0.343232
+2547,est gene trees (200L),CASTLES,40,12.05,0.167868
+2548,est gene trees (200L),ERaBLE,40,5.99,0.17934
+2549,est gene trees (200L),FastME(AVG),40,0.11,0.001576
+2550,est gene trees (200L),FastME(MIN),40,0.21,0.00158
+2551,est gene trees (200L),Concat+RAxML,40,87.22,1.390136
+2552,est gene trees (200L),Patristic(AVG),40,87.47,0.326652
+2553,est gene trees (200L),Patristic(MIN),40,89.15,0.327132
+2554,est gene trees (200L),Patristic(ALL),40,146.65,0.342184
+2555,est gene trees (200L),ASTER,40,37.39,0.262044
+2556,est gene trees (200L),CASTLES+ASTER,40,49.44,0.262044
+2557,est gene trees (200L),Patristic(AVG)+FastME(AVG),40,87.58,0.326652
+2558,est gene trees (200L),Patristic(MIN)+FastME(MIN),40,89.36,0.327132
+2559,est gene trees (200L),Patristic(ALL)+ERaBLE,40,152.64000000000001,0.342184
+2560,true gene trees,CASTLES,41,12.73,0.163416
+2561,true gene trees,ERaBLE,41,5.98,0.17934
+2562,true gene trees,FastME(AVG),41,0.05,0.00158
+2563,true gene trees,FastME(MIN),41,0.05,0.00158
+2564,true gene trees,Patristic(AVG),41,85.85,0.322644
+2565,true gene trees,Patristic(MIN),41,104.62,0.32296
+2566,true gene trees,Patristic(ALL),41,146.6,0.339036
+2567,true gene trees,ASTER,41,21.18,0.26032
+2568,true gene trees,CASTLES+ASTER,41,33.91,0.26032
+2569,true gene trees,Patristic(AVG)+FastME(AVG),41,85.89999999999999,0.322644
+2570,true gene trees,Patristic(MIN)+FastME(MIN),41,104.67,0.32296
+2571,true gene trees,Patristic(ALL)+ERaBLE,41,152.57999999999998,0.339036
+2572,est gene trees (1600L),CASTLES,41,23.73,0.180344
+2573,est gene trees (1600L),ERaBLE,41,16.06,0.17934
+2574,est gene trees (1600L),FastME(AVG),41,0.07,0.00158
+2575,est gene trees (1600L),FastME(MIN),41,0.06,0.001576
+2576,est gene trees (1600L),Concat+RAxML,41,515.48,11.668576
+2577,est gene trees (1600L),Patristic(AVG),41,95.21000000000001,0.327564
+2578,est gene trees (1600L),Patristic(MIN),41,104.58,0.327096
+2579,est gene trees (1600L),Patristic(ALL),41,146.49,0.344496
+2580,est gene trees (1600L),ASTER,41,32.2,0.260728
+2581,est gene trees (1600L),CASTLES+ASTER,41,55.93000000000001,0.260728
+2582,est gene trees (1600L),Patristic(AVG)+FastME(AVG),41,95.28,0.327564
+2583,est gene trees (1600L),Patristic(MIN)+FastME(MIN),41,104.64,0.327096
+2584,est gene trees (1600L),Patristic(ALL)+ERaBLE,41,162.55,0.344496
+2585,est gene trees (800L),CASTLES,41,23.73,0.173872
+2586,est gene trees (800L),ERaBLE,41,16.07,0.179344
+2587,est gene trees (800L),FastME(AVG),41,0.06,0.00158
+2588,est gene trees (800L),FastME(MIN),41,0.05,0.00158
+2589,est gene trees (800L),Concat+RAxML,41,222.6,5.97658
+2590,est gene trees (800L),Patristic(AVG),41,85.37,0.32808
+2591,est gene trees (800L),Patristic(MIN),41,103.57,0.326784
+2592,est gene trees (800L),Patristic(ALL),41,150.94,0.342924
+2593,est gene trees (800L),ASTER,41,33.15,0.262152
+2594,est gene trees (800L),CASTLES+ASTER,41,56.879999999999995,0.262152
+2595,est gene trees (800L),Patristic(AVG)+FastME(AVG),41,85.43,0.32808
+2596,est gene trees (800L),Patristic(MIN)+FastME(MIN),41,103.61999999999999,0.326784
+2597,est gene trees (800L),Patristic(ALL)+ERaBLE,41,167.01,0.342924
+2598,est gene trees (400L),CASTLES,41,13.65,0.180784
+2599,est gene trees (400L),ERaBLE,41,16.08,0.17934
+2600,est gene trees (400L),FastME(AVG),41,0.04,0.001576
+2601,est gene trees (400L),FastME(MIN),41,0.04,0.00158
+2602,est gene trees (400L),Concat+RAxML,41,232.19,3.053124
+2603,est gene trees (400L),Patristic(AVG),41,88.97,0.331944
+2604,est gene trees (400L),Patristic(MIN),41,103.39,0.326788
+2605,est gene trees (400L),Patristic(ALL),41,146.45,0.34424
+2606,est gene trees (400L),ASTER,41,33.19,0.26212
+2607,est gene trees (400L),CASTLES+ASTER,41,46.839999999999996,0.26212
+2608,est gene trees (400L),Patristic(AVG)+FastME(AVG),41,89.01,0.331944
+2609,est gene trees (400L),Patristic(MIN)+FastME(MIN),41,103.43,0.326788
+2610,est gene trees (400L),Patristic(ALL)+ERaBLE,41,162.52999999999997,0.34424
+2611,est gene trees (200L),CASTLES,41,23.73,0.170928
+2612,est gene trees (200L),ERaBLE,41,16.07,0.17934
+2613,est gene trees (200L),FastME(AVG),41,0.05,0.001576
+2614,est gene trees (200L),FastME(MIN),41,0.11,0.00158
+2615,est gene trees (200L),Concat+RAxML,41,124.08,1.554872
+2616,est gene trees (200L),Patristic(AVG),41,88.21000000000001,0.327392
+2617,est gene trees (200L),Patristic(MIN),41,103.8,0.325996
+2618,est gene trees (200L),Patristic(ALL),41,146.76,0.34126
+2619,est gene trees (200L),ASTER,41,34.38,0.26206
+2620,est gene trees (200L),CASTLES+ASTER,41,58.11,0.26206
+2621,est gene trees (200L),Patristic(AVG)+FastME(AVG),41,88.26,0.327392
+2622,est gene trees (200L),Patristic(MIN)+FastME(MIN),41,103.91,0.325996
+2623,est gene trees (200L),Patristic(ALL)+ERaBLE,41,162.82999999999998,0.34126
+2624,true gene trees,CASTLES,42,12.25,0.170532
+2625,true gene trees,ERaBLE,42,16.07,0.179344
+2626,true gene trees,FastME(AVG),42,0.04,0.001576
+2627,true gene trees,FastME(MIN),42,0.04,0.00158
+2628,true gene trees,Patristic(AVG),42,85.8,0.32406
+2629,true gene trees,Patristic(MIN),42,86.03,0.321672
+2630,true gene trees,Patristic(ALL),42,100.4,0.339356
+2631,true gene trees,ASTER,42,29.07,0.26176
+2632,true gene trees,CASTLES+ASTER,42,41.32,0.26176
+2633,true gene trees,Patristic(AVG)+FastME(AVG),42,85.84,0.32406
+2634,true gene trees,Patristic(MIN)+FastME(MIN),42,86.07000000000001,0.321672
+2635,true gene trees,Patristic(ALL)+ERaBLE,42,116.47,0.339356
+2636,est gene trees (1600L),CASTLES,42,23.73,0.175568
+2637,est gene trees (1600L),ERaBLE,42,5.98,0.179344
+2638,est gene trees (1600L),FastME(AVG),42,0.04,0.001576
+2639,est gene trees (1600L),FastME(MIN),42,0.04,0.00158
+2640,est gene trees (1600L),Concat+RAxML,42,790.98,9.514968
+2641,est gene trees (1600L),Patristic(AVG),42,86.6,0.328056
+2642,est gene trees (1600L),Patristic(MIN),42,87.66,0.32854
+2643,est gene trees (1600L),Patristic(ALL),42,108.15,0.344736
+2644,est gene trees (1600L),ASTER,42,45.03,0.260732
+2645,est gene trees (1600L),CASTLES+ASTER,42,68.76,0.260732
+2646,est gene trees (1600L),Patristic(AVG)+FastME(AVG),42,86.64,0.328056
+2647,est gene trees (1600L),Patristic(MIN)+FastME(MIN),42,87.7,0.32854
+2648,est gene trees (1600L),Patristic(ALL)+ERaBLE,42,114.13000000000001,0.344736
+2649,est gene trees (800L),CASTLES,42,23.73,0.173692
+2650,est gene trees (800L),ERaBLE,42,16.06,0.179344
+2651,est gene trees (800L),FastME(AVG),42,0.04,0.00158
+2652,est gene trees (800L),FastME(MIN),42,0.1,0.00158
+2653,est gene trees (800L),Concat+RAxML,42,395.7,4.932988
+2654,est gene trees (800L),Patristic(AVG),42,85.99,0.327868
+2655,est gene trees (800L),Patristic(MIN),42,87.3,0.327364
+2656,est gene trees (800L),Patristic(ALL),42,105.6,0.343288
+2657,est gene trees (800L),ASTER,42,35.86,0.262136
+2658,est gene trees (800L),CASTLES+ASTER,42,59.59,0.262136
+2659,est gene trees (800L),Patristic(AVG)+FastME(AVG),42,86.03,0.327868
+2660,est gene trees (800L),Patristic(MIN)+FastME(MIN),42,87.39999999999999,0.327364
+2661,est gene trees (800L),Patristic(ALL)+ERaBLE,42,121.66,0.343288
+2662,est gene trees (400L),CASTLES,42,13.41,0.174568
+2663,est gene trees (400L),ERaBLE,42,16.06,0.17934
+2664,est gene trees (400L),FastME(AVG),42,0.04,0.00158
+2665,est gene trees (400L),FastME(MIN),42,0.1,0.00158
+2666,est gene trees (400L),Concat+RAxML,42,170.52,2.554
+2667,est gene trees (400L),Patristic(AVG),42,87.25,0.326532
+2668,est gene trees (400L),Patristic(MIN),42,92.37,0.32676
+2669,est gene trees (400L),Patristic(ALL),42,102.7,0.343956
+2670,est gene trees (400L),ASTER,42,36.62,0.262192
+2671,est gene trees (400L),CASTLES+ASTER,42,50.03,0.262192
+2672,est gene trees (400L),Patristic(AVG)+FastME(AVG),42,87.29,0.326532
+2673,est gene trees (400L),Patristic(MIN)+FastME(MIN),42,92.47,0.32676
+2674,est gene trees (400L),Patristic(ALL)+ERaBLE,42,118.76,0.343956
+2675,est gene trees (200L),CASTLES,42,13.61,0.165244
+2676,est gene trees (200L),ERaBLE,42,16.06,0.179344
+2677,est gene trees (200L),FastME(AVG),42,0.06,0.001584
+2678,est gene trees (200L),FastME(MIN),42,0.16,0.00158
+2679,est gene trees (200L),Concat+RAxML,42,54.63,1.319004
+2680,est gene trees (200L),Patristic(AVG),42,92.3,0.32378
+2681,est gene trees (200L),Patristic(MIN),42,85.56,0.325528
+2682,est gene trees (200L),Patristic(ALL),42,106.05,0.340804
+2683,est gene trees (200L),ASTER,42,36.84,0.262016
+2684,est gene trees (200L),CASTLES+ASTER,42,50.45,0.262016
+2685,est gene trees (200L),Patristic(AVG)+FastME(AVG),42,92.36,0.32378
+2686,est gene trees (200L),Patristic(MIN)+FastME(MIN),42,85.72,0.325528
+2687,est gene trees (200L),Patristic(ALL)+ERaBLE,42,122.11,0.340804
+2688,true gene trees,CASTLES,43,12.47,0.16018
+2689,true gene trees,ERaBLE,43,16.07,0.179344
+2690,true gene trees,FastME(AVG),43,0.05,0.00158
+2691,true gene trees,FastME(MIN),43,0.06,0.00158
+2692,true gene trees,Patristic(AVG),43,85.98,0.32232
+2693,true gene trees,Patristic(MIN),43,86.31,0.322996
+2694,true gene trees,Patristic(ALL),43,104.97999999999999,0.341656
+2695,true gene trees,ASTER,43,24.26,0.260324
+2696,true gene trees,CASTLES+ASTER,43,36.730000000000004,0.260324
+2697,true gene trees,Patristic(AVG)+FastME(AVG),43,86.03,0.32232
+2698,true gene trees,Patristic(MIN)+FastME(MIN),43,86.37,0.322996
+2699,true gene trees,Patristic(ALL)+ERaBLE,43,121.04999999999998,0.341656
+2700,est gene trees (1600L),CASTLES,43,23.73,0.180864
+2701,est gene trees (1600L),ERaBLE,43,16.09,0.17938
+2702,est gene trees (1600L),FastME(AVG),43,0.05,0.00158
+2703,est gene trees (1600L),FastME(MIN),43,0.06,0.001576
+2704,est gene trees (1600L),Concat+RAxML,43,419.55,10.477732
+2705,est gene trees (1600L),Patristic(AVG),43,85.93,0.32804
+2706,est gene trees (1600L),Patristic(MIN),43,86.74,0.327832
+2707,est gene trees (1600L),Patristic(ALL),43,106.97999999999999,0.349488
+2708,est gene trees (1600L),ASTER,43,30.75,0.262172
+2709,est gene trees (1600L),CASTLES+ASTER,43,54.480000000000004,0.262172
+2710,est gene trees (1600L),Patristic(AVG)+FastME(AVG),43,85.98,0.32804
+2711,est gene trees (1600L),Patristic(MIN)+FastME(MIN),43,86.8,0.327832
+2712,est gene trees (1600L),Patristic(ALL)+ERaBLE,43,123.07,0.349488
+2713,est gene trees (800L),CASTLES,43,13.47,0.18106
+2714,est gene trees (800L),ERaBLE,43,16.05,0.179344
+2715,est gene trees (800L),FastME(AVG),43,0.04,0.00158
+2716,est gene trees (800L),FastME(MIN),43,0.06,0.001576
+2717,est gene trees (800L),Concat+RAxML,43,264.72,5.393544
+2718,est gene trees (800L),Patristic(AVG),43,86.75,0.326684
+2719,est gene trees (800L),Patristic(MIN),43,84.78999999999999,0.326856
+2720,est gene trees (800L),Patristic(ALL),43,113.78,0.345956
+2721,est gene trees (800L),ASTER,43,30.2,0.262144
+2722,est gene trees (800L),CASTLES+ASTER,43,43.67,0.262144
+2723,est gene trees (800L),Patristic(AVG)+FastME(AVG),43,86.79,0.326684
+2724,est gene trees (800L),Patristic(MIN)+FastME(MIN),43,84.85,0.326856
+2725,est gene trees (800L),Patristic(ALL)+ERaBLE,43,129.83,0.345956
+2726,est gene trees (400L),CASTLES,43,23.73,0.171808
+2727,est gene trees (400L),ERaBLE,43,16.05,0.179344
+2728,est gene trees (400L),FastME(AVG),43,0.05,0.001584
+2729,est gene trees (400L),FastME(MIN),43,0.17,0.001576
+2730,est gene trees (400L),Concat+RAxML,43,87.95,2.76692
+2731,est gene trees (400L),Patristic(AVG),43,86.58,0.327148
+2732,est gene trees (400L),Patristic(MIN),43,91.93,0.327052
+2733,est gene trees (400L),Patristic(ALL),43,104.46000000000001,0.343272
+2734,est gene trees (400L),ASTER,43,30.56,0.262112
+2735,est gene trees (400L),CASTLES+ASTER,43,54.29,0.262112
+2736,est gene trees (400L),Patristic(AVG)+FastME(AVG),43,86.63,0.327148
+2737,est gene trees (400L),Patristic(MIN)+FastME(MIN),43,92.10000000000001,0.327052
+2738,est gene trees (400L),Patristic(ALL)+ERaBLE,43,120.51,0.343272
+2739,est gene trees (200L),CASTLES,43,13.5,0.16652
+2740,est gene trees (200L),ERaBLE,43,16.06,0.17934
+2741,est gene trees (200L),FastME(AVG),43,0.03,0.00158
+2742,est gene trees (200L),FastME(MIN),43,0.18,0.00158
+2743,est gene trees (200L),Concat+RAxML,43,50.62,1.419468
+2744,est gene trees (200L),Patristic(AVG),43,94.0,0.324524
+2745,est gene trees (200L),Patristic(MIN),43,86.96000000000001,0.325284
+2746,est gene trees (200L),Patristic(ALL),43,103.09,0.3462
+2747,est gene trees (200L),ASTER,43,30.77,0.26062
+2748,est gene trees (200L),CASTLES+ASTER,43,44.269999999999996,0.26062
+2749,est gene trees (200L),Patristic(AVG)+FastME(AVG),43,94.03,0.324524
+2750,est gene trees (200L),Patristic(MIN)+FastME(MIN),43,87.14000000000001,0.325284
+2751,est gene trees (200L),Patristic(ALL)+ERaBLE,43,119.15,0.3462
+2752,true gene trees,CASTLES,44,12.16,0.162556
+2753,true gene trees,ERaBLE,44,16.09,0.179188
+2754,true gene trees,FastME(AVG),44,0.05,0.001576
+2755,true gene trees,FastME(MIN),44,0.06,0.001576
+2756,true gene trees,Patristic(AVG),44,85.14,0.323708
+2757,true gene trees,Patristic(MIN),44,84.76,0.322548
+2758,true gene trees,Patristic(ALL),44,101.17,0.341636
+2759,true gene trees,ASTER,44,24.65,0.26032
+2760,true gene trees,CASTLES+ASTER,44,36.81,0.26032
+2761,true gene trees,Patristic(AVG)+FastME(AVG),44,85.19,0.323708
+2762,true gene trees,Patristic(MIN)+FastME(MIN),44,84.82000000000001,0.322548
+2763,true gene trees,Patristic(ALL)+ERaBLE,44,117.26,0.341636
+2764,est gene trees (1600L),CASTLES,44,23.73,0.180404
+2765,est gene trees (1600L),ERaBLE,44,16.1,0.17934
+2766,est gene trees (1600L),FastME(AVG),44,0.06,0.00158
+2767,est gene trees (1600L),FastME(MIN),44,0.06,0.00158
+2768,est gene trees (1600L),Concat+RAxML,44,1715.13,16.223536
+2769,est gene trees (1600L),Patristic(AVG),44,86.93,0.32784
+2770,est gene trees (1600L),Patristic(MIN),44,88.26,0.327416
+2771,est gene trees (1600L),Patristic(ALL),44,106.19,0.343996
+2772,est gene trees (1600L),ASTER,44,28.53,0.26218
+2773,est gene trees (1600L),CASTLES+ASTER,44,52.260000000000005,0.26218
+2774,est gene trees (1600L),Patristic(AVG)+FastME(AVG),44,86.99000000000001,0.32784
+2775,est gene trees (1600L),Patristic(MIN)+FastME(MIN),44,88.32000000000001,0.327416
+2776,est gene trees (1600L),Patristic(ALL)+ERaBLE,44,122.28999999999999,0.343996
+2777,est gene trees (800L),CASTLES,44,13.34,0.180464
+2778,est gene trees (800L),ERaBLE,44,16.07,0.17934
+2779,est gene trees (800L),FastME(AVG),44,0.07,0.001576
+2780,est gene trees (800L),FastME(MIN),44,0.05,0.00158
+2781,est gene trees (800L),Concat+RAxML,44,1707.04,8.166548
+2782,est gene trees (800L),Patristic(AVG),44,93.52000000000001,0.33022
+2783,est gene trees (800L),Patristic(MIN),44,91.38,0.331164
+2784,est gene trees (800L),Patristic(ALL),44,101.00999999999999,0.3436
+2785,est gene trees (800L),ASTER,44,28.08,0.26072
+2786,est gene trees (800L),CASTLES+ASTER,44,41.42,0.26072
+2787,est gene trees (800L),Patristic(AVG)+FastME(AVG),44,93.59,0.33022
+2788,est gene trees (800L),Patristic(MIN)+FastME(MIN),44,91.42999999999999,0.331164
+2789,est gene trees (800L),Patristic(ALL)+ERaBLE,44,117.07999999999998,0.3436
+2790,est gene trees (400L),CASTLES,44,13.54,0.182292
+2791,est gene trees (400L),ERaBLE,44,16.07,0.17934
+2792,est gene trees (400L),FastME(AVG),44,0.05,0.00158
+2793,est gene trees (400L),FastME(MIN),44,0.05,0.001576
+2794,est gene trees (400L),Concat+RAxML,44,294.39,4.107608
+2795,est gene trees (400L),Patristic(AVG),44,86.93,0.330084
+2796,est gene trees (400L),Patristic(MIN),44,89.48,0.32852
+2797,est gene trees (400L),Patristic(ALL),44,109.8,0.346
+2798,est gene trees (400L),ASTER,44,28.7,0.2607
+2799,est gene trees (400L),CASTLES+ASTER,44,42.239999999999995,0.2607
+2800,est gene trees (400L),Patristic(AVG)+FastME(AVG),44,86.98,0.330084
+2801,est gene trees (400L),Patristic(MIN)+FastME(MIN),44,89.53,0.32852
+2802,est gene trees (400L),Patristic(ALL)+ERaBLE,44,125.87,0.346
+2803,est gene trees (200L),CASTLES,44,23.73,0.18368
+2804,est gene trees (200L),ERaBLE,44,16.07,0.17934
+2805,est gene trees (200L),FastME(AVG),44,0.07,0.00158
+2806,est gene trees (200L),FastME(MIN),44,0.06,0.001576
+2807,est gene trees (200L),Concat+RAxML,44,108.22,2.068956
+2808,est gene trees (200L),Patristic(AVG),44,86.64,0.326808
+2809,est gene trees (200L),Patristic(MIN),44,86.34,0.326036
+2810,est gene trees (200L),Patristic(ALL),44,105.35,0.343756
+2811,est gene trees (200L),ASTER,44,28.86,0.262124
+2812,est gene trees (200L),CASTLES+ASTER,44,52.59,0.262124
+2813,est gene trees (200L),Patristic(AVG)+FastME(AVG),44,86.71,0.326808
+2814,est gene trees (200L),Patristic(MIN)+FastME(MIN),44,86.4,0.326036
+2815,est gene trees (200L),Patristic(ALL)+ERaBLE,44,121.41999999999999,0.343756
+2816,true gene trees,CASTLES,45,12.37,0.161932
+2817,true gene trees,ERaBLE,45,16.07,0.17934
+2818,true gene trees,FastME(AVG),45,0.04,0.001576
+2819,true gene trees,FastME(MIN),45,0.06,0.00158
+2820,true gene trees,Patristic(AVG),45,89.94,0.323312
+2821,true gene trees,Patristic(MIN),45,86.53,0.323536
+2822,true gene trees,Patristic(ALL),45,101.14,0.340536
+2823,true gene trees,ASTER,45,24.25,0.26176
+2824,true gene trees,CASTLES+ASTER,45,36.62,0.26176
+2825,true gene trees,Patristic(AVG)+FastME(AVG),45,89.98,0.323312
+2826,true gene trees,Patristic(MIN)+FastME(MIN),45,86.59,0.323536
+2827,true gene trees,Patristic(ALL)+ERaBLE,45,117.21000000000001,0.340536
+2828,est gene trees (1600L),CASTLES,45,13.56,0.16858
+2829,est gene trees (1600L),ERaBLE,45,16.07,0.179344
+2830,est gene trees (1600L),FastME(AVG),45,0.05,0.00158
+2831,est gene trees (1600L),FastME(MIN),45,0.59,0.00158
+2832,est gene trees (1600L),Concat+RAxML,45,318.58,4.528912
+2833,est gene trees (1600L),Patristic(AVG),45,85.1,0.32628
+2834,est gene trees (1600L),Patristic(MIN),45,91.55,0.329332
+2835,est gene trees (1600L),Patristic(ALL),45,110.0,0.342416
+2836,est gene trees (1600L),ASTER,45,27.38,0.262116
+2837,est gene trees (1600L),CASTLES+ASTER,45,40.94,0.262116
+2838,est gene trees (1600L),Patristic(AVG)+FastME(AVG),45,85.14999999999999,0.32628
+2839,est gene trees (1600L),Patristic(MIN)+FastME(MIN),45,92.14,0.329332
+2840,est gene trees (1600L),Patristic(ALL)+ERaBLE,45,126.07,0.342416
+2841,est gene trees (800L),CASTLES,45,13.49,0.165196
+2842,est gene trees (800L),ERaBLE,45,16.06,0.17934
+2843,est gene trees (800L),FastME(AVG),45,0.03,0.001576
+2844,est gene trees (800L),FastME(MIN),45,0.66,0.001576
+2845,est gene trees (800L),Concat+RAxML,45,202.25,2.400492
+2846,est gene trees (800L),Patristic(AVG),45,91.47,0.324404
+2847,est gene trees (800L),Patristic(MIN),45,85.39,0.325604
+2848,est gene trees (800L),Patristic(ALL),45,101.5,0.341116
+2849,est gene trees (800L),ASTER,45,28.24,0.26204
+2850,est gene trees (800L),CASTLES+ASTER,45,41.73,0.26204
+2851,est gene trees (800L),Patristic(AVG)+FastME(AVG),45,91.5,0.324404
+2852,est gene trees (800L),Patristic(MIN)+FastME(MIN),45,86.05,0.325604
+2853,est gene trees (800L),Patristic(ALL)+ERaBLE,45,117.56,0.341116
+2854,est gene trees (400L),CASTLES,45,13.32,0.160524
+2855,est gene trees (400L),ERaBLE,45,16.07,0.17934
+2856,est gene trees (400L),FastME(AVG),45,0.03,0.00158
+2857,est gene trees (400L),FastME(MIN),45,164.26,0.00158
+2858,est gene trees (400L),Concat+RAxML,45,34.16,1.261644
+2859,est gene trees (400L),Patristic(AVG),45,91.49,0.3201
+2860,est gene trees (400L),Patristic(MIN),45,87.42,0.319552
+2861,est gene trees (400L),Patristic(ALL),45,102.24000000000001,0.337168
+2862,est gene trees (400L),ASTER,45,30.47,0.26208
+2863,est gene trees (400L),CASTLES+ASTER,45,43.79,0.26208
+2864,est gene trees (400L),Patristic(AVG)+FastME(AVG),45,91.52,0.3201
+2865,est gene trees (400L),Patristic(MIN)+FastME(MIN),45,251.68,0.319552
+2866,est gene trees (400L),Patristic(ALL)+ERaBLE,45,118.31,0.337168
+2867,est gene trees (200L),CASTLES,45,12.09,0.15362
+2868,est gene trees (200L),ERaBLE,45,5.98,0.17934
+2869,est gene trees (200L),FastME(AVG),45,0.06,0.001492
+2870,est gene trees (200L),FastME(MIN),45,164.07999999999998,0.001576
+2871,est gene trees (200L),Concat+RAxML,45,16.03,0.658768
+2872,est gene trees (200L),Patristic(AVG),45,83.07,0.309352
+2873,est gene trees (200L),Patristic(MIN),45,84.28999999999999,0.311708
+2874,est gene trees (200L),Patristic(ALL),45,101.31,0.326144
+2875,est gene trees (200L),ASTER,45,38.54,0.261968
+2876,est gene trees (200L),CASTLES+ASTER,45,50.629999999999995,0.261968
+2877,est gene trees (200L),Patristic(AVG)+FastME(AVG),45,83.13,0.309352
+2878,est gene trees (200L),Patristic(MIN)+FastME(MIN),45,248.36999999999998,0.311708
+2879,est gene trees (200L),Patristic(ALL)+ERaBLE,45,107.29,0.326144
+2880,true gene trees,CASTLES,46,12.48,0.163136
+2881,true gene trees,ERaBLE,46,16.07,0.17934
+2882,true gene trees,FastME(AVG),46,0.02,0.001576
+2883,true gene trees,FastME(MIN),46,0.06,0.00158
+2884,true gene trees,Patristic(AVG),46,86.26,0.322324
+2885,true gene trees,Patristic(MIN),46,85.47,0.32304
+2886,true gene trees,Patristic(ALL),46,104.97,0.339848
+2887,true gene trees,ASTER,46,24.26,0.260316
+2888,true gene trees,CASTLES+ASTER,46,36.74,0.260316
+2889,true gene trees,Patristic(AVG)+FastME(AVG),46,86.28,0.322324
+2890,true gene trees,Patristic(MIN)+FastME(MIN),46,85.53,0.32304
+2891,true gene trees,Patristic(ALL)+ERaBLE,46,121.03999999999999,0.339848
+2892,est gene trees (1600L),CASTLES,46,23.73,0.180904
+2893,est gene trees (1600L),ERaBLE,46,16.07,0.179344
+2894,est gene trees (1600L),FastME(AVG),46,0.06,0.00158
+2895,est gene trees (1600L),FastME(MIN),46,0.06,0.00158
+2896,est gene trees (1600L),Concat+RAxML,46,405.33,10.891564
+2897,est gene trees (1600L),Patristic(AVG),46,92.49000000000001,0.328624
+2898,est gene trees (1600L),Patristic(MIN),46,87.27,0.327284
+2899,est gene trees (1600L),Patristic(ALL),46,103.66,0.34418
+2900,est gene trees (1600L),ASTER,46,26.79,0.262172
+2901,est gene trees (1600L),CASTLES+ASTER,46,50.519999999999996,0.262172
+2902,est gene trees (1600L),Patristic(AVG)+FastME(AVG),46,92.55000000000001,0.328624
+2903,est gene trees (1600L),Patristic(MIN)+FastME(MIN),46,87.33,0.327284
+2904,est gene trees (1600L),Patristic(ALL)+ERaBLE,46,119.72999999999999,0.34418
+2905,est gene trees (800L),CASTLES,46,23.73,0.179952
+2906,est gene trees (800L),ERaBLE,46,16.07,0.179344
+2907,est gene trees (800L),FastME(AVG),46,0.05,0.00158
+2908,est gene trees (800L),FastME(MIN),46,0.03,0.00158
+2909,est gene trees (800L),Concat+RAxML,46,352.87,5.60062
+2910,est gene trees (800L),Patristic(AVG),46,86.9,0.327344
+2911,est gene trees (800L),Patristic(MIN),46,91.45,0.327456
+2912,est gene trees (800L),Patristic(ALL),46,115.16,0.34294
+2913,est gene trees (800L),ASTER,46,26.51,0.262148
+2914,est gene trees (800L),CASTLES+ASTER,46,50.24,0.262148
+2915,est gene trees (800L),Patristic(AVG)+FastME(AVG),46,86.95,0.327344
+2916,est gene trees (800L),Patristic(MIN)+FastME(MIN),46,91.48,0.327456
+2917,est gene trees (800L),Patristic(ALL)+ERaBLE,46,131.23,0.34294
+2918,est gene trees (400L),CASTLES,46,23.73,0.181552
+2919,est gene trees (400L),ERaBLE,46,16.07,0.179344
+2920,est gene trees (400L),FastME(AVG),46,0.05,0.00158
+2921,est gene trees (400L),FastME(MIN),46,0.03,0.00158
+2922,est gene trees (400L),Concat+RAxML,46,135.13,2.870232
+2923,est gene trees (400L),Patristic(AVG),46,87.65,0.326396
+2924,est gene trees (400L),Patristic(MIN),46,88.3,0.329532
+2925,est gene trees (400L),Patristic(ALL),46,107.2,0.342828
+2926,est gene trees (400L),ASTER,46,26.88,0.26212
+2927,est gene trees (400L),CASTLES+ASTER,46,50.61,0.26212
+2928,est gene trees (400L),Patristic(AVG)+FastME(AVG),46,87.7,0.326396
+2929,est gene trees (400L),Patristic(MIN)+FastME(MIN),46,88.33,0.329532
+2930,est gene trees (400L),Patristic(ALL)+ERaBLE,46,123.27000000000001,0.342828
+2931,est gene trees (200L),CASTLES,46,23.73,0.178756
+2932,est gene trees (200L),ERaBLE,46,16.07,0.179344
+2933,est gene trees (200L),FastME(AVG),46,0.05,0.001576
+2934,est gene trees (200L),FastME(MIN),46,0.05,0.00158
+2935,est gene trees (200L),Concat+RAxML,46,68.02,1.467412
+2936,est gene trees (200L),Patristic(AVG),46,87.1,0.32578
+2937,est gene trees (200L),Patristic(MIN),46,87.6,0.330304
+2938,est gene trees (200L),Patristic(ALL),46,101.28,0.342864
+2939,est gene trees (200L),ASTER,46,26.91,0.262072
+2940,est gene trees (200L),CASTLES+ASTER,46,50.64,0.262072
+2941,est gene trees (200L),Patristic(AVG)+FastME(AVG),46,87.14999999999999,0.32578
+2942,est gene trees (200L),Patristic(MIN)+FastME(MIN),46,87.64999999999999,0.330304
+2943,est gene trees (200L),Patristic(ALL)+ERaBLE,46,117.35,0.342864
+2944,true gene trees,CASTLES,47,13.03,0.169384
+2945,true gene trees,ERaBLE,47,16.06,0.17934
+2946,true gene trees,FastME(AVG),47,0.05,0.00158
+2947,true gene trees,FastME(MIN),47,0.04,0.001576
+2948,true gene trees,Patristic(AVG),47,89.46000000000001,0.322536
+2949,true gene trees,Patristic(MIN),47,85.09,0.322224
+2950,true gene trees,Patristic(ALL),47,105.15,0.338356
+2951,true gene trees,ASTER,47,24.26,0.261764
+2952,true gene trees,CASTLES+ASTER,47,37.29,0.261764
+2953,true gene trees,Patristic(AVG)+FastME(AVG),47,89.51,0.322536
+2954,true gene trees,Patristic(MIN)+FastME(MIN),47,85.13000000000001,0.322224
+2955,true gene trees,Patristic(ALL)+ERaBLE,47,121.21000000000001,0.338356
+2956,est gene trees (1600L),CASTLES,47,23.73,0.180728
+2957,est gene trees (1600L),ERaBLE,47,16.06,0.17934
+2958,est gene trees (1600L),FastME(AVG),47,0.03,0.00158
+2959,est gene trees (1600L),FastME(MIN),47,0.08,0.00158
+2960,est gene trees (1600L),Concat+RAxML,47,1850.33,12.453012
+2961,est gene trees (1600L),Patristic(AVG),47,86.24,0.330508
+2962,est gene trees (1600L),Patristic(MIN),47,89.24,0.328008
+2963,est gene trees (1600L),Patristic(ALL),47,103.46000000000001,0.344696
+2964,est gene trees (1600L),ASTER,47,28.38,0.26218
+2965,est gene trees (1600L),CASTLES+ASTER,47,52.11,0.26218
+2966,est gene trees (1600L),Patristic(AVG)+FastME(AVG),47,86.27,0.330508
+2967,est gene trees (1600L),Patristic(MIN)+FastME(MIN),47,89.32,0.328008
+2968,est gene trees (1600L),Patristic(ALL)+ERaBLE,47,119.52000000000001,0.344696
+2969,est gene trees (800L),CASTLES,47,23.73,0.174348
+2970,est gene trees (800L),ERaBLE,47,5.98,0.17934
+2971,est gene trees (800L),FastME(AVG),47,0.03,0.00158
+2972,est gene trees (800L),FastME(MIN),47,0.03,0.00158
+2973,est gene trees (800L),Concat+RAxML,47,303.62,6.358896
+2974,est gene trees (800L),Patristic(AVG),47,86.57,0.328004
+2975,est gene trees (800L),Patristic(MIN),47,94.59,0.327664
+2976,est gene trees (800L),Patristic(ALL),47,105.34,0.342976
+2977,est gene trees (800L),ASTER,47,28.91,0.260728
+2978,est gene trees (800L),CASTLES+ASTER,47,52.64,0.260728
+2979,est gene trees (800L),Patristic(AVG)+FastME(AVG),47,86.6,0.328004
+2980,est gene trees (800L),Patristic(MIN)+FastME(MIN),47,94.62,0.327664
+2981,est gene trees (800L),Patristic(ALL)+ERaBLE,47,111.32000000000001,0.342976
+2982,est gene trees (400L),CASTLES,47,23.73,0.178964
+2983,est gene trees (400L),ERaBLE,47,16.05,0.179344
+2984,est gene trees (400L),FastME(AVG),47,0.03,0.00158
+2985,est gene trees (400L),FastME(MIN),47,0.05,0.00158
+2986,est gene trees (400L),Concat+RAxML,47,124.18,3.232528
+2987,est gene trees (400L),Patristic(AVG),47,87.07,0.328116
+2988,est gene trees (400L),Patristic(MIN),47,86.99,0.32694
+2989,est gene trees (400L),Patristic(ALL),47,104.38,0.343768
+2990,est gene trees (400L),ASTER,47,28.94,0.262128
+2991,est gene trees (400L),CASTLES+ASTER,47,52.67,0.262128
+2992,est gene trees (400L),Patristic(AVG)+FastME(AVG),47,87.1,0.328116
+2993,est gene trees (400L),Patristic(MIN)+FastME(MIN),47,87.03999999999999,0.32694
+2994,est gene trees (400L),Patristic(ALL)+ERaBLE,47,120.42999999999999,0.343768
+2995,est gene trees (200L),CASTLES,47,23.73,0.174488
+2996,est gene trees (200L),ERaBLE,47,16.06,0.17934
+2997,est gene trees (200L),FastME(AVG),47,0.03,0.001576
+2998,est gene trees (200L),FastME(MIN),47,0.1,0.001576
+2999,est gene trees (200L),Concat+RAxML,47,87.66,1.641908
+3000,est gene trees (200L),Patristic(AVG),47,85.96000000000001,0.32636
+3001,est gene trees (200L),Patristic(MIN),47,85.74,0.325588
+3002,est gene trees (200L),Patristic(ALL),47,113.78,0.342528
+3003,est gene trees (200L),ASTER,47,30.07,0.262104
+3004,est gene trees (200L),CASTLES+ASTER,47,53.8,0.262104
+3005,est gene trees (200L),Patristic(AVG)+FastME(AVG),47,85.99000000000001,0.32636
+3006,est gene trees (200L),Patristic(MIN)+FastME(MIN),47,85.83999999999999,0.325588
+3007,est gene trees (200L),Patristic(ALL)+ERaBLE,47,129.84,0.342528
+3008,true gene trees,CASTLES,48,13.11,0.161952
+3009,true gene trees,ERaBLE,48,16.05,0.179336
+3010,true gene trees,FastME(AVG),48,0.06,0.001576
+3011,true gene trees,FastME(MIN),48,0.06,0.001576
+3012,true gene trees,Patristic(AVG),48,87.4,0.323436
+3013,true gene trees,Patristic(MIN),48,85.81,0.323116
+3014,true gene trees,Patristic(ALL),48,101.93,0.338784
+3015,true gene trees,ASTER,48,24.27,0.261748
+3016,true gene trees,CASTLES+ASTER,48,37.379999999999995,0.261748
+3017,true gene trees,Patristic(AVG)+FastME(AVG),48,87.46000000000001,0.323436
+3018,true gene trees,Patristic(MIN)+FastME(MIN),48,85.87,0.323116
+3019,true gene trees,Patristic(ALL)+ERaBLE,48,117.98,0.338784
+3020,est gene trees (1600L),CASTLES,48,23.73,0.170196
+3021,est gene trees (1600L),ERaBLE,48,16.07,0.179168
+3022,est gene trees (1600L),FastME(AVG),48,0.05,0.001488
+3023,est gene trees (1600L),FastME(MIN),48,167.91,0.001576
+3024,est gene trees (1600L),Concat+RAxML,48,625.32,9.927472
+3025,est gene trees (1600L),Patristic(AVG),48,93.19,0.325936
+3026,est gene trees (1600L),Patristic(MIN),48,87.77,0.326928
+3027,est gene trees (1600L),Patristic(ALL),48,106.63,0.341644
+3028,est gene trees (1600L),ASTER,48,24.67,0.262112
+3029,est gene trees (1600L),CASTLES+ASTER,48,48.400000000000006,0.262112
+3030,est gene trees (1600L),Patristic(AVG)+FastME(AVG),48,93.24,0.325936
+3031,est gene trees (1600L),Patristic(MIN)+FastME(MIN),48,255.68,0.326928
+3032,est gene trees (1600L),Patristic(ALL)+ERaBLE,48,122.69999999999999,0.341644
+3033,est gene trees (800L),CASTLES,48,13.63,0.1658
+3034,est gene trees (800L),ERaBLE,48,16.01,0.178992
+3035,est gene trees (800L),FastME(AVG),48,0.05,0.001576
+3036,est gene trees (800L),FastME(MIN),48,167.86,0.001576
+3037,est gene trees (800L),Concat+RAxML,48,250.5,5.081536
+3038,est gene trees (800L),Patristic(AVG),48,87.03999999999999,0.324228
+3039,est gene trees (800L),Patristic(MIN),48,85.74,0.324544
+3040,est gene trees (800L),Patristic(ALL),48,110.32,0.34
+3041,est gene trees (800L),ASTER,48,26.28,0.260624
+3042,est gene trees (800L),CASTLES+ASTER,48,39.910000000000004,0.260624
+3043,est gene trees (800L),Patristic(AVG)+FastME(AVG),48,87.08999999999999,0.324228
+3044,est gene trees (800L),Patristic(MIN)+FastME(MIN),48,253.60000000000002,0.324544
+3045,est gene trees (800L),Patristic(ALL)+ERaBLE,48,126.33,0.34
+3046,est gene trees (400L),CASTLES,48,13.4,0.16372
+3047,est gene trees (400L),ERaBLE,48,16.06,0.178992
+3048,est gene trees (400L),FastME(AVG),48,0.06,0.001576
+3049,est gene trees (400L),FastME(MIN),48,168.57999999999998,0.001576
+3050,est gene trees (400L),Concat+RAxML,48,121.44,2.585856
+3051,est gene trees (400L),Patristic(AVG),48,86.02,0.325004
+3052,est gene trees (400L),Patristic(MIN),48,86.91,0.322532
+3053,est gene trees (400L),Patristic(ALL),48,100.6,0.338052
+3054,est gene trees (400L),ASTER,48,27.78,0.26198
+3055,est gene trees (400L),CASTLES+ASTER,48,41.18,0.26198
+3056,est gene trees (400L),Patristic(AVG)+FastME(AVG),48,86.08,0.325004
+3057,est gene trees (400L),Patristic(MIN)+FastME(MIN),48,255.48999999999998,0.322532
+3058,est gene trees (400L),Patristic(ALL)+ERaBLE,48,116.66,0.338052
+3059,est gene trees (200L),CASTLES,48,13.07,0.160584
+3060,est gene trees (200L),ERaBLE,48,16.01,0.178992
+3061,est gene trees (200L),FastME(AVG),48,0.05,0.001576
+3062,est gene trees (200L),FastME(MIN),48,168.82999999999998,0.001576
+3063,est gene trees (200L),Concat+RAxML,48,43.57,1.318908
+3064,est gene trees (200L),Patristic(AVG),48,86.45,0.317516
+3065,est gene trees (200L),Patristic(MIN),48,91.1,0.318808
+3066,est gene trees (200L),Patristic(ALL),48,105.85,0.336232
+3067,est gene trees (200L),ASTER,48,30.81,0.261872
+3068,est gene trees (200L),CASTLES+ASTER,48,43.879999999999995,0.261872
+3069,est gene trees (200L),Patristic(AVG)+FastME(AVG),48,86.5,0.317516
+3070,est gene trees (200L),Patristic(MIN)+FastME(MIN),48,259.92999999999995,0.318808
+3071,est gene trees (200L),Patristic(ALL)+ERaBLE,48,121.86,0.336232
+3072,true gene trees,CASTLES,49,12.84,0.167824
+3073,true gene trees,ERaBLE,49,16.01,0.179344
+3074,true gene trees,FastME(AVG),49,0.03,0.00158
+3075,true gene trees,FastME(MIN),49,0.04,0.00158
+3076,true gene trees,Patristic(AVG),49,84.83,0.32234
+3077,true gene trees,Patristic(MIN),49,86.98,0.322112
+3078,true gene trees,Patristic(ALL),49,144.45,0.339972
+3079,true gene trees,ASTER,49,24.26,0.26176
+3080,true gene trees,CASTLES+ASTER,49,37.1,0.26176
+3081,true gene trees,Patristic(AVG)+FastME(AVG),49,84.86,0.32234
+3082,true gene trees,Patristic(MIN)+FastME(MIN),49,87.02000000000001,0.322112
+3083,true gene trees,Patristic(ALL)+ERaBLE,49,160.45999999999998,0.339972
+3084,est gene trees (1600L),CASTLES,49,23.73,0.178364
+3085,est gene trees (1600L),ERaBLE,49,16.11,0.17938
+3086,est gene trees (1600L),FastME(AVG),49,0.02,0.00158
+3087,est gene trees (1600L),FastME(MIN),49,0.03,0.00158
+3088,est gene trees (1600L),Concat+RAxML,49,1446.07,11.682232
+3089,est gene trees (1600L),Patristic(AVG),49,90.37,0.326484
+3090,est gene trees (1600L),Patristic(MIN),49,85.94,0.327212
+3091,est gene trees (1600L),Patristic(ALL),49,144.86,0.342484
+3092,est gene trees (1600L),ASTER,49,26.86,0.262136
+3093,est gene trees (1600L),CASTLES+ASTER,49,50.59,0.262136
+3094,est gene trees (1600L),Patristic(AVG)+FastME(AVG),49,90.39,0.326484
+3095,est gene trees (1600L),Patristic(MIN)+FastME(MIN),49,85.97,0.327212
+3096,est gene trees (1600L),Patristic(ALL)+ERaBLE,49,160.97000000000003,0.342484
+3097,est gene trees (800L),CASTLES,49,23.73,0.17472
+3098,est gene trees (800L),ERaBLE,49,16.09,0.179344
+3099,est gene trees (800L),FastME(AVG),49,0.02,0.001576
+3100,est gene trees (800L),FastME(MIN),49,0.42,0.001576
+3101,est gene trees (800L),Concat+RAxML,49,670.36,5.989124
+3102,est gene trees (800L),Patristic(AVG),49,87.69,0.327344
+3103,est gene trees (800L),Patristic(MIN),49,85.22,0.326788
+3104,est gene trees (800L),Patristic(ALL),49,144.89,0.342404
+3105,est gene trees (800L),ASTER,49,27.35,0.260672
+3106,est gene trees (800L),CASTLES+ASTER,49,51.08,0.260672
+3107,est gene trees (800L),Patristic(AVG)+FastME(AVG),49,87.71,0.327344
+3108,est gene trees (800L),Patristic(MIN)+FastME(MIN),49,85.64,0.326788
+3109,est gene trees (800L),Patristic(ALL)+ERaBLE,49,160.98,0.342404
+3110,est gene trees (400L),CASTLES,49,13.49,0.172964
+3111,est gene trees (400L),ERaBLE,49,16.06,0.179344
+3112,est gene trees (400L),FastME(AVG),49,0.06,0.001576
+3113,est gene trees (400L),FastME(MIN),49,0.51,0.00158
+3114,est gene trees (400L),Concat+RAxML,49,109.4,3.070148
+3115,est gene trees (400L),Patristic(AVG),49,84.89,0.326756
+3116,est gene trees (400L),Patristic(MIN),49,91.94,0.328408
+3117,est gene trees (400L),Patristic(ALL),49,144.57999999999998,0.341168
+3118,est gene trees (400L),ASTER,49,27.24,0.262048
+3119,est gene trees (400L),CASTLES+ASTER,49,40.73,0.262048
+3120,est gene trees (400L),Patristic(AVG)+FastME(AVG),49,84.95,0.326756
+3121,est gene trees (400L),Patristic(MIN)+FastME(MIN),49,92.45,0.328408
+3122,est gene trees (400L),Patristic(ALL)+ERaBLE,49,160.64,0.341168
+3123,est gene trees (200L),CASTLES,49,13.39,0.167048
+3124,est gene trees (200L),ERaBLE,49,16.09,0.17934
+3125,est gene trees (200L),FastME(AVG),49,0.05,0.00158
+3126,est gene trees (200L),FastME(MIN),49,0.56,0.00158
+3127,est gene trees (200L),Concat+RAxML,49,49.58,1.566788
+3128,est gene trees (200L),Patristic(AVG),49,86.94,0.323192
+3129,est gene trees (200L),Patristic(MIN),49,88.28999999999999,0.32612
+3130,est gene trees (200L),Patristic(ALL),49,144.16,0.34006
+3131,est gene trees (200L),ASTER,49,27.01,0.261944
+3132,est gene trees (200L),CASTLES+ASTER,49,40.400000000000006,0.261944
+3133,est gene trees (200L),Patristic(AVG)+FastME(AVG),49,86.99,0.323192
+3134,est gene trees (200L),Patristic(MIN)+FastME(MIN),49,88.85,0.32612
+3135,est gene trees (200L),Patristic(ALL)+ERaBLE,49,160.25,0.34006
+3136,true gene trees,CASTLES,50,12.48,0.16226
+3137,true gene trees,ERaBLE,50,25.11,0.179372
+3138,true gene trees,FastME(AVG),50,0.09,0.00158
+3139,true gene trees,FastME(MIN),50,0.06,0.001576
+3140,true gene trees,Patristic(AVG),50,104.21000000000001,0.322308
+3141,true gene trees,Patristic(MIN),50,103.6,0.32262
+3142,true gene trees,Patristic(ALL),50,144.92000000000002,0.338148
+3143,true gene trees,ASTER,50,23.63,0.260324
+3144,true gene trees,CASTLES+ASTER,50,36.11,0.260324
+3145,true gene trees,Patristic(AVG)+FastME(AVG),50,104.30000000000001,0.322308
+3146,true gene trees,Patristic(MIN)+FastME(MIN),50,103.66,0.32262
+3147,true gene trees,Patristic(ALL)+ERaBLE,50,170.03000000000003,0.338148
+3148,est gene trees (1600L),CASTLES,50,23.73,0.180596
+3149,est gene trees (1600L),ERaBLE,50,25.7,0.1793
+3150,est gene trees (1600L),FastME(AVG),50,0.08,0.001576
+3151,est gene trees (1600L),FastME(MIN),50,0.07,0.00158
+3152,est gene trees (1600L),Concat+RAxML,50,976.82,13.042776
+3153,est gene trees (1600L),Patristic(AVG),50,104.15,0.328256
+3154,est gene trees (1600L),Patristic(MIN),50,103.78999999999999,0.328164
+3155,est gene trees (1600L),Patristic(ALL),50,145.28,0.344408
+3156,est gene trees (1600L),ASTER,50,31.33,0.26218
+3157,est gene trees (1600L),CASTLES+ASTER,50,55.06,0.26218
+3158,est gene trees (1600L),Patristic(AVG)+FastME(AVG),50,104.23,0.328256
+3159,est gene trees (1600L),Patristic(MIN)+FastME(MIN),50,103.85999999999999,0.328164
+3160,est gene trees (1600L),Patristic(ALL)+ERaBLE,50,170.98,0.344408
+3161,est gene trees (800L),CASTLES,50,13.57,0.179904
+3162,est gene trees (800L),ERaBLE,50,25.41,0.179344
+3163,est gene trees (800L),FastME(AVG),50,0.1,0.00158
+3164,est gene trees (800L),FastME(MIN),50,0.09,0.00158
+3165,est gene trees (800L),Concat+RAxML,50,536.26,6.646588
+3166,est gene trees (800L),Patristic(AVG),50,103.89,0.33228
+3167,est gene trees (800L),Patristic(MIN),50,104.84,0.327512
+3168,est gene trees (800L),Patristic(ALL),50,144.29,0.3431
+3169,est gene trees (800L),ASTER,50,31.25,0.26216
+3170,est gene trees (800L),CASTLES+ASTER,50,44.82,0.26216
+3171,est gene trees (800L),Patristic(AVG)+FastME(AVG),50,103.99,0.33228
+3172,est gene trees (800L),Patristic(MIN)+FastME(MIN),50,104.93,0.327512
+3173,est gene trees (800L),Patristic(ALL)+ERaBLE,50,169.7,0.3431
+3174,est gene trees (400L),CASTLES,50,23.73,0.177056
+3175,est gene trees (400L),ERaBLE,50,25.64,0.179164
+3176,est gene trees (400L),FastME(AVG),50,0.09,0.00158
+3177,est gene trees (400L),FastME(MIN),50,0.09,0.00158
+3178,est gene trees (400L),Concat+RAxML,50,258.65,3.386044
+3179,est gene trees (400L),Patristic(AVG),50,103.28999999999999,0.326092
+3180,est gene trees (400L),Patristic(MIN),50,104.34,0.327476
+3181,est gene trees (400L),Patristic(ALL),50,144.41,0.343456
+3182,est gene trees (400L),ASTER,50,31.06,0.2607
+3183,est gene trees (400L),CASTLES+ASTER,50,54.79,0.2607
+3184,est gene trees (400L),Patristic(AVG)+FastME(AVG),50,103.38,0.326092
+3185,est gene trees (400L),Patristic(MIN)+FastME(MIN),50,104.43,0.327476
+3186,est gene trees (400L),Patristic(ALL)+ERaBLE,50,170.05,0.343456
+3187,est gene trees (200L),CASTLES,50,23.73,0.179532
+3188,est gene trees (200L),ERaBLE,50,25.87,0.179276
+3189,est gene trees (200L),FastME(AVG),50,0.09,0.00158
+3190,est gene trees (200L),FastME(MIN),50,0.16,0.00158
+3191,est gene trees (200L),Concat+RAxML,50,109.12,1.711764
+3192,est gene trees (200L),Patristic(AVG),50,105.78999999999999,0.327448
+3193,est gene trees (200L),Patristic(MIN),50,106.09,0.327716
+3194,est gene trees (200L),Patristic(ALL),50,144.86,0.342404
+3195,est gene trees (200L),ASTER,50,31.13,0.262104
+3196,est gene trees (200L),CASTLES+ASTER,50,54.86,0.262104
+3197,est gene trees (200L),Patristic(AVG)+FastME(AVG),50,105.88,0.327448
+3198,est gene trees (200L),Patristic(MIN)+FastME(MIN),50,106.25,0.327716
+3199,est gene trees (200L),Patristic(ALL)+ERaBLE,50,170.73000000000002,0.342404
