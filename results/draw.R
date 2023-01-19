@@ -253,11 +253,11 @@ ggplot(aes(x=ratevar, y=abserr,color=Method,fill=outgroup),
         axis.text.x = element_text(angle=0),
         legend.box.margin = margin(0), legend.margin = margin(0)
         )+
-  coord_cartesian(ylim=c(0,0.1) ,xlim=c(1,3), clip = "off")+
+  coord_cartesian(ylim=c(0,0.09865) ,xlim=c(1,3), clip = "off")+
   guides(color=guide_legend(nrow=2,  byrow=TRUE),
          fill=guide_legend(nrow=2, byrow=TRUE))+
-  annotate(geom="text",label="a)", x = 0.13, y = 0.104, size = 5) 
-ggsave("MV-error-perrep.pdf",width=6.5,height = 4.3)
+  annotate(geom="text",label="a)", x = 0.1, y = 0.103, size = 5) 
+ggsave("MV-error-perrep.pdf",width=6.5,height = 4.4)
 
 ggplot(aes(x=Method, y=abserr,fill=ratevar,color=outgroup,shape=outgroup),
        data=dcast(data=m[!mvariants,],
