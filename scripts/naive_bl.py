@@ -64,9 +64,13 @@ def naive(args):
             p_est = (num_m_gts - 0.5 * (num_n_gts+1)) / (num_n_gts + num_m_gts+1)
             d_est = -np.log(1 - p_est)
             print("d_est, p_est", d_est, p_est)
+            lm_i = safe_div(label_dict['LR_SO']['sumInternal'], label_dict['LR_SO']['quartetCnt'])
             ln_i = safe_div(label_dict['LS_RO']['sumInternal']+label_dict['LO_RS']['sumInternal'],
                             label_dict['LS_RO']['quartetCnt']+ label_dict['LO_RS']['quartetCnt'])
-            node.edge.length = ln_i * d_est
+            if args.mode == 'M':
+                node.edge.length = lm_i * d_est
+            elif args.mode == 'NM':
+                node.edge.length = ln_i * d_est
             node.label = None
 
     with open(args.outputtree, 'w') as f:
@@ -79,6 +83,8 @@ if __name__ == "__main__":
                         help="Species tree file in newick format")
     parser.add_argument("-g", "--genetrees", type=str, required=True,
                         help="Gene trees file in newick format")
+    parser.add_argument("-m", "--mode", type=str, required=False,
+                        help="options: M (matching), NM (non-matching)", default='M')
     parser.add_argument("-o", "--outputtree", type=str, required=True,
                         help="Species tree annotated with SU branches in newick format")
     naive(parser.parse_args())
