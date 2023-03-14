@@ -607,6 +607,28 @@ ggplot(aes(x=reorder(Condition,time_s),y=time_s/60,color=Method,group=Method),
          linetype=guide_legend(nrow=2, byrow=TRUE))
 ggsave("S100-time.pdf",width=6.3,height =5)
 
+
+ggplot(aes(color=reorder((Condition),time_s),y=time_s/60,x=reorder(Method,time_s)),
+       data=t[t$Method %in% c("CASTLES+ASTER","Concat+RAxML","Patristic(ALL)+ERaBLE" ,   "Patristic(AVG)+FastME(AVG)" ,    "Patristic(MIN)+FastME(MIN)" ),])+
+  #stat_summary(geom="line")+
+  #stat_summary()+
+  geom_boxplot()+
+  scale_fill_brewer(palette = "Set2",name="")+
+  scale_color_brewer(palette = "Paired",name="")+
+  scale_y_continuous(trans="log10",name="Running time (minutes)" )+
+  theme_bw()+
+  theme(legend.position = c(.3,.9), legend.direction = "horizontal",
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle=0),
+        legend.box.margin = margin(0), legend.margin = margin(0)
+  )+
+  coord_cartesian(xlim=c(1,5),clip="off")+
+  scale_x_discrete(label=function(x) gsub("+","+\n",x,fixed=T))+
+  annotate(geom="text",label="c)", x = 0.0, y = 42, size = 5) +
+  guides(color=guide_legend(nrow=2, byrow=TRUE),
+         linetype=guide_legend(nrow=2, byrow=TRUE))
+ggsave("S100-time-main-box.pdf",width=5*1.3,height = 2.6*1.3)
+
 ggplot(aes(x=reorder(Condition,time_s),y=time_s/60,color=Method,group=Method),
        data=t[t$Method %in% c("CASTLES+ASTER","Concat+RAxML","Patristic(ALL)+ERaBLE" ,   "Patristic(AVG)+FastME(AVG)" ,    "Patristic(MIN)+FastME(MIN)" ),])+
   stat_summary(geom="line")+
