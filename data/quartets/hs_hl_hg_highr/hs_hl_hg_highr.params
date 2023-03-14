@@ -1,0 +1,40 @@
+
+Global settings:
+--------------------
+
+Trees:
+	-Species trees: 200 Birth-death simulations
+		-Speciation rate: Fixed 1.000000e-04,
+		-Extinction rate: Fixed 0,
+		-Outgroup addition: No addition
+		-Stopping rules:
+			-Number of leaves: Fixed 4,
+			-Generations: Fixed 400,
+	-Locus trees: Fixed 10000, directly obtained from each species tree (no birth-death process)
+
+	-Gene trees: 1 multilocus coalescent simulations
+
+Parameters:
+	-Haploid efective population size: Fixed 800,
+	-Generation time: Fixed 1.000000e+00,
+	-Global substitution rate: LogN(-8,5.000000e-01)
+	-Substitution rate heterogeneities
+		-Lineage (species) specific rate heterogeneity gamma shape: LogN(1.500000e+00,1)
+		-Gene family (locus tree) specific rate heterogeneity gamma shape: LogN(1.500000e+00,1)
+		-Gene tree branch specific rate heterogeneity gamma shape: Genome-wide parameter (hyperhyperparameter) No heterogeneity, locus-tree related parameter Fixed 10000,, Gamma parameter(gene-tree related) LogN(1.500000e+00,1)
+	-Individuals per species: Fixed 1,
+
+Misc parameters:
+	-Rooting method epsilon: 0.000001
+	-Seed: 12964
+
+I/O options:
+	-Output files prefix: hs_hl_hg_highr
+	-Verbosity: 4
+	-Stats file: OFF
+	-Mapping: OFF
+	-Database: ON
+	-Parameterization: ON 
+	-Command-line arguments: ON
+	-Bounded locus subtrees: OFF
+	-Output trees with internal node labels: OFF
