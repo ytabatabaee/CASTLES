@@ -58,7 +58,6 @@ def find_sibling(node):
 def castles(args):
     tns = dendropy.TaxonNamespace()
     st = dendropy.Tree.get(path=args.speciestree, schema='newick', taxon_namespace=tns)
-    st = st.extract_tree_without_taxa([],suppress_unifurcations=True)
     gts = dendropy.TreeList.get(path=args.genetrees, schema='newick', taxon_namespace=tns)
 
     #st.deroot()
@@ -74,7 +73,7 @@ def castles(args):
             num_m_gts = label_dict['LR_SO']['quartetCnt']
             num_n_gts = label_dict['LS_RO']['quartetCnt'] + label_dict['LO_RS']['quartetCnt']
             p_est = (num_m_gts - 0.5 * (1 + num_n_gts)) / (num_n_gts + num_m_gts + 1)
-            #d_est = -np.log(1 - p_est)
+            d_est = -np.log(1 - p_est)
 
             left = node._child_nodes[0]
             right = node._child_nodes[1]
@@ -104,11 +103,11 @@ def castles(args):
             #l_integrals = 1 / 3 * (lm_i - ln_i) * d_est * (1 + 2 * p_est) / (d_est - p_est)
             #l_naive = d_est * ln_i
 
-            delta = safe_div(np.abs(lm_i - ln_i), ln_i)
+            delta = safe_div(lm_i - ln_i, ln_i) if lm_i > ln_i else 1e-03
             l_est = 1/6 * (3 * delta + np.sqrt(3 * delta * (4 + 3 * delta))) * ln_i
 
-            #m = max(0, d_est)
-            #l_taylor_34 = 1/6 * (3 * (delta + m) + np.sqrt(3)*np.exp(-m)*np.sqrt(np.abs(np.exp(m)*(3*np.exp(m)*(delta-m+2)**2-4*(2*delta+3))))) * ln_i
+           # m = max(0, d_est)
+           # l_est = 1/6 * (3 * (delta + m) + np.sqrt(3)*np.exp(-m)*np.sqrt(np.abs(np.exp(m)*(3*np.exp(m)*(delta-m+2)**2-4*(2*delta+3))))) * ln_i
 
             #M = delta*(delta*(delta+6)+3) - 1
             #A = 3 * np.sqrt(np.abs(-delta*(delta*(delta*(delta+6)+6)+2)))
@@ -122,11 +121,13 @@ def castles(args):
             #print("l_est, l_taylor", l_integrals, l_taylor_33)#, l_mixed)
 
             #l_est = l_taylor_33
-            #mu1_est = l_est / d_est
+            mu1_est = l_est / d_est
 
             # cherry equations
             mu2_est_a = -2 * (1 + 2 * p_est) * ((lm_i - ln_i) + (lm_a - ln_a)) / (1 + 4 * p_est)
             mu2_est_b = -2 * (1 + 2 * p_est) * ((lm_i - ln_i) + (lm_b - ln_b)) / (1 + 4 * p_est)
+            #mu2_est_a = -(mu1_est * 3 * (d_est - p_est) + (lm_a - ln_a) * (1 + 2 * p_est)) * 2 / (1 + 4 * p_est)
+            #mu2_est_b = -(mu1_est * 3 * (d_est - p_est) + (lm_b - ln_b) * (1 + 2 * p_est)) * 2 / (1 + 4 * p_est)
 
             l_a_est = ln_a - 5 / 6 * mu2_est_a - l_est
             l_b_est = ln_b - 5 / 6 * mu2_est_b - l_est
@@ -139,8 +140,6 @@ def castles(args):
                     if l_d_est == 0:
                         l_d_est = average_terminal_bl(gts, sibling.taxon.label)
                     set_branch_length(node.edge, l_d_est)
-                    node.edge.length /= 4.0
-                    sibling.edge.length = node.edge.length * 3.0
                 else:
                     set_branch_length(node.edge, l_est)
             elif not node.edge.length:
@@ -182,7 +181,7 @@ def castles(args):
                 set_branch_length(sibling.edge, l_c_est)'''
         node.label = None
 
-    #st.deroot()
+    st.deroot()
     with open(args.outputtree, 'w') as f:
         f.write(str(st) + ';\n')
 

@@ -135,28 +135,29 @@ def castles(args):
     ln_d = np.mean(bl_n_gts[4]) if len(n_gts) > 0 else 0
 
 
-    l_formula = 1 / 3 * np.abs(lm_i - ln_i) * d_est * (1 + 2 * p_est) / (d_est - p_est)
+    #l_formula = 1 / 3 * np.abs(lm_i - ln_i) * d_est * (1 + 2 * p_est) / (d_est - p_est)
     #l_est = (math.log(num_gts) * d_est * l_formula + 1/(math.log(num_gts) * d_est) * l_naive) / (math.log(num_gts) * d_est + 1/(math.log(num_gts) * d_est))
 
-    delta = np.abs(lm_i - ln_i) / ln_i
+    delta = (lm_i - ln_i) / ln_i if lm_i > ln_i else 1e-03
+    #delta = np.abs(lm_i - ln_i) / ln_i
     l_taylor_33 = 1/6 * (3 * delta + np.sqrt(3 * delta * (4 + 3 * delta))) * ln_i
 
-    m = max(0, d_est)
-    l_taylor_34 = 1/6 * (3 * (delta + m) + np.sqrt(3)*np.exp(-m)*np.sqrt(np.abs(np.exp(m)*(3*np.exp(m)*(delta-m+2)**2-4*(2*delta+3))))) * ln_i
+    #m = max(0, d_est)
+    #l_taylor_34 = 1/6 * (3 * (delta + m) + np.sqrt(3)*np.exp(-m)*np.sqrt(np.abs(np.exp(m)*(3*np.exp(m)*(delta-m+2)**2-4*(2*delta+3))))) * ln_i
 
-    M = delta*(delta*(delta+6)+3) - 1
-    A = 3 * np.sqrt(np.abs(-delta*(delta*(delta*(delta+6)+6)+2)))
-    l_taylor_35 = 1/3 * (delta - 1 + (M + A)**(1/3) + (delta*(delta+4)+1)/((M + A)**(1/3))) * ln_i
+    #M = delta*(delta*(delta+6)+3) - 1
+    #A = 3 * np.sqrt(np.abs(-delta*(delta*(delta*(delta+6)+6)+2)))
+    #l_taylor_35 = 1/3 * (delta - 1 + (M + A)**(1/3) + (delta*(delta+4)+1)/((M + A)**(1/3))) * ln_i
 
     l_est = l_taylor_33
 
     #mu1_est = ln_i
     mu1_est = l_est / d_est
 
-    if balanced:
-        mu3_est = ln_i
-    else:
-        mu3_est = -(mu1_est * 3 * (d_est - p_est) + (lm_a - ln_a) * (1+2*p_est))/(2*p_est)
+    #if balanced:
+    #    mu3_est = ln_i
+    #else:
+    #    mu3_est = -(mu1_est * 3 * (d_est - p_est) + (lm_a - ln_a) * (1+2*p_est))/(2*p_est)
 
 
     mu2_est_a = -(mu1_est * 3 * (d_est - p_est) + (lm_a - ln_a) * (1 + 2 * p_est)) * 2 / (1 + 4 * p_est)
@@ -165,10 +166,14 @@ def castles(args):
     mu2_est_d = -(mu1_est * 3 * (d_est - p_est) + (lm_d - ln_d) * (1 + 2 * p_est)) * 2 / (1 + 4 * p_est)
 
     if balanced:
-        l_a_est = ln_a - 5 / 6 * mu2_est_a - mu1_est * d_est#l_est
-        l_b_est = ln_b - 5 / 6 * mu2_est_b - mu1_est * d_est#l_est
-        l_c_est = ln_c - 5 / 6 * mu2_est_c - mu1_est * d_est#l_est
-        l_d_est = ln_d - 5 / 6 * mu2_est_d - mu1_est * d_est#l_est
+        #l_a_est = ln_a - 5 / 6 * mu2_est_a - mu1_est * d_est#l_est
+        #l_b_est = ln_b - 5 / 6 * mu2_est_b - mu1_est * d_est#l_est
+        #l_c_est = ln_c - 5 / 6 * mu2_est_c - mu1_est * d_est#l_est
+        #l_d_est = ln_d - 5 / 6 * mu2_est_d - mu1_est * d_est#l_est
+        l_a_est = ln_a - 2 / 3 * mu1_est - 1 / 3 *(mu1_est * p_est - (lm_a - ln_a) * (1 + 2*p_est)) # l_est
+        l_b_est = ln_b - 2 / 3 * mu1_est - 1 / 3 *(mu1_est * p_est - (lm_b - ln_b) * (1 + 2*p_est))
+        l_c_est = ln_c - 2 / 3 * mu1_est - 1 / 3 *(mu1_est * p_est - (lm_c - ln_c) * (1 + 2*p_est))
+        l_d_est = ln_d - 2 / 3 * mu1_est - 1 / 3 *(mu1_est * p_est - (lm_d - ln_d) * (1 + 2*p_est))
     else:
         l_a_est = ln_a - 5 / 6 * mu2_est_a - mu1_est * d_est#l_est
         l_b_est = ln_b - 5 / 6 * mu2_est_b - mu1_est * d_est#l_est
@@ -192,7 +197,6 @@ def castles(args):
         else:
             node.edge.length = l_est
         node.label = None
-
 
     with open(args.outputtree, 'w') as f:
         f.write(str(st) + ';\n')
