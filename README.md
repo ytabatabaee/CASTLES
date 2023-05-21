@@ -31,3 +31,6 @@ The `example` directory contains one example set, with a 30-taxon model species 
 ```
 $ python3 castles.py -t example/aster.trees.annotated -g example/estimatedgenetre.gtr -o example/castles.tre
 ```
+
+## Data Availability
+Datasets and results from this paper are available in [CASTLES-paper](https://github.com/ytabatabaee/CASTLES-paper/tree/main) repository.
