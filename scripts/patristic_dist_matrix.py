@@ -1,12 +1,10 @@
 import dendropy
-import sys
 import numpy as np
 import argparse
 
 
 def main(args):
     tns = dendropy.TaxonNamespace()
-    st = dendropy.Tree.get(path=args.speciestree, schema='newick', taxon_namespace=tns)
     gts = dendropy.TreeList.get(path=args.genetrees, schema='newick', taxon_namespace=tns)
 
     dist_mat = np.zeros((len(tns), len(tns), len(gts)))
@@ -58,12 +56,10 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="CASTLES")
-    parser.add_argument("-t", "--speciestree", type=str,  required=True,
-                        help="Species tree file in newick format")
     parser.add_argument("-g", "--genetrees", type=str, required=True,
                         help="Gene trees file in newick format")
     parser.add_argument("-m", "--mode", type=str, required=False,
                         help="options: min, avg, med, all", default='avg')
     parser.add_argument("-o", "--outputmatrix", type=str, required=False,
-                        help="Output distance matrix in phylip format")
+                        help="Output distance matrix in Phylip format")
     main(parser.parse_args())
