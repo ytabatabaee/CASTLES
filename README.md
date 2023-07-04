@@ -27,7 +27,8 @@ Then, use the following command to run ASTER, where the annotated tree is printe
 ```
 $ astral -C -i <gene_tree_path> -c <species_tree_path> -o <output_path> > annotated.tre
 ```
-Particularly, when there are multiple individuals per species and the individual names do not match the species names, run the following command
+#### Handling multiple individuals per species
+When there are multiple individuals per species and the individual names do not match the species names, run the following command
 ```
 $ astral -C -i <gene_tree> -m <name_map> -c <species_tree> -o <output_path> > annotated.tre
 ```
