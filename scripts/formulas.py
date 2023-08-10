@@ -1,8 +1,8 @@
+import argparse
 import math
-import sys
 from itertools import combinations
-import matplotlib.pyplot as plt
 import dendropy
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -76,6 +76,7 @@ def node_labels(t):
 
 
 def get_mutation_rates(t, labels, rates_path, global_subs_path, balanced):
+    # read mutation rates in pre-order traversal of the tree
     for node in t.postorder_node_iter():
         if node.is_leaf():
             node.label = node.taxon.label
@@ -85,7 +86,7 @@ def get_mutation_rates(t, labels, rates_path, global_subs_path, balanced):
             node_list = left.label.split(',') + right.label.split(',')
             node.label = ','.join(sorted(node_list))
     preorder_labels = [node.label for node in t.preorder_node_iter()]
-    print(preorder_labels)
+    # print(preorder_labels)
     with open(global_subs_path) as f:
         global_rate = float(f.readline().split()[-1])
     print('global subs rate:', global_rate)
@@ -93,7 +94,7 @@ def get_mutation_rates(t, labels, rates_path, global_subs_path, balanced):
     for line in open(rates_path):
         mu_rates = line.split("\t")
         mu_rates = [float(mu) * global_rate for mu in mu_rates[:-1]]
-    print(mu_rates)
+    print('max/min substitution rate:', max(mu_rates) / min(mu_rates))
     if balanced:
         mu1 = mu_rates[preorder_labels.index(','.join(sorted(labels[0:2])))]
         mu2 = mu_rates[preorder_labels.index(','.join(sorted(labels[2:4])))]
@@ -115,16 +116,38 @@ def get_mutation_rates(t, labels, rates_path, global_subs_path, balanced):
     return mu3, mu2, mu1, mua, mub, muc, mud
 
 
+def balanced_internal_formulas(pop_size, t1, t2, mu1, mu2, mu3):
+    lm_i_theory = pop_size * (3 * math.exp(-t1) * (mu1 - mu3) + mu3 * math.exp(-(t1 + t2)) + 3 * math.exp(-t2) * (
+            mu2 - mu3) + 3 * (t1 * mu1 + t2 * mu2 - mu1 - mu2 + 2 * mu3)) / (3 - 2 * math.exp(-(t1 + t2)))
+    ln_i_theory = pop_size * mu3
+    lm_i_simplified = pop_size * ((3 * mu1 * (t1 + math.exp(-t1) - 1)) / (3 - 2 * math.exp(-t1)) + mu3)
+    ln_i_simplified = pop_size * mu3
+    return lm_i_theory, ln_i_theory, lm_i_simplified, ln_i_simplified
+
+
 def balanced_terminal_formulas(pop_size, t1, t2, t_a, mu1, mu3, mua):
+    # terminal A, B, C, D
     lm_a_theory = pop_size * ((math.exp(-(t1 + t2)) * (-6 * t1 * mu1 - 7 * mu3) + 9 * (
             (1 - math.exp(-t1)) * mu1 + mu3 * math.exp(-t1))) / (9 - 6 * math.exp(-(t1 + t2))) + t_a * mua)
     ln_a_theory = pop_size * (t1 * mu1 + 2 / 3 * mu3 + t_a * mua)
     lm_a_simplified = pop_size * (mu1 + mu1 * (1 + 6 * t1) / (6 - 9 * math.exp(t1 + t2)) + t_a * mua)
     ln_a_simplified = pop_size * (t1 * mu1 + 2 / 3 * mu1 + t_a * mua)
+    # delta_a_theory = pop_size * ()
+    # delta_a_simplified = pop_size * ()
     return lm_a_theory, ln_a_theory, lm_a_simplified, ln_a_simplified
 
 
+def unbalanced_internal_formulas(pop_size, t1, t2, mu1, mu2, mu3):
+    lm_i_theory = pop_size * (((math.exp(-3 * t2) + 3 * math.exp(-t2) - 6 * math.exp(t1 - t2)) * (mu2 - mu3) + 6 * (
+            1 - math.exp(t1) + t1 * math.exp(t1)) * mu1) / (2 * (3 * math.exp(t1) - 2)) + mu2)
+    ln_i_theory = pop_size * (mu2 + 0.5 * (mu2 - mu3) * (math.exp(-3 * t2) - 3 * math.exp(-t2)))
+    lm_i_simplified = pop_size * ((3 * mu1 * (t1 + math.exp(-t1) - 1)) / (3 - 2 * math.exp(-t1)) + mu2)
+    ln_i_simplified = pop_size * mu2
+    return lm_i_theory, ln_i_theory, lm_i_simplified, ln_i_simplified
+
+
 def unbalanced_cherry_formulas(pop_size, t1, t2, t_a, mu1, mu2, mu3, mua):
+    # terminal A, B
     lm_a_theory = pop_size * ((6 * t1 * mu1 + 3 * mu1 - mu2 + math.exp(-3 * t2) * (mu2 - 2 * mu3)) / (
             6 - 9 * math.exp(t1)) + mu1 + mua * t_a)
     ln_a_theory = pop_size * (1 / 12 * (10 * mu2 - 9 * math.exp(-t2) * (mu2 - mu3) - 3 * math.exp(-3 * t2) * (
@@ -134,8 +157,29 @@ def unbalanced_cherry_formulas(pop_size, t1, t2, t_a, mu1, mu2, mu3, mua):
     return lm_a_theory, ln_a_theory, lm_a_simplified, ln_a_simplified
 
 
+def unbalanced_middle_branch_formulas(pop_size, t1, t2, t_c, mu2, mu3, muc):
+    # terminal C
+    lm_c_theory = pop_size * (-math.exp(-t2) * (mu2 - mu3) + mu2 + muc * t_c + (
+            2 * mu2 - (3 * math.exp(-t2) - math.exp(-3 * t2)) * (mu2 - mu3) - 4 * mu3 * math.exp(-3 * t2)) / (
+                                      6 * (3 * math.exp(t1) - 2)))
+    ln_c_theory = pop_size * (1 / 3 * mu2 * (1 + math.exp(-3 * t2)) + muc * t_c)
+    lm_c_simplified = pop_size * (mu2 + muc * t_c + mu2 / (3 * (3 * math.exp(t1) - 2)))
+    ln_c_simplified = pop_size * (1 / 3 * mu2 + muc * t_c)
+    return lm_c_theory, ln_c_theory, lm_c_simplified, ln_c_simplified
 
-def compute_su_branches(dir, idx, df):
+
+def unbalanced_root_adjacent_formulas(pop_size, t1, t2, t_d, mu2, mu3, mud):
+    # terminal D
+    lm_d_theory = pop_size * (math.exp(-t2) * (mu2 - mu3) - mu2 + 2 * mu3 + t2 * mu2 + t_d * mud + (
+            -2 * mu2 + (3 * math.exp(-t2) - math.exp(-3 * t2)) * (mu2 - mu3)) / (6 * (3 * math.exp(t1) - 2)))
+    ln_d_theory = pop_size * ((3 / 2 * math.exp(-t2) - 1 / 6 * math.exp(-3 * t2)) * (
+            mu2 - mu3) - 4 / 3 * mu2 + 2 * mu3 + t2 * mu2 + mud * t_d)
+    lm_d_simplified = pop_size * (mu2 + t2 * mu2 + mud * t_d - (mu2 / (3 * (3 * math.exp(t1) - 2))))
+    ln_d_simplified = pop_size * (2 / 3 * mu2 + t2 * mu2 + mud * t_d)
+    return lm_d_theory, ln_d_theory, lm_d_simplified, ln_d_simplified
+
+
+def compute_su_branches(pop_size, dir, idx, df):
     tns = dendropy.TaxonNamespace()
     st_r = dendropy.Tree.get(path=dir + '/' + idx + '/s_tree.trees', schema='newick', taxon_namespace=tns,
                              rooting="force-rooted")
@@ -144,8 +188,6 @@ def compute_su_branches(dir, idx, df):
     st_u = dendropy.Tree.get(path=dir + '/' + idx + '/s_tree.trees', schema='newick', taxon_namespace=tns)
     st_c = dendropy.Tree.get(path=dir + '/' + idx + '/species_trees.cu', schema='newick', taxon_namespace=tns)
     gts = dendropy.TreeList.get(path=dir + '/' + idx + '/truegenetrees', schema='newick', taxon_namespace=tns)
-
-    pop_size = 100
 
     st_c.deroot()
     st_u.deroot()
@@ -179,7 +221,7 @@ def compute_su_branches(dir, idx, df):
     num_gts = len(gts)
     print('#matching, #non-matching: ', num_m_gts, num_n_gts)
     print('mu3/mu2, mu3/mu1', mu3 / mu2, mu3 / mu1)
-    l_true, l_a_true, l_b_true, l_c_true, l_d_true = get_branch_lengths(st_u, labels)
+    l_i_true, l_a_true, l_b_true, l_c_true, l_d_true = get_branch_lengths(st_u, labels)
     print('true l_a', l_a_true)
 
     d, _, _, _, _ = get_branch_lengths(st_c, labels, nc=1 / pop_size)
@@ -190,11 +232,7 @@ def compute_su_branches(dir, idx, df):
     if balanced:
         print('td*mud / l_d_true', t_d * mud * pop_size / l_d_true)
     else:
-        print('td*mud+t2mu2 / l_d_true', (t_d * mud + t2*mu2) * pop_size / l_d_true)
-    if balanced:
-        print(d - (t1 + t2))
-    else:
-        print(d - t1)
+        print('td*mud+t2mu2 / l_d_true', (t_d * mud + t2 * mu2) * pop_size / l_d_true)
     p = 1 - math.exp(-d)
     print("d, p", d, p)
 
@@ -228,212 +266,128 @@ def compute_su_branches(dir, idx, df):
     ln_d = np.mean(bl_n_gts[4]) if len(n_gts) > 0 else 0
 
     if balanced:
-        lm_i_theory = pop_size * (3 * math.exp(-t1) * (mu1 - mu3) + mu3 * math.exp(-(t1 + t2)) + 3 * math.exp(-t2) * (
-                    mu2 - mu3) + 3 * (t1 * mu1 + t2 * mu2 - mu1 - mu2 + 2 * mu3)) / (3 - 2 * math.exp(-(t1 + t2)))
-        ln_i_theory = pop_size * mu3
-        lm_i_simplified = pop_size * ((3 * mu1 * (t1 + math.exp(-t1) - 1)) / (3 - 2 * math.exp(-t1)) + mu3)
-        ln_i_simplified = pop_size * mu3
-
-        lm_a_theory = pop_size * ((math.exp(-(t1 + t2)) * (-6 * t1 * mu1 - 7 * mu3) + 9 * (
-                    (1 - math.exp(-t1)) * mu1 + mu3 * math.exp(-t1))) / (9 - 6 * math.exp(-(t1 + t2))) + t_a * mua)
-        ln_a_theory = pop_size * (t1 * mu1 + 2 / 3 * mu3 + t_a * mua)
-        lm_a_simplified = pop_size * (mu1 + mu1 * (1 + 6 * t1) / (6 - 9 * math.exp(t1 + t2)) + t_a * mua)
-        ln_a_simplified = pop_size * (t1 * mu1 + 2 / 3 * mu1 + t_a * mua)
+        lm_i_theory, ln_i_theory, lm_i_simplified, ln_i_simplified = balanced_internal_formulas(pop_size, t1, t2, mu1,
+                                                                                                mu2, mu3)
+        lm_a_theory, ln_a_theory, lm_a_simplified, ln_a_simplified = balanced_terminal_formulas(pop_size, t1, t2, t_a,
+                                                                                                mu1, mu3, mua)
+        lm_b_theory, ln_b_theory, lm_b_simplified, ln_b_simplified = balanced_terminal_formulas(pop_size, t1, t2, t_b,
+                                                                                                mu1, mu3, mub)
+        lm_c_theory, ln_c_theory, lm_c_simplified, ln_c_simplified = balanced_terminal_formulas(pop_size, t2, t1, t_c,
+                                                                                                mu2, mu3, muc)
+        lm_d_theory, ln_d_theory, lm_d_simplified, ln_d_simplified = balanced_terminal_formulas(pop_size, t2, t1, t_d,
+                                                                                                mu2, mu3, mud)
+        l_a_est = ln_a_theory - 2 / 3 * mu1 * pop_size - 1 / 3 * (
+                mu1 * pop_size * (1 - math.exp(-(t1 + t2))) - (lm_a_theory - ln_a_theory) * (
+                3 - 2 * math.exp(-(t1 + t2))))
+        l_b_est = ln_b_theory - 2 / 3 * mu1 * pop_size - 1 / 3 * (
+                mu1 * pop_size * (1 - math.exp(-(t1 + t2))) - (lm_b_theory - ln_b_theory) * (
+                3 - 2 * math.exp(-(t1 + t2))))
+        l_c_est = ln_c_theory - 2 / 3 * mu2 * pop_size - 1 / 3 * (
+                mu2 * pop_size * (1 - math.exp(-(t1 + t2))) - (lm_c_theory - ln_c_theory) * (
+                3 - 2 * math.exp(-(t1 + t2))))
+        l_d_est = ln_d_theory - 2 / 3 * mu2 * pop_size - 1 / 3 * (
+                mu2 * pop_size * (1 - math.exp(-(t1 + t2))) - (lm_d_theory - ln_d_theory) * (
+                3 - 2 * math.exp(-(t1 + t2))))
 
     else:
-        lm_i_theory = pop_size * (((math.exp(-3 * t2) + 3 * math.exp(-t2) - 6 * math.exp(t1 - t2)) * (mu2 - mu3) + 6 * (
-                    1 - math.exp(t1) + t1 * math.exp(t1)) * mu1) / (2 * (3 * math.exp(t1) - 2)) + mu2)
-        ln_i_theory = pop_size * (mu2 + 0.5 * (mu2 - mu3) * (math.exp(-3 * t2) - 3 * math.exp(-t2)))
-        lm_i_simplified = pop_size * ((3 * mu1 * (t1 + math.exp(-t1) - 1)) / (3 - 2 * math.exp(-t1)) + mu2)
-        ln_i_simplified = pop_size * mu2
+        lm_i_theory, ln_i_theory, lm_i_simplified, ln_i_simplified = unbalanced_internal_formulas(pop_size, t1, t2, mu1,
+                                                                                                  mu2, mu3)
+        lm_a_theory, ln_a_theory, lm_a_simplified, ln_a_simplified = unbalanced_cherry_formulas(pop_size, t1, t2, t_a,
+                                                                                                mu1, mu2, mu3, mua)
+        lm_b_theory, ln_b_theory, lm_b_simplified, ln_b_simplified = unbalanced_cherry_formulas(pop_size, t1, t2, t_b,
+                                                                                                mu1, mu2, mu3, mub)
+        lm_c_theory, ln_c_theory, lm_c_simplified, ln_c_simplified = unbalanced_middle_branch_formulas(pop_size, t1, t2,
+                                                                                                       t_c, mu2, mu3,
+                                                                                                       muc)
+        lm_d_theory, ln_d_theory, lm_d_simplified, ln_d_simplified = unbalanced_root_adjacent_formulas(pop_size, t1, t2,
+                                                                                                       t_d, mu2, mu3,
+                                                                                                       mud)
+        l_a_est = ln_a_theory + (pop_size * mu1 * (math.exp(-t1) - 1 + t1) + (lm_a_theory - ln_a_theory) * (
+                1 - 2 / 3 * math.exp(-t1))) / (1 - 4 / 5 * math.exp(-t1)) - t1 * mu1 * pop_size
+        l_b_est = ln_b_theory + (pop_size * mu1 * (math.exp(-t1) - 1 + t1) + (lm_b_theory - ln_b_theory) * (
+                    1 - 2 / 3 * math.exp(-t1))) / (1 - 4 / 5 * math.exp(-t1)) - t1 * mu1 * pop_size
+        l_c_est = ln_c_theory - 1 / 3 * (2 - (1 / (2 - math.exp(-t1)))) * (lm_c_theory - ln_c_theory)
+        l_d_est = ln_d_theory - 2 / 3 * (2 + (1 / (1 - math.exp(-t1)))) * (lm_d_theory - ln_d_theory)
 
-        lm_a_theory = pop_size * ((6 * t1 * mu1 + 3 * mu1 - mu2 + math.exp(-3 * t2) * (mu2 - 2 * mu3)) / (
-                    6 - 9 * math.exp(t1)) + mu1 + mua * t_a)
-        ln_a_theory = pop_size * (1 / 12 * (10 * mu2 - 9 * math.exp(-t2) * (mu2 - mu3) - 3 * math.exp(-3 * t2) * (
-                    mu2 + mu3)) + t1 * mu1 + t_a * mua)
-        lm_a_simplified = pop_size * ((6 * t1 * mu1 + 3 * mu1 - mu2) / (6 - 9 * math.exp(t1)) + mu1 + t_a * mua)
-        ln_a_simplified = pop_size * (t1 * mu1 + 5 / 6 * mu2 + t_a * mua)
+    delta = (lm_i - ln_i) / ln_i if (lm_i - ln_i) >= 0 else 1e-02
 
-        lm_c_theory = pop_size * (-math.exp(-t2) * (mu2 - mu3) + mu2 + muc * t_c + (
-                    2 * mu2 - (3 * math.exp(-t2) - math.exp(-3 * t2)) * (mu2 - mu3) - 4 * mu3 * math.exp(-3 * t2)) / (
-                                              6 * (3 * math.exp(t1) - 2)))
-        ln_c_theory = pop_size * (1 / 3 * mu2 * (1 + math.exp(-3 * t2)) + muc * t_c)
-        lm_c_simplified = pop_size * (mu2 + muc * t_c + mu2 / (3 * (3 * math.exp(t1) - 2)))
-        ln_c_simplified = pop_size * (1 / 3 * mu2 + muc * t_c)
+    l_i_est = ln_i * (1 / 2 * delta + 1 / 6 * math.sqrt(3 * delta * (3 * delta + 4)))
+    l_i_lambert_alt = (np.sqrt(2 / 3 * delta) + 7 / 9 * delta + 19 * (delta ** (3 / 2)) / (27 * np.sqrt(6)) - (
+           delta ** 2) / 9) * ln_i
 
-        print('lm_c, lm_c (theory), lm_c (simplified)', lm_c, lm_c_theory, lm_c_simplified)
-        print('ln_c, ln_c (thoery), ln_c (simplified)', ln_c, ln_c_theory, ln_c_simplified)
-        print('lm_c/lm_c (theory), lm_c/lm_c (simplified), lm_c(simplified)/lm_c(theory)', lm_c / lm_c_theory,
-              lm_c / lm_c_simplified, lm_c_simplified / lm_c_theory)
-        print('ln_c/ln_c (theory), ln_c/ln_c (simplified), ln_c(simplified)/ln_c(theory)', ln_c / ln_c_theory,
-              ln_c / ln_c_simplified,
-              ln_c_simplified / ln_c_theory)
+    '''delta_theory = (lm_i_theory - ln_i_theory) / ln_i_theory if (lm_i_theory - ln_i_theory) >= 0 else 1e-03
+
+    l_i_est = ln_i_theory * (1 / 2 * delta_theory + 1 / 6 * math.sqrt(3 * delta_theory * (3 * delta_theory + 4)))
+    l_i_lambert_alt = (np.sqrt(2 / 3 * delta_theory) + 7 / 9 * delta_theory + 19 * (delta_theory ** (3 / 2)) / (27 * np.sqrt(6)) - (
+            delta_theory ** 2) / 9) * ln_i_theory'''
 
     print('lm, lm (theory), lm (simplified)', lm_i, lm_i_theory, lm_i_simplified)
-    print('ln, ln (thoery), ln (simplified)', ln_i, ln_i_theory, ln_i_simplified)
-    print('lm/lm (theory), lm/lm (simplified), lm(simplified)/lm(theory)', lm_i / lm_i_theory, lm_i / lm_i_simplified,
-          lm_i_simplified / lm_i_theory)
-    print('ln/ln (theory), ln/ln (simplified), ln(simplified)/ln(theory)', ln_i / ln_i_theory, ln_i / ln_i_simplified,
-          ln_i_simplified / ln_i_theory)
+    print('ln, ln (theory), ln (simplified)', ln_i, ln_i_theory, ln_i_simplified)
+    print('lm(simplified)/lm(theory)', lm_i_simplified / lm_i_theory)
+    print('ln(simplified)/ln(theory)', ln_i_simplified / ln_i_theory)
+    print('l_i, l_i_est, l_i_lambert_alt', l_i_true, l_i_est, l_i_lambert_alt)
+    print('l_i_est/l_i', l_i_est / l_i_true)
+    print('l_i_lambert_alt/l_i', l_i_lambert_alt / l_i_true)
+    print('delta, delta_theory, delta/delta_theory', delta, delta_theory, delta/delta_theory)
 
     print('lm_a, lm_a (theory), lm_a (simplified)', lm_a, lm_a_theory, lm_a_simplified)
-    print('ln_a, ln_a (thoery), ln_a (simplified)', ln_a, ln_a_theory, ln_a_simplified)
-    print('lm_a/lm_a (theory), lm_a/lm_a (simplified), lm_a(simplified)/lm_a(theory)', lm_a / lm_a_theory,
-          lm_a / lm_a_simplified, lm_a_simplified / lm_a_theory)
-    print('ln_a/ln_a (theory), ln_a/ln_a (simplified), ln_a(simplified)/ln_a(theory)', ln_a / ln_a_theory,
-          ln_a / ln_a_simplified,
-          ln_a_simplified / ln_a_theory)
-    return
+    print('ln_a, ln_a (theory), ln_a (simplified)', ln_a, ln_a_theory, ln_a_simplified)
+    print('lm_a(simplified)/lm_a(theory)', lm_a_simplified / lm_a_theory)
+    print('ln_a(simplified)/ln_a(theory)', ln_a_simplified / ln_a_theory)
+    print('l_a_est/l_a', l_a_est / l_a_true)
 
-    lm_b_theory = (mu1 + (-3 * (1 + 2 * d) * mu1 + 2 * mu3) / (-6 + 9 * math.exp(d))) * 100 + l_b_true
-    ln_b_theory = (t1 * mu1 + 2 / 3 * mu3) * 100 + l_b_true
+    print('lm_b, lm_b (theory), lm_b (simplified)', lm_b, lm_b_theory, lm_b_simplified)
+    print('ln_b, ln_b (theory), ln_b (simplified)', ln_b, ln_b_theory, ln_b_simplified)
+    print('lm_b(simplified)/lm_b(theory)', lm_b_simplified / lm_b_theory)
+    print('ln_b(simplified)/ln_b(theory)', ln_b_simplified / ln_b_theory)
+    print('l_b_est/l_b', l_b_est / l_b_true)
 
-    lm_c_theory = mu2 * (1 + 1 / (-6 + 9 * math.exp(d))) * 100 + l_c_true
-    if not balanced:
-        ln_c_theory = mu2 / 3 * 100 + l_c_true
-    else:
-        ln_c_theory = (t2 * mu2 + 2 / 3 * mu3) * 100 + l_c_true
+    print('lm_c, lm_c (theory), lm_c (simplified)', lm_c, lm_c_theory, lm_c_simplified)
+    print('ln_c, ln_c (theory), ln_c (simplified)', ln_c, ln_c_theory, ln_c_simplified)
+    print('lm_c(simplified)/lm_c(theory)', lm_c_simplified / lm_c_theory)
+    print('ln_c(simplified)/ln_c(theory)', ln_c_simplified / ln_c_theory)
+    print('l_c_est/l_c', l_c_est / l_c_true)
 
-    lm_d_theory = mu3 * (1 + 1 / (6 - 9 * math.exp(d))) * 100 + l_d_true
-    if not balanced:
-        ln_d_theory = 2 * mu3 / 3 * 100 + l_d_true
-    else:
-        ln_d_theory = (t2 * mu2 + 2 / 3 * mu3) * 100 + l_d_true
+    print('lm_d, lm_d (theory), lm_d (simplified)', lm_d, lm_d_theory, lm_d_simplified)
+    print('ln_d, ln_d (thoery), ln_d (simplified)', ln_d, ln_d_theory, ln_d_simplified)
+    print('lm_d(simplified)/lm_d(theory)', lm_d_simplified / lm_d_theory)
+    print('ln_d(simplified)/ln_d(theory)', ln_d_simplified / ln_d_theory)
+    print('l_d_est/l_d', l_d_est / l_d_true)
 
-    l_formula = 1 / 3 * np.abs(lm_i - ln_i) * d_est * (1 + 2 * p_est) / (d_est - p_est)
-    l_naive = d_est * (mu1 + mu2 + mu3 + mua + mub + muc + mud) * 100 / 7
-    l_est = (math.log(num_gts) * d_est * l_formula + 1 / (math.log(num_gts) * d_est) * l_naive) / (
-                math.log(num_gts) * d_est + 1 / (math.log(num_gts) * d_est))
-
-    delta = np.abs(lm_i - ln_i) / ln_i
-    l_taylor_33 = 1 / 6 * (3 * delta + np.sqrt(3 * delta * (4 + 3 * delta))) * ln_i
-
-    m = max(0, d_est)
-    l_taylor_34 = 1 / 6 * (3 * (delta + m) + np.sqrt(3) * np.exp(-m) * np.sqrt(
-        np.abs(np.exp(m) * (3 * np.exp(m) * (delta - m + 2) ** 2 - 4 * (2 * delta + 3))))) * ln_i
-
-    # M = delta*(delta*(delta+6)+3) - 1
-    # A = 3 * np.sqrt(np.abs(-delta*(delta*(delta*(delta+6)+6)+2)))
-    # l_taylor_35 = 1/3 * (delta - 1 + (M + A)**(1/3) + (delta*(delta+4)+1)/((M + A)**(1/3))) * ln_i
-
-    l_lambertw = (delta + abs(lambertw(-1 / 3 * np.exp(-delta - 1) * (2 * delta + 3))) + 1) * ln_i
-    print('lambert', lambertw(-1 / 3 * np.exp(-delta - 1) * (2 * delta + 3)),
-          abs(lambertw(-1 / 3 * np.exp(-delta - 1) * (2 * delta + 3))))
-    print('lambertw final', l_lambertw)
-
-    l_lambert_alt = (np.sqrt(2 / 3 * delta) + 7 / 9 * delta + 19 * (delta ** (3 / 2)) / (27 * np.sqrt(6)) - (
-                delta ** 2) / 9) * ln_i
-
-    l_est = l_lambert_alt
-    print('lambertw, l_lambert_alt, l_lambert/l_lambert_alt', l_lambertw, l_lambert_alt, l_lambertw / l_lambert_alt)
-
-    # mu1_est = ln_i
-    mu1_est = l_est / d_est
-    # mu2_est = -(mu1_est * 3 * (d_est - p_est) + (lm_a - ln_a) * (1+2*p_est))/(1+3*p_est)
-
-    if balanced:
-        mu3_est = ln_i
-    else:
-        mu3_est = -(mu1_est * 3 * (d_est - p_est) + (lm_a - ln_a) * (1 + 2 * p_est)) / (2 * p_est)
-    # l_a_est = ln_a - 4 / 3 * mu2_est - l_est
-
-    # l_a_est = ln_a - 2 / 3 * mu3_est - l_est
-    # l_b_est = ln_b - 2 / 3 * mu3_est - l_est
-    mu2_est_a = -(mu1_est * 3 * (d_est - p_est) + (lm_a - ln_a) * (1 + 2 * p_est)) * 2 / (1 + 4 * p_est)
-    mu2_est_b = -(mu1_est * 3 * (d_est - p_est) + (lm_b - ln_b) * (1 + 2 * p_est)) * 2 / (1 + 4 * p_est)
-    mu2_est_c = -(mu1_est * 3 * (d_est - p_est) + (lm_c - ln_c) * (1 + 2 * p_est)) * 2 / (1 + 4 * p_est)
-    mu2_est_d = -(mu1_est * 3 * (d_est - p_est) + (lm_d - ln_d) * (1 + 2 * p_est)) * 2 / (1 + 4 * p_est)
-    if balanced:
-        l_a_est = ln_a - 5 / 6 * mu2_est_a - l_est
-        l_b_est = ln_b - 5 / 6 * mu2_est_b - l_est
-        l_c_est = ln_c - 5 / 6 * mu2_est_c - l_est
-        l_d_est = ln_d - 5 / 6 * mu2_est_d - l_est
-    else:
-        l_a_est = ln_a - 5 / 6 * mu2_est_a - l_est
-        l_b_est = ln_b - 5 / 6 * mu2_est_b - l_est
-        l_c_est = ln_c - 1 / 3 * (2 - 1 / (p_est + 1)) * (lm_c - ln_c)
-        l_d_est = ln_d - 2 / 3 * (2 + 1 / p_est) * (lm_d - ln_d)
-
-    mu2_est = mu2_est_a
-
-    print('ln_a_theory, ln_a, ln_a/ln_a_theory:', ln_a_theory, ln_a, ln_a / ln_a_theory)
-    print('lm_a_theory, lm_a, lm_a/lm_a_theory:', lm_a_theory, lm_a, lm_a / lm_a_theory)
-
-    print('ln_b_theory, ln_b, ln_b/ln_b_theory:', ln_b_theory, ln_b, ln_b / ln_b_theory)
-    print('lm_b_theory, lm_b, lm_b/lm_b_theory:', lm_b_theory, lm_b, lm_b / lm_b_theory)
-
-    print('ln_c_theory, ln_c, ln_c/ln_c_theory:', ln_c_theory, ln_c, ln_c / ln_c_theory)
-    print('lm_c_theory, lm_c, lm_c/lm_c_theory:', lm_c_theory, lm_c, lm_c / lm_c_theory)
-
-    print('ln_d_theory, ln_d, ln_d/ln_d_theory:', ln_d_theory, ln_d, ln_d / ln_d_theory)
-    print('lm_d_theory, lm_d, lm_d/lm_d_theory:', lm_d_theory, lm_d, lm_d / lm_d_theory)
-
-    print('mu1 (true), mu1 (est)', mu1 * 100, mu1_est)
-    print('mu2 (true), mu2 (est)', mu2 * 100, mu2_est)
-    print('mu3 (true), mu3 (est)', mu3 * 100, mu3_est)
-
-    print('lm, lm (theory), lm/lm (theory)', lm_i, lm_i_theory, lm_i / lm_i_theory)
-    print('ln, ln (theory), ln/ln (theory)', ln_i, ln_i_theory, ln_i / ln_i_theory)
-
-    print('internal: est, true, est/true', l_est, l_true, l_est / l_true)
-    print('l_a_true, l_a_est, l_a_true/l_a_est, l_a_naive, l_a_true/l_a_naive', l_a_true,
-          l_a_est, l_a_true / l_a_est, l_a_naive, l_a_true / l_a_naive)
-    print('l_b_true, l_b_est, l_b_true/l_b_est, l_b_naive, l_b_true/l_b_naive', l_b_true,
-          l_b_est, l_b_true / l_b_est, l_b_naive, l_b_true / l_b_naive)
-    print('l_c_true, l_c_est, l_c_true/l_c_est, l_c_naive, l_c_true/l_c_naive', l_c_true,
-          l_c_est, l_c_true / l_c_est, l_c_naive, l_c_true / l_c_naive)
-    print('l_d_true, l_d_est, l_d_true/l_d_est, l_d_naive, l_d_true/l_d_naive', l_d_true,
-          l_d_est, l_d_true / l_d_est, l_d_naive, l_d_true / l_d_naive)
-
-    df.loc[len(df.index)] = ['internal', 'balanced' if balanced else 'unbalanced', d, d_est, p, p_est, num_m_gts,
-                             num_n_gts,
+    df.loc[len(df.index)] = ['internal', 'balanced' if balanced else 'unbalanced',
+                             d, d_est, p, p_est, num_m_gts, num_n_gts,
                              mu3, mu2, mu1, mua, mub, muc, mud,
-                             mu2_est, mu1_est,
-                             l_true, l_est, l_est / l_true,
-                             math.log10(l_true) if l_true > 0 else 0, math.log10(l_est) if l_est > 0 else 0,
-                             lm_i_theory, lm_i, ln_i_theory, ln_i,
-                             math.log10(lm_i_theory) if lm_i_theory > 0 else 0, math.log10(lm_i) if lm_i > 0 else 0,
-                             math.log10(ln_i_theory) if ln_i_theory > 0 else 0, math.log10(ln_i) if ln_i > 0 else 0]
+                             l_i_true, l_i_est, l_i_true/l_i_est,
+                             lm_i_theory, lm_i_simplified, lm_i,
+                             ln_i_theory, ln_i_simplified , ln_i]
 
-    df.loc[len(df.index)] = ['terminal A', 'balanced' if balanced else 'unbalanced', d, d_est, p, p_est, num_m_gts,
-                             num_n_gts,
+    df.loc[len(df.index)] = ['terminal A', 'balanced' if balanced else 'unbalanced',
+                             d, d_est, p, p_est, num_m_gts, num_n_gts,
                              mu3, mu2, mu1, mua, mub, muc, mud,
-                             mu2_est, mu1_est,
-                             l_a_true, l_a_est, l_a_est / l_a_true,
-                             math.log10(l_a_true) if l_a_true > 0 else 0, math.log10(l_a_est) if l_a_est > 0 else 0,
-                             lm_a_theory, lm_a, ln_a_theory, ln_a,
-                             math.log10(lm_a_theory) if lm_a_theory > 0 else 0, math.log10(lm_a) if lm_a > 0 else 0,
-                             math.log10(ln_a_theory) if ln_a_theory > 0 else 0, math.log10(ln_a) if ln_a > 0 else 0]
+                             l_a_true, l_a_est, l_a_true/l_a_est,
+                             lm_a_theory, lm_a_simplified, lm_a,
+                             ln_a_theory, ln_a_simplified, ln_a]
 
-    df.loc[len(df.index)] = ['terminal B', 'balanced' if balanced else 'unbalanced', d, d_est, p, p_est, num_m_gts,
-                             num_n_gts,
+    df.loc[len(df.index)] = ['terminal B', 'balanced' if balanced else 'unbalanced',
+                             d, d_est, p, p_est, num_m_gts, num_n_gts,
                              mu3, mu2, mu1, mua, mub, muc, mud,
-                             mu2_est, mu1_est,
-                             l_b_true, l_b_est, l_b_est / l_b_true,
-                             math.log10(l_b_true) if l_b_true > 0 else 0, math.log10(l_b_est) if l_b_est > 0 else 0,
-                             lm_b_theory, lm_b, ln_b_theory, ln_b,
-                             math.log10(lm_b_theory) if lm_b_theory > 0 else 0, math.log10(lm_b) if lm_b > 0 else 0,
-                             math.log10(ln_b_theory) if ln_b_theory > 0 else 0, math.log10(ln_b) if ln_b > 0 else 0]
+                             l_b_true, l_b_est, l_b_true/l_b_est,
+                             lm_b_theory, lm_b_simplified, lm_b,
+                             ln_b_theory, ln_b_simplified, ln_b]
 
-    df.loc[len(df.index)] = ['terminal C', 'balanced' if balanced else 'unbalanced', d, d_est, p, p_est, num_m_gts,
-                             num_n_gts,
+    df.loc[len(df.index)] = ['terminal C', 'balanced' if balanced else 'unbalanced',
+                             d, d_est, p, p_est, num_m_gts, num_n_gts,
                              mu3, mu2, mu1, mua, mub, muc, mud,
-                             mu2_est, mu1_est,
-                             l_c_true, l_c_est, l_c_est / l_c_true,
-                             math.log10(l_c_true) if l_c_true > 0 else 0, math.log10(l_c_est) if l_c_est > 0 else 0,
-                             lm_c_theory, lm_c, ln_c_theory, ln_c,
-                             math.log10(lm_c_theory) if lm_c_theory > 0 else 0, math.log10(lm_c) if lm_c > 0 else 0,
-                             math.log10(ln_c_theory) if ln_c_theory > 0 else 0, math.log10(ln_c) if ln_c > 0 else 0]
+                             l_c_true, l_c_est, l_c_true/l_c_est,
+                             lm_c_theory, lm_c_simplified, lm_c,
+                             ln_c_theory, ln_c_simplified, ln_c]
 
-    df.loc[len(df.index)] = ['terminal D', 'balanced' if balanced else 'unbalanced', d, d_est, p, p_est, num_m_gts,
-                             num_n_gts,
+    df.loc[len(df.index)] = ['terminal D', 'balanced' if balanced else 'unbalanced',
+                             d, d_est, p, p_est, num_m_gts, num_n_gts,
                              mu3, mu2, mu1, mua, mub, muc, mud,
-                             mu2_est, mu1_est,
-                             l_d_true, l_d_est, l_d_est / l_d_true,
-                             math.log10(l_d_true) if l_d_true > 0 else 0, math.log10(l_d_est) if l_d_est > 0 else 0,
-                             lm_d_theory, lm_d, ln_d_theory, ln_d,
-                             math.log10(lm_d_theory) if lm_d_theory > 0 else 0, math.log10(lm_d) if lm_d > 0 else 0,
-                             math.log10(ln_d_theory) if ln_d_theory > 0 else 0, math.log10(ln_d) if ln_d > 0 else 0]
+                             l_d_true, l_d_est, l_d_true/l_d_est,
+                             lm_d_theory, lm_d_simplified, lm_d,
+                             ln_d_theory, ln_d_simplified, ln_d]
     return df
 
 
@@ -446,44 +400,23 @@ def plot_x_y_line(ax):
     ax.set_xlim(lims)
 
 
-def plot_correlations(df):
-    for branch in ['internal', 'terminal A', 'terminal B', 'terminal C', 'terminal D']:
-        plt.cla()
-        fig, axes = plt.subplots(4, 3, figsize=(18, 24))
-        df = df.replace([np.inf, -np.inf], np.nan)
-        sns.violinplot(ax=axes[0, 0], data=df, x="branch", y="log10(l_est/l_true)", hue="type", inner="quartile",
-                       palette='viridis')
-        sns.violinplot(ax=axes[0, 1], data=df, x="branch", y="log10(l_true)", hue="type", inner="quartile")
-        sns.violinplot(ax=axes[0, 2], data=df, x="branch", y="log10(l_est)", hue="type", inner="quartile")
-        sns.scatterplot(ax=axes[1, 0], data=df[df['branch'] == branch], x="log10(l_true)", y="log10(l_est)", hue="type",
-                        palette='viridis')
-        sns.scatterplot(ax=axes[1, 1], data=df[df['branch'] == branch], x="log10(mu3/mu2)", y="log10(l_est/l_true)",
-                        hue="type")
-        sns.scatterplot(ax=axes[1, 2], data=df[df['branch'] == branch], x="log10(mu3/mu1)", y="log10(l_est/l_true)",
-                        hue="type")
-        sns.scatterplot(ax=axes[2, 0], data=df[df['branch'] == branch], x="log10(lm_theory)", y="log10(lm_est)",
-                        hue="type")
-        sns.scatterplot(ax=axes[2, 1], data=df[df['branch'] == branch], x="log10(ln_theory)", y="log10(ln_est)",
-                        hue="type")
-        sns.scatterplot(ax=axes[2, 2], data=df[df['branch'] == branch], x="log10(d)", y="log10(l_est/l_true)",
-                        hue="type")
-        sns.scatterplot(ax=axes[3, 0], data=df[df['branch'] == branch], x="-log10(d)+|log10(m3/m2)|",
-                        y="log10(l_est/l_true)", hue="type", palette='viridis')
-        sns.scatterplot(ax=axes[3, 1], data=df[df['branch'] == branch], x="-log10(d)+|log10(m3/m2)|",
-                        y="log10(ln_est/ln_theory)", hue="type")
-        sns.scatterplot(ax=axes[3, 2], data=df[df['branch'] == branch], x="-log10(d)+|log10(m3/m2)|",
-                        y="log10(lm_est/lm_theory)", hue="type")
-        axes[1, 2].axhline(y=0, linestyle='--', linewidth=1, alpha=0.75, color='black')
-        axes[1, 1].axhline(y=0, linestyle='--', linewidth=1, alpha=0.75, color='black')
-        axes[2, 2].axhline(y=0, linestyle='--', linewidth=1, alpha=0.75, color='black')
-        axes[0, 0].axhline(y=0, linestyle='--', linewidth=1, alpha=0.75, color='black')
-        axes[3, 0].axhline(y=0, linestyle='--', linewidth=1, alpha=0.75, color='black')
-        axes[3, 1].axhline(y=0, linestyle='--', linewidth=1, alpha=0.75, color='black')
-        axes[3, 2].axhline(y=0, linestyle='--', linewidth=1, alpha=0.75, color='black')
-        plot_x_y_line(axes[1, 0])
-        plot_x_y_line(axes[2, 0])
-        plot_x_y_line(axes[2, 1])
-        plt.savefig(output_name + '_' + branch + '.pdf', bbox_inches='tight')
+def plot_correlations(df, output_name):
+    plt.cla()
+    fig, axes = plt.subplots(5, 3, figsize=(18, 24))
+    df = df.replace([np.inf, -np.inf], np.nan)
+    branches = ['internal', 'terminal A', 'terminal B', 'terminal C', 'terminal D']
+
+    for i in range(len(branches)):
+        sns.scatterplot(ax=axes[i, 0], data=df[df['branch'] == branches[i]], x="l_true", y="l_est", hue="type", palette='Dark2')
+        sns.scatterplot(ax=axes[i, 1], data=df[df['branch'] == branches[i]], x="lm_theory", y="lm_simplified", hue="type", palette='Dark2')
+        sns.scatterplot(ax=axes[i, 2], data=df[df['branch'] == branches[i]], x="ln_theory", y="ln_simplified", hue="type", palette='Dark2')
+        for j in range(3):
+            axes[i, j].set_title(branches[i])
+            # plot_x_y_line(axes[i, j])
+            axes[i, j].set_yscale('log')
+            axes[i, j].set_xscale('log')
+
+    plt.savefig(output_name + '.pdf', bbox_inches='tight')
 
 
 def plot_length_accuracy(df):
@@ -513,19 +446,28 @@ def add_additional_columns(df):
 
 if __name__ == '__main__':
     # sns.set_theme()
-    dir_name = sys.argv[1]
-    output_name = 'results'
+    parser = argparse.ArgumentParser(description="Quartet branch length formulas in substitution units")
+    parser.add_argument("-ps", "--popsize", type=str, required=True,
+                        help="Population size")
+    parser.add_argument("-d", "--datadir", type=str, required=True,
+                        help="Quartet data directory")
+    args = parser.parse_args()
+    output_name = 'qt'
     df = pd.DataFrame(
         columns=["branch", "type", "d", "d-est", "p", "p-est", "m_gts", "n_gts",
-                 "mu3", "mu2", "mu1", "mu2_est", "mu1_est", "mua", "mub", "muc", "mud",
-                 "l_true", "l_est",
+                 "mu3", "mu2", "mu1", "mua", "mub", "muc", "mud",
+                 "l_true", "l_est", "l_true/l_est",
                  "lm_theory", "lm_simplified", "lm_est",
                  "ln_theory", "ln_simplified", "ln_est"])
-    for i in range(1, 11):
+    for i in range(1, 201):
         print('\n', i)
-        df = compute_su_branches(dir_name, str(i).zfill(3), df)
+        try:
+            df = compute_su_branches(int(args.popsize), args.datadir, str(i).zfill(3), df)
+        except Exception as e:
+            print(str(e))
+            continue
     df.to_csv(output_name + '.csv')
     df = pd.read_csv(output_name + '.csv')
     # df = add_additional_columns(df)
     # plot_length_accuracy(df)
-    # plot_correlations(df)
+    plot_correlations(df, output_name)

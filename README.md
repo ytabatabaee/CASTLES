@@ -1,6 +1,12 @@
 # CASTLES
 
-**CASTLES** is a quartet-based method for phylogenomic branch length estimation (in substitution units), that is designed based on the properties of the multispecies coalescent (MSC) model.
+**CASTLES** is a method for estimating branch lengths of a given species tree from estimated gene trees in the unit of expected number of substitutions per site (substitution units), that addresses gene tree heterogeneity due to incomplete lineage sorting (ILS), as modeled by the multi-species coalescent (MSC) model.
+
+The CASTLES algorithm is described in the following paper:
+
+Y. Tabatabaee, C. Zhang, T. Warnow, S. Mirarab, Phylogenomic branch length estimation using quartets, Bioinformatics, Volume 39, Issue Supplement_1, June 2023, Pages i185–i193, https://doi.org/10.1093/bioinformatics/btad221
+
+Datasets and results from this study are available in [CASTLES-paper](https://github.com/ytabatabaee/CASTLES-paper/tree/main) repository.
 
 ## Dependencies
 CASTLES is implemented in Python 3. It was developed and tested in Python version 3.7.0 and has the following dependencies:
@@ -10,11 +16,11 @@ CASTLES is implemented in Python 3. It was developed and tested in Python versio
 
 ## Usage Instructions
 
-**Input:** A file containing a species tree and a file containing a set of gene trees, both in newick format.
+**Input:** A file containing a species tree and a file containing a set of single-copy gene trees, both in newick format.
 
 **Output:** A file containing the species tree in newick format, annotated with substitution unit (SU) branch lengths.
 
-Running CASTLES is currently a two-step approach, but in the future it will be available to use inside the tool [ASTER](https://github.com/chaoszhang/ASTER). 
+Running CASTLES is currently a two-step approach, but in the future it will be available to use inside the species tree estimation software [ASTER](https://github.com/chaoszhang/ASTER).
 1) Annotate branches of the species tree with quartet statistics using [ASTER](https://github.com/chaoszhang/ASTER).
 2) Assign final branch lengths to each branch of the species tree using `castles.py`.
 
@@ -48,19 +54,14 @@ $ python3 castles.py -t annotated.tre -g <gene_tree_path> -o <output_path>
 - **Required**
 ```
  -t,  --speciestree        ASTER-annotated species tree in newick format
- -g,  --genetrees          input gene trees in newick format
+ -g,  --genetrees          input single-copy gene trees in newick format
  -o,  --output             output file containing a species tree annotated with SU branch lengths
 ```
 
 
 **Example**
 
-The `example` directory contains one example set, with a 30-taxon model species tree and a corresponding tree annotated by ASTER, and 500 estimated gene trees. The command below shows how CASTLES can be run on this data:
+The `example` directory contains a 30-taxon model species tree and a corresponding tree annotated by ASTER, and 500 estimated gene trees. The command below shows how CASTLES can be run on this data:
 ```
 $ python3 castles.py -t example/aster.trees.annotated -g example/estimatedgenetre.gtr -o example/castles.tre
 ```
-
-## Publication
-Y. Tabatabaee, C. Zhang, T. Warnow, S. Mirarab, Phylogenomic branch length estimation using quartets, Bioinformatics, Volume 39, Issue Supplement_1, June 2023, Pages i185–i193, https://doi.org/10.1093/bioinformatics/btad221
-### Data Availability
-Datasets and results from this paper are available in [CASTLES-paper](https://github.com/ytabatabaee/CASTLES-paper/tree/main) repository.
