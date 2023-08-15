@@ -73,6 +73,6 @@ if __name__ == "__main__":
     parser.add_argument("-t2", "--tree2", type=str, required=True,
                         help="tree file with branch lengths in newick format")
     parser.add_argument("-p", "--plot", default=False, required=False,
-                        action = argparse.BooleanOptionalAction,
+                        action='store_true',
                         help="plot correlations between branch lengths of input trees")
     compare_bl(parser.parse_args())
