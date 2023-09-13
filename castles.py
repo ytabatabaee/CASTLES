@@ -8,7 +8,10 @@ from itertools import combinations
 def average_terminal_bl(gts, taxon_label):
     sum_bl = 0
     for gt in gts:
-        sum_bl += gt.find_node_with_taxon_label(taxon_label).edge.length
+        try:
+            sum_bl += gt.find_node_with_taxon_label(taxon_label).edge.length
+        except:
+            continue
     return sum_bl/len(gts)
 
 
@@ -239,7 +242,7 @@ def castles(st, gts, tns):
 
             # compute internal branch (Table S3 in paper)
             delta = safe_div(lm_i - ln_i, ln_i) if lm_i > ln_i else 1e-03
-            l_est = 1/6 * (3 * delta + np.sqrt(3 * delta * (4 + 3 * delta))) * ln_i
+            l_est = 1/6 * (3 * delta + np.sqrt(3 * delta * (4 + 3 * delta))) * ln_i if ln_i > 0 else 1e-06
             mu1_est = ln_i #l_est / d_est
 
             # compute terminal branches (Table S3 in paper, unbalanced)
