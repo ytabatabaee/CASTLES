@@ -51,11 +51,12 @@ def compare_bl(args):
         idx += 1
 
     print(df_branches[['Taxon', "Branch Type", "l1", "l2"]].to_string())
+    name1 = args.tree1.split('/')[-1].split('.')[0].upper()
+    name2 = args.tree2.split('/')[-1].split('.')[0].upper()
+    df_branches[['Taxon', "Branch Type", "l1", "l2"]].to_csv(name1 + '_' + name2 + '_lengths.csv')
+
     if args.plot:
-        name1 = args.tree1.split('/')[-1].split('.')[0].upper()
-        name2 = args.tree2.split('/')[-1].split('.')[0].upper()
         plot_correlations(df_branches, name1, name2)
-        df_branches.to_csv(name1 + '_' + name2 + '_correlations.csv')
 
     df_branches['l1'] = df_branches['l1'].apply(lambda x: x if x > 0 else 1e-6)
     df_branches['l2'] = df_branches['l2'].apply(lambda x: x if x > 0 else 1e-6)
