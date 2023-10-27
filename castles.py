@@ -243,7 +243,7 @@ def castles(st, gts, tns):
             # compute internal branch (Table S3 in paper)
             delta = safe_div(lm_i - ln_i, ln_i) if lm_i > ln_i else 1e-03
             l_est = 1/6 * (3 * delta + np.sqrt(3 * delta * (4 + 3 * delta))) * ln_i if ln_i > 0 else 1e-06
-            mu1_est = ln_i #l_est / d_est
+            mu1_est = l_est / d_est
 
             # compute terminal branches (Table S3 in paper, unbalanced)
             l_a_est = ln_a + (mu1_est * (d_est - p_est) + (lm_a - ln_a) * (
