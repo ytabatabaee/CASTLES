@@ -29,6 +29,8 @@ Follow the installation instructions on [ASTER](https://github.com/chaoszhang/AS
 ```
 $ g++ -std=gnu++11 -D"ASTRALIV" -march=native -Ofast -pthread src/astral.cpp -o bin/astral
 ```
+**WARNING:** *If you use an M1 Mac and you got a compilation error with the command above, we suggest you switch to a Linux system.*
+
 Then, use the following command to run ASTER, where the annotated tree is printed to the log file (make sure the above compilation is used).
 ```
 $ astral -C -i <gene_tree_path> -c <species_tree_path> -o <output_path> > annotated.tre
