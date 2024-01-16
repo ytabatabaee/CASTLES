@@ -46,11 +46,9 @@ def process_node_annotation(annot_str):
 def safe_div(n, d):
     return n / d if d else 0
 
-
 def set_branch_length(edge, length):
     edge.length = np.abs(length)
     return edge
-
 
 def find_sibling(node):
     if node.parent_node._child_nodes[0] == node:
@@ -147,14 +145,9 @@ def castles_quartets(st, gts, tns):
     lm_d = np.mean(bl_m_gts[4]) if len(m_gts) > 0 else 0
     ln_d = np.mean(bl_n_gts[4]) if len(n_gts) > 0 else 0
 
-    delta = (lm_i - ln_i) / ln_i if lm_i > ln_i else 1e-03
-    l_est = 1/6 * (3 * delta + np.sqrt(3 * delta * (4 + 3 * delta))) * ln_i
+    delta = safe_div(lm_i - ln_i, ln_i) if lm_i > ln_i else 1e-03
+    l_est = 1/6 * (3 * delta + np.sqrt(3 * delta * (4 + 3 * delta))) * ln_i if ln_i > 0 else 1e-06
     mu1_est = l_est / d_est
-
-    mu2_est_a = -(mu1_est * 3 * (d_est - p_est) + (lm_a - ln_a) * (1 + 2 * p_est)) * 2 / (1 + 4 * p_est)
-    mu2_est_b = -(mu1_est * 3 * (d_est - p_est) + (lm_b - ln_b) * (1 + 2 * p_est)) * 2 / (1 + 4 * p_est)
-    mu2_est_c = -(mu1_est * 3 * (d_est - p_est) + (lm_c - ln_c) * (1 + 2 * p_est)) * 2 / (1 + 4 * p_est)
-    mu2_est_d = -(mu1_est * 3 * (d_est - p_est) + (lm_d - ln_d) * (1 + 2 * p_est)) * 2 / (1 + 4 * p_est)
 
     if balanced:
         l_a_est = ln_a - 2 / 3 * mu1_est - 1 / 3 *(mu1_est * p_est - (lm_a - ln_a) * (1 + 2*p_est))
@@ -162,8 +155,10 @@ def castles_quartets(st, gts, tns):
         l_c_est = ln_c - 2 / 3 * mu1_est - 1 / 3 *(mu1_est * p_est - (lm_c - ln_c) * (1 + 2*p_est))
         l_d_est = ln_d - 2 / 3 * mu1_est - 1 / 3 *(mu1_est * p_est - (lm_d - ln_d) * (1 + 2*p_est))
     else:
-        l_a_est = ln_a - 5 / 6 * mu2_est_a - l_est
-        l_b_est = ln_b - 5 / 6 * mu2_est_b - l_est
+        l_a_est = ln_a + (mu1_est * (d_est - p_est) + (lm_a - ln_a) * (
+                1 - 2 / 3 * (1 - p_est))) / (1 - 4 / 5 * (1 - p_est)) - l_est
+        l_b_est = ln_b + (mu1_est * (d_est - p_est) + (lm_b - ln_b) * (
+                1 - 2 / 3 * (1 - p_est))) / (1 - 4 / 5 * (1 - p_est)) - l_est
         l_c_est = ln_c - 1 / 3 * (2 - 1 / (p_est + 1)) * (lm_c - ln_c)
         l_d_est = ln_d - 2 / 3 * (2 + 1 / p_est) * (lm_d - ln_d)
 
@@ -207,7 +202,11 @@ def castles(st, gts, tns):
         if node.taxon is not None:
             continue
         else:
-            label_dict = process_node_annotation(node.label)
+            try:
+                label_dict = process_node_annotation(node.label)
+            except:
+                print('Error: Input tree is not annotated correctly by ASTER!')
+                exit(1)
             num_m_gts = label_dict['LR_SO']['quartetCnt']
             num_n_gts = label_dict['LS_RO']['quartetCnt'] + label_dict['LO_RS']['quartetCnt']
             # calculate coalescent unit lenght
