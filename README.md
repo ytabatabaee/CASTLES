@@ -16,33 +16,43 @@ CASTLES is implemented in Python 3. It was developed and tested in Python versio
 
 ## Usage Instructions
 
-**Input:** A file containing a species tree and a file containing a set of single-copy gene trees, both in newick format.
+**Input:** A file containing a species tree and a file containing a set of single-copy or multi-copy gene trees, both in newick format.
 
 **Output:** A file containing the species tree in newick format, annotated with substitution unit (SU) branch lengths.
 
-Running CASTLES is currently a two-step approach, but in the future it will be available to use inside the species tree estimation software [ASTER](https://github.com/chaoszhang/ASTER).
+Running CASTLES is currently a two-step approach, but in the future it will be integerated inside the species tree estimation software [ASTER](https://github.com/chaoszhang/ASTER) and can be used with both [ASTRAL](https://github.com/chaoszhang/ASTER/blob/master/tutorial/astral.md) and [ASTRAL-Pro](https://github.com/chaoszhang/ASTER/blob/master/tutorial/astral-pro.md).
 1) Annotate branches of the species tree with quartet statistics using [ASTER](https://github.com/chaoszhang/ASTER).
 2) Assign final branch lengths to each branch of the species tree using `castles.py`.
 
 ### Annotating the input species tree with ASTER
-Follow the installation instructions on [ASTER](https://github.com/chaoszhang/ASTER) repository and download ASTER (>= v1.13.2.4). Use the following command to compile it
+Follow the installation instructions on [ASTER](https://github.com/chaoszhang/ASTER) repository and download ASTER (>= v1.13.2.4). 
+
+For **single-copy** gene trees, use the following command to compile ASTER
 ```
-$ g++ -std=gnu++11 -D"ASTRALIV" -march=native -Ofast -pthread src/astral.cpp -o bin/astral
+$ g++ -std=gnu++11 -D"ASTRALIV" -march=native -Ofast -pthread src/astral.cpp -o bin/astral_castles
+```
+For **multi-copy** gene trees, use the following command for compilation
+```
+$ g++ -std=gnu++11 -march=native -D CASTLES -Ofast -pthread src/astral-pro.cpp -o bin/astral-pro_castles
 ```
 **WARNING:** *If you use an M1 Mac and you got a compilation error with the command above, we suggest you switch to a Linux system.*
 
-Then, use the following command to run ASTER, where the annotated tree is printed to the log file (make sure the above compilation is used).
+Then, use the following command to run ASTER, where the annotated tree is printed to the log file
 ```
-$ astral -C -i <gene_tree_path> -c <species_tree_path> -o <output_path> > annotated.tre
+$ astral_castles -C -i <gene_tree_path> -c <species_tree_path> -o <output_path> > annotated.tre
+```
+or the following command for **multi-copy** gene trees
+```
+$ astral-pro_castles -C -i <gene_tree_path> -c <species_tree_path> -o <output_path> > annotated.tre
 ```
 If an outgroup taxon is known, it can be specified with the option `--root` as follows
 ```
-$ astral -C -i <gene_tree_path> -c <species_tree_path> -o <output_path> --root <outgroup_taxon> > annotated.tre
+$ astral_castles -C -i <gene_tree_path> -c <species_tree_path> -o <output_path> --root <outgroup_taxon> > annotated.tre
 ```
 #### Handling multiple individuals per species
 When there are multiple individuals per species and the individual names do not match the species names, run the following command
 ```
-$ astral -C -i <gene_tree> -a <name_map> -c <species_tree> -o <output_path> > annotated.tre
+$ astral_castles -C -i <gene_tree> -a <name_map> -c <species_tree> -o <output_path> > annotated.tre
 ```
 where the `name_map` file contains maps from individual names to species names in the following format
 ```
