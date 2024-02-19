@@ -1,8 +1,8 @@
 # CASTLES
 
-**CASTLES** is a method for estimating branch lengths of a given species tree from estimated gene trees in the unit of expected number of substitutions per sequence site (substitution units), that addresses gene tree heterogeneity due to incomplete lineage sorting (ILS), as modeled by the multi-species coalescent (MSC) model.
+**CASTLES** is a method for estimating branch lengths of a given species tree from estimated gene trees in the unit of expected number of substitutions per sequence site (substitution units), that addresses gene tree heterogeneity due to incomplete lineage sorting (ILS), as modeled by the multi-species coalescent (MSC) model. A new version of CASTLES also handles gene duplication and loss. 
 
-The CASTLES algorithm is described in the following paper:
+The original CASTLES algorithm is described in the following paper:
 
 Y. Tabatabaee, C. Zhang, T. Warnow, S. Mirarab, Phylogenomic branch length estimation using quartets, Bioinformatics, Volume 39, Issue Supplement_1, June 2023, Pages i185–i193, https://doi.org/10.1093/bioinformatics/btad221
 
@@ -62,7 +62,7 @@ individual_name3    species_name3
 ...
 ```
 ### Assigning SU branch lengths
-Use the following command to produce the final species tree with SU branch lengths (**note:** the input is the *ASTER-annotated* tree, not the original species tree)
+Use the following command to produce the final species tree with SU branch lengths (**note:** the input is the **ASTER-annotated** tree, not the original species tree)
 ```
 $ python3 castles.py -t annotated.tre -g <gene_tree_path> -o <output_path>
 ```
