@@ -5,6 +5,29 @@ import math
 import numpy as np
 from itertools import combinations
 
+'''
+def average_terminal_bl(gts, taxon_label, tns):
+    sum_bl = 0
+    all_labels = []
+    for label in tns:
+        #print(label)
+        #print(str(label).replace("'", "").split(" ")[0])
+        if taxon_label == str(label).replace("'", "").split(" ")[0]:
+            all_labels.append(label)
+    count = 0
+    for gt in gts:
+        for label in all_labels:
+            #print(label)
+            try:
+                print(label.split(" ").join('_'))
+                sum_bl += gt.find_node_with_taxon_label(label.split(" ").join('_')).edge.length
+                count += 1
+            except:
+                continue
+    return sum_bl/count
+'''
+
+
 def average_terminal_bl(gts, taxon_label):
     sum_bl = 0
     for gt in gts:
@@ -255,7 +278,7 @@ def castles(st, gts, tns):
 
             if node.parent_node.parent_node is None: # node is child of the root
                 if sibling.is_leaf():
-                    if l_d_est == 0:
+                    if l_d_est <= 0:
                         l_d_est = average_terminal_bl(gts, sibling.taxon.label)
                     set_branch_length(node.edge, l_d_est)
                     print('outgroup terminal branch ', sibling.taxon.label, '| length =', l_d_est)
@@ -267,13 +290,13 @@ def castles(st, gts, tns):
                 print('internal branch | length =', l_est)
             if left.is_leaf() and not left.edge.length:
                 set_branch_length(left.edge, l_a_est)
-                print('cherry terminal branch', left.taxon.label,  '| length =', l_a_est)
+                print('cherry terminal branch', left.taxon.label,  '| length =', np.abs(l_a_est))
             if right.is_leaf() and not right.edge.length:
                 set_branch_length(right.edge, l_b_est)
-                print('cherry terminal branch', right.taxon.label, '| length =', l_b_est)
+                print('cherry terminal branch', right.taxon.label, '| length =', np.abs(l_b_est))
             if sibling and sibling.is_leaf() and not sibling.edge.length:
                 set_branch_length(sibling.edge, l_c_est)
-                print('middle terminal branch', sibling.taxon.label, '| length =', l_c_est)
+                print('middle terminal branch', sibling.taxon.label, '| length =', np.abs(l_c_est))
         node.label = None
 
     st.deroot()
@@ -298,7 +321,7 @@ if __name__ == "__main__":
     st = dendropy.Tree.get(path=args.speciestree, schema='newick', taxon_namespace=tns, rooting='force-rooted')
     gts = dendropy.TreeList.get(path=args.genetrees, schema='newick', taxon_namespace=tns)
 
-    print('Number of species:', len(tns))
+    print('Number of species:', st.__len__())
     print('Number of genes:', len(gts))
     if len(tns) == 4:
         castles_quartets(st, gts, tns)
