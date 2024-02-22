@@ -4,6 +4,7 @@ import re
 import math
 import numpy as np
 from itertools import combinations
+from scipy.special import lambertw
 
 '''
 def average_terminal_bl(gts, taxon_label, tns):
@@ -223,7 +224,7 @@ def castles_quartets(st, gts, tns):
         print('\nSpecies tree with SU lengths written to', args.outputtree)
 
 
-def castles(st, gts, tns):
+def castles(st, gts, tns, s):
     print('\nCalculating lengths in post-order traversal of internal nodes:')
 
     for node in st.postorder_node_iter():
@@ -264,8 +265,10 @@ def castles(st, gts, tns):
                             label_dict['LS_RO']['quartetCnt']+label_dict['LO_RS']['quartetCnt'])
 
             # compute internal branch (Table S3 in paper)
-            delta = safe_div(lm_i - ln_i, ln_i) if lm_i > ln_i else 1e-03
-            l_est = 1/6 * (3 * delta + np.sqrt(3 * delta * (4 + 3 * delta))) * ln_i if ln_i > 0 else 1e-06
+            #delta = safe_div(lm_i - ln_i, ln_i) if lm_i > ln_i else 1e-03
+            #l_est = 1/6 * (3 * delta + np.sqrt(3 * delta * (4 + 3 * delta))) * ln_i if ln_i > 0 else 1e-06
+            delta = safe_div(lm_i - ln_i, ln_i+1/s) if lm_i > ln_i else 1e-03
+            l_est = (delta + np.real(lambertw(-1 / 3 * np.exp(-delta - 1) * (2 * delta + 3))) + 1) * ln_i if ln_i > 0 else 1e-06
             mu1_est = l_est / d_est
 
             # compute terminal branches (Table S3 in paper, unbalanced)
@@ -313,6 +316,8 @@ if __name__ == "__main__":
                         help="Gene trees in newick format")
     parser.add_argument("-o", "--outputtree", type=str, required=True,
                         help="Species tree with SU branch lengths in newick format")
+    parser.add_argument("-s", "--seqlen", type=int, required=False, default=1000,
+                        help="Sequence length")
     args = parser.parse_args()
 
     print('* CASTLES: Coalescent-Aware Species Tree Length Estimation in Substitution-units *\n')
@@ -326,4 +331,4 @@ if __name__ == "__main__":
     if len(tns) == 4:
         castles_quartets(st, gts, tns)
     else:
-        castles(st, gts, tns)
+        castles(st, gts, tns, args.seqlen)
