@@ -8,10 +8,11 @@ Y. Tabatabaee, C. Zhang, T. Warnow, S. Mirarab, Phylogenomic branch length estim
 
 Datasets and results from this study are available in [CASTLES-paper](https://github.com/ytabatabaee/CASTLES-paper/tree/main) repository.
 
-**NEW:** An improved version of CASTLES that also handles gene duplication and loss (called **CASTLES-Pro**) is now integerated inside the species tree estimation software [ASTER](https://github.com/chaoszhang/ASTER). We recommend using ASTER directly to get branch lengths on trees produced by [ASTRAL](https://github.com/chaoszhang/ASTER/blob/master/tutorial/astral.md), [ASTRAL-Pro](https://github.com/chaoszhang/ASTER/blob/master/tutorial/astral-pro.md), or on a fixed input tree topology. 
-
 ## Integrated inside ASTER (NEW)
-Follow the installation instructions on [ASTER](https://github.com/chaoszhang/ASTER) repository and download ASTER (>= v1.16.2.4). ASTRAL and ASTRAL-Pro with the following compilation by default produce species trees with SU branch lengths. See [ASTRAL tutorial](https://github.com/chaoszhang/ASTER/blob/master/tutorial/astral.md) and [ASTRAL-Pro tutorial](https://github.com/chaoszhang/ASTER/blob/master/tutorial/astral-pro.md) for more information.
+An improved version of CASTLES that also handles gene duplication and loss (called **CASTLES-Pro**) is now integerated inside the species tree estimation software [ASTER](https://github.com/chaoszhang/ASTER). We recommend using ASTER directly to get SU branch lengths on trees produced by [ASTRAL](https://github.com/chaoszhang/ASTER/blob/master/tutorial/astral.md), [ASTRAL-Pro](https://github.com/chaoszhang/ASTER/blob/master/tutorial/astral-pro.md), or on a fixed input species tree topology. 
+
+## Usage Instructions
+Follow the installation instructions on [ASTER](https://github.com/chaoszhang/ASTER) repository and download ASTER (>= v1.16.2.4). Using the following compilation, ASTRAL and ASTRAL-Pro by default produce species trees with SU branch lengths. See [ASTRAL tutorial](https://github.com/chaoszhang/ASTER/blob/master/tutorial/astral.md) and [ASTRAL-Pro tutorial](https://github.com/chaoszhang/ASTER/blob/master/tutorial/astral-pro.md) for more information.
 ### Compilation
 For **single-copy** gene trees, use the following command to compile ASTER
 ```
@@ -21,7 +22,7 @@ For **multi-copy** gene trees, use the following command for compilation
 ```
 $ g++ -D CASTLES -std=gnu++11 -march=native -Ofast -pthread src/astral-pro.cpp -o bin/astral-pro2
 ```
-### Usage
+### Estimating branch lengths
 **Arguments**
 ```
 Required
@@ -37,7 +38,7 @@ To infer a species tree using ASTRAL with SU branch lengths, use the following c
 ```
 $ bin/astral4 -i <gene-tree-path> -o <output-path> [--root <outgroup-name>] [--genelength <gene-length>]
 ```
-To infer branch lengths on a **fixed** species tree topology, use the scoring option `-C -c <species-tree-path>`:
+To infer branch lengths on a **fixed** input species tree topology, use the scoring option `-C -c <species-tree-path>`:
 ```
 $ bin/astral4 -i <gene-tree-path> -C -c <species-tree-path> -o <output-path> [--root <outgroup-name>] [--genelength <gene-length>]
 ```
@@ -59,7 +60,7 @@ individual_name2    species_name2
 individual_name3    species_name3
 ...
 ```
-### Additional Files
+## Additional Files
 - An old documentation of CASTLES is available [here](https://github.com/ytabatabaee/CASTLES/blob/main/OLD-README.md).
 - A modified version of the simulation software [SimPhy](https://github.com/adamallo/SimPhy) that produces species trees with SU branch lenghts is available in [simulation_files](https://github.com/ytabatabaee/CASTLES/tree/main/simulation_files).
 - Some useful scripts for comparing branch lengths of two species trees are available in [scripts](https://github.com/ytabatabaee/CASTLES/tree/main/scripts).
