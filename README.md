@@ -64,3 +64,4 @@ individual_name3    species_name3
 - An old documentation of CASTLES is available [here](https://github.com/ytabatabaee/CASTLES/blob/main/OLD-README.md).
 - A modified version of the simulation software [SimPhy](https://github.com/adamallo/SimPhy) that produces species trees with SU branch lenghts is available in [simulation_files](https://github.com/ytabatabaee/CASTLES/tree/main/simulation_files).
 - Some useful scripts for comparing branch lengths of two species trees are available in [scripts](https://github.com/ytabatabaee/CASTLES/tree/main/scripts).
+- See [su_branch_calcs.nb](https://github.com/ytabatabaee/CASTLES/blob/main/su_branch_calcs.nb) for theoretical derivations of SU branch lengths under the MSC.
