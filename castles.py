@@ -271,7 +271,13 @@ def castles(st, gts, tns, s):
             if delta > 0 and ln_i > 0:
                 l_est = (delta + np.real(lambertw(-1 / 3 * np.exp(-delta - 1) * (2 * delta + 3))) + 1) * ln_i #if ln_i > 0 else 1e-06
             else:
-                l_est = lm_i
+                delta = 1e-03
+                l_lambert = (delta + np.real(lambertw(-1 / 3 * np.exp(-delta - 1) * (2 * delta + 3))) + 1) * ln_i
+                threshold = np.log10(len(gts))
+                w_mean, w_lambert = threshold * d_est, 1 / (threshold * d_est)
+                l_est = (w_mean * lm_i + w_lambert * l_lambert) / (w_mean + w_lambert)
+                # l_est = (1 - np.exp(-d_est)) * l_mean + np.exp(-d_est) * l_lambert
+
             mu1_est = l_est / d_est
 
             # compute terminal branches (Table S3 in paper, unbalanced)
