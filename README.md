@@ -46,7 +46,7 @@ To infer branch lengths using ASTRAL-Pro, use the following command:
 ```
 $ bin/astral-pro2 -i <gene-tree-path > [-C -c <species-tree-path>] -o <output-path> [--root <outgroup-name>] [--genelength <gene-length>]
 ```
-If an outgroup is known, it is recommded to specify it using the option `--root`. Additionally, if the average gene sequence length that was used to infer the input gene trees is approximately known, it can be set with `--genelength`. The default value for this parameter is 1000.
+If an **outgroup** is known, it is recommded to specify it using the option `--root`. Additionally, if the average **gene sequence length** that was used to infer the input gene trees is approximately known, it can be set with `--genelength`. The default value for this parameter is 1000.
 
 #### Handling multiple individuals per species
 When there are multiple individuals per species and the individual names do not match the species names, use the following command
