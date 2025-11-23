@@ -8,7 +8,7 @@ Y. Tabatabaee, C. Zhang, T. Warnow, S. Mirarab, Phylogenomic branch length estim
 
 Datasets and results from this study are available in [CASTLES-paper](https://github.com/ytabatabaee/CASTLES-paper/tree/main) repository.
 
-## Integrated inside ASTER (NEW)
+## Integrated inside ASTER
 An improved version of CASTLES that also handles gene duplication and loss (called **CASTLES-Pro**) is now integerated inside the species tree estimation software [ASTER](https://github.com/chaoszhang/ASTER). We recommend using ASTER directly to get SU branch lengths on trees produced by [ASTRAL](https://github.com/chaoszhang/ASTER/blob/master/tutorial/astral.md), [ASTRAL-Pro](https://github.com/chaoszhang/ASTER/blob/master/tutorial/astral-pro.md), or on a fixed input species tree topology. 
 
 ## Usage Instructions
