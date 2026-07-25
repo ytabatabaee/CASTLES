@@ -1,5 +1,9 @@
 # CASTLES
 
+[![DOI](https://img.shields.io/badge/DOI-10.1093%2Fbioinformatics%2Fbtad221-blue.svg)](https://doi.org/10.1093/bioinformatics/btad221)
+[![Dryad](https://img.shields.io/badge/Dryad-10.5061%2Fdryad.pg4f4qs3q-green.svg)](https://doi.org/10.5061/dryad.pg4f4qs3q)
+[![Talk](https://img.shields.io/badge/ISMB%2FECCB%202023-Talk-red.svg)](https://www.youtube.com/watch?v=orv5VTUG81w)
+
 **CASTLES** is a method for estimating branch lengths of a given species tree from estimated gene trees in the unit of expected number of substitutions per sequence site (substitution units), that addresses gene tree heterogeneity due to incomplete lineage sorting (ILS), as modeled by the multi-species coalescent (MSC) model. 
 
 The CASTLES algorithm is described in the following paper:
